@@ -1,7 +1,10 @@
 # Plano de Projeto
 ## 1. Identificação
-Nome do Projeto: Sistema Plutão
-Equipe: 1B
+
+**Nome do Projeto:** Sistema Plutão
+
+**Equipe:** 1B
+
 ## 2. Histórico de revisão
 | Data | Versão | Descrição | Autor |
 | :--- | :--- | :--- | :--- |
