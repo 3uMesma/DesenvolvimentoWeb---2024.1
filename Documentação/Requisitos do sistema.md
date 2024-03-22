@@ -8,7 +8,7 @@ Site para contato do público geral com o clube de Astronomia. Abarca:
 - Divulgação de atividades
 - Distribuição de material didático gratuito
 - Solicitação e agendamento de cursos
-- e Emissão de certificados de participação
+- e emissão de certificados de participação
 ## Características dos usuários
 
 **Estudantes:** Buscam no site a divulgação de atividades nas quais possam participar, e fazer uso dos materiais didáticos.
