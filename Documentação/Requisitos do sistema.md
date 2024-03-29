@@ -31,7 +31,7 @@ Site para contato do público geral com o clube de Astronomia. Abarca:
 - **RF08:** Realizar publicações com material para download associado.
 - **RF09:** Alterar disponibilidade para a realização de atividades.
 - **RF10:** Atender solicitações de realização de atividades.
-- **RF11:** Alocar integrantes ou materiais para a realização das atividades (?)
+
 ## e os Requisitos lógicos do Banco de Dados
 
 - Pertinentes às **publicações**:
