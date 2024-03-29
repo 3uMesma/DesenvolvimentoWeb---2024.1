@@ -1,7 +1,7 @@
 # Plano de Projeto
 ## 1. Identificação
 
-**Nome do Projeto:** Sistema Plutão
+**Nome do Projeto:** AstroCariri
 
 **Equipe:** 1B
 
@@ -9,25 +9,21 @@
 | Data | Versão | Descrição | Autor |
 | :--- | :--- | :--- | :--- |
 | 20/03/2024 | 0.1 | Criação do documento | Guilherme de Abreu |
+| 23/03/2024 | 0.2 | Mudança de projeto | Guilherme de Abreu |
 
 
 ## 3. Introdução
 
-Com o Sistema Plutão buscamos implementar um sistema de informação para o gerenciamento da Moradia Universitária da Universidade de São Paulo, Campus São Carlos, a ser utilizado pelos moradores desta moradia, seus dirigentes eleitos (a diretoria), mais representantes da *Secretaria de Assistência Social e Moradia Estudantil* da referida Universidade.
-
-### 3.1. Definições
-- **Aloja:** Denominação mais comumente utilizada para o Conjunto Residencial dos Estudantes Universitários (CREU);
-- **Argos:** Sistema de Informação utilizado pela USP para dar encaminhamento a solicitações de manutenção diversas.
-- **Autogestão:** Denominação dada a capacidade e o ente resultante da capacidade dos moradores do Aloja de decidir e gerir este último. Comumente utilizado no contexto de se frisar que dadas ações podem ser tomadas por determinação dos próprios moradores.
-- **Mercúrio:** Sistema de Informação utilizado pela USP para o gerenciamento de seus almoxarifados e finanças.
+AstroCariri trata-se de um clube de astronomia originado, e que promove a realização de cursos sobre o tema, na região metropolitana do Cariri, Ceará. Pretende-se com este projeto expandir a presença digital do grupo e fornecê-los ferramentas para promover uma melhor divulgação e registro das suas atividades e materiais didáticos.
 
 ## 4. Escopo
 
-Um sistema de informação para o gerenciamento de um dos blocos do Alojamento, no caso, o Bloco E. Embora este bloco e suas demandas sejam análogas àquelas vistas em todos os demais. Este sistema deve abarcar uma aplicação web que organiza um banco de dados para controle de:
-- Manutenção
-- Limpeza
-- Vagas em quartos
-- Eventos organizados pelo alojamento (tais quais festas, reuniões, escalas de trabalho)
+Site para contato do público geral com o clube de Astronomia. Abarca:
+
+- Divulgação de atividades
+- Distribuição de material didático gratuito
+- Solicitação e agendamento de cursos
+- Emissão de certificados de participação
 
 ## 5. Equipe e Infraestrutura
 
@@ -36,18 +32,19 @@ A equipe 1B é composta pelos seguintes integrantes, cujos papeis podem sofrer r
 | Nome | Responsabilidade |
 | :--- | :--- |
 | Alcino Salviano Cavalcanti | Desenvolvedor |
-| Amanda Kasat Baltor | SCRUM Master |
+| Amanda Kasat Baltor | Product Owner |
 | Eduarda Fritzen Neumann | Desenvolvedora |
-| Guilherme de Abreu Barreto | Product Owner |
+| Guilherme de Abreu Barreto | SCRUM Master |
 | Lucas Issao Omati | Desenvolvedor |
 | Rafael de Almeida | Desenvolvedor |
 
 Enquanto as ferramentas das quais faremos uso são:
 
-| Nome | Descrição |
+| Nome | Uso da ferramenta|
 | :--- | :--- |
-| Figma | Ferramenta para prototipação das telas da aplicação |
-| Github | Ferramenta para versionamento do código e respectiva documentação |
-| Telegram | Ferramenta para comunicação intrapessoal |
-| Trello | Ferramenta de gerenciamento de projeto |
+| Figma | Prototipação das telas da aplicação |
+| Github | Versionamento do código e respectiva documentação |
+| Google Docs | Elaboração da documentação do projeto |
+| Discord | Comunicação intrapessoal |
+| Trello | Gerenciamento do projeto |
 
