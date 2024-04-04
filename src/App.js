@@ -1,9 +1,10 @@
-import Home from './components/Home'
-import User from './components/User'
-import SolicitacaoEvento from './components/SolicitacaoEvento'
-import Materiais from './components/Materiais'
-import Login from './components/Login'
+import Home from './components/pages/Home'
+import User from './components/pages/User'
+import SolicitacaoEvento from './components/pages/SolicitacaoEvento'
+import Materiais from './components/pages/Materiais'
+import Login from './components/pages/Login'
 import Navbar from './components/layout/Navbar'
+import Footer from './components/layout/Footer'
 import {BrowserRouter, Routes, Link, Route} from 'react-router-dom'
 
 function App() {
@@ -13,6 +14,8 @@ function App() {
 
 			{/* Acho q falta deixar responsivo */}
 			<Navbar/>
+
+			{/* <Footer/> */}
 
 			{/*Isso não é nada, só estava mexendo com bootstrap*/}
 			{/* <Nav variant="tabs"> */}
@@ -28,6 +31,9 @@ function App() {
 				<Route path="/solicitacao-evento" element={<SolicitacaoEvento/>}></Route>
 				<Route path="/login" element={<Login/>}></Route>
 			</Routes>
+
+			<Footer/>
+
         	</BrowserRouter>
       	</div>
     );
