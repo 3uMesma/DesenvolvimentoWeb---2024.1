@@ -1,7 +1,7 @@
 import './Navbar.css'
 import { Link } from "react-router-dom";
-import astrocariri_logo from '../../images/astrocariri-logo.png'
-import user_logo from '../../images/user-logo.png'
+import astrocariri_logo from '../../../images/astrocariri-logo.png'
+import user_logo from '../../../images/user-logo.png'
 
 function Navbar(){
     return(

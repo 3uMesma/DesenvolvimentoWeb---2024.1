@@ -1,0 +1,37 @@
+.footer {
+    background-color: var(--cor-roxo);
+    color: var(--cor-amarelo);
+    display: flex;
+    text-align: center;
+    height: 12vh;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    justify-content: space-between;;
+}
+
+.footer-left {
+    display:flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.footer-right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 8vw;
+    margin-right: 4vw;
+}
+
+.footer-title {
+    color: #D9963F;
+    padding: 0 4vw;
+    font-size: 1.8em;
+    font-weight: 900;
+}
+
+.footer-icon-instagram, .footer-icon-gmail{
+    height: 45px;
+    width: 45px;
+}

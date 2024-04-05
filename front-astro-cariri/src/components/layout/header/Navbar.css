@@ -1,0 +1,94 @@
+.navbar {
+    background-color: var(--cor-roxo);
+    color: var(--cor-amarelo);
+    display: flex;
+    text-align: center;
+    height: 12vh;
+    justify-content: space-between;
+}
+
+.navbar-left {
+    display:flex;
+    align-items: center;
+    padding: 0 5vw 0 5vw;
+}
+
+.navbar-mid {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-right {
+    display:flex;
+    align-items: center;
+    text-align: center;
+    justify-content: right;
+    padding: 0 5vw 0 5vw;
+}
+
+.navbar-title {
+    color: #D9963F;
+    padding: 5px;
+    font-size: 1.8em;
+    font-weight: 600;
+}
+
+.navbar-title:hover {
+    color: var(--cor-branco);
+    font-size: 1.9em;
+    transition: 0.5s;
+}
+
+.navbar-text- {
+    color: var(--cor-amarelo);
+    font-size: 1.5em;
+    font-weight: 400;
+    padding: 0 0.5em;
+}
+
+.navbar-text-:hover {
+    color: var(--cor-branco);
+    font-size: 1.6em;
+    transition: 0.5s;
+}
+
+.navbar-text-username {
+    color: var(--cor-amarelo);
+    font-size: 1.2em;
+    font-weight: 400;
+    padding: 10px;
+}
+
+.navbar-text-username:hover {
+    color: var(--cor-branco);
+    font-size: 1.3em;
+    transition: 0.5s;
+}
+
+.navbar-pipe {
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.navbar-icon-main {
+    height: 45px;
+    width: 45px;
+}
+
+.navbar-icon-user {
+    height: 45px;
+    width: 45px;
+}
+
+@media screen and (max-width: 846px){
+    .navbar-title {
+        display: none;
+    }
+
+    .navbar-text-username {
+        display: none;
+    }
+}

@@ -3,8 +3,8 @@ import User from './components/pages/user/User'
 import SolicitacaoEvento from './components/pages/solicitarEvento/SolicitacaoEvento'
 import Materiais from './components/pages/materiais/Materiais'
 import Login from './components/pages/login/Login'
-import Navbar from './components/layout/Navbar'
-import Footer from './components/layout/Footer'
+import Navbar from './components/layout/header/Navbar'
+import Footer from './components/layout/footer/Footer'
 import {BrowserRouter, Routes, Link, Route} from 'react-router-dom'
 
 function App() {

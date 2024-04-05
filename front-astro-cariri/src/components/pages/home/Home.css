@@ -8,60 +8,51 @@ h1 {
     background-size: cover;
     width: 100%;
     background-color: #4d2375;
-    height: 60em;
+    height: auto;
     align-items: center;
     text-align: center;
 }
 
 .home-main-title {
-    font-family: 'Merriweather';
     font-style: normal;
     font-weight: 900;
     font-size: 46px;
-    color: #ffffff;
+    color: var(--cor-branco);
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    padding-top: 18%;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding: 52vh 0 48vh 0;
 }
 
 .home-about {
     display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 10vh 0;
 }
 
 .home-about-left {
-    width: 50%;
+    width: 45%;
+}
+
+.home-about-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .home-about-title {
-    font-family: 'Merriweather';
-    font-style: normal;
     font-weight: 900;
-    font-size: 40px;
-    line-height: 45px;
-    display: flex;
-    align-items: center;
-    padding-top: 3%;
-    padding-left: 15%;
+    font-size: 2em;
+    padding: 0 1em 1em 1em;
+
 }
 
 .home-about-description {
-    font-family: 'Merriweather';
-    font-style: normal;
     font-weight: 400;
-    font-size: 24px;
-    line-height: 25px;
-    padding-left: 15%;
-    padding-right: 10%;
-    padding-bottom: 4%;
+    font-size: 1.5em;
+    padding: 0 1.2em;
 }
 
 .home-about-image {
-    padding-left: 20%;
-    padding-top: 10%;
     width: 75%;
-    height: 75%;
-    align-items: center;
-    text-align: center;
-    margin: 0;
+    height: 100%;
 }
