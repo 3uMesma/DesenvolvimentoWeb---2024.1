@@ -13,6 +13,7 @@
     - listar e buscar publicações, dentre as quais materiais de divulgação e didáticos, ou atividades do clube **para assim** conhecê-las ou acompanhá-las.
     - filtrar minhas buscas **para assim** obter apenas os resultados que me forem relevantes.
     - realizar o download dos materiais didáticos **para** posterior consulta ou compartilhamento conforme a minha conveniência.
+    - visualizar uma descrição e detalhes associados a dadas atividades ou materiais didáticos **para** decidir se desejo participar na atividade ou obter o material associado.
 3. Como um professor, quero
     - ser capaz de solicitar a realização de atividades **para** complementar a grade curricular por mim oferecida.
 4. Como um Membro do clube AstroCariri, quero
