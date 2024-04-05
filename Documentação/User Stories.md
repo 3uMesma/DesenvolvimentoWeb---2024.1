@@ -7,10 +7,10 @@
 
 ## Funcionalidades
 
-1. Como um *usuário*, quero *opções de acessibilidade* para *mitigar empecilhos, ou mesmo permitir o uso, da interface gráfica do site AstroCariri*.
-2. Como um *estudante ou professor*, quero *listar e buscar publicações, dentre as quais materiais de divulgação e didáticos, ou atividades do clube* para assim *conhecê-las ou acompanhá-las*. 
-3. Como um *estudante ou professor*, quero *filtrar minhas buscas* para assim *obter apenas os resultados que me forem relevantes*.
-4. Como um *estudante ou professor*, quero *realizar o download dos materiais didáticos* para *posterior consulta ou compartilhamento conforme a minha conveniência*.
-5. Como um *professor*, quero *ser capaz de solicitar a realização de atividades* para *complementar a grade curricular por mim oferecida*.
-7. Como um *Membro do clube AstroCariri*, quero *publicar atividades ou materiais didáticos* para *cumprir com os objetivos do clube*.
-8. Como um *Membro do clube AstroCariri* quero *conceder e revogar acesso administrativo a outros integrantes do grupo* para *atender com as exigências da mudança do quadro de membros*.
+1. Como um **usuário**, quero **opções de acessibilidade** para **mitigar empecilhos, ou mesmo permitir o uso, da interface gráfica do site AstroCariri**.
+2. Como um **estudante ou professor**, quero **listar e buscar publicações, dentre as quais materiais de divulgação e didáticos, ou atividades do clube** para assim **conhecê-las ou acompanhá-las**.
+3. Como um **estudante ou professor**, quero **filtrar minhas buscas** para assim **obter apenas os resultados que me forem relevantes**.
+4. Como um **estudante ou professor**, quero **realizar o download dos materiais didáticos** para **posterior consulta ou compartilhamento conforme a minha conveniência**.
+5. Como um **professor**, quero **ser capaz de solicitar a realização de atividades** para **complementar a grade curricular por mim oferecida**.
+7. Como um **Membro do clube AstroCariri**, quero **publicar atividades ou materiais didáticos** para **cumprir com os objetivos do clube**.
+8. Como um **Membro do clube AstroCariri** quero **conceder e revogar acesso administrativo a outros integrantes do grupo** para **atender com as exigências da mudança do quadro de membros**.
