@@ -1,5 +1,5 @@
 import './Home.css'
-import background from '../../images/astrocariri-home-background.png'
+import gato_logo from '../../images/astronaut-image.jpg'
 
 function Home(){
     return(
@@ -9,11 +9,11 @@ function Home(){
             </div>
             <div className='home-about'>
                 <div className='home-about-left'>
-                    <h1>Quem Somos</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate eu nunc sit amet commodo. Proin at augue eget odio elementum fringilla sed at tortor. Phasellus in diam et massa interdum porta sed a neque. Fusce vel nibh sollicitudin, tincidunt nibh vel, accumsan velit. Morbi eleifend sapien non odio ullamcorper accumsan. Nullam gravida orci ac nisl consectetur, eu accumsan tellus lacinia. Proin fermentum leo lectus, sed consequat nisl tincidunt vitae. </p>
+                    <h1 className='home-about-title'>Quem Somos?</h1>
+                    <p className='home-about-description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate eu nunc sit amet commodo. Proin at augue eget odio elementum fringilla sed at tortor. Phasellus in diam et massa interdum porta sed a neque. Fusce vel nibh sollicitudin, tincidunt nibh vel, accumsan velit. Morbi eleifend sapien non odio ullamcorper accumsan. Nullam gravida orci ac nisl consectetur, eu accumsan tellus lacinia. Proin fermentum leo lectus, sed consequat nisl tincidunt vitae. </p>
                 </div>
                 <div className='home-about-right'>
-
+                    <img src={gato_logo} alt="astronaut" className="home-about-image"></img>
                 </div>
             </div>
         </div>

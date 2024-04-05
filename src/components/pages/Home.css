@@ -1,3 +1,7 @@
+h1 {
+    margin:0
+}
+
 .home-main {
     background-image: url("../../images/astrocariri-home-background.png");
     background-repeat: repeat;
@@ -9,31 +13,55 @@
     text-align: center;
 }
 
-/* “Somos feitos de poeira de estrelas. Nós somos uma maneira de o cosmos se autoconhecer.” - Carl Sagan
-position: absolute;
-width: 1107px;
-height: 191px;
-left: 86px;
-top: 383px;
-
-font-family: 'Merriweather';
-font-style: normal;
-font-weight: 900;
-font-size: 36px;
-line-height: 45px;
-display: flex;
-align-items: center;
-text-align: center;
-
-color: #FFFFFF;
-
-text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
-
 .home-main-title {
     font-family: 'Merriweather';
     font-style: normal;
     font-weight: 900;
-    font-size: 36px;
+    font-size: 46px;
+    color: #ffffff;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding-top: 18%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.home-about {
+    display: flex;
+}
+
+.home-about-left {
+    width: 50%;
+}
+
+.home-about-title {
+    font-family: 'Merriweather';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 40px;
     line-height: 45px;
     display: flex;
+    align-items: center;
+    padding-top: 3%;
+    padding-left: 15%;
+}
+
+.home-about-description {
+    font-family: 'Merriweather';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 25px;
+    padding-left: 15%;
+    padding-right: 10%;
+    padding-bottom: 4%;
+}
+
+.home-about-image {
+    padding-left: 20%;
+    padding-top: 10%;
+    width: 75%;
+    height: 75%;
+    align-items: center;
+    text-align: center;
+    margin: 0;
 }
