@@ -83,7 +83,7 @@
     width: 45px;
 }
 
-@media screen and (max-width: 846px){
+@media screen and (max-width: 970px){
     .navbar-title {
         display: none;
     }

@@ -19,9 +19,7 @@
 .footer-right {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 8vw;
-    margin-right: 4vw;
+    margin-right: 5vw;
 }
 
 .footer-title {
@@ -34,4 +32,5 @@
 .footer-icon-instagram, .footer-icon-gmail{
     height: 45px;
     width: 45px;
+    margin-left: 15px;
 }
