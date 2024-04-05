@@ -17,4 +17,4 @@
     - ser capaz de solicitar a realização de atividades **para** complementar a grade curricular por mim oferecida.
 4. Como um Membro do clube AstroCariri, quero
     - publicar atividades ou materiais didáticos **para** cumprir com os objetivos do clube.
-    - conceder e revogar acesso administrativo a outros integrantes do grupo **para** atender com as exigências da mudança do quadro de membros.
+    - conceder ou revogar acesso administrativo a outros integrantes do grupo **para** atender com as exigências da mudança do quadro de membros.
