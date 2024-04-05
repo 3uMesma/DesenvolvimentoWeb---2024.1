@@ -1,7 +1,13 @@
+import './Login.css'
+
 function Login(){
     return(
-        <div>
-            <p>Esta é a /login</p>
+        <div className="login">
+            <div className='login-graybox'>
+                <p>Usuário</p>
+                <p>Senha</p>
+                <button>Fazer Login</button>
+            </div>
         </div>
     )
 }
