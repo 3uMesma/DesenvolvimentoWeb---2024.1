@@ -11,10 +11,6 @@ function App() {
     return(
     	<div className="App">
         	<BrowserRouter>
-
-			{/* Acho q falta deixar responsivo */}
-			<Navbar/>
-
 			{/* <Footer/> */}
 
 			{/*Isso não é nada, só estava mexendo com bootstrap*/}
