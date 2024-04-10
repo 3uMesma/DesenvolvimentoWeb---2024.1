@@ -1,10 +1,12 @@
 import './Materiais.css'
 import GlobalStyle from '../../../styles/GlobalStyle.js';
+import Header from '../../layout/header/Navbar.js';
 
 function Materiais(){
     return(
         <div className='materiais'>
             <GlobalStyle/>
+            <Header/>
             <h1 className='materiais-title'>MATERIAIS</h1>
             <div className='materiais-list'>
                 <ul>

@@ -49,7 +49,7 @@
 
 .navbar-text-:hover {
     color: var(--cor-branco);
-    font-size: 1.6em;
+    transform: scale(1.02); 
     transition: 0.5s;
 }
 
@@ -92,13 +92,23 @@
     background-color: var(--cor-amarelo);
     display: flex;
     justify-content: space-between;
-    width: 350px;
+    width: 275px;
     padding: 1vh 1vw;
 }
 
+button {
+    background-color: transparent;
+}
+
+button:hover {
+    transform: scale(1.1); 
+    transition: 1s;
+}
+
 .icon-acessibility {
-    width: 45px;
-    height: 45px;
+    width: 35px;
+    height: 35px;
+    background-color: transparent;
 }
 
 @media screen and (max-width: 970px){
