@@ -1,3 +1,11 @@
+.home {
+    background-color: var(--cor-branco);
+}
+
+.header-style {
+    background-color: var(--cor-roxo-escuro);
+}
+
 h1 {
     margin:0
 }
@@ -7,7 +15,6 @@ h1 {
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    background-color: #4d2375;
     height: auto;
     align-items: center;
     text-align: center;
@@ -28,6 +35,7 @@ h1 {
     justify-content: space-around;
     width: 100%;
     margin: 10vh 0;
+    background-color: var(--cor-branco);
 }
 
 .home-about-left {

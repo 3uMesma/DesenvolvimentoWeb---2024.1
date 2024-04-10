@@ -1,4 +1,5 @@
 import './Home.css'
+import Header from '../../layout/header/Navbar.js'
 import GlobalStyle from '../../../styles/GlobalStyle.js';
 import gato_logo from '../../../images/astronaut-image.jpg';
 
@@ -6,6 +7,9 @@ function Home(){
     return(
         <div className='home'>
             <GlobalStyle/>
+            <div className='header-style'>
+                <Header/>
+            </div>
             <div className='home-main'>
                 <h1 className='home-main-title'>“Somos feitos de poeira de estrelas. Nós somos uma maneira de o cosmos se autoconhecer.” - Carl Sagan</h1>
             </div>
