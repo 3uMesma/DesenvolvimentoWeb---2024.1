@@ -24,8 +24,9 @@ function SolicitacaoEventos(){
                     <p><strong>Descrição</strong></p> <textarea required name="descricao" className="descricao-input" rows="7" cols="40" placeholder="Explique brevemente a proposta do evento"></textarea>
                     <br></br>
                 </form>
+                <button type="submit" id="botaoSolicitar" name="SolicitarEvento">Solicitar</button>
             </div>
-            <button type="submit" id="botaoSolicitar" name="SolicitarEvento">Solicitar</button>
+            <p>    </p>
         </div>
     )
 }
