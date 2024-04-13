@@ -3,6 +3,7 @@ import User from './components/pages/user/User'
 import SolicitacaoEvento from './components/pages/solicitarEvento/SolicitacaoEvento'
 import Materiais from './components/pages/materiais/Materiais'
 import Login from './components/pages/login/Login'
+import ConteudoMateriais from './components/pages/conteudoMateriais/ConteudoMateriais'
 import Navbar from './components/layout/header/Navbar'
 import Footer from './components/layout/footer/Footer'
 import {BrowserRouter, Routes, Link, Route} from 'react-router-dom'
@@ -26,6 +27,7 @@ function App() {
 				<Route path="/user" element={<User/>}></Route>
 				<Route path="/solicitacao-evento" element={<SolicitacaoEvento/>}></Route>
 				<Route path="/login" element={<Login/>}></Route>
+				<Route path="/conteudo-materiais" element={<ConteudoMateriais/>}></Route>
 			</Routes>
 
 			<Footer/>
