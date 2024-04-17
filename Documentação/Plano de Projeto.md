@@ -10,6 +10,7 @@
 | :--- | :--- | :--- | :--- |
 | 20/03/2024 | 0.1 | Criação do documento | Guilherme de Abreu |
 | 23/03/2024 | 0.2 | Mudança de projeto | Guilherme de Abreu |
+| 17/04/2024 | 0.3 | Atualização Plano de Projeto | Alcino Cavalcanti e Eduarda Neumann |
 
 
 ## 3. Introdução
