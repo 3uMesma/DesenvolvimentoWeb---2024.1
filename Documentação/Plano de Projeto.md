@@ -48,6 +48,14 @@ Enquanto as ferramentas das quais faremos uso são:
 | Discord | Comunicação intrapessoal |
 | Trello | Gerenciamento do projeto |
 
+## 6. Acompanhamento do Projeto
+
+O acompanhamento do projeto está sendo realizado com o apoio de diferentes ferramentas. A equipe se comunica através do Discord e do Telegram para a distribuição de tarefas e acompanhamento do progresso de cada atividade. Há duas reuniões semanais (dailys) para o alinhamento da equipe e revisão da metodologia ágil que são realizadas via Discord. Tem-se reuniões periódicas com a cliente via Google Meet para apresentar partes do projeto já implementadas e receber feedback. Os relatórios e demais documentos do Plano de Projeto têm sido reunidos em repositório do GitHub de forma a manter organizados a documentação e o código fonte do projeto.
+
+## 7. Cronograma e Marcos do Projeto
+
+Link p/ a planilha aqui: 
+
 ## 8. Gerência de Riscos
 
 O levantamento de riscos foi organizado nessa [planilha](https://docs.google.com/spreadsheets/d/1DsqYmGn9HqbstkxohSNH91RMbwWWpcCD6hRg8YOb8rc/edit?usp=sharing).
