@@ -48,3 +48,18 @@ Enquanto as ferramentas das quais faremos uso são:
 | Discord | Comunicação intrapessoal |
 | Trello | Gerenciamento do projeto |
 
+## 8. Gerência de Riscos
+
+O levantamento de riscos foi organizado nessa [planilha](https://docs.google.com/spreadsheets/d/1DsqYmGn9HqbstkxohSNH91RMbwWWpcCD6hRg8YOb8rc/edit?usp=sharing).
+
+
+## 10. Gerenciamento de configuração de software
+
+### Nomenclatura dos itens de configuração
+
+### Controle de versão
+
+Utilizaremos os comits do GitHub para controlar as versões do projeto. Cada commit por um desenvolvedor do time representa a adição de uma feature nova, sendo uma nova versão minor. Ao final do projeto espera-se a entrega da versão major 1 do projeto.
+
+### Dependências entre os itens de configuração.
+
