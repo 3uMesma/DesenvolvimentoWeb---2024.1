@@ -31,7 +31,7 @@ function CriarMaterial(){
         <div className="criarMaterial">
             <GlobalStyle/>
             <Header/>
-            <div className="body">
+            <div className="body" id="body-criar">
                 <h1 className="criarMaterial-title">CRIAÇÃO DE MATERIAL</h1>
                 <div className="criarMaterial-form">
                     <form onSubmit={handleSubmit}>

@@ -1,5 +1,8 @@
+.body {
+    padding-top: 150px;
+}
+
 .conteudoMateriais-title {
-    /* text-align: center; */
     font-weight: 700;
     font-size: 2.2em;
     padding: 3%;

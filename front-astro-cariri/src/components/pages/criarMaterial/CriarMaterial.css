@@ -1,10 +1,10 @@
-.body {
-    margin: 0 8vw;
-}
-
 .criarMaterial-title {
     font-size: 1.7em;
     margin: 5vh 0;
+}
+
+#body-criar {
+    margin: 0 8vw;
 }
 
 .criarMaterial-form {

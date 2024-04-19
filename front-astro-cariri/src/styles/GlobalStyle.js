@@ -10,7 +10,7 @@ export default createGlobalStyle`
         --cor-branco: #F2F2F2;
         --cor-preto: #0D0D0D;
         --cor-cinza: #d9d9d9;
-        --font-family: 'Merriweather', serif;
+        --font-family: 'Merriweather', sans;
     }
     * {
         margin: 0;

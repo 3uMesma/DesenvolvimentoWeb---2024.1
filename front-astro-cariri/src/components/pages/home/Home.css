@@ -4,6 +4,7 @@
 
 .header-style-home {
     background-color: var(--cor-roxo-escuro);
+    margin-bottom: 10vh;
 }
 
 h1 {

@@ -18,54 +18,56 @@ function SolicitacaoEventos(){
         <div className="solicitarEvento">
             <GlobalStyle/>
             <Header/>
-            <div className="solicitarEvento-main">
-                <h1>SOLICITAR EVENTO</h1>
-            </div>
-            <div className="solicitarEvento-form">
-                <form>
-                    <div className="solicitarEvento-form-entry">
-                    <p className="title-input">Título da Proposta</p>
-                    <input name="titulo" className="text-input" type="text"></input>
-                    </div>
+            <div className="body">
+                <div className="solicitarEvento-main">
+                    <h1>SOLICITAR EVENTO</h1>
+                </div>
+                <div className="solicitarEvento-form">
+                    <form>
+                        <div className="solicitarEvento-form-entry">
+                        <p className="title-input">Título da Proposta</p>
+                        <input name="titulo" className="text-input" type="text"></input>
+                        </div>
 
-                    <div className="solicitarEvento-form-entry">
-                    <p className="title-input">Nome do Interessado</p>
-                    <input name="interessado" className="text-input" type="text"></input>
-                    </div>
+                        <div className="solicitarEvento-form-entry">
+                        <p className="title-input">Nome do Interessado</p>
+                        <input name="interessado" className="text-input" type="text"></input>
+                        </div>
 
-                    <div className="solicitarEvento-form-entry">
-                    <p className="title-input">Tipo de Contato (email, celular, etc)</p>
-                    <input name="contato" className="text-input" type="text"></input>
-                    </div>
+                        <div className="solicitarEvento-form-entry">
+                        <p className="title-input">Tipo de Contato (email, celular, etc)</p>
+                        <input name="contato" className="text-input" type="text"></input>
+                        </div>
 
-                    <div className="solicitarEvento-form-entry">
-                    <p className="title-input">Instituição do Interessado</p>
-                    <input name="instituicao" className="text-input" type="text"></input>
-                    </div>
+                        <div className="solicitarEvento-form-entry">
+                        <p className="title-input">Instituição do Interessado</p>
+                        <input name="instituicao" className="text-input" type="text"></input>
+                        </div>
 
-                    <div className="solicitarEvento-form-entry">
-                    <p className="title-input">Tipo de Evento</p> 
-                    <select name="tipo" className="select-input">
-                        <option selected>Tipo 1</option>
-                        <option>Tipo 2</option>
-                        <option>Tipo 3</option>
-                        <option>Outro</option>
-                    </select>
-                    </div>
+                        <div className="solicitarEvento-form-entry">
+                        <p className="title-input">Tipo de Evento</p> 
+                        <select name="tipo" className="select-input">
+                            <option selected>Tipo 1</option>
+                            <option>Tipo 2</option>
+                            <option>Tipo 3</option>
+                            <option>Outro</option>
+                        </select>
+                        </div>
 
-                    <div className="solicitarEvento-form-entry">
-                    <p className="title-input">Descrição</p>
-                    <textarea required name="descricao" 
-                    className="descricao-input" 
-                    ref={textAreaRef}
-                    onChange={adjustHeight}
-                    style={{ height: `${textareaHeight}px` }}
-                    placeholder="Explique brevemente a proposta do evento"></textarea>
-                    </div>
+                        <div className="solicitarEvento-form-entry">
+                        <p className="title-input">Descrição</p>
+                        <textarea required name="descricao" 
+                        className="descricao-input" 
+                        ref={textAreaRef}
+                        onChange={adjustHeight}
+                        style={{ height: `${textareaHeight}px` }}
+                        placeholder="Explique brevemente a proposta do evento"></textarea>
+                        </div>
 
-                    <br></br>
-                </form>
-                <button type="submit" id="botaoSolicitar" name="SolicitarEvento">Solicitar</button>
+                        <br></br>
+                    </form>
+                    <button type="submit" id="botaoSolicitar" name="SolicitarEvento">Solicitar</button>
+                </div>
             </div>
             <p>    </p>
         </div>

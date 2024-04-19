@@ -7,16 +7,18 @@ function Materiais(){
         <div className='materiais'>
             <GlobalStyle/>
             <Header/>
-            <h1 className='materiais-title'>MATERIAIS</h1>
-            <div className='materiais-list'>
-                <ul>
-                    <li><div className='materiais-item'>Introdução</div></li>
-                    <li><div className='materiais-item'>Material 1</div></li>
-                    <li><div className='materiais-item'>Material 2</div></li>
-                    <li><div className='materiais-item'>Material 3</div></li>
-                    <li><div className='materiais-item'>Material 4</div></li>
-                    <li><div className='materiais-item'>Material 5</div></li>
-                </ul>
+            <div className='body'>
+                <h1 className='materiais-title'>MATERIAIS</h1>
+                <div className='materiais-list'>
+                    <ul>
+                        <li><div className='materiais-item'>Introdução</div></li>
+                        <li><div className='materiais-item'>Material 1</div></li>
+                        <li><div className='materiais-item'>Material 2</div></li>
+                        <li><div className='materiais-item'>Material 3</div></li>
+                        <li><div className='materiais-item'>Material 4</div></li>
+                        <li><div className='materiais-item'>Material 5</div></li>
+                    </ul>
+                </div>
             </div>
         </div>
     )
