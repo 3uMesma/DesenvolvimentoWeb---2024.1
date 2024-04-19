@@ -1,6 +1,7 @@
 import Home from './components/pages/home/Home'
 import User from './components/pages/user/User'
 import SolicitacaoEvento from './components/pages/solicitarEvento/SolicitacaoEvento'
+import VisualizarEvento from './components/pages/visualizarEvento/VisualizarEvento'
 import Materiais from './components/pages/materiais/Materiais'
 import Login from './components/pages/login/Login'
 import HomeAdmin from './components/pages/homeAdmin/HomeAdmin'
@@ -32,6 +33,7 @@ function App() {
 				<Route path="/home-admin" element={<HomeAdmin/>}></Route>
 				<Route path="/conteudo-materiais" element={<ConteudoMateriais/>}></Route>
 				<Route path="/material/criar" element={<CriarMaterial/>}></Route>
+				<Route path="/visualizar-evento" element={<VisualizarEvento/>}></Route>
 			</Routes>
 
 			<Footer/>
