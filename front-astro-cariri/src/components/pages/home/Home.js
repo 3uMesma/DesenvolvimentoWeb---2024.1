@@ -7,7 +7,7 @@ function Home(){
     return(
         <div className='home'>
             <GlobalStyle/>
-            <div className='header-style'>
+            <div className='header-style-home'>
                 <Header/>
             </div>
             <div className='home-main'>

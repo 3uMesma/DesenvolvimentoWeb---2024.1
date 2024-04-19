@@ -86,7 +86,6 @@
 .second-navbar {
     display: flex;
     justify-content: flex-end;
-    background-color: var(--cor-branco);
 }
 
 .navbar-acessibility {
