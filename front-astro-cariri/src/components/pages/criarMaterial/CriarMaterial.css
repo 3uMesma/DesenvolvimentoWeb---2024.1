@@ -1,0 +1,62 @@
+.body {
+    margin: 0 8vw;
+}
+
+.criarMaterial-title {
+    font-size: 1.7em;
+    margin: 5vh 0;
+}
+
+.criarMaterial-form {
+    background-color: var(--cor-cinza);
+    margin-bottom: 10vh;
+}
+
+.campo-forms {
+    display: flex;
+    flex-direction: column;
+    margin: 0 5vw;
+    padding-top: 3vh;
+}
+
+.text-input-criar, .texto-input {
+    border-radius: 10px;
+    margin-top: 0.3em;
+    font-size: 1.5em;
+    padding: 0.5em 0.8em;
+    border: 1px solid #555;
+    color: #555;
+}
+
+.file-input-criar {
+    padding: 0.5em 0;
+    color: #555;
+    border-radius: 10px;
+    margin-top: 0.3em;
+    font-size: 1.5em;
+}
+
+.btn-add {
+    display: flex;
+    justify-content: space-around;
+    margin: 5vh 3vw 0 3vw;
+}
+
+.btn-solicitar {
+    display: flex;
+    justify-content: center;
+}
+
+.botaoAdicionar {
+    background-color: var(--cor-amarelo);
+    color: var(--cor-roxo);
+    font-size: 1.5em;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 0.8em 0.5em;
+}
+
+.botaoAdicionar:hover {
+    color: var(--cor-roxo-escuro);
+    transform: scale(1.05);
+}

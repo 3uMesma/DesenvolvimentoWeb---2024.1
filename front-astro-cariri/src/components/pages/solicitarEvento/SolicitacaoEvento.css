@@ -47,14 +47,12 @@ h1 {
     width: 20%;
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.05);
     border-radius: 0.5rem;
+    font-weight: 600;
 }
 
 #botaoSolicitar:hover {
     color: var(--cor-branco);
-    font-size: 1.5em;
-    height: 2.8rem;
-    width: 15.3%;
-    transition: 0.5s;
+    transform: scale(1.05);
 }
 
 p {
@@ -109,6 +107,6 @@ p {
 
 .title-input {
     font-weight: 500;
-    margin: 0 10%;
+    margin: 0 5%;
     padding-top: 5vh;
 }

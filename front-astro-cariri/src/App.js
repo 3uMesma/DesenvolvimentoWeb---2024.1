@@ -8,6 +8,7 @@ import ConteudoMateriais from './components/pages/conteudoMateriais/ConteudoMate
 import Navbar from './components/layout/header/Navbar'
 import Footer from './components/layout/footer/Footer'
 import {BrowserRouter, Routes, Link, Route} from 'react-router-dom'
+import CriarMaterial from './components/pages/criarMaterial/CriarMaterial'
 
 function App() {
     return(
@@ -30,6 +31,7 @@ function App() {
 				<Route path="/login" element={<Login/>}></Route>
 				<Route path="/home-admin" element={<HomeAdmin/>}></Route>
 				<Route path="/conteudo-materiais" element={<ConteudoMateriais/>}></Route>
+				<Route path="/material/criar" element={<CriarMaterial/>}></Route>
 			</Routes>
 
 			<Footer/>
