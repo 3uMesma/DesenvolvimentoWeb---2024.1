@@ -6,6 +6,7 @@ import Materiais from './components/pages/materiais/Materiais'
 import Login from './components/pages/login/Login'
 import HomeAdmin from './components/pages/homeAdmin/HomeAdmin'
 import ConteudoMateriais from './components/pages/conteudoMateriais/ConteudoMateriais'
+import GerenciarUsers from './components/pages/gerenciarUsers/GerenciarUsers'
 import Navbar from './components/layout/header/Navbar'
 import Footer from './components/layout/footer/Footer'
 import {BrowserRouter, Routes, Link, Route} from 'react-router-dom'
@@ -38,6 +39,7 @@ function App() {
 				<Route path="/material/editar" element={<EditarMaterial/>}></Route>
 				<Route path="/visualizar-evento" element={<VisualizarEvento/>}></Route>
 				<Route path="/editar-dados-login" element={<EditarDadosLogin/>}></Route>
+				<Route path="/gerenciar-users" element={<GerenciarUsers/>}></Route>
 			</Routes>
 
 			<Footer/>
