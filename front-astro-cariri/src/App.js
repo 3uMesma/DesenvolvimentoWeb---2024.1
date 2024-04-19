@@ -10,6 +10,7 @@ import Navbar from './components/layout/header/Navbar'
 import Footer from './components/layout/footer/Footer'
 import {BrowserRouter, Routes, Link, Route} from 'react-router-dom'
 import CriarMaterial from './components/pages/criarMaterial/CriarMaterial'
+import EditarMaterial from './components/pages/editarMaterial/EditarMaterial'
 
 function App() {
     return(
@@ -33,6 +34,7 @@ function App() {
 				<Route path="/home-admin" element={<HomeAdmin/>}></Route>
 				<Route path="/conteudo-materiais" element={<ConteudoMateriais/>}></Route>
 				<Route path="/material/criar" element={<CriarMaterial/>}></Route>
+				<Route path="/material/editar" element={<EditarMaterial/>}></Route>
 				<Route path="/visualizar-evento" element={<VisualizarEvento/>}></Route>
 			</Routes>
 
