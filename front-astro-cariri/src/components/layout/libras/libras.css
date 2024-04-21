@@ -1,0 +1,10 @@
+.icon-acessibility {
+    width: 35px;
+    height: 35px;
+    background-color: transparent;
+}
+
+.second-navbar {
+    display: flex;
+    justify-content: flex-end;
+}
