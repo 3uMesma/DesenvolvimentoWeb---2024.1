@@ -4,8 +4,11 @@ import Header from '../../layout/header/Navbar.js';
 import deleteIcon from '../../../images/Delete.png';
 import polygon1 from '../../../images/polygon1.png'
 
+import React from 'react';
+import users from "../../data/users.json";
 
 function GerenciarUsers(){
+    const user = users[0];
     return(
         <div className='gerenciar-users'>
             <GlobalStyle/>
@@ -15,10 +18,10 @@ function GerenciarUsers(){
                 <ul>
                     <li><div className='gerenciarUsers-item-titulo'>Lista de Usuários</div></li>
                     <li><div className='gerenciarUsers-item'>
-                        <p className='gerenciarUsers-item-userName'>Usuário 1</p>
+                        <p className='gerenciarUsers-item-userName'>{user.nome}</p>
                         <img className='delete-icon' src={deleteIcon} alt='Delete Image'></img>
                     </div></li>
-                    <li><div className='gerenciarUsers-item'>
+                    {/* <li><div className='gerenciarUsers-item'>
                         <p className='gerenciarUsers-item-userName'>Usuário 2</p>
                         <img className='delete-icon' src={deleteIcon} alt='Delete Image'></img>
                     </div></li>
@@ -33,9 +36,9 @@ function GerenciarUsers(){
                     <li><div className='gerenciarUsers-item'>
                         <p className='gerenciarUsers-item-userName'>Usuário 5</p>
                         <img className='delete-icon' src={deleteIcon} alt='Delete Image'></img>
-                    </div></li>
+                    </div></li> */}
                 </ul>
-                <div className='polygon1'> <img src={polygon1} alt='Polygon1'/> </div>
+                <div className='btn-scroll'> <img src={polygon1} alt='Polygon1'/> </div>
             </div>
         </div>
     )
