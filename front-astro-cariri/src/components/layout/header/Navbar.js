@@ -6,7 +6,6 @@ import user_logo from '../../../images/user-logo.png'
 import aumenta_fonte_icon from '../../../images/aumenta-fonte.png'
 import diminui_fonte_icon from '../../../images/diminui-fonte.png'
 import contraste_icon from '../../../images/contraste.png'
-import libras_icon from '../../../images/libras.png'
 
 
 function Navbar(){
@@ -37,7 +36,7 @@ function Navbar(){
                     <div className='navbar-pipe'>|</div>
                     <Link to="/solicitacao-evento" className="navbar-text-">SOLICITE EVENTO</Link>
                     <div className='navbar-pipe'>|</div>
-                    <Link to="./login" className="navbar-text-">LOGIN</Link>
+                    <Link to="/login" className="navbar-text-">LOGIN</Link>
                     {/* <div className='navbar-pipe'>|</div> */}
                 </div>
                 <div className="navbar-right">
@@ -62,8 +61,6 @@ function Navbar(){
                     </div>
                     <img className='icon-acessibility' src={contraste_icon} 
                     alt='ícone da ferramenta para aumento de contraste nas pages'></img>
-                    <img className='icon-acessibility' src={libras_icon} 
-                    alt='ícone da ferramenta para suporte em libras'></img>
                 </div>
             </div>
         </div>

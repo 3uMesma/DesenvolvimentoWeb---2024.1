@@ -2,6 +2,8 @@ import './Materiais.css'
 import GlobalStyle from '../../../styles/GlobalStyle.js';
 import Header from '../../layout/header/Navbar.js';
 
+import { Link } from "react-router-dom";
+
 function Materiais(){
     return(
         <div className='materiais'>
@@ -11,12 +13,8 @@ function Materiais(){
                 <h1 className='materiais-title'>MATERIAIS</h1>
                 <div className='materiais-list'>
                     <ul>
-                        <li><div className='materiais-item'>Introdução</div></li>
-                        <li><div className='materiais-item'>Material 1</div></li>
-                        <li><div className='materiais-item'>Material 2</div></li>
-                        <li><div className='materiais-item'>Material 3</div></li>
-                        <li><div className='materiais-item'>Material 4</div></li>
-                        <li><div className='materiais-item'>Material 5</div></li>
+                        <li><div className='materiais-item'><Link to='/conteudo-materiais'>Introdução</Link></div></li>
+                        <li><div className='materiais-item'><Link to='/conteudo-materiais'>Material</Link></div></li>
                     </ul>
                 </div>
             </div>
