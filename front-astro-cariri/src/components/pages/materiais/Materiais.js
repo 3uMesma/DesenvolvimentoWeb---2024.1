@@ -3,6 +3,8 @@ import GlobalStyle from '../../../styles/GlobalStyle.js';
 import Header from '../../layout/header/Navbar.js';
 
 import { Link } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import materiais from "../../data/materiais.json"
 
 function Materiais(){
     return(
@@ -13,8 +15,10 @@ function Materiais(){
                 <h1 className='materiais-title'>MATERIAIS</h1>
                 <div className='materiais-list'>
                     <ul>
-                        <li><div className='materiais-item'><Link to='/conteudo-materiais'>Introdução</Link></div></li>
-                        <li><div className='materiais-item'><Link to='/conteudo-materiais'>Material</Link></div></li>
+                        {materiais.map((material, index) => (
+                        <li key={index}><div className='materiais-item'>
+                            <Link to='/conteudo-materiais'>{material.nome}</Link></div></li>
+                        ))}
                     </ul>
                 </div>
             </div>
