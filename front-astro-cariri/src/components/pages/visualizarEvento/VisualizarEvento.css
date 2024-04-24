@@ -18,7 +18,7 @@ p {
     background-color: var(--cor-branco);
 }
 
-.visualizarEvento-main {
+.visualizarEvento-title {
     background-color: var(--cor-branco);
     align-items: center;
     text-align: center;

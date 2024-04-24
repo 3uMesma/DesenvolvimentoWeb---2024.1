@@ -1,0 +1,18 @@
+[
+    {
+      "titulo": "Palestra sobre telescópios na escola X",
+      "nome-interessado": "Professora Fulana",
+      "contato": "fulana@escolax.br",
+      "instituicao": "Escola X",
+      "tipo": "Palestra",
+      "descricao": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae purus sit amet quam condimentum congue a at justo. Cras gravida velit ut est rutrum gravida tincidunt blandit mi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae."
+    },
+    {
+      "titulo": "Palestra sobre mulheres na astronomia na escola Y",
+      "nome-interessado": "Professor Ciclano",
+      "contato": "ciclano@escolay.br",
+      "instituicao": "Escola Y",
+      "tipo": "Palestra",
+      "descricao": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae purus sit amet quam condimentum congue a at justo. Cras gravida velit ut est rutrum gravida tincidunt blandit mi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae."
+    }
+]

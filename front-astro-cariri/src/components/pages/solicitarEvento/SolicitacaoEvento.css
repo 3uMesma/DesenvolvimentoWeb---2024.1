@@ -18,7 +18,7 @@ p {
     background-color: var(--cor-branco);
 }
 
-.solicitarEvento-main {
+.solicitarEvento-title {
     background-color: var(--cor-branco);
     align-items: center;
     text-align: center;
@@ -47,11 +47,13 @@ p {
     padding: 1% 0%;
 }
 
-.text-input {
+input.text-input {
     font-size: 1.2em;
-    height: 2.2em;
+    height: auto;
     width: 100%;
     padding: 1% 2%;
+    background-color: white;
+    margin: 0%;
 
     border-width: 1px;
     border-style: solid;
@@ -62,10 +64,13 @@ p {
 }
 
 .select-input {
-    background-color: var(--cor-branco);
-    height: 2.7em;
+    font-size: 1.2em;
+    height: auto;
     width: 100%;
     padding: 1% 2%;
+    background-color: white;
+    margin: 0%;
+    text-indent: 0%;
     
     border-width: 1px;
     border-style: solid;
@@ -81,6 +86,8 @@ p {
     height: 7rem;
     width: 100%;
     padding: 1% 2%;
+    background-color: white;
+    margin: 0%;
 
     border-width: 1px;
     border-style: solid;

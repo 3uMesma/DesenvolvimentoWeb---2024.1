@@ -19,9 +19,8 @@ function SolicitacaoEventos(){
             <GlobalStyle/>
             <Header/>
             <div className="body">
-                <div className="solicitarEvento-main">
-                    <h1>SOLICITAR EVENTO</h1>
-                </div>
+                <h1 className="solicitarEvento-title">SOLICITAR EVENTO</h1>
+                
                 <div className="solicitarEvento-form">
                     <form>
                         <div className="solicitarEvento-form-entry">
