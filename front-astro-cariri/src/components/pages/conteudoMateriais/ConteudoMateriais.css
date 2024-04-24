@@ -5,7 +5,6 @@
 .conteudoMateriais-title {
     font-weight: 700;
     font-size: 2.2em;
-    padding: 3%;
     color: var(--cor-preto);
 }
 
@@ -19,7 +18,6 @@
 }
 
 .conteudoMateriais-conteudo {
-    /* padding: 20px; */
     display: flex;
     justify-content: left;
     font-size: 1.5em;
@@ -34,10 +32,18 @@ p {
 .conteudoMateriais-text {
     display: flex;
     font-weight: 400;
-    font-size: 1.1em;
+    margin: 0.8em 0;
+    padding: 0;
+    font-size: 0.8em;
+    text-align: justify;
 }
 
 .conteudoMateriais-image {
     width: 100%;
     max-width: 100%;
+}
+
+.material-legenda {
+    font-size: 0.6em;
+    padding: 0;
 }

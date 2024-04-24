@@ -1,9 +1,13 @@
 import './ConteudoMateriais.css'
 import GlobalStyle from '../../../styles/GlobalStyle.js';
 import Header from '../../layout/header/Navbar';
-import foto from '../../../images/astrocariri-home-background.png';
+import foto from '../../../images/img-materiais/foguete.png';
 
-function conteudoMateriais(){
+import React from 'react';
+import materiais from "../../data/materiais.json";
+
+function conteudoMateriais(props){
+    const material = materiais[0];
     return(
         <div className='conteudoMateriais'>
             <GlobalStyle/>
@@ -11,14 +15,16 @@ function conteudoMateriais(){
             <div className='body'>
                 <h1 className='conteudoMateriais-title'></h1>
                 <div className='conteudoMateriais-list'>
-                    <h1 className='conteudoMateriais-title'>ASTRONOMIA</h1>
+                    <h1 className='conteudoMateriais-title'>{material.nome}</h1>
+                    <h2>Escrito por: {material.autor} ✨</h2>
                     <ul>
                         <div className='conteudoMateriais-conteudo'>
                         <ul>
-                        <p className='conteudoMateriais-text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate eu nunc sit amet commodo. Proin at augue eget odio elementum fringilla sed at tortor. Phasellus in diam et massa interdum porta sed a neque. Fusce vel nibh sollicitudin, tincidunt nibh vel, accumsan velit. Morbi eleifend sapien non odio ullamcorper accumsan. Nullam gravida orci ac nisl consectetur, eu accumsan tellus lacinia. Proin fermentum leo lectus, sed consequat nisl tincidunt vitae. </p>
+                        <p className='conteudoMateriais-text'>{material.texto}</p>
                         <br></br>
-                        <figure><img src={foto} className="conteudoMateriais-image"></img></figure>
+                        <figure><img src={material.imagem_url} className="conteudoMateriais-image"></img></figure>
                         <br></br>
+                        <p className='material-legenda'>{material.imagem_legenda}</p>
                         </ul>
                         </div>
                     </ul>
