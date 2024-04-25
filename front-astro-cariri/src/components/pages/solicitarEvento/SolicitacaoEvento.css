@@ -63,7 +63,7 @@ input.text-input {
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.05);
 }
 
-.select-input {
+.input {
     font-size: 1.2em;
     height: auto;
     width: 100%;

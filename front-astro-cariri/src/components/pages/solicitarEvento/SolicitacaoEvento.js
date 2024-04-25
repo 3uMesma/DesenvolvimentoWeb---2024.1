@@ -25,27 +25,27 @@ function SolicitacaoEventos(){
                     <form>
                         <div className="solicitarEvento-form-entry">
                         <p className="title-input">Título da Proposta</p>
-                        <input name="titulo" className="text-input" type="text"></input>
+                        <input name="titulo" className="input" type="text"></input>
                         </div>
 
                         <div className="solicitarEvento-form-entry">
                         <p className="title-input">Nome do Interessado</p>
-                        <input name="interessado" className="text-input" type="text"></input>
+                        <input name="interessado" className="input" type="text"></input>
                         </div>
 
                         <div className="solicitarEvento-form-entry">
                         <p className="title-input">Tipo de Contato (email, celular, etc)</p>
-                        <input name="contato" className="text-input" type="text"></input>
+                        <input name="contato" className="input" type="text"></input>
                         </div>
 
                         <div className="solicitarEvento-form-entry">
                         <p className="title-input">Instituição do Interessado</p>
-                        <input name="instituicao" className="text-input" type="text"></input>
+                        <input name="instituicao" className="input" type="text"></input>
                         </div>
 
                         <div className="solicitarEvento-form-entry">
                         <p className="title-input">Tipo de Evento</p> 
-                        <select name="tipo" className="select-input">
+                        <select name="tipo" className="input">
                             <option selected>Tipo 1</option>
                             <option>Tipo 2</option>
                             <option>Tipo 3</option>
