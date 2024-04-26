@@ -36,7 +36,7 @@ function Navbar(){
                     <div className='navbar-pipe'>|</div>
                     <Link to="/solicitacao-evento" className="navbar-text-">SOLICITE EVENTO</Link>
                     <div className='navbar-pipe'>|</div>
-                    <Link to="./login" className="navbar-text-">LOGIN</Link>
+                    <Link to="/login" className="navbar-text-">LOGIN</Link>
                 </div>
                 <div className="navbar-right">
                     <Link to="/user" className="navbar-text-username">Letícia Vieira</Link>

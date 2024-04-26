@@ -13,6 +13,7 @@ import {BrowserRouter, Routes, Link, Route} from 'react-router-dom'
 import CriarMaterial from './components/pages/criarMaterial/CriarMaterial'
 import EditarMaterial from './components/pages/editarMaterial/EditarMaterial'
 import EditarDadosLogin from './components/pages/editarDadosLogin/editarDadosLogin'
+import GerenciaMateriais from './components/pages/gerenciarMaterial/Materiais'
 
 function App() {
     return(
@@ -40,6 +41,7 @@ function App() {
 				<Route path="/visualizar-evento" element={<VisualizarEvento/>}></Route>
 				<Route path="/editar-dados-login" element={<EditarDadosLogin/>}></Route>
 				<Route path="/gerenciar-users" element={<GerenciarUsers/>}></Route>
+				<Route path="/material/gerenciar" element={<GerenciaMateriais/>}></Route>
 			</Routes>
 
 			<Footer/>
