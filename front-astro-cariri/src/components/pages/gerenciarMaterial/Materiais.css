@@ -15,6 +15,39 @@
     margin-bottom: 100px;
 }
 
+.area-btn-criar-material {
+    display: flex;
+    justify-content: right;
+}
+
+.btn-criar-material {
+    background-color: var(--cor-amarelo);
+    border-radius: 10px;
+    font-weight: 500;
+    width: 250px;
+    height: 3.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.link-criar-material {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.p-criar-gerenciar-material {
+    padding: 0;
+    margin-right: 30px;
+}
+
+.icon-criar-material {
+    width: 35px;
+    height: 35px;
+}
+
 .materiais-item {
     background-color: var(--cor-branco);
     border-style: solid;
@@ -27,11 +60,15 @@
     font-weight: 400;
 }
 
-.icon-excluir-material {
+.icon-excluir-material, .icon-editar-material {
     width: 45px;
     height: 45px;
 }
 
 .btn-excluir-material:hover {
+    transform: scale(1.07);
+}
+
+.btn-editar-material:hover {
     transform: scale(1.07);
 }

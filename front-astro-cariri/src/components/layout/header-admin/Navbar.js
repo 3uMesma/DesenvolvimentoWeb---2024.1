@@ -38,7 +38,7 @@ function NavbarAdmin(){
                     <div className='navbar-pipe'>|</div>
                     <Link to="#" className="navbar-text-">ADICIONAR ADMIN</Link>
                     <div className='navbar-pipe'>|</div>
-                    <Link to="#" className="navbar-text-">GERENCIAR ADMINS</Link>
+                    <Link to="/gerenciar-users" className="navbar-text-">GERENCIAR ADMINS</Link>
                     {/* <div className='navbar-pipe'>|</div> */}
                 </div>
                 <div className="navbar-right">
