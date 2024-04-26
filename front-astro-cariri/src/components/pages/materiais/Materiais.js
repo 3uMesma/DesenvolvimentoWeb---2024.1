@@ -4,7 +4,7 @@ import Header from '../../layout/header/Navbar.js';
 
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
-import materiais from "../../data/materiais.json"
+import { fakeMateriais } from "../../data/materiais.jsx"
 
 function Materiais(){
     return(
@@ -15,7 +15,7 @@ function Materiais(){
                 <h1 className='materiais-title'>MATERIAIS</h1>
                 <div className='materiais-list'>
                     <ul>
-                        {materiais.map((material, index) => (
+                        {fakeMateriais.map((material, index) => (
                         <li key={index}><div className='materiais-item'>
                             <Link to='/conteudo-materiais'>{material.nome}</Link></div></li>
                         ))}

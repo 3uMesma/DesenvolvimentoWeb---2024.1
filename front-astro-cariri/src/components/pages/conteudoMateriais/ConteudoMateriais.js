@@ -1,13 +1,12 @@
 import './ConteudoMateriais.css'
 import GlobalStyle from '../../../styles/GlobalStyle.js';
 import Header from '../../layout/header/Navbar';
-import foto from '../../../images/img-materiais/foguete.png';
 
 import React from 'react';
-import materiais from "../../data/materiais.json";
+import { fakeMateriais } from "../../data/materiais.jsx";
 
 function conteudoMateriais(props){
-    const material = materiais[0];
+    const material = fakeMateriais[0];
     return(
         <div className='conteudoMateriais'>
             <GlobalStyle/>
