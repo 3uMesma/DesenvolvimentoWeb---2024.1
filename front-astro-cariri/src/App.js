@@ -1,5 +1,4 @@
 import Home from './components/pages/home/Home'
-import User from './components/pages/user/User'
 import SolicitacaoEvento from './components/pages/solicitarEvento/SolicitacaoEvento'
 import VisualizarEvento from './components/pages/visualizarEvento/VisualizarEvento'
 import Materiais from './components/pages/materiais/Materiais'
@@ -31,15 +30,14 @@ function App() {
 			<Routes>
 				<Route path="/" element={<Home/>}></Route>
 				<Route path="/materiais" element={<Materiais/>}></Route>
-				<Route path="/user" element={<User/>}></Route>
+				<Route path="/user" element={<EditarDadosLogin/>}></Route>
 				<Route path="/solicitacao-evento" element={<SolicitacaoEvento/>}></Route>
 				<Route path="/login" element={<Login/>}></Route>
-				<Route path="/home-admin" element={<HomeAdmin/>}></Route>
+				<Route path="admin/home" element={<HomeAdmin/>}></Route>
 				<Route path="/conteudo-materiais" element={<ConteudoMateriais/>}></Route>
 				<Route path="/material/criar" element={<CriarMaterial/>}></Route>
 				<Route path="/material/editar" element={<EditarMaterial/>}></Route>
 				<Route path="/visualizar-evento" element={<VisualizarEvento/>}></Route>
-				<Route path="/editar-dados-login" element={<EditarDadosLogin/>}></Route>
 				<Route path="/gerenciar-users" element={<GerenciarUsers/>}></Route>
 				<Route path="/material/gerenciar" element={<GerenciaMateriais/>}></Route>
 			</Routes>

@@ -43,8 +43,7 @@
 
 .navbar-title:hover {
     color: var(--cor-branco);
-    font-size: 1.9em;
-    transition: 0.5s;
+    transition: scale(1.03);
 }
 
 .navbar-text- {
@@ -69,8 +68,7 @@
 
 .navbar-text-username:hover {
     color: var(--cor-branco);
-    font-size: 1.3em;
-    transition: 0.5s;
+    transition: scale(1.03);
 }
 
 .navbar-pipe {

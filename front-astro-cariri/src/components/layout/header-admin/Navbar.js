@@ -32,11 +32,13 @@ function NavbarAdmin(){
                     <Link to="/" className="navbar-title">ASTROCARIRI</Link>
                 </div>
                 <div className="navbar-mid">
+                    <Link to="/admin/home" className="navbar-text-">HOME ADMIN</Link>
+                    <div className='navbar-pipe'>|</div>
                     <Link to="/material/gerenciar" className="navbar-text-">GERENCIAR MATERIAL</Link>
                     <div className='navbar-pipe'>|</div>
-                    <Link to="/solicitacao-evento" className="navbar-text-">ADICIONAR ADMIN</Link>
+                    <Link to="#" className="navbar-text-">ADICIONAR ADMIN</Link>
                     <div className='navbar-pipe'>|</div>
-                    <Link to="./login" className="navbar-text-">GERENCIAR ADMINS</Link>
+                    <Link to="#" className="navbar-text-">GERENCIAR ADMINS</Link>
                     {/* <div className='navbar-pipe'>|</div> */}
                 </div>
                 <div className="navbar-right">
