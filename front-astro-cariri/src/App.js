@@ -13,6 +13,7 @@ import CriarMaterial from './components/pages/criarMaterial/CriarMaterial'
 import EditarMaterial from './components/pages/editarMaterial/EditarMaterial'
 import EditarDadosLogin from './components/pages/editarDadosLogin/editarDadosLogin'
 import GerenciaMateriais from './components/pages/gerenciarMaterial/Materiais'
+import CadastrarAdmin from './components/pages/cadastrarAdmin/cadastrarAdmin'
 
 function App() {
     return(
@@ -40,6 +41,7 @@ function App() {
 				<Route path="/visualizar-evento" element={<VisualizarEvento/>}></Route>
 				<Route path="/gerenciar-users" element={<GerenciarUsers/>}></Route>
 				<Route path="/material/gerenciar" element={<GerenciaMateriais/>}></Route>
+				<Route path="/cadastrar-admin" element={<CadastrarAdmin/>}></Route>
 			</Routes>
 
 			<Footer/>
