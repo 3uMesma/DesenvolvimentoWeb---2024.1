@@ -41,7 +41,7 @@ function App() {
 				<Route path="/visualizar-evento" element={<VisualizarEvento/>}></Route>
 				<Route path="/gerenciar-users" element={<GerenciarUsers/>}></Route>
 				<Route path="/material/gerenciar" element={<GerenciaMateriais/>}></Route>
-				<Route path="/cadastrar-admin" element={<CadastrarAdmin/>}></Route>
+				<Route path="/admin/cadastrar" element={<CadastrarAdmin/>}></Route>
 			</Routes>
 
 			<Footer/>
