@@ -6,22 +6,18 @@ import opened_eye from "../../../images/visible.png"
 import React, { useRef, useState } from 'react';
 
 function EditarDadosLogin () {
+    const [hidden2, setHidden2] = useState(true);
+    const [hidden3, setHidden3] = useState(true);
+    const [newPassword, setNewPassword] = useState(''); // Estado para a nova senha
+    const [confirmPassword, setConfirmPassword] = useState(''); // Estado para a confirmação da senha
 
-   /* document.addEventListener("DOMContentLoaded", function togglePass(txt_input, image_button) {
+    const toggleShow2 = () => {
+        setHidden2(!hidden2);
+    };
 
-        const input = document.getElementById(txt_input);
-        const image = document.getElementById(image_button);
-    
-        if (input.type === "password"){
-            input.type = "text";
-            image.src = opened_eye;
-        } else {
-            input.type = "password";
-            image.src = closed_eye;
-        }
-    
-    })*/
-
+    const toggleShow3 = () => {
+        setHidden3(!hidden3);
+    };
     return (
 
         <div className="EditarDadosLogin">
@@ -45,27 +41,23 @@ function EditarDadosLogin () {
                     </div>
 
                     <div className="form-entry">
-                        <p className="name-input">Senha Atual</p>
-                        <input name="current-password" id="password-input1" type="password"></input>
-                        <button type="button" id="botao-senha1" /*onClick={togglePass("password-input1", "img-botao1")}*/>
-                            <img src={closed_eye} id="img-botao1"></img>
-                        </button>
-                    </div>
-
-                    <div className="form-entry">
                         <p className="name-input">Nova Senha</p>
-                        <input name="new-password" id="password-input2" type="password"></input>
-                        <button type="button" id="botao-senha2">
-                            <img src={closed_eye} id="img-botao2"></img>
-                        </button>
+                        <div className="password-area">
+                            <input name="new-password" id="password-input2" type={hidden2 ? 'password' : 'text'} value={newPassword} onChange={(e) => setNewPassword(e.target.value)}></input>
+                            <button type="button" id="botao-senha2" onClick={toggleShow2}>
+                                <img src={closed_eye} id="img-botao2" alt="mostrar/esconder senha"></img>
+                            </button>
+                        </div>
                     </div>
 
                     <div className="form-entry">
                         <p className="name-input">Confirmar Senha</p>
-                        <input name="confirm-password" id="password-input3" type="password"></input>
-                        <button type="button" id="botao-senha3">
-                            <img src={closed_eye} id="img-botao3"></img>
-                        </button>
+                        <div className="password-area">
+                            <input name="confirm-password" id="password-input3" type={hidden3 ? 'password' : 'text'} value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}></input>
+                            <button type="button" id="botao-senha3" onClick={toggleShow3}>
+                                <img src={closed_eye} id="img-botao3" alt="mostrar/esconder senha"></img>
+                            </button>
+                        </div>
                     </div>
 
                 </form>
