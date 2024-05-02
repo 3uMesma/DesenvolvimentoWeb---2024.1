@@ -1,6 +1,6 @@
 import './GerenciarUsers.css'
 import GlobalStyle from '../../../styles/GlobalStyle.js';
-import Header from '../../layout/header/Navbar.js';
+import Header from '../../layout/header-admin/Navbar.js';
 import deleteIcon from '../../../images/Delete.png';
 import polygon1_forward from '../../../images/polygon1.png'
 import polygon1_backward from '../../../images/polygon1_upwards.png'
@@ -30,7 +30,7 @@ function GerenciarUsers(){
         <div className='gerenciar-users'>
             <GlobalStyle/>
             <Header/>
-            <h1 className='gerenciarUsers-title'>Gerenciar Usuários</h1>
+            <h1 className='gerenciarUsers-title'>GERENCIAR USUÁRIOS</h1>
             <div className='gerenciarUsers-list'>
                 <ul>
                     <li><div className='gerenciarUsers-item-titulo'>Lista de Usuários</div></li>
