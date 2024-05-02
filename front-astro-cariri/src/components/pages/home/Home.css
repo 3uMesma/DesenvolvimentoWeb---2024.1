@@ -36,6 +36,7 @@ h1 {
     justify-content: space-around;
     width: 100%;
     margin: 10vh 0;
+    color: var(--cor-preto);
     background-color: var(--cor-branco);
 }
 
@@ -53,7 +54,7 @@ h1 {
     font-weight: 900;
     font-size: 2em;
     padding: 0 1em 1em 1em;
-
+    color: var(--cor-preto);
 }
 
 .home-about-description {

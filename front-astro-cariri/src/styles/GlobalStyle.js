@@ -12,6 +12,18 @@ export default createGlobalStyle`
         --cor-cinza: #d9d9d9;
         --font-family: 'Merriweather', sans;
     }
+
+    [data-theme="dark"] {
+        --cor-roxo-escuro: #4D2375;
+        --cor-roxo: #210140;
+        --cor-roxo-claro: #A384BC;
+        --cor-rosa: #945A76;
+        --cor-amarelo: #D9963F;
+        --cor-branco: #0D0D0D;
+        --cor-preto: #F2F2F2;
+        --cor-cinza: #d9d9d9;
+    }
+
     * {
         margin: 0;
         padding: 0;
