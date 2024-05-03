@@ -1,5 +1,14 @@
 .homeAdmin {
-    background-color: var(--cor-branco);
+    background-image: url("../../../images/astrocariri-home-background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
 }
 
 .header-style {
@@ -10,24 +19,17 @@ h1 {
     margin: 0;
 }
 
-/* .home-main {
-    background-color: white;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: auto;
-    align-items: center;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-} */
+.proposals-container {
+    max-height: 600px;
+    overflow-y: scroll;
+}
 
 .homeAdmin-title {
     font-weight: 900;
     font-size: 1.5em;
-    color: var(--cor-roxo);
+    color: var(--cor-branco);
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin: 4vh 4vw;
+    margin: -4vh 4vw 4vh 4vw;
     justify-content: left;
 }
 
