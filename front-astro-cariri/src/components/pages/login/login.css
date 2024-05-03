@@ -5,9 +5,6 @@ h1 {
 }
 
 .AdminLogin {
-    align-items: center;
-    text-align: center;
-    justify-content: center;
     background-color: var(--cor-branco);
     margin-top: 100px;
 }
@@ -20,6 +17,7 @@ h1 {
     font-weight: 900;
     font-size: 2.5em;
     padding: 3%;
+    padding-bottom: 3vh;
 }
 
 .Login-form{
@@ -29,7 +27,7 @@ h1 {
     background-color: var(--cor-cinza);
     margin-right: 15%;
     margin-left: 15%;
-    margin-bottom: 3%;
+    margin-bottom: 4vh;
 }
 
 #fazer-login {
@@ -52,9 +50,7 @@ h1 {
 
 #fazer-login:hover {
     color: var(--cor-branco);
-    font-size: 1.5em;
-    height: 3.1rem;
-    width: 25.3%;
+    transform: scale(1.05);
     transition: 0.5s;
 }
 
@@ -107,6 +103,5 @@ p {
 }
 
 #img-botao {
-    height: 1em;
-    width: 40%;
+    width: 25px;
 }

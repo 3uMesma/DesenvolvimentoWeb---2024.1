@@ -34,7 +34,7 @@ function App() {
 				<Route path="/user" element={<EditarDadosLogin/>}></Route>
 				<Route path="/solicitacao-evento" element={<SolicitacaoEvento/>}></Route>
 				<Route path="/login" element={<Login/>}></Route>
-				<Route path="admin/home" element={<HomeAdmin/>}></Route>
+				<Route path="/admin/home" element={<HomeAdmin/>}></Route>
 				<Route path="/conteudo-materiais" element={<ConteudoMateriais/>}></Route>
 				<Route path="/material/criar" element={<CriarMaterial/>}></Route>
 				<Route path="/material/editar" element={<EditarMaterial/>}></Route>

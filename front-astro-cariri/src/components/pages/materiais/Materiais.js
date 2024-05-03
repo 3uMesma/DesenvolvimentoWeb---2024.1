@@ -3,7 +3,7 @@ import GlobalStyle from '../../../styles/GlobalStyle.js';
 import Header from '../../layout/header/Navbar.js';
 
 import { Link } from "react-router-dom";
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { fakeMateriais } from "../../data/materiais.jsx"
 
 function Materiais(){

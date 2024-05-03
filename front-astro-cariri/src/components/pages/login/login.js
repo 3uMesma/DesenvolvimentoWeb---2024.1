@@ -4,6 +4,7 @@ import GlobalStyle from "../../../styles/GlobalStyle";
 import closed_eye from "../../../images/invisible.png"
 import opened_eye from "../../../images/visible.png"
 import React, { useRef, useState } from 'react';
+import { Link } from "react-router-dom";
 
 function AdminLogin(){
 
@@ -40,7 +41,11 @@ function AdminLogin(){
                         </div>
                     </div>
                 </form>
-                <button type="submit" id="fazer-login" name="fazer-login">Fazer Login</button>
+                <button type="submit" id="fazer-login" name="fazer-login">
+                    <Link to="/admin/home">
+                        Fazer Login
+                    </Link>
+                </button>
             </div>
         </div>
         
