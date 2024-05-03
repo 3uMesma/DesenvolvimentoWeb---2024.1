@@ -2,7 +2,7 @@ import Home from './components/pages/home/Home'
 import SolicitacaoEvento from './components/pages/solicitarEvento/SolicitacaoEvento'
 import VisualizarEvento from './components/pages/visualizarEvento/VisualizarEvento'
 import Materiais from './components/pages/materiais/Materiais'
-import Login from './components/pages/login/Login'
+import Login from './components/pages/login/login'
 import HomeAdmin from './components/pages/homeAdmin/HomeAdmin'
 import ConteudoMateriais from './components/pages/conteudoMateriais/ConteudoMateriais'
 import GerenciarUsers from './components/pages/gerenciarUsers/GerenciarUsers'
@@ -33,7 +33,7 @@ function App() {
 				<Route path="/materiais" element={<Materiais/>}></Route>
 				<Route path="/user" element={<EditarDadosLogin/>}></Route>
 				<Route path="/solicitacao-evento" element={<SolicitacaoEvento/>}></Route>
-				<Route path="/login" element={<Login/>}></Route>
+				<Route path="/login" element={<login/>}></Route>
 				<Route path="admin/home" element={<HomeAdmin/>}></Route>
 				<Route path="/conteudo-materiais" element={<ConteudoMateriais/>}></Route>
 				<Route path="/material/criar" element={<CriarMaterial/>}></Route>
