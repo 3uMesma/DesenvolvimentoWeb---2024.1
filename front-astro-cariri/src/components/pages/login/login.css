@@ -9,6 +9,7 @@ h1 {
     text-align: center;
     justify-content: center;
     background-color: var(--cor-branco);
+    margin-top: 100px;
 }
 
 .AdminLogin-Main {
@@ -102,10 +103,6 @@ p {
     text-align: end;
     justify-content: end;
     width: 5%;
-    margin-top: 3%;
-    margin-bottom: 3%;
-    margin-left: 37.5%;
-    margin-right: 37.5%;
     border-radius: 0.5rem;
 }
 
