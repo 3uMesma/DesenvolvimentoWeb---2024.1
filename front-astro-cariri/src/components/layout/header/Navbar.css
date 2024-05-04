@@ -6,8 +6,8 @@
 }
 
 .navbar {
-    background-color: var(--cor-roxo);
-    color: var(--cor-amarelo);
+    background-color: var(--cor-navbar);
+    color: var(--cor-nav-footer-text);
     display: flex;
     text-align: center;
     height: 12vh;
@@ -35,39 +35,39 @@
 }
 
 .navbar-title {
-    color: var(--cor-amarelo);
+    color: var(--cor-nav-footer-text);
     padding: 5px;
     font-size: 1.8em;
     font-weight: 600;
 }
 
 .navbar-title:hover {
-    color: var(--cor-branco);
+    color: var(--cor-main-background);
     transition: scale(1.03);
 }
 
 .navbar-text- {
-    color: var(--cor-amarelo);
+    color: var(--cor-nav-footer-text);
     font-size: 1.5em;
     font-weight: 400;
     padding: 0 0.5em;
 }
 
 .navbar-text-:hover {
-    color: var(--cor-branco);
+    color: var(--cor-main-background);
     transform: scale(1.02); 
     transition: 0.5s;
 }
 
 .navbar-text-username {
-    color: var(--cor-amarelo);
+    color: var(--cor-nav-footer-text);
     font-size: 1.2em;
     font-weight: 400;
     padding: 10px;
 }
 
 .navbar-text-username:hover {
-    color: var(--cor-branco);
+    color: var(--cor-main-background);
     transition: scale(1.03);
 }
 
@@ -94,7 +94,7 @@
 }
 
 .navbar-acessibility {
-    background-color: var(--cor-amarelo);
+    background-color: var(--cor-nav-footer-text);
     display: flex;
     justify-content: space-between;
     width: 275px;

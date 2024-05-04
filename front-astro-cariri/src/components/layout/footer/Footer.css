@@ -1,6 +1,6 @@
 .footer {
-    background-color: var(--cor-roxo);
-    color: var(--cor-amarelo);
+    background-color: var(--cor-footer);
+    color: var(--cor-nav-footer-text);
     display: flex;
     text-align: center;
     height: 12vh;

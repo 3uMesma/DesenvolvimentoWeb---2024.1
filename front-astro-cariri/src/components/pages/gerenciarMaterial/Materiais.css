@@ -3,7 +3,7 @@
     font-weight: 900;
     font-size: 2.5em;
     padding: 3%;
-    color: var(--cor-roxo);
+    color: var(--cor-titulo);
 }
 
 .materiais-list {
@@ -21,7 +21,7 @@
 }
 
 .btn-criar-material {
-    background-color: var(--cor-amarelo);
+    background-color: var(--cor-nav-footer-text);
     border-radius: 10px;
     font-weight: 500;
     width: 250px;

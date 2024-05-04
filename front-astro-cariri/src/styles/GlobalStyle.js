@@ -2,26 +2,32 @@ import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
     :root {
+        --cor-navbar: #4D2375; //roxo
+        --cor-footer: #4D2375; //roxo
+        --cor-nav-footer-text: #D9963F; //amarelo
+        --cor-main-background: #F2F2F2; //branco
+        --cor-titulo-home: #F2F2F2; //branco
+        --cor-titulo: #4D2375; //roxo
+        --cor-texto: #0D0D0D; //preto
+        
         --cor-roxo-escuro: #210140;
         --cor-roxo: #4D2375;
         --cor-roxo-claro: #A384BC;
         --cor-rosa: #945A76;
         --cor-amarelo: #D9963F;
-        --cor-branco: #F2F2F2;
         --cor-preto: #0D0D0D;
         --cor-cinza: #d9d9d9;
         --font-family: 'Merriweather', sans;
     }
 
     [data-theme="dark"] {
-        --cor-roxo-escuro: #4D2375;
-        --cor-roxo: #210140;
-        --cor-roxo-claro: #A384BC;
-        --cor-rosa: #945A76;
-        --cor-amarelo: #D9963F;
-        --cor-branco: #0D0D0D;
-        --cor-preto: #F2F2F2;
-        --cor-cinza: #d9d9d9;
+        --cor-navbar: #210140;
+        --cor-footer: #210140;
+        --cor-nav-footer-text: #D9963F;
+        --cor-main-background: #0D0D0D;
+        --cor-titulo-home: #0D0D0D;
+        --cor-titulo: #F2F2F2;
+        --cor-texto: #F2F2F2;
     }
 
     * {
@@ -51,7 +57,7 @@ export default createGlobalStyle`
       }      
 
     body {
-        background-color: var(--cor-branco);
+        background-color: var(--cor-main-background);
     }
 
     hr {

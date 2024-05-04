@@ -1,9 +1,8 @@
 .home {
-    background-color: var(--cor-branco);
+    background-color: var(--cor-main-background);
 }
 
 .header-style-home {
-    background-color: var(--cor-roxo-escuro);
     margin-bottom: 10vh;
 }
 
@@ -26,7 +25,7 @@ h1 {
 .home-main-title {
     font-weight: 900;
     font-size: 2.5em;
-    color: var(--cor-branco);
+    color: var(--cor-main-background);
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     padding: 25% 0;
 }
@@ -36,8 +35,7 @@ h1 {
     justify-content: space-around;
     width: 100%;
     margin: 10vh 0;
-    color: var(--cor-preto);
-    background-color: var(--cor-branco);
+    background-color: var(--cor-main-background);
 }
 
 .home-about-left {
@@ -54,13 +52,14 @@ h1 {
     font-weight: 900;
     font-size: 2em;
     padding: 0 1em 1em 1em;
-    color: var(--cor-preto);
+    color: var(--cor-titulo);
 }
 
 .home-about-description {
     font-weight: 400;
     font-size: 1.5em;
     padding: 0 1.2em;
+    color: var(--cor-texto);
 }
 
 .home-about-image {
