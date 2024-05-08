@@ -48,8 +48,12 @@ function Navbar(){
         <div className='header'>
             <div className="navbar">
                 <div className="navbar-left">
+                    <Link to="/" className="navbar-link">
                     <img src={astrocariri_logo} alt="astrocariri logo" className="navbar-icon-main"></img>
-                    <Link to="/" className="navbar-title">ASTROCARIRI</Link>
+                    </Link>
+                    <Link to="/" className="navbar-link">
+                    <div className='navbar-title'>ASTROCARIRI</div>
+                    </Link>
                 </div>
                 <div className="navbar-mid">
                     <Link to="/materiais" className="navbar-text-">MATERIAIS</Link>
