@@ -28,7 +28,9 @@ function NavbarAdmin(){
         <div className='header'>
             <div className="navbar">
                 <div className="navbar-left">
-                    <img src={astrocariri_logo} alt="astrocariri logo" className="navbar-icon-main"></img>
+                    <Link to="/">
+                        <img src={astrocariri_logo} alt="astrocariri logo" className="navbar-icon-main"></img>
+                    </Link>
                     <Link to="/" className="navbar-title">ASTROCARIRI</Link>
                 </div>
                 <div className="navbar-mid">
