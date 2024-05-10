@@ -1,16 +1,36 @@
 import './Home.css'
 import Header from '../../layout/header/Navbar.js'
+import HamburguerMenu from "../../layout/header-hamburguer/NavbarHamburguer.jsx"
 import GlobalStyle from '../../../styles/GlobalStyle.js';
 import { fakeHome } from '../../data/home.jsx';
+
+import React, {useState, useEffect} from 'react';
 
 function Home(props){
     const home = fakeHome[0];
 
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  
+    useEffect(() => {
+      const handleResize = () => {
+        setWindowWidth(window.innerWidth);
+      };
+  
+      window.addEventListener('resize', handleResize);
+  
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
     return(
         <div className='home'>
             <GlobalStyle/>
             <div className='header-style-home'>
-                <Header/>
+                {windowWidth > 850 ? (
+                    <Header/>
+                ) : (
+                    <HamburguerMenu/>
+                )}
             </div>
             <div className='home-main'>
                 <h1 className='home-main-title'>{home.citacao}</h1>
