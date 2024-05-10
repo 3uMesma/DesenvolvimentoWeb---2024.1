@@ -40,11 +40,14 @@
     display: flex;
     justify-content: space-around;
     margin: 5vh 3vw 0 3vw;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .btn-solicitar {
     display: flex;
     justify-content: center;
+    padding: 15px 0;
 }
 
 .botaoAdicionar {

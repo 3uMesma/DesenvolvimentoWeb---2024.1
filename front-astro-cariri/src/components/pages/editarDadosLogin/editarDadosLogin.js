@@ -50,7 +50,7 @@ function EditarDadosLogin () {
                 <form>
                     <div className="form-entry">
                         <p className="name-input">Nome de Usuário</p>
-                        <input name="username" className="text-input2" type="text"></input>
+                        <input name="username" className="text-input2"  placeholder="Seu nome de usuário" type="text"></input>
                     </div>
 
                     <div className="form-entry">
@@ -61,7 +61,7 @@ function EditarDadosLogin () {
                     <div className="form-entry">
                         <p className="name-input">Nova Senha</p>
                         <div className="password-area">
-                            <input name="new-password" id="password-input2" type={hidden2 ? 'password' : 'text'} value={newPassword} onChange={(e) => setNewPassword(e.target.value)}></input>
+                            <input name="new-password" id="password-input2"  placeholder="Sua nova senha" type={hidden2 ? 'password' : 'text'} value={newPassword} onChange={(e) => setNewPassword(e.target.value)}></input>
                             <button type="button" id="botao-senha2" onClick={toggleShow2}>
                                 <img src={closed_eye} id="img-botao2" alt="mostrar/esconder senha"></img>
                             </button>
@@ -71,7 +71,7 @@ function EditarDadosLogin () {
                     <div className="form-entry">
                         <p className="name-input">Confirmar Senha</p>
                         <div className="password-area">
-                            <input name="confirm-password" id="password-input3" type={hidden3 ? 'password' : 'text'} value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}></input>
+                            <input name="confirm-password" id="password-input3" placeholder="Antiga senha" type={hidden3 ? 'password' : 'text'} value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}></input>
                             <button type="button" id="botao-senha3" onClick={toggleShow3}>
                                 <img src={closed_eye} id="img-botao3" alt="mostrar/esconder senha"></img>
                             </button>

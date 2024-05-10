@@ -56,21 +56,22 @@ function CriarMaterial(){
                     <form onSubmit={handleSubmit}>
                         <div className="campo-forms">
                             <p className="title-input-criar">Título</p>
-                            <input name="titulo" className="text-input-criar" type="text"></input>
+                            <input name="titulo" className="text-input-criar" type="text" placeholder="Título do Material a ser criado"></input>
                         </div>
                         <div className="campo-forms">
                             <p className="title-input-criar">Autor</p>
-                            <input name="autor" className="text-input-criar" type="text"></input>
+                            <input name="autor" className="text-input-criar" type="text" placeholder="Autor do Material"></input>
                         </div>
                         <div className="campo-forms">
                             <p className="title-input-criar">Tópico</p>
-                            <input name="topico" className="text-input-criar" type="text"></input>
+                            <input name="topico" className="text-input-criar" type="text" placeholder="Tópico 1"></input>
                         </div>
                         <div className="campo-forms">
                             <p className="title-input-criar">Texto</p> 
                             <textarea required name="texto" 
                             className="texto-input" 
                             ref={textAreaRef}
+                            placeholder="Texto do tópico"
                             onChange={adjustHeight}
                             style={{ height: `${textareaHeight}px` }}></textarea>
                         </div>
@@ -80,7 +81,7 @@ function CriarMaterial(){
                         </div>
                         <div className="campo-forms">
                             <p className="title-input-criar">Legenda Imagem</p>
-                            <input name="legenda" className="text-input-criar" type="text"></input>
+                            <input name="legenda" className="text-input-criar" placeholder="Leganda para a imagem" type="text"></input>
                         </div>
                     </form>
                     <div className="btn-add">

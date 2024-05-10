@@ -46,13 +46,13 @@ function AdminLogin(){
                 <form>
                     <div className="form-entry">
                         <p className="name-input">Nome de Usuário</p>
-                        <input name="username" className="text-input2" type="text"></input>
+                        <input name="username" className="text-input2" placeholder="Seu nome de Usuário" type="text"></input>
                     </div>
 
                     <div className="form-entry">
                         <p className="name-input">Senha</p>
                         <div className="password-area">
-                            <input name="current-password" id="password-id" type={hidden ? 'password' : 'text'} value={Password} onChange={(e) => setPassword(e.target.value)}></input>
+                            <input name="current-password" id="password-id" placeholder="Sua senha" type={hidden ? 'password' : 'text'} value={Password} onChange={(e) => setPassword(e.target.value)}></input>
                             <button type="button" id="botao-senha" onClick={toggleShow}>
                                 <img src={closed_eye} id="img-botao"></img>
                             </button>

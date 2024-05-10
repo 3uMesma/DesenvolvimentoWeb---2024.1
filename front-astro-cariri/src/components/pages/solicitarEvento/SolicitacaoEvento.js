@@ -44,30 +44,30 @@ function SolicitacaoEventos(){
                     <form>
                         <div className="solicitarEvento-form-entry">
                         <p className="title-input">Título da Proposta</p>
-                        <input name="titulo" className="input" type="text"></input>
+                        <input name="titulo" className="input" type="text" placeholder="Título do evento que você propõe"></input>
                         </div>
 
                         <div className="solicitarEvento-form-entry">
                         <p className="title-input">Nome do Interessado</p>
-                        <input name="interessado" className="input" type="text"></input>
+                        <input name="interessado" className="input" type="text" placeholder="Nome e Sobrenome"></input>
                         </div>
 
                         <div className="solicitarEvento-form-entry">
-                        <p className="title-input">Tipo de Contato (email, celular, etc)</p>
-                        <input name="contato" className="input" type="text"></input>
+                        <p className="title-input">Tipo de Contato</p>
+                        <input name="contato" className="input" type="text" placeholder="email ou celular"></input>
                         </div>
 
                         <div className="solicitarEvento-form-entry">
                         <p className="title-input">Instituição do Interessado</p>
-                        <input name="instituicao" className="input" type="text"></input>
+                        <input name="instituicao" className="input" type="text" placeholder="Nome completo da sua instituição"></input>
                         </div>
 
                         <div className="solicitarEvento-form-entry">
                         <p className="title-input">Tipo de Evento</p> 
                         <select name="tipo" className="input">
-                            <option selected>Tipo 1</option>
-                            <option>Tipo 2</option>
-                            <option>Tipo 3</option>
+                            <option selected>Minicurso</option>
+                            <option>Palestra</option>
+                            <option>Roda de Conversa</option>
                             <option>Outro</option>
                         </select>
                         </div>

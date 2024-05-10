@@ -44,18 +44,18 @@ function CadastrarAdmin () {
                 <form>
                     <div className="form-entry">
                         <p className="name-input">Nome de Usuário</p>
-                        <input name="username" className="text-input2" type="text"></input>
+                        <input name="username" className="text-input2" placeholder="Nome do usuário a ser cadastrado" type="text"></input>
                     </div>
 
                     <div className="form-entry">
                         <p className="name-input">Email</p>
-                        <input name="email" className="text-input2" type="email" placeholder="exemplo@gmail.com"></input>
+                        <input name="email" className="text-input2" type="email" placeholder="Email do usuário a ser cadastrado. exemplo@gmail.com"></input>
                     </div>
 
                     <div className="form-entry">
                         <p className="name-input">Senha</p>
                         <div className="password-area">
-                            <input name="current-password" id="password-input1" type={hidden ? 'password' : 'text'} value={Password} onChange={(e) => setPassword(e.target.value)}></input>
+                            <input name="current-password" placeholder="Senha do usuário a ser cadastrado" id="password-input1" type={hidden ? 'password' : 'text'} value={Password} onChange={(e) => setPassword(e.target.value)}></input>
                             <button type="button" id="botao-senha1" onClick={toggleShow}>
                                 <img src={closed_eye} id="img-botao1" alt="mostrar ou esconder senha"></img>
                             </button>
