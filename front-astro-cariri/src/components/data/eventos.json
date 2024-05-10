@@ -5,7 +5,7 @@
       "contato": "fulana@escolax.br",
       "instituicao": "Escola X",
       "tipo": "Palestra",
-      "descricao": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae purus sit amet quam condimentum congue a at justo. Cras gravida velit ut est rutrum gravida tincidunt blandit mi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.",
+      "descricao": "Evento para Fundamental II.",
       "data": "XX/XX/XX"
     },
     {
@@ -14,7 +14,7 @@
       "contato": "ciclano@escolay.br",
       "instituicao": "Escola Y",
       "tipo": "Palestra",
-      "descricao": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae purus sit amet quam condimentum congue a at justo. Cras gravida velit ut est rutrum gravida tincidunt blandit mi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.",
+      "descricao": "Gostaria de usar Scratch.",
       "data": "XX/XX/XX"
     },
     {
@@ -23,7 +23,7 @@
       "contato": "fulana@escolax.br",
       "instituicao": "Escola Z",
       "tipo": "Palestra",
-      "descricao": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae purus sit amet quam condimentum congue a at justo. Cras gravida velit ut est rutrum gravida tincidunt blandit mi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.",
+      "descricao": "Escola pública",
       "data": "XX/XX/XX"
     },
     {
@@ -32,7 +32,7 @@
       "contato": "ciclano@escolay.br",
       "instituicao": "Escola K",
       "tipo": "Palestra",
-      "descricao": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae purus sit amet quam condimentum congue a at justo. Cras gravida velit ut est rutrum gravida tincidunt blandit mi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.",
+      "descricao": "Disponibilizaremos materiais",
       "data": "XX/XX/XX"
     }
 ]

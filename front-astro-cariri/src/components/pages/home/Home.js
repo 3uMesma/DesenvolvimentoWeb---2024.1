@@ -41,7 +41,7 @@ function Home(props){
                     <p className='home-about-description'>{home.descricao}</p>
                 </div>
                 <div className='home-about-right'>
-                    <img src={home.imagem_descricao} alt="astronaut" className="home-about-image"></img>
+                    <img src={home.imagem_descricao} alt="banner do Astrocariri, com por do sol ao fundo, algumas estrelas no céu, e cactos e outras palntas nativas do cariri no chão, símbolo do projeto Força Meninas no canto inferior direito" id="home-about-image"></img>
                 </div>
             </div>
         </div>

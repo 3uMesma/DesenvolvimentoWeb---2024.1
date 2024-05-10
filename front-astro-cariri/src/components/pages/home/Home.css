@@ -62,9 +62,8 @@ h1 {
     color: var(--cor-texto);
 }
 
-.home-about-image {
-    width: 75%;
-    height: 20em;
+#home-about-image {
+    width: 300px;
 }
 
 @media screen and (max-width: 903.20px){

@@ -1,9 +1,9 @@
-import about_image from '../../images/astronaut-image.jpg';
+import about_image from '../../images/img-home.png';
 
 export const fakeHome = [
     {
         citacao: "“Somos feitos de poeira de estrelas. Nós somos uma maneira de o cosmos se autoconhecer.” - Carl Sagan",
-        descricao: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate eu nunc sit amet commodo. Proin at augue eget odio elementum fringilla sed at tortor. Phasellus in diam et massa interdum porta sed a neque. Fusce vel nibh sollicitudin, tincidunt nibh vel, accumsan velit. Morbi eleifend sapien non odio ullamcorper accumsan. Nullam gravida orci ac nisl consectetur, eu accumsan tellus lacinia. Proin fermentum leo lectus, sed consequat nisl tincidunt vitae.",
+        descricao: "Fundado em 2023, como uma parcerira com o projeto Força Meninas, o nosso clube de astronomia, AstroCariri, busca a realização de oficinas e projetos sobre ciências especiais pela região do Cariri Cearense promovendo a divulgação científica inclusiva, o aprendizado nas áreas STEM (Ciência, TEcnologia, Engenharia e Matemática) e a preservação astronômica tradicional das comunidades indíginas pelo Cariri.",
         imagem_descricao: about_image
     }
 ];
