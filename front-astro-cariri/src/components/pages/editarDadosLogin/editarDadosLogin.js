@@ -12,10 +12,12 @@ function EditarDadosLogin () {
     const [newPassword, setNewPassword] = useState(''); // Estado para a nova senha
     const [confirmPassword, setConfirmPassword] = useState(''); // Estado para a confirmação da senha
 
+    //Função para tratar a visibilidade do campo de senha
     const toggleShow2 = () => {
         setHidden2(!hidden2);
     };
 
+    //Função para tratar a visibilidade do campo de senha
     const toggleShow3 = () => {
         setHidden3(!hidden3);
     };
@@ -46,8 +48,10 @@ function EditarDadosLogin () {
                 <h1 className="Editar-Dados-Login-Main-Title">EDITAR DADOS DE LOGIN</h1>
             </div>
 
+            {/* Formulário para a edição dos dados de login */}
             <div className="EditarDados-form">
                 <form>
+                    {/**Dados pessoais do user */}
                     <div className="form-entry">
                         <p className="name-input">Nome de Usuário</p>
                         <input name="username" className="text-input2"  placeholder="Seu nome de usuário" type="text"></input>
@@ -58,6 +62,7 @@ function EditarDadosLogin () {
                         <input name="email" className="text-input2" type="email" placeholder="exemplo@gmail.com"></input>
                     </div>
 
+                    {/**Campos de senha e tratamento dos inputs */}
                     <div className="form-entry">
                         <p className="name-input">Nova Senha</p>
                         <div className="password-area">
@@ -79,6 +84,8 @@ function EditarDadosLogin () {
                     </div>
 
                 </form>
+
+                {/* Botão de Submissão do forms */}
                 <div className="btn-area-editar-dados">
                     <button type="submit" id="salvar-mudancas" name="salvar-mudancas">Salvar Mudanças</button>
                 </div>
