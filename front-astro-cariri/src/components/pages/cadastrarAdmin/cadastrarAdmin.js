@@ -18,19 +18,19 @@ function CadastrarAdmin () {
             <Header/>
 
             <div className="CadastrarAdmin-Main">
-                <h1>CADASTRO</h1>
+                <h1 className="CadastrarAdmin-Title">CADASTRO</h1>
             </div>
 
             <div className="CadastrarAdmin-form">
                 <form>
                     <div className="form-entry">
                         <p className="name-input">Nome de Usuário</p>
-                        <input name="username" className="text-input" type="text"></input>
+                        <input name="username" className="text-input2" type="text"></input>
                     </div>
 
                     <div className="form-entry">
                         <p className="name-input">Email</p>
-                        <input name="email" className="text-input" type="email" placeholder="exemplo@gmail.com"></input>
+                        <input name="email" className="text-input2" type="email" placeholder="exemplo@gmail.com"></input>
                     </div>
 
                     <div className="form-entry">

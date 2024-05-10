@@ -12,12 +12,12 @@ import criarIcon from "../../../images/btn-criar.png"
 
 function GerenciaMateriais(){
     return(
-        <div className='materiais'>
+        <div className='gerenciar-materiais'>
             <GlobalStyle/>
             <HeaderAdmin/>
             <div className='body'>
-                <h1 className='materiais-title'>MATERIAIS</h1>
-                <div className='materiais-list'>
+                <h1 className='gerenciar-materiais-title'>MATERIAIS</h1>
+                <div className='gerenciar-materiais-list'>
                     <div className='area-btn-criar-material'>
                         <div className='btn-criar-material'>
                             <Link className='link-criar-material' to="/material/criar">
@@ -29,7 +29,7 @@ function GerenciaMateriais(){
                     <ul>
                         {fakeMateriais.map((material, index) => (
                         <li key={index}>
-                            <div className='materiais-item'>
+                            <div className='gerenciar-materiais-item'>
                                 <Link to='/conteudo-materiais'>{material.nome}</Link>
                                 <div className='btn-area-gerenciar-material'>
                                     <Link to='/material/editar' className="btn-editar-material">

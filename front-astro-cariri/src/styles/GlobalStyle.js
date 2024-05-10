@@ -6,6 +6,8 @@ export default createGlobalStyle`
         --cor-footer: #4D2375; //roxo
         --cor-nav-footer-text: #D9963F; //amarelo
         --cor-main-background: #F2F2F2; //branco
+        --cor-secondary-background: #d9d9d9; //cinza
+        --cor-item-background: #F2F2F2; //branco
         --cor-titulo-home: #F2F2F2; //branco
         --cor-titulo: #4D2375; //roxo
         --cor-texto: #0D0D0D; //preto
@@ -25,6 +27,8 @@ export default createGlobalStyle`
         --cor-footer: #210140;
         --cor-nav-footer-text: #D9963F;
         --cor-main-background: #0D0D0D;
+        --cor-secondary-background: #F2F2F2; //branco
+        --cor-item-background: #c9c9c9;
         --cor-titulo-home: #0D0D0D;
         --cor-titulo: #F2F2F2;
         --cor-texto: #F2F2F2;

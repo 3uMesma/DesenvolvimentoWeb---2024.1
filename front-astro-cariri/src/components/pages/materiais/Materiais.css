@@ -8,7 +8,7 @@
 
 .materiais-list {
     width: 70%;
-    background-color: var(--cor-cinza);
+    background-color: var(--cor-secondary-background);
     padding: 80px;
     margin-left: auto;
     margin-right: auto;
@@ -16,9 +16,8 @@
 }
 
 .materiais-item {
-    background-color: var(--cor-branco);
+    background-color: var(--cor-item-background);
     border-style: solid;
-    border-color: var(--cor-preto);
     border-width: 1px;
     padding: 20px;
     display: flex;

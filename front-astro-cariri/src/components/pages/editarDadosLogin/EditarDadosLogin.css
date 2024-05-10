@@ -1,6 +1,6 @@
-h1 {
+.Editar-Dados-Login-Main-Title {
     margin:0;
-    color: var(--cor-roxo);
+    color: var(--cor-titulo);
     font-size: 1em;
 }
 
@@ -13,12 +13,12 @@ h1 {
     align-items: center;
     text-align: center;
     justify-content: center;
-    background-color: var(--cor-branco);
+    background-color: var(--cor-main-background);
     margin-top: 100px;
 }
 
 .Editar-Dados-Login-Main {
-    background-color: var(--cor-branco);
+    background-color: var(--cor-main-background);
     align-items: center;
     text-align: center;
     justify-content: center;
@@ -31,7 +31,7 @@ h1 {
     align-items: left;
     text-align: left;
     justify-content: left;
-    background-color: var(--cor-cinza);
+    background-color: var(--cor-secondary-background);
     margin-right: 15%;
     margin-left: 15%;
     margin-bottom: 3%;
@@ -56,7 +56,7 @@ h1 {
 }
 
 #salvar-mudancas:hover {
-    color: var(--cor-branco);
+    color: var(--cor-main-background);
     font-size: 1.5em;
     height: 3.1rem;
     width: 25.3%;
@@ -72,7 +72,7 @@ p {
     padding: 1% 10%;
 }
 
-.text-input {
+.text-input2 {
     text-indent: 0.5rem;
     font-size: 1.2em;
     height: 2.2em;
@@ -80,6 +80,7 @@ p {
     border-width: 1px;
     border-style: solid;
     border-color: var(--cor-preto);
+    background-color: var(--cor-item-background);
     border-radius: 0.5rem;
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.05);
 }
@@ -93,6 +94,7 @@ p {
     border-width: 1px;
     border-style: solid;
     border-color: var(--cor-preto);
+    background-color: var(--cor-item-background);
     border-radius: 0.5rem;
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.05);
 }
@@ -106,6 +108,7 @@ p {
     border-width: 1px;
     border-style: solid;
     border-color: var(--cor-preto);
+    background-color: var(--cor-item-background);
     border-radius: 0.5rem;
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.05);
 }
@@ -119,6 +122,7 @@ p {
     border-width: 1px;
     border-style: solid;
     border-color: var(--cor-preto);
+    background-color: var(--cor-item-background);
     border-radius: 0.5rem;
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.05);
 }

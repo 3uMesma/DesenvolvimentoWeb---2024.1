@@ -21,14 +21,14 @@ function AdminLogin(){
             <Header/>
 
             <div className="AdminLogin-Main">
-                <h1>LOGIN</h1>
+                <h1 className="AdminLogin-Title">LOGIN</h1>
             </div>
             
             <div className="Login-form">
                 <form>
                     <div className="form-entry">
                         <p className="name-input">Nome de Usuário</p>
-                        <input name="username" className="text-input" type="text"></input>
+                        <input name="username" className="text-input2" type="text"></input>
                     </div>
 
                     <div className="form-entry">

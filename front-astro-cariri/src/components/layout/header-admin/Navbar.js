@@ -11,6 +11,7 @@ import contraste_icon from '../../../images/contraste.png'
 function NavbarAdmin(){
     // Definindo o estado inicial do tamanho da fonte
     const [fontSize, setFontSize] = useState(16); // Tamanho padrão da fonte é 16px
+    const [theme, setTheme] = useState('white');
 
     // Função para aumentar a fonte
     const increaseFontSize = () => {
@@ -22,8 +23,26 @@ function NavbarAdmin(){
         setFontSize(prevFontSize => Math.max(prevFontSize - 2, 10)); // Garante que a fonte não fique menor que 10px
     };
 
+    // Função para aumentar o contraste
+    const darkMode = () => {
+        setTheme(prevTheme => {
+            if(prevTheme === 'white'){
+                return 'dark';
+            }
+            else{
+                return 'white';
+            }
+        }); // Garante que a fonte não fique menor que 10px
+    };
+    
     // Aplica o tamanho da fonte à página inteira
     document.body.style.fontSize = `${fontSize}px`;
+    if(theme === 'dark'){
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+    else{
+        document.documentElement.setAttribute('data-theme', 'light');
+    }
     return(
         <div className='header'>
             <div className="navbar">
@@ -63,8 +82,10 @@ function NavbarAdmin(){
                             alt='ícone da ferramenta para diminuição do tamanho da fonte'/>
                         </button>
                     </div>
-                    <img className='icon-acessibility' src={contraste_icon} 
-                    alt='ícone da ferramenta para aumento de contraste nas pages'></img>
+                    <button onClick={darkMode}>
+                        <img className='icon-acessibility' src={contraste_icon} 
+                        alt='ícone da ferramenta para aumento de contraste nas pages'></img>
+                    </button>
                 </div>
             </div>
         </div>

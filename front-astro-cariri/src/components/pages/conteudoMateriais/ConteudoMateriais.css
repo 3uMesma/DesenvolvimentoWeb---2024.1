@@ -5,12 +5,11 @@
 .conteudoMateriais-title {
     font-weight: 700;
     font-size: 2.2em;
-    color: var(--cor-preto);
 }
 
 .conteudoMateriais-list {
     width: 70%;
-    background-color: var(--cor-cinza);
+    background-color: var(--cor-secondary-background);
     padding: 80px;
     margin-left: auto;
     margin-right: auto;

@@ -25,19 +25,19 @@ function EditarDadosLogin () {
             <Header/>
 
             <div className="Editar-Dados-Login-Main">
-                <h1>EDITAR DADOS DE LOGIN</h1>
+                <h1 className="Editar-Dados-Login-Main-Title">EDITAR DADOS DE LOGIN</h1>
             </div>
 
             <div className="EditarDados-form">
                 <form>
                     <div className="form-entry">
                         <p className="name-input">Nome de Usuário</p>
-                        <input name="username" className="text-input" type="text"></input>
+                        <input name="username" className="text-input2" type="text"></input>
                     </div>
 
                     <div className="form-entry">
                         <p className="name-input">Email</p>
-                        <input name="email" className="text-input" type="email" placeholder="exemplo@gmail.com"></input>
+                        <input name="email" className="text-input2" type="email" placeholder="exemplo@gmail.com"></input>
                     </div>
 
                     <div className="form-entry">
