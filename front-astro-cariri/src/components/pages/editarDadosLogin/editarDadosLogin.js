@@ -1,5 +1,5 @@
 import "./EditarDadosLogin.css"
-import Header from "../../layout/header/Navbar";
+import Header from "../../layout/header-admin/Navbar";
 import GlobalStyle from "../../../styles/GlobalStyle";
 import closed_eye from "../../../images/invisible.png"
 import opened_eye from "../../../images/visible.png"

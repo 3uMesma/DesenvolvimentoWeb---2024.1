@@ -71,11 +71,11 @@ const HamburgerMenu = () => {
                 </div>
                 <div className="navbar-right">
                     <Link to="/user" className="navbar-text-username">Letícia Vieira</Link>
-                    <img src={user_logo} alt="user logo" className="navbar-icon-user"></img>
+                    <Link to="/user"><img src={user_logo} alt="user logo" className="navbar-icon-user"></img></Link>
                 </div>
             </div>
         </div>
-            <div className='second-navbar' id='second-navbar-hamburguer' style={{backgroundColor: isOpen ? '#A384BC' : '#210140'}}>
+            <div className='second-navbar' id='second-navbar-hamburguer' style={{backgroundColor: isOpen ? '#A384BC' : 'transparent'}}>
                 <div className="navbar-acessibility">
                     <div className='acessibility-fonts'>
                         <button onClick={increaseFontSize}>

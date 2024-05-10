@@ -1,7 +1,8 @@
 import "./SolicitacaoEvento.css"
 import Header from "../../layout/header/Navbar";
+import HamburguerMenu from "../../layout/header-hamburguer/NavbarHamburguer.jsx"
 import GlobalStyle from "../../../styles/GlobalStyle";
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 
 function SolicitacaoEventos(){
     const textAreaRef = useRef(null);
@@ -14,10 +15,28 @@ function SolicitacaoEventos(){
         setTextareaHeight(newHeight);
     }
 
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  
+    useEffect(() => {
+      const handleResize = () => {
+        setWindowWidth(window.innerWidth);
+      };
+  
+      window.addEventListener('resize', handleResize);
+  
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
+
     return(
         <div className="solicitarEvento">
             <GlobalStyle/>
-            <Header/>
+            {windowWidth > 850 ? (
+                <Header/>
+            ) : (
+                <HamburguerMenu/>
+            )}
             <div className="body">
                 <h1 className="solicitarEvento-title">SOLICITAR EVENTO</h1>
                 

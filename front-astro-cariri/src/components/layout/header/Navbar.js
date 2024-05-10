@@ -64,7 +64,7 @@ function Navbar(){
                 </div>
                 <div className="navbar-right">
                     <Link to="/user" className="navbar-text-username">Letícia Vieira</Link>
-                    <img src={user_logo} alt="user logo" className="navbar-icon-user"></img>
+                    <Link to="/user"><img src={user_logo} alt="user logo" className="navbar-icon-user"></img></Link>
                 </div>
             </div>
             <div className='second-navbar'>

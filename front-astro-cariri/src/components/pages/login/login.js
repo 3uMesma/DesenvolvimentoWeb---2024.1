@@ -1,9 +1,10 @@
 import "./login.css"
 import Header from "../../layout/header/Navbar";
+import HamburguerMenu from "../../layout/header-hamburguer/NavbarHamburguer.jsx"
 import GlobalStyle from "../../../styles/GlobalStyle";
 import closed_eye from "../../../images/invisible.png"
 import opened_eye from "../../../images/visible.png"
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 
 function AdminLogin(){
@@ -15,10 +16,27 @@ function AdminLogin(){
         setHidden(!hidden);
     };
 
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleResize = () => {
+          setWindowWidth(window.innerWidth);
+        };
+    
+        window.addEventListener('resize', handleResize);
+    
+        return () => {
+          window.removeEventListener('resize', handleResize);
+        };
+    }, []);
     return(
         <div className="AdminLogin">
             <GlobalStyle/>
-            <Header/>
+            {windowWidth > 850 ? (
+                <Header/>
+            ) : (
+                <HamburguerMenu/>
+            )}
 
             <div className="AdminLogin-Main">
                 <h1 className="AdminLogin-Title">LOGIN</h1>

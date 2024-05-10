@@ -2,6 +2,10 @@ import { styled } from "styled-components";
 
 export const Container = styled.header`
     width: auto;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
 
     .navbar {
         display: flex;
@@ -49,20 +53,11 @@ export const Container = styled.header`
         width: 100vw;
         display: flex;
         flex-direction: column;
-        height: auto;
         font-size: 1em;
         color: var(--cor-preto);
         padding: 1em 1em;
         margin-top: -50px;
         font-weight: 400;
         gap: 10px;
-    }
-
-    .open #second-navbar-hamburguer {
-        background-color: var(--cor-roxo-claro); /* Defina a cor de fundo quando o menu está aberto */
-    }
-
-    .closed #second-navbar-hamburguer {
-        background-color: var(--cor-roxo-escuro); /* Defina a cor de fundo quando o menu está fechado */
     }
 `;

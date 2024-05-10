@@ -80,7 +80,7 @@ h1 {
 }
 
 @media screen and (max-width: 850px){
-    .header-style-home {
-        margin-bottom: 0;
+    .home-main {
+        margin-top: 70px;
     }
 }
