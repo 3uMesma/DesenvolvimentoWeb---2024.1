@@ -40,8 +40,10 @@ function SolicitacaoEventos(){
             <div className="body">
                 <h1 className="solicitarEvento-title">SOLICITAR EVENTO</h1>
                 
+                {/**Formulário para a solicitação de um novo evento */}
                 <div className="solicitarEvento-form">
                     <form>
+                        {/**Dados do evento e do interessado */}
                         <div className="solicitarEvento-form-entry">
                         <p className="title-input">Título da Proposta</p>
                         <input name="titulo" className="input" type="text" placeholder="Título do evento que você propõe"></input>
@@ -62,6 +64,7 @@ function SolicitacaoEventos(){
                         <input name="instituicao" className="input" type="text" placeholder="Nome completo da sua instituição"></input>
                         </div>
 
+                        {/**Select para indicar o tipo do evento */}
                         <div className="solicitarEvento-form-entry">
                         <p className="title-input">Tipo de Evento</p> 
                         <select name="tipo" className="input">
@@ -72,6 +75,7 @@ function SolicitacaoEventos(){
                         </select>
                         </div>
 
+                        {/**Campo de descrição do evento e tratamento da textarea */}
                         <div className="solicitarEvento-form-entry">
                         <p className="title-input">Descrição</p>
                         <textarea required name="descricao" 
@@ -84,6 +88,8 @@ function SolicitacaoEventos(){
 
                         <br></br>
                     </form>
+
+                    {/**Botão de submissão do forms */}
                     <div className="btn-area-solicitar">
                         <button type="submit" id="botaoSolicitar" name="SolicitarEvento">Solicitar</button>
                     </div>
