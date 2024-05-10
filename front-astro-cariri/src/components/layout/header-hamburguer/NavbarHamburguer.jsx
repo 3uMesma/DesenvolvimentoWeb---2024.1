@@ -13,6 +13,9 @@ import solicitar from '../../../images/solicitar.png'
 import materiais from '../../../images/material.png'
 import login from '../../../images/login.png'
 
+import userLogoLoggedOut from '../../../images/user-logo.png';
+import userLogoLoggedIn from '../../../images/user-logo-logado.png';
+
 const HamburgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -54,6 +57,8 @@ const HamburgerMenu = () => {
         document.documentElement.setAttribute('data-theme', 'light');
     }
 
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   return (
     <Container>
         <div className="navbar">
@@ -71,7 +76,9 @@ const HamburgerMenu = () => {
                 </div>
                 <div>
                     <Link to="/user" className="navbar-text-username">Letícia Vieira</Link>
-                    <Link to="/user"><img src={user_logo} alt="user logo" className="navbar-icon-user"></img></Link>
+                    <Link to="/user">
+                        <img src={isLoggedIn ? userLogoLoggedIn : userLogoLoggedOut} alt="user logo" className="navbar-icon-user" />
+                    </Link>
                 </div>
             </div>
         </div>

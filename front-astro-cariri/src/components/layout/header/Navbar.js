@@ -2,10 +2,13 @@ import './Navbar.css'
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import astrocariri_logo from '../../../images/astrocariri-logo.png'
-import user_logo from '../../../images/user-logo.png'
+
 import aumenta_fonte_icon from '../../../images/aumenta-fonte.png'
 import diminui_fonte_icon from '../../../images/diminui-fonte.png'
 import contraste_icon from '../../../images/contraste.png'
+
+import userLogoLoggedOut from '../../../images/user-logo.png';
+import userLogoLoggedIn from '../../../images/user-logo-logado.png';
 
 
 function Navbar(){
@@ -44,6 +47,8 @@ function Navbar(){
         document.documentElement.setAttribute('data-theme', 'light');
     }
 
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
     return(
         <div className='header'>
             <div className="navbar">
@@ -64,7 +69,9 @@ function Navbar(){
                 </div>
                 <div className="navbar-right">
                     <Link to="/user" className="navbar-text-username">Letícia Vieira</Link>
-                    <Link to="/user"><img src={user_logo} alt="user logo" className="navbar-icon-user"></img></Link>
+                    <Link to="/user">
+                        <img src={isLoggedIn ? userLogoLoggedIn : userLogoLoggedOut} alt="user logo" className="navbar-icon-user" />
+                    </Link>
                 </div>
             </div>
             <div className='second-navbar'>

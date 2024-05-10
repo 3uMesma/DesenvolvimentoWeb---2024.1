@@ -5,7 +5,7 @@ import { Container } from "./NavbarHamburguer";
 
 import MenuImage from "../../../images/menu.png";
 import astrocariri_logo from '../../../images/astrocariri-logo.png'
-import user_logo from '../../../images/user-logo.png'
+import user_logo from '../../../images/user-logo-logado.png'
 import aumenta_fonte_icon from '../../../images/aumenta-fonte.png'
 import diminui_fonte_icon from '../../../images/diminui-fonte.png'
 import contraste_icon from '../../../images/contraste.png'

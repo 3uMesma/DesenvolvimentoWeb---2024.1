@@ -2,7 +2,7 @@ import './Navbar.css'
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import astrocariri_logo from '../../../images/astrocariri-logo.png'
-import user_logo from '../../../images/user-logo.png'
+import user_logo from '../../../images/user-logo-logado.png'
 import aumenta_fonte_icon from '../../../images/aumenta-fonte.png'
 import diminui_fonte_icon from '../../../images/diminui-fonte.png'
 import contraste_icon from '../../../images/contraste.png'
