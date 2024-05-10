@@ -7,6 +7,7 @@
 .AdminLogin {
     background-color: var(--cor-main-background);
     margin-top: 100px;
+    padding-bottom: 20vh;
 }
 
 .AdminLogin-Main {
@@ -18,6 +19,7 @@
     font-size: 2.5em;
     padding: 3%;
     padding-bottom: 3vh;
+    padding-top: 20vh;
 }
 
 .Login-form{
