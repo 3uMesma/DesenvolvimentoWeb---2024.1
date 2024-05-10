@@ -79,7 +79,9 @@ function EditarDadosLogin () {
                     </div>
 
                 </form>
-                <button type="submit" id="salvar-mudancas" name="salvar-mudancas">Salvar Mudanças</button>
+                <div className="btn-area-editar-dados">
+                    <button type="submit" id="salvar-mudancas" name="salvar-mudancas">Salvar Mudanças</button>
+                </div>
             </div>
         </div>
 

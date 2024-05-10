@@ -63,7 +63,9 @@ function CadastrarAdmin () {
                     </div>
 
                 </form>
-                <button type="submit" id="fazer-cadastro" name="fazer-cadastro">Fazer Cadastro</button>
+                <div className="btn-area-cadastro">
+                    <button type="submit" id="fazer-cadastro" name="fazer-cadastro">Fazer Cadastro</button>
+                </div>
             </div>
         </div>
 

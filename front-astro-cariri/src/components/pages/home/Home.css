@@ -83,3 +83,20 @@ h1 {
         margin-top: 70px;
     }
 }
+
+@media screen and (max-width: 850px){
+    .home-about {
+        flex-direction: column;
+    }
+
+    .home-about-description {
+        width: 100vw;
+        margin-bottom: 1.5em;
+    }
+
+    .home-about-title {
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+    }
+}

@@ -26,7 +26,7 @@ h1 {
 }
 
 .proposals-container {
-    max-height: 54.2vh;
+    max-height: 53vh;
     overflow-y: scroll;
 }
 
@@ -102,10 +102,4 @@ h1 {
 .home-about-image {
     width: 75%;
     height: 20em;
-}
-
-@media screen and (max-width: 737.60px){
-    .homeAdmin-title {
-        padding: 21.5% 0;
-    }
 }

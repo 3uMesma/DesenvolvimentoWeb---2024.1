@@ -84,7 +84,9 @@ function SolicitacaoEventos(){
 
                         <br></br>
                     </form>
-                    <button type="submit" id="botaoSolicitar" name="SolicitarEvento">Solicitar</button>
+                    <div className="btn-area-solicitar">
+                        <button type="submit" id="botaoSolicitar" name="SolicitarEvento">Solicitar</button>
+                    </div>
                 </div>
             </div>
             <p>    </p>

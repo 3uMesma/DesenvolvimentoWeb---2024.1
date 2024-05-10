@@ -25,12 +25,11 @@
     background-color: var(--cor-nav-footer-text);
     border-radius: 10px;
     font-weight: 500;
-    width: 250px;
-    height: 3.5em;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 30px;
+    padding: 10px;
 }
 
 .link-criar-material {
@@ -72,4 +71,19 @@
 
 .btn-editar-material:hover {
     transform: scale(1.07);
+}
+
+@media screen and (max-width: 720px){
+    .gerenciar-materiais-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btn-area-gerenciar-material {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
 }
