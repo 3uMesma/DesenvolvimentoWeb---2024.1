@@ -1,6 +1,7 @@
 import './Materiais.css'
 import GlobalStyle from '../../../styles/GlobalStyle.js';
-import HeaderAdmin from '../../layout/header-admin/Navbar.js';
+import Header from '../../layout/header-admin/Navbar.js';
+import HamburguerMenu from "../../layout/header-admin-hamburguer/NavbarHamburguer.jsx"
 
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
@@ -11,10 +12,27 @@ import editIcon from "../../../images/edit.png"
 import criarIcon from "../../../images/btn-criar.png"
 
 function GerenciaMateriais(){
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  
+    useEffect(() => {
+      const handleResize = () => {
+        setWindowWidth(window.innerWidth);
+      };
+  
+      window.addEventListener('resize', handleResize);
+  
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
     return(
         <div className='gerenciar-materiais'>
             <GlobalStyle/>
-            <HeaderAdmin/>
+            {windowWidth > 850 ? (
+                <Header/>
+            ) : (
+                <HamburguerMenu/>
+            )}
             <div className='body'>
                 <h1 className='gerenciar-materiais-title'>MATERIAIS</h1>
                 <div className='gerenciar-materiais-list'>

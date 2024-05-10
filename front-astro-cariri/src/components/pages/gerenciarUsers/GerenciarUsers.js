@@ -1,11 +1,12 @@
 import './GerenciarUsers.css'
 import GlobalStyle from '../../../styles/GlobalStyle.js';
 import Header from '../../layout/header-admin/Navbar.js';
+import HamburguerMenu from "../../layout/header-admin-hamburguer/NavbarHamburguer.jsx"
 import deleteIcon from '../../../images/Delete.png';
 import polygon1_forward from '../../../images/polygon1.png'
 import polygon1_backward from '../../../images/polygon1_upwards.png'
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import users from "../../data/users.json";
 
 function GerenciarUsers(){
@@ -26,10 +27,28 @@ function GerenciarUsers(){
             setStartIndex(prevIndex);
         }
     };
+
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  
+    useEffect(() => {
+      const handleResize = () => {
+        setWindowWidth(window.innerWidth);
+      };
+  
+      window.addEventListener('resize', handleResize);
+  
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
     return(
         <div className='gerenciar-users'>
             <GlobalStyle/>
-            <Header/>
+            {windowWidth > 850 ? (
+                <Header/>
+            ) : (
+                <HamburguerMenu/>
+            )}
             <h1 className='gerenciarUsers-title'>GERENCIAR USUÁRIOS</h1>
             <div className='gerenciarUsers-list'>
                 <ul>

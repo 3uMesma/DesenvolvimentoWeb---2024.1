@@ -1,7 +1,8 @@
 import "./CriarMaterial.css"
 import Header from "../../layout/header-admin/Navbar";
+import HamburguerMenu from "../../layout/header-admin-hamburguer/NavbarHamburguer.jsx"
 import GlobalStyle from "../../../styles/GlobalStyle";
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 
 function CriarMaterial(){
     const textAreaRef = useRef(null);
@@ -27,10 +28,28 @@ function CriarMaterial(){
         console.log('Arquivo selecionado:', file);
     };
 
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  
+    useEffect(() => {
+      const handleResize = () => {
+        setWindowWidth(window.innerWidth);
+      };
+  
+      window.addEventListener('resize', handleResize);
+  
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
+
     return(
         <div className="criarMaterial">
             <GlobalStyle/>
-            <Header/>
+            {windowWidth > 850 ? (
+                <Header/>
+            ) : (
+                <HamburguerMenu/>
+            )}
             <div className="body" id="body-criar">
                 <h1 className="criarMaterial-title">CRIAÇÃO DE MATERIAL</h1>
                 <div className="criarMaterial-form">

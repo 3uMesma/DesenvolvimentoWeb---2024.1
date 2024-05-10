@@ -1,9 +1,10 @@
 import "./EditarDadosLogin.css"
 import Header from "../../layout/header-admin/Navbar";
+import HamburguerMenu from "../../layout/header-admin-hamburguer/NavbarHamburguer.jsx"
 import GlobalStyle from "../../../styles/GlobalStyle";
 import closed_eye from "../../../images/invisible.png"
 import opened_eye from "../../../images/visible.png"
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 function EditarDadosLogin () {
     const [hidden2, setHidden2] = useState(true);
@@ -18,12 +19,29 @@ function EditarDadosLogin () {
     const toggleShow3 = () => {
         setHidden3(!hidden3);
     };
+
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  
+    useEffect(() => {
+      const handleResize = () => {
+        setWindowWidth(window.innerWidth);
+      };
+  
+      window.addEventListener('resize', handleResize);
+  
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
     return (
 
         <div className="EditarDadosLogin">
             <GlobalStyle/>
-            <Header/>
-
+            {windowWidth > 850 ? (
+                <Header/>
+            ) : (
+                <HamburguerMenu/>
+            )}
             <div className="Editar-Dados-Login-Main">
                 <h1 className="Editar-Dados-Login-Main-Title">EDITAR DADOS DE LOGIN</h1>
             </div>

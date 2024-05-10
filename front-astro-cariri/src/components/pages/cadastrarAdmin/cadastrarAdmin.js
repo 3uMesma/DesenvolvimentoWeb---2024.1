@@ -1,9 +1,10 @@
 import "./CadastrarAdmin.css"
 import Header from "../../layout/header-admin/Navbar";
+import HamburguerMenu from "../../layout/header-admin-hamburguer/NavbarHamburguer.jsx"
 import GlobalStyle from "../../../styles/GlobalStyle";
 import closed_eye from "../../../images/invisible.png"
 import opened_eye from "../../../images/visible.png"
-import React, { useRef, useState } from 'react';
+import React, {useState, useEffect} from 'react';
 
 function CadastrarAdmin () {
     const [hidden, setHidden] = useState(true);
@@ -12,10 +13,28 @@ function CadastrarAdmin () {
     const toggleShow = () => {
         setHidden(!hidden);
     };
+
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  
+    useEffect(() => {
+      const handleResize = () => {
+        setWindowWidth(window.innerWidth);
+      };
+  
+      window.addEventListener('resize', handleResize);
+  
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
     return (
         <div className="CadastrarAdmin">
             <GlobalStyle/>
-            <Header/>
+            {windowWidth > 850 ? (
+                <Header/>
+            ) : (
+                <HamburguerMenu/>
+            )}
 
             <div className="CadastrarAdmin-Main">
                 <h1 className="CadastrarAdmin-Title">CADASTRO</h1>

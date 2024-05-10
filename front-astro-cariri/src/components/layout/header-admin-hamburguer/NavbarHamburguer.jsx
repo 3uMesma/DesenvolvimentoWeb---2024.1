@@ -9,9 +9,10 @@ import user_logo from '../../../images/user-logo.png'
 import aumenta_fonte_icon from '../../../images/aumenta-fonte.png'
 import diminui_fonte_icon from '../../../images/diminui-fonte.png'
 import contraste_icon from '../../../images/contraste.png'
-import solicitar from '../../../images/solicitar.png'
-import materiais from '../../../images/material.png'
-import login from '../../../images/login.png'
+import add_user from '../../../images/add-user.png'
+import home from '../../../images/home-admin.png'
+import material from '../../../images/material.png'
+import mng_user from '../../../images/manage-users.png'
 
 const HamburgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -96,22 +97,28 @@ const HamburgerMenu = () => {
         <div className="drop-down">
                 {isOpen && (
                     <ul className="lista-menu">
-                        <a href="/materiais">
+                        <a href="/admin/home">
                             <li className="li-item-hamburguer">
-                                <img src={materiais} className="img-item-hamburguer"/>
-                                <p className="lista-title-hamburguer">Materiais</p>
+                                <img src={home} className="img-item-hamburguer"/>
+                                <p className="lista-title-hamburguer">Home Admin</p>
                             </li>
                         </a>
-                        <a href="/solicitacao-evento">
+                        <a href="/material/gerenciar">
                             <li className="li-item-hamburguer">
-                                <img src={solicitar} className="img-item-hamburguer"/>
-                                <p className="lista-title-hamburguer">Solicite Evento</p>
+                                <img src={material} className="img-item-hamburguer"/>
+                                <p className="lista-title-hamburguer">Gerenciar Material</p>
                             </li>
                         </a>
-                        <a href="/login">
+                        <a href="/admin/cadastrar">
                             <li className="li-item-hamburguer">
-                                <img src={login} className="img-item-hamburguer"/>
-                                <p className="lista-title-hamburguer">Login</p>
+                                <img src={add_user} className="img-item-hamburguer"/>
+                                <p className="lista-title-hamburguer">Adicionar Admin</p>
+                            </li>
+                        </a>
+                        <a href="/gerenciar-users">
+                            <li className="li-item-hamburguer">
+                                <img src={mng_user} className="img-item-hamburguer"/>
+                                <p className="lista-title-hamburguer">Gerenciar Admins</p>
                             </li>
                         </a>
                     </ul>

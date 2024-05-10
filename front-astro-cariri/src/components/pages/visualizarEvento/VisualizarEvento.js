@@ -1,5 +1,6 @@
 import "./VisualizarEvento.css"
 import Header from "../../layout/header/Navbar";
+import HamburguerMenu from "../../layout/header-admin-hamburguer/NavbarHamburguer.jsx"
 import GlobalStyle from "../../../styles/GlobalStyle";
 
 import { Link } from "react-router-dom";
@@ -7,10 +8,27 @@ import React, { useState, useEffect } from 'react';
 import eventos from "../../data/eventos.json"
 
 function VisualizarEvento(){
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  
+    useEffect(() => {
+      const handleResize = () => {
+        setWindowWidth(window.innerWidth);
+      };
+  
+      window.addEventListener('resize', handleResize);
+  
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
     return(
         <div className="visualizarEvento">
             <GlobalStyle/>
-            <Header/>
+            {windowWidth > 850 ? (
+                <Header/>
+            ) : (
+                <HamburguerMenu/>
+            )}
             <div className='body'>
                 <h1 className="visualizarEvento-title">VISUALIZAR EVENTO</h1>
             
