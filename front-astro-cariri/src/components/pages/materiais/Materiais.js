@@ -7,6 +7,11 @@ import React, {useState, useEffect} from 'react';
 import { Link } from "react-router-dom";
 import { fakeMateriais } from "../../data/materiais.jsx"
 
+/*
+Retorna o código HTML da página que contém os materiais disponíveis no site. 
+Os títulos de cada um são listados em ordem de inclusão no site.
+Usa os dados dos materiais contidos no arquivo "materiais.jsx", da pasta data.
+*/
 function Materiais(){
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   

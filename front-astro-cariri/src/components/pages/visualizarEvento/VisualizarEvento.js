@@ -1,5 +1,5 @@
 import "./VisualizarEvento.css"
-import Header from "../../layout/header/Navbar";
+import Header from '../../layout/header-admin/Navbar.js';
 import HamburguerMenu from "../../layout/header-admin-hamburguer/NavbarHamburguer.jsx"
 import GlobalStyle from "../../../styles/GlobalStyle";
 
@@ -7,6 +7,10 @@ import { Link } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
 import eventos from "../../data/eventos.json"
 
+/*
+Retorna o código HTML da página que contém as informações especificas de um evento. 
+Usa os dados do evento contidos no arquivo "eventos.json", da pasta data.
+*/
 function VisualizarEvento(){
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   

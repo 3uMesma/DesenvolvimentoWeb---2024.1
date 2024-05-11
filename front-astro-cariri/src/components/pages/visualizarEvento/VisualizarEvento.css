@@ -11,6 +11,7 @@ p {
     font-size: 1.5em;
 }
 
+/* Engloba toda a página */
 .visualizarEvento {
     align-items: center;
     text-align: center;
@@ -18,6 +19,7 @@ p {
     background-color: var(--cor-branco);
 }
 
+/* Engloba apenas o título principal */
 .visualizarEvento-title {
     background-color: var(--cor-branco);
     align-items: center;
@@ -28,6 +30,7 @@ p {
     padding: 3%;
 }
 
+/* Engloba todos os campos de informação sobre o evento */
 .visualizarEvento-infos {
     align-items: left;
     text-align: left;
@@ -37,16 +40,19 @@ p {
     margin: 3% 15% 5%;
 }
 
+/* Engloba cada campo de informação sobre o evento */
 .visualizarEvento-infos-entry {
     padding: 1% 10%;
 }
 
+/* Engloba o nome de cada campo */
 .visualizarEvento-infos-entry-name {
     font-weight: 600;
     text-indent: 0%;
     padding: 1% 0%;
 }
 
+/* Engloba o valor de cada campo (sempre um campo de texto) */
 .visualizarEvento-infos-entry-value {
     font-size: 1.2em;
     height: auto;

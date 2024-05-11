@@ -1,3 +1,4 @@
+/* Engloba o título da página */
 .materiais-title {
     text-align: center;
     font-weight: 900;
@@ -6,6 +7,7 @@
     color: var(--cor-titulo);
 }
 
+/* Engloba todos os títulos de material */
 .materiais-list {
     width: 70%;
     background-color: var(--cor-secondary-background);
@@ -15,6 +17,7 @@
     margin-bottom: 100px;
 }
 
+/* Engloba um título de material */
 .materiais-item {
     background-color: var(--cor-item-background);
     border-style: solid;
