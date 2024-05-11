@@ -11,8 +11,8 @@ import users from "../../data/users.json";
 
 function GerenciarUsers(){
     // const user = users[0];
-    const usersPerPage = 5; // Number of users to display per page
-    const [startIndex, setStartIndex] = useState(0); // Index of the first user to display
+    const usersPerPage = 10; // Usuários por página
+    const [startIndex, setStartIndex] = useState(0); 
 
     const nextPage = () => {
         const nextIndex = startIndex + usersPerPage;

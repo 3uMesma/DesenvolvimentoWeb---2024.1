@@ -59,11 +59,13 @@ function AdminLogin(){
                         </div>
                     </div>
                 </form>
-                <button type="submit" id="fazer-login" name="fazer-login">
-                    <Link to="/admin/home">
-                        Fazer Login
-                    </Link>
-                </button>
+                <div className="btn-area-login">
+                    <button type="submit" id="fazer-login" name="fazer-login">
+                        <Link to="/admin/home">
+                            Fazer Login
+                        </Link>
+                    </button>
+                </div>
             </div>
         </div>
         

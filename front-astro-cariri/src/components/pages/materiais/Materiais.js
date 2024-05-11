@@ -13,6 +13,23 @@ Os títulos de cada um são listados em ordem de inclusão no site.
 Usa os dados dos materiais contidos no arquivo "materiais.jsx", da pasta data.
 */
 function Materiais(){
+    const materialsPerPage = 10; // Materiais por página
+    const [startIndex, setStartIndex] = useState(0); 
+
+    const nextPage = () => {
+        const nextIndex = startIndex + materialsPerPage;
+        if (nextIndex < fakeMateriais.length) {
+            setStartIndex(nextIndex);
+        }
+    };
+
+    const prevPage = () => {
+        const prevIndex = startIndex - materialsPerPage;
+        if (prevIndex >= 0) {
+            setStartIndex(prevIndex);
+        }
+    };
+
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   
     useEffect(() => {

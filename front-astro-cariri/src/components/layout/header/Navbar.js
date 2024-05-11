@@ -47,12 +47,12 @@ function Navbar(){
         document.documentElement.setAttribute('data-theme', 'light');
     }
 
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(true);
 
     return(
         <div className='header'>
-            <div className="navbar">
-                <div className="navbar-left">
+            <div className="navbar-header">
+                <div className="navbar-left-header">
                     <Link to="/" className="navbar-link">
                     <img src={astrocariri_logo} alt="astrocariri logo" className="navbar-icon-main"></img>
                     </Link>
@@ -67,8 +67,10 @@ function Navbar(){
                     <div className='navbar-pipe'>|</div>
                     <Link to="/login" className="navbar-text-">LOGIN</Link>
                 </div>
-                <div className="navbar-right">
-                    <Link to="/user" className="navbar-text-username">Letícia Vieira</Link>
+                <div className="navbar-right-header">
+                    {isLoggedIn && (
+                        <Link to="/user" className="navbar-text-username">Letícia Vieira</Link>
+                    )}
                     <Link to="/user">
                         <img src={isLoggedIn ? userLogoLoggedIn : userLogoLoggedOut} alt="user logo" className="navbar-icon-user" />
                     </Link>

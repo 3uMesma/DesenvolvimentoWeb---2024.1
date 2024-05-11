@@ -75,7 +75,9 @@ const HamburgerMenu = () => {
                     </Link>
                 </div>
                 <div>
-                    <Link to="/user" className="navbar-text-username">Letícia Vieira</Link>
+                    {isLoggedIn && (
+                        <Link to="/user" className="navbar-text-username">Letícia Vieira</Link>
+                    )}
                     <Link to="/user">
                         <img src={isLoggedIn ? userLogoLoggedIn : userLogoLoggedOut} alt="user logo" className="navbar-icon-user" />
                     </Link>

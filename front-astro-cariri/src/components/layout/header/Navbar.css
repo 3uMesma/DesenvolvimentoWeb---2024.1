@@ -5,19 +5,18 @@
     z-index: 2;
 }
 
-.navbar {
+.navbar-header {
     background-color: var(--cor-navbar);
     color: var(--cor-nav-footer-text);
     display: flex;
     text-align: center;
     height: 12vh;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
-.navbar-left {
+.navbar-left-header {
     display:flex;
     align-items: center;
-    padding: 0 5vw 0 5vw;
 }
 
 .navbar-mid {
@@ -26,12 +25,11 @@
     justify-content: center;
 }
 
-.navbar-right {
+.navbar-right-header {
     display:flex;
     align-items: center;
     text-align: center;
     justify-content: right;
-    padding: 0 5vw 0 5vw;
 }
 
 .navbar-title {

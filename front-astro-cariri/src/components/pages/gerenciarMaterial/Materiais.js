@@ -12,6 +12,23 @@ import editIcon from "../../../images/edit.png"
 import criarIcon from "../../../images/btn-criar.png"
 
 function GerenciaMateriais(){
+    const materialsPerPage = 10; // Materiais por página
+    const [startIndex, setStartIndex] = useState(0); 
+
+    const nextPage = () => {
+        const nextIndex = startIndex + materialsPerPage;
+        if (nextIndex < fakeMateriais.length) {
+            setStartIndex(nextIndex);
+        }
+    };
+
+    const prevPage = () => {
+        const prevIndex = startIndex - materialsPerPage;
+        if (prevIndex >= 0) {
+            setStartIndex(prevIndex);
+        }
+    };
+    
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   
     useEffect(() => {

@@ -1,13 +1,13 @@
 .AdminLogin-Title {
-    margin:0;
+    margin: 0;
     color: var(--cor-titulo);
     font-size: 1em;
+    padding: 0;
 }
 
 .AdminLogin {
     background-color: var(--cor-main-background);
-    margin-top: 100px;
-    padding-bottom: 20vh;
+    max-height: 100vh;
 }
 
 .AdminLogin-Main {
@@ -17,9 +17,8 @@
     justify-content: center;
     font-weight: 900;
     font-size: 2.5em;
-    padding: 3%;
-    padding-bottom: 3vh;
-    padding-top: 20vh;
+    padding-top: 150px;
+    padding-bottom: 0.5em;
 }
 
 .Login-form{
@@ -29,7 +28,7 @@
     background-color: var(--cor-secondary-background);
     margin-right: 15%;
     margin-left: 15%;
-    margin-bottom: 4vh;
+    margin-bottom: 47px;
 }
 
 #fazer-login {
@@ -39,13 +38,10 @@
     justify-content: center;
     background-color: var(--cor-roxo);
     color: var(--cor-amarelo);
-    margin-top: 3%;
-    margin-bottom: 3%;
-    margin-left: 37.5%;
-    margin-right: 37.5%;
     font-size: 1.5em;
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.05);
     border-radius: 0.5rem;
+    padding: 10px;
 }
 
 #fazer-login:hover {
@@ -63,11 +59,11 @@ p {
     padding: 1% 10%;
 }
 
-.text-input2 {
+.text-input2-login {
     text-indent: 0.5rem;
     font-size: 1.2em;
     height: 2.2em;
-    width: 100%;
+    width: 80%;
     border-width: 1px;
     border-style: solid;
     border-color: var(--cor-preto);
@@ -106,4 +102,10 @@ p {
 
 #img-botao {
     width: 25px;
+}
+
+.btn-area-login {
+    display: flex;
+    justify-content: center;
+    padding: 0.5em;
 }
