@@ -1,0 +1,89 @@
+.gerenciar-materiais-title {
+    text-align: center;
+    font-weight: 900;
+    font-size: 2.5em;
+    padding: 3%;
+    color: var(--cor-titulo);
+}
+
+.gerenciar-materiais-list {
+    width: 70%;
+    background-color: var(--cor-secondary-background);
+    padding: 80px;
+    padding-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+}
+
+.area-btn-criar-material {
+    display: flex;
+    justify-content: right;
+}
+
+.btn-criar-material {
+    background-color: var(--cor-nav-footer-text);
+    border-radius: 10px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    padding: 10px;
+}
+
+.link-criar-material {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.p-criar-gerenciar-material {
+    padding: 0;
+    margin-right: 30px;
+}
+
+.icon-criar-material {
+    width: 35px;
+    height: 35px;
+}
+
+.gerenciar-materiais-item {
+    background-color: var(--cor-item-background);
+    border-style: solid;
+    border-color: var(--cor-preto);
+    border-width: 1px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+.icon-excluir-material, .icon-editar-material {
+    width: 45px;
+    height: 45px;
+}
+
+.btn-excluir-material:hover {
+    transform: scale(1.07);
+}
+
+.btn-editar-material:hover {
+    transform: scale(1.07);
+}
+
+@media screen and (max-width: 720px){
+    .gerenciar-materiais-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btn-area-gerenciar-material {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+}

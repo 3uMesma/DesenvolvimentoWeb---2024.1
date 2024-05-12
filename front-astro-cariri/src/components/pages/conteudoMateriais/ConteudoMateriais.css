@@ -1,0 +1,48 @@
+.body {
+    padding-top: 150px;
+}
+
+.conteudoMateriais-title {
+    font-weight: 700;
+    font-size: 2.2em;
+}
+
+.conteudoMateriais-list {
+    width: 70%;
+    background-color: var(--cor-secondary-background);
+    padding: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+}
+
+.conteudoMateriais-conteudo {
+    display: flex;
+    justify-content: left;
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.conteudoMateriais-text {
+    display: flex;
+    font-weight: 400;
+    margin: 0.8em 0;
+    padding: 0;
+    font-size: 0.8em;
+    text-align: justify;
+}
+
+.conteudoMateriais-image {
+    width: 100%;
+    max-width: 100%;
+}
+
+.material-legenda {
+    font-size: 0.6em;
+    padding: 0;
+}

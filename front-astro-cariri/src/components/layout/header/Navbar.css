@@ -1,0 +1,125 @@
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.navbar-header {
+    background-color: var(--cor-navbar);
+    color: var(--cor-nav-footer-text);
+    display: flex;
+    text-align: center;
+    height: 12vh;
+    justify-content: space-around;
+}
+
+.navbar-left-header {
+    display:flex;
+    align-items: center;
+}
+
+.navbar-mid {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-right-header {
+    display:flex;
+    align-items: center;
+    text-align: center;
+    justify-content: right;
+}
+
+.navbar-title {
+    color: var(--cor-nav-footer-text);
+    padding: 5px;
+    font-size: 1.8em;
+    font-weight: 600;
+}
+
+.navbar-title:hover {
+    color: var(--cor-main-background);
+    transition: scale(1.03);
+}
+
+.navbar-text- {
+    color: var(--cor-nav-footer-text);
+    font-size: 1.5em;
+    font-weight: 400;
+    padding: 0 0.5em;
+}
+
+.navbar-text-:hover {
+    color: var(--cor-main-background);
+    transform: scale(1.02); 
+    transition: 0.5s;
+}
+
+.navbar-text-username {
+    color: var(--cor-nav-footer-text);
+    font-size: 1.2em;
+    font-weight: 400;
+    padding: 10px;
+}
+
+.navbar-text-username:hover {
+    color: var(--cor-main-background);
+    transition: scale(1.03);
+}
+
+.navbar-pipe {
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.navbar-icon-main {
+    height: 45px;
+    width: 45px;
+}
+
+.navbar-icon-user {
+    height: 45px;
+    width: 45px;
+}
+
+.second-navbar {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navbar-acessibility {
+    background-color: var(--cor-nav-footer-text);
+    display: flex;
+    justify-content: space-between;
+    width: 275px;
+    padding: 1vh 1vw;
+}
+
+button {
+    background-color: transparent;
+}
+
+button:hover {
+    transform: scale(1.1); 
+    transition: 1s;
+}
+
+.icon-acessibility {
+    width: 35px;
+    height: 35px;
+    background-color: transparent;
+}
+
+@media screen and (max-width: 970px){
+    .navbar-title {
+        display: none;
+    }
+
+    .navbar-text-username {
+        display: none;
+    }
+}

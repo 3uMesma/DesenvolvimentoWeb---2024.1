@@ -1,0 +1,123 @@
+h1 {
+    margin:0;
+    font-size: 1em;
+}
+
+p {
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 3%;
+    font-size: 1.5em;
+}
+
+.solicitarEvento {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background-color: var(--cor-main-background);
+}
+
+.solicitarEvento-title {
+    color: var(--cor-titulo);
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 2.5em;
+    padding: 3%;
+}
+
+.solicitarEvento-form {
+    align-items: left;
+    text-align: left;
+    justify-content: left;
+    background-color: var(--cor-secondary-background);
+    padding: 3% 0%;
+    margin: 3% 15% 5%;
+}
+
+.solicitarEvento-form-entry {
+    padding: 1% 10%;
+}
+
+.title-input {
+    font-weight: 600;
+    text-indent: 0%;
+    padding: 1% 0%;
+}
+
+input.text-input {
+    font-size: 1.2em;
+    height: auto;
+    width: 100%;
+    padding: 1% 2%;
+    background-color: white;
+    margin: 0%;
+
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--cor-preto);
+    border-radius: 0.5rem;
+
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.05);
+}
+
+.input {
+    font-size: 1.2em;
+    height: auto;
+    width: 100%;
+    padding: 1% 2%;
+    background-color: white;
+    margin: 0%;
+    text-indent: 0%;
+    
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--cor-preto);
+    background-color: var(--cor-item-background);
+    border-radius: 0.5rem;
+
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.05);
+}
+
+.descricao-input {
+    font-size: 1.2em;
+    resize: none;
+    height: 7rem;
+    width: 100%;
+    padding: 1% 2%;
+    background-color: white;
+    margin: 0%;
+
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--cor-preto);
+    background-color: var(--cor-item-background);
+    border-radius: 0.5rem;
+    
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.05);
+}
+
+#botaoSolicitar {
+    border-style: solid;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background-color: var(--cor-roxo);
+    color: var(--cor-amarelo);
+    font-size: 1.5em;
+    padding: 0.3em;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.05);
+    border-radius: 0.5rem;
+    font-weight: 600;
+}
+
+#botaoSolicitar:hover {
+    color: var(--cor-main-background);
+    transform: scale(1.05);
+}
+
+.btn-area-solicitar {
+    display: flex;
+    justify-content: center;
+}

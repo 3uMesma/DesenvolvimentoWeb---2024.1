@@ -1,0 +1,111 @@
+.AdminLogin-Title {
+    margin: 0;
+    color: var(--cor-titulo);
+    font-size: 1em;
+    padding: 0;
+}
+
+.AdminLogin {
+    background-color: var(--cor-main-background);
+    max-height: 100vh;
+}
+
+.AdminLogin-Main {
+    background-color: var(--cor-main-background);
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 2.5em;
+    padding-top: 150px;
+    padding-bottom: 0.5em;
+}
+
+.Login-form{
+    align-items: left;
+    text-align: left;
+    justify-content: left;
+    background-color: var(--cor-secondary-background);
+    margin-right: 15%;
+    margin-left: 15%;
+    margin-bottom: 47px;
+}
+
+#fazer-login {
+    border-style: solid;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background-color: var(--cor-roxo);
+    color: var(--cor-amarelo);
+    font-size: 1.5em;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.05);
+    border-radius: 0.5rem;
+    padding: 10px;
+}
+
+#fazer-login:hover {
+    color: var(--cor-branco);
+    transform: scale(1.05);
+    transition: 0.5s;
+}
+
+p {
+    padding-top: 3%;
+    font-size: 1.5em;
+}
+
+.form-entry {
+    padding: 1% 10%;
+}
+
+.text-input2-login {
+    text-indent: 0.5rem;
+    font-size: 1.2em;
+    height: 2.2em;
+    width: 80%;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--cor-preto);
+    background-color: var(--cor-item-background);
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.05);
+}
+
+#password-id {
+    display: inline;
+    text-indent: 0.5rem;
+    font-size: 1.2em;
+    height: 2.2em;
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--cor-preto);
+    background-color: var(--cor-item-background);
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.05);
+}
+
+.name-input {
+    font-weight: 500;
+    margin-bottom: 0.3em;
+}
+
+#botao-senha {
+    border-style: solid;
+    align-items: end;
+    text-align: end;
+    justify-content: end;
+    width: 5%;
+    border-radius: 0.5rem;
+}
+
+#img-botao {
+    width: 25px;
+}
+
+.btn-area-login {
+    display: flex;
+    justify-content: center;
+    padding: 0.5em;
+}

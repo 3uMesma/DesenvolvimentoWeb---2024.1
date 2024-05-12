@@ -1,0 +1,105 @@
+.homeAdmin {
+    background-color: #000000;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding-top: 70px;
+}
+
+.home-admin-body {
+    background-image: url("../../../images/astrocariri-home-background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+}
+
+.header-style {
+    background-color: var(--cor-branco);
+}
+
+h1 {
+    margin: 0;
+}
+
+.proposals-container {
+    max-height: 53vh;
+    overflow-y: scroll;
+}
+
+.homeAdmin-title {
+    font-weight: 900;
+    font-size: 1.5em;
+    color: var(--cor-amarelo);
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin: 80px 2em 1em 2em;
+    justify-content: left;
+}
+
+.homeAdmin-proposals {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 8vw;
+    margin-bottom: 5vh;
+    gap: 3vw;
+    justify-content: center;
+}
+
+.homeAdmin-proposals-proposal {
+    text-align: left;
+    width: 350px; 
+    background-color: rgb(217, 217, 217);
+    padding: 2%;
+    height: auto;
+}
+
+.homeAdmin-proposals-proposal:hover {
+    transform: scale(1.03);
+}
+
+.homeAdmin-proposal-title {
+    font-weight: 900;
+    font-size: 1.5em;
+    color: var(--cor-roxo);
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.home-about {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 10vh 0;
+    background-color: var(--cor-branco);
+}
+
+.home-about-left {
+    width: 45%;
+}
+
+.home-about-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-about-title {
+    font-weight: 900;
+    font-size: 2em;
+    padding: 0 1em 1em 1em;
+
+}
+
+.home-about-description {
+    font-weight: 400;
+    font-size: 1.5em;
+    padding: 0 1.2em;
+}
+
+.home-about-image {
+    width: 75%;
+    height: 20em;
+}

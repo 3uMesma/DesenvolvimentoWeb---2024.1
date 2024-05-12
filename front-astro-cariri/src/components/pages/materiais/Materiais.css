@@ -1,0 +1,30 @@
+/* Engloba o título da página */
+.materiais-title {
+    text-align: center;
+    font-weight: 900;
+    font-size: 2.5em;
+    padding: 3%;
+    color: var(--cor-titulo);
+}
+
+/* Engloba todos os títulos de material */
+.materiais-list {
+    width: 70%;
+    background-color: var(--cor-secondary-background);
+    padding: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+}
+
+/* Engloba um título de material */
+.materiais-item {
+    background-color: var(--cor-item-background);
+    border-style: solid;
+    border-width: 1px;
+    padding: 20px;
+    display: flex;
+    justify-content: left;
+    font-size: 1.5em;
+    font-weight: 400;
+}

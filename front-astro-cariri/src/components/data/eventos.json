@@ -1,0 +1,38 @@
+[
+    {
+      "titulo": "Palestra sobre telescópios na escola X",
+      "nome-interessado": "Professora Fulana",
+      "contato": "fulana@escolax.br",
+      "instituicao": "Escola X",
+      "tipo": "Palestra",
+      "descricao": "Evento para Fundamental II.",
+      "data": "XX/XX/XX"
+    },
+    {
+      "titulo": "Palestra sobre mulheres na astronomia na escola Y",
+      "nome-interessado": "Professor Ciclano",
+      "contato": "ciclano@escolay.br",
+      "instituicao": "Escola Y",
+      "tipo": "Palestra",
+      "descricao": "Gostaria de usar Scratch.",
+      "data": "XX/XX/XX"
+    },
+    {
+      "titulo": "Palestra sobre telescópios na escola Z",
+      "nome-interessado": "Professora Fulana",
+      "contato": "fulana@escolax.br",
+      "instituicao": "Escola Z",
+      "tipo": "Palestra",
+      "descricao": "Escola pública",
+      "data": "XX/XX/XX"
+    },
+    {
+      "titulo": "Palestra sobre mulheres na astronomia na escola K",
+      "nome-interessado": "Professor Ciclano",
+      "contato": "ciclano@escolay.br",
+      "instituicao": "Escola K",
+      "tipo": "Palestra",
+      "descricao": "Disponibilizaremos materiais",
+      "data": "XX/XX/XX"
+    }
+]
