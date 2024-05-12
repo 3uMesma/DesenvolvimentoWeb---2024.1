@@ -18,7 +18,7 @@ function Navbar(){
 
     // Função para aumentar a fonte
     const increaseFontSize = () => {
-        setFontSize(prevFontSize => prevFontSize + 2); // Aumenta o tamanho da fonte em 2px
+        setFontSize(prevFontSize => Math.min(prevFontSize + 2, 22)); // Aumenta o tamanho da fonte em 2px
     };
 
     // Função para diminuir a fonte

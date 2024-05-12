@@ -28,3 +28,14 @@
     font-size: 1.5em;
     font-weight: 400;
 }
+
+@media screen and (max-width: 520px){
+    .materiais-list{
+        background-color: transparent;
+        width: 100%;
+    }
+
+    .materiais-item {
+        background-color: var(--cor-secondary-background);
+    }
+}
