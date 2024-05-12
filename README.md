@@ -30,3 +30,13 @@ Sobre os commits, quando forem subir mudanças, usem o padrão:
 - Refactor: Usado para refatorar o código, ou seja, reestruturar o código sem alterar sua funcionalidade externa.
 - Docs: Usado para atualizar a documentação do projeto.
 - Chore: Usado para commits relacionados à manutenção do projeto que não se encaixam em nenhuma outra categoria.
+
+## Instruções para configuração e instalação do ambiente
+O front do site já esté hospedado no Vercel, no link desenvolvimento-web-2024-1-y38t.vercel.app . Mas, caso queira rodar na máquina e ver o site em localhost, seguie o tutorial:
+- Clone o projeto
+- Como a branch main está atualizada com as mudanças do front, não é necessário mexer nas outras branchs fora a main
+- Vá para a pasta front-astro-cariri
+- Dê um 
+`npm i` 
+para instalar o npm e suas dependências
+- escreva o código `npm run start`
