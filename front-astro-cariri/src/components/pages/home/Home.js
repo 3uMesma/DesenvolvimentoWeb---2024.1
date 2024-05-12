@@ -7,9 +7,10 @@ import { fakeHome } from '../../data/home.jsx';
 import React, {useState, useEffect} from 'react';
 
 function Home(props){
-    const home = fakeHome[0];
+    const home = fakeHome[0]; // As informações da home, imagem, texto estão sendo chamadas por um JSON
 
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth); 
+    // Função para eu saber o tamanho da tela para chamar o menu hamburguer, esss parte e o useffect abaixo são chamados em todas as outras pages
   
     useEffect(() => {
       const handleResize = () => {
@@ -24,14 +25,16 @@ function Home(props){
     }, []);
     return(
         <div className='home'>
-            <GlobalStyle/>
-            <div className='header-style-home'>
+            <GlobalStyle/> 
+            {/* chamando o global style no começo de cada página para padronizar o projeto */}
+            <div className='header-style-home'> 
                 {windowWidth > 850 ? (
                     <Header/>
                 ) : (
                     <HamburguerMenu/>
                 )}
             </div>
+            {/* defini 850 para virar hamburguer pq é o tamanho limite o qual o header ainda fica legal */}
             <div className='home-main'>
                 <h1 className='home-main-title'>{home.citacao}</h1>
             </div>

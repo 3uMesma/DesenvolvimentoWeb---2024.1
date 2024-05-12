@@ -4,7 +4,7 @@ import HamburguerMenu from "../../layout/header-admin-hamburguer/NavbarHamburgue
 import GlobalStyle from "../../../styles/GlobalStyle";
 import React, { useRef, useState, useEffect } from 'react';
 
-import { fakeConteudo } from "../../data/conteudo.jsx"
+import { fakeMateriais } from "../../data/materiais.jsx"
 
 function EditarMaterial(){
     const textAreaRef = useRef(null);
@@ -16,6 +16,8 @@ function EditarMaterial(){
         const newHeight = Math.max(scrollHeight, 32); // Altura mínima
         setTextareaHeight(newHeight);
     }
+
+    const conteudo = fakeMateriais[0];
 
     const [file, setFile] = useState(null);
 
@@ -43,7 +45,8 @@ function EditarMaterial(){
         window.removeEventListener('resize', handleResize);
       };
     }, []);
-
+    // Essa page tem a mesma estrutura, incluso comnetários, da paga criarMaterial, com a diferença de que, nessa a gente chama
+    // o material que a pessoa quer editar (por enquanto isso é mocado) com react, para que apareça na tela as informações.
     return(
         <div className="criarMaterial">
             <GlobalStyle/>
@@ -56,38 +59,35 @@ function EditarMaterial(){
                 <h1 className="criarMaterial-title">EDIÇÃO DE MATERIAL</h1>
                 <div className="criarMaterial-form">
                     <form onSubmit={handleSubmit}>
-                        {fakeConteudo.map((conteudo, index) => (
-                        <li key={index}>
-                            <div className="campo-forms">
-                                <p className="title-input-criar">Título</p>
-                                <input name="titulo" className="text-input-criar" type="text" value={conteudo.titulo}></input>
-                            </div>
-                            <div className="campo-forms">
-                                <p className="title-input-criar">Autor</p>
-                                <input name="autor" className="text-input-criar" type="text" value={conteudo.autor}></input>
-                            </div>
-                            <div className="campo-forms">
-                                <p className="title-input-criar">Tópico</p>
-                                <input name="topico" className="text-input-criar" type="text" value={conteudo.topico}></input>
-                            </div>
-                            <div className="campo-forms">
-                                <p className="title-input-criar">Texto</p> 
-                                <textarea required name="texto" 
-                                className="texto-input" 
-                                ref={textAreaRef}
-                                onChange={adjustHeight}
-                                style={{ height: `${textareaHeight}px` }} value={conteudo.texto}></textarea>
-                            </div>
-                            <div className="campo-forms">
-                                <p className="title-input-criar">Imagem</p> 
-                                <input name="imagem" className="file-input-criar" type="file" onChange={handleFileChange}></input>
-                            </div>
-                            <div className="campo-forms">
-                                <p className="title-input-criar">Legenda Imagem</p>
-                                <input name="legenda" className="text-input-criar" type="text" value={conteudo.legenda}></input>
-                            </div>
-                        </li>
-                        ))}
+                        <div className="campo-forms">
+                            <p className="title-input-criar">Título</p>
+                            <input name="titulo" className="text-input-criar" type="text" value={conteudo.nome}></input>
+                        </div>
+                        <div className="campo-forms">
+                            <p className="title-input-criar">Autor</p>
+                            <input name="autor" className="text-input-criar" type="text" value={conteudo.autor}></input>
+                        </div>
+                        <div className="campo-forms">
+                            <p className="title-input-criar">Tópico</p>
+                            <input name="topico" className="text-input-criar" type="text" value={conteudo.topico}></input>
+                        </div>
+                        <div className="campo-forms">
+                            <p className="title-input-criar">Texto</p> 
+                            <textarea required name="texto" 
+                            className="texto-input" 
+                            ref={textAreaRef}
+                            onChange={adjustHeight}
+                            style={{ height: `${textareaHeight}px` }} value={conteudo.texto}></textarea>
+                        </div>
+                        <div className="campo-forms">
+                            <p className="title-input-criar">Imagem</p> 
+                            <input name="imagem" className="file-input-criar" type="file" onChange={handleFileChange}></input>
+                        </div>
+                        <p className="p-imagem-atual">Nome do arquivo de imagem atual: {conteudo.imagem_name}</p>
+                        <div className="campo-forms">
+                            <p className="title-input-criar">Legenda Imagem</p>
+                            <input name="legenda" className="text-input-criar" type="text" value={conteudo.imagem_legenda}></input>
+                        </div>
                     </form>
                     <div className="btn-add">
                         <button type="submit" className="botaoAdicionar" name="AdicionarTopico">Adicionar Tópico</button>
