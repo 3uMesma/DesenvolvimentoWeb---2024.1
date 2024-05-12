@@ -52,10 +52,13 @@ function GerenciaMateriais(){
             )}
             <div className='body'>
                 <h1 className='gerenciar-materiais-title'>MATERIAIS</h1>
+
+                {/* Lista dos materiais */}
                 <div className='gerenciar-materiais-list'>
                     <div className='area-btn-criar-material'>
                         <div className='btn-criar-material'>
                             <Link className='link-criar-material' to="/material/criar">
+                                {/* Botao de criar material */}
                                 <p className='p-criar-gerenciar-material'>Criar Material</p>
                                 <img className="icon-criar-material" src={criarIcon}/>
                             </Link>
@@ -67,9 +70,11 @@ function GerenciaMateriais(){
                             <div className='gerenciar-materiais-item'>
                                 <Link to='/conteudo-materiais'>{material.nome}</Link>
                                 <div className='btn-area-gerenciar-material'>
+                                    {/* Botao de editar material */}
                                     <Link to='/material/editar' className="btn-editar-material">
                                         <img className="icon-editar-material" src={editIcon}/>
                                     </Link>
+                                    {/* Botao de excluir material */}
                                     <button className="btn-excluir-material">
                                         <img className="icon-excluir-material" src={deleteIcon}/>
                                     </button>

@@ -37,11 +37,13 @@ function AdminLogin(){
             ) : (
                 <HamburguerMenu/>
             )}
-
+            
+            {/* Titulo do formulario */}
             <div className="AdminLogin-Main">
                 <h1 className="AdminLogin-Title">LOGIN</h1>
             </div>
             
+            {/* Formulario para login */}
             <div className="Login-form">
                 <form>
                     <div className="form-entry">
@@ -59,6 +61,8 @@ function AdminLogin(){
                         </div>
                     </div>
                 </form>
+
+                {/* Botao de submissao */}
                 <div className="btn-area-login">
                     <button type="submit" id="fazer-login" name="fazer-login">
                         <Link to="/admin/home">
