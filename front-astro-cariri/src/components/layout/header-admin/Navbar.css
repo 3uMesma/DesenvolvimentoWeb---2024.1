@@ -46,6 +46,13 @@
     padding: 0 0.5em;
 }
 
+.navbar-text-selected {
+    color: var(--cor-nav-footer-text-selected);
+    font-size: 1.5em;
+    font-weight: 400;
+    padding: 0 0.5em;
+}
+
 .navbar-text-:hover {
     color: var(--cor-main-background);
     transform: scale(1.02); 
