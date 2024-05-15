@@ -19,7 +19,7 @@ export default createGlobalStyle`
         --cor-amarelo: #D9963F;
         --cor-preto: #0D0D0D;
         --cor-cinza: #d9d9d9;
-        --font-family: 'Merriweather', sans;
+        --font-family: 'Merriweather Sans', sans-serif;
     }
 
     [data-theme="dark"] {
