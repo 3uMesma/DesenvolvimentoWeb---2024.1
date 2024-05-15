@@ -2,6 +2,7 @@ import './Navbar.css'
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
 import astrocariri_logo from '../../../images/astrocariri-logo.png'
 import user_logo from '../../../images/user-logo-logado.png'
 import aumenta_fonte_icon from '../../../images/aumenta-fonte.png'
@@ -13,6 +14,7 @@ function NavbarAdmin(){
     // Definindo o estado inicial do tamanho da fonte
     const [fontSize, setFontSize] = useState(16); // Tamanho padrão da fonte é 16px
     const [theme, setTheme] = useState('white');
+    const [cookies, setCookie] = useCookies(['darkmode']);
     const location = useLocation();
 
     // Função para aumentar a fonte
@@ -29,22 +31,27 @@ function NavbarAdmin(){
     const darkMode = () => {
         setTheme(prevTheme => {
             if(prevTheme === 'white'){
+                setCookie('darkmode', 'True', { path: '/' });
                 return 'dark';
             }
             else{
+                setCookie('darkmode', 'False', { path: '/' });
                 return 'white';
             }
-        }); // Garante que a fonte não fique menor que 10px
+        });
     };
-    
+
     // Aplica o tamanho da fonte à página inteira
     document.body.style.fontSize = `${fontSize}px`;
-    if(theme === 'dark'){
+
+    const cookieValue = cookies['darkmode'];
+    if(cookieValue === 'True'){
         document.documentElement.setAttribute('data-theme', 'dark');
     }
     else{
         document.documentElement.setAttribute('data-theme', 'light');
     }
+    
     return(
         <div className='header'>
             <div className="navbar">
