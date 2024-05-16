@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import { Link } from "react-router-dom";
+import { useCookies } from 'react-cookie';
 
 import { Container } from "./NavbarHamburguer";
 
@@ -23,6 +24,7 @@ const HamburgerMenu = () => {
 
   const [fontSize, setFontSize] = useState(16); // Tamanho padrão da fonte é 16px
     const [theme, setTheme] = useState('white');
+    const [cookies, setCookie] = useCookies(['darkmode']);
 
     // Função para aumentar a fonte
     const increaseFontSize = () => {
@@ -38,17 +40,21 @@ const HamburgerMenu = () => {
     const darkMode = () => {
         setTheme(prevTheme => {
             if(prevTheme === 'white'){
+                setCookie('darkmode', 'True', { path: '/' });
                 return 'dark';
             }
             else{
+                setCookie('darkmode', 'False', { path: '/' });
                 return 'white';
             }
-        }); // Garante que a fonte não fique menor que 10px
+        });
     };
     
     // Aplica o tamanho da fonte à página inteira
     document.body.style.fontSize = `${fontSize}px`;
-    if(theme === 'dark'){
+    
+    const cookieValue = cookies['darkmode'];
+    if(cookieValue === 'True'){
         document.documentElement.setAttribute('data-theme', 'dark');
     }
     else{

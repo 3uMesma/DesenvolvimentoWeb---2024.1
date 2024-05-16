@@ -5,6 +5,7 @@ export default createGlobalStyle`
         --cor-navbar: #4D2375; //roxo
         --cor-footer: #4D2375; //roxo
         --cor-nav-footer-text: #D9963F; //amarelo
+        --cor-nav-footer-text-selected: #fcd6a4; //amarelo claro
         --cor-main-background: #F2F2F2; //branco
         --cor-secondary-background: #d9d9d9; //cinza
         --cor-item-background: #F2F2F2; //branco
