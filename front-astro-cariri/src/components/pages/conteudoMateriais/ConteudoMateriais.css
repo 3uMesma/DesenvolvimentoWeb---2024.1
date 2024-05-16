@@ -54,4 +54,5 @@ p {
 
 .btn-download {
     margin-right: 15vw; 
+    color: var(--cor-texto);
 }
