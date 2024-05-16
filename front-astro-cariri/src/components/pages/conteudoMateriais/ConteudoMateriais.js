@@ -3,8 +3,11 @@ import GlobalStyle from '../../../styles/GlobalStyle.js';
 
 import Header from '../../layout/header/Navbar';
 import HamburguerMenu from "../../layout/header-hamburguer/NavbarHamburguer.jsx";
+import MenuPDF from "../../layout/header_pdf/Navbar.js";
 
 import React, { useState, useEffect } from 'react';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 
 // Importação dos dados falsos de materiais
 import { fakeMateriais } from "../../data/materiais.jsx";
@@ -31,21 +34,68 @@ function ConteudoMateriais(props) {
         };
     }, []);
 
+    const [generatingPDF, setGeneratingPDF] = useState(false); // Declarando generatingPDF e setGeneratingPDF usando o hook useState
+    function downloadPDF() {
+        setGeneratingPDF(true);
+    
+        const input = document.getElementById('conteudoMateriais');
+    
+        if (input) {
+            // Adicione uma classe ao elemento de conteúdo
+            input.classList.add('generating-pdf');
+    
+            html2canvas(input, { scale: 2 })
+                .then((canvas) => {
+                    const pdf = new jsPDF('p', 'mm', 'a4');
+                    const imgData = canvas.toDataURL('image/jpeg', 1.0);
+    
+                    const imgWidth = 210;
+                    const imgHeight = canvas.height * imgWidth / canvas.width;
+    
+                    pdf.addImage(imgData, 'JPEG', 0, 0, imgWidth, imgHeight);
+    
+                    pdf.save("material_astrocariri.pdf");
+                    setGeneratingPDF(false);
+                });
+        } else {
+            console.error('Elemento não encontrado');
+            setGeneratingPDF(false);
+        }  
+    }   
+    
+    useEffect(() => {
+        if (generatingPDF) {
+            downloadPDF();
+        }
+    }, [generatingPDF]);
+    
+    function handleDownloadClick() {
+        setGeneratingPDF(true);
+    }   
+
     // Renderização do componente
     return (
-        <div className='conteudoMateriais'>
+        <div className='conteudoMateriais' id='conteudoMateriais'>
             <GlobalStyle />
 
-            {/* Renderiza o cabeçalho de acordo com a largura da janela */}
-            {windowWidth > 850 ? (
-                <Header />
+            {/* Renderiza o cabeçalho apropriado com base no estado de generatingPDF, o seguinte renderiza de acordo com o tamanho da janela*/}
+            {generatingPDF ? (
+                <MenuPDF />
             ) : (
-                <HamburguerMenu />
+                windowWidth > 850 ? (
+                    <Header />
+                ) : (
+                    <HamburguerMenu />
+                )
             )}
 
             <div className='body'>
                 <h1 className='conteudoMateriais-title'></h1>
-
+                <div className='btn-area-download'>
+                    {!generatingPDF && (
+                        <button className="btn-download" onClick={handleDownloadClick}>Baixar como PDF</button>
+                    )}
+                </div>
                 <div className='conteudoMateriais-list'>
                     {/* Título do material */}
                     <h1 className='conteudoMateriais-title'>{material.nome}</h1>

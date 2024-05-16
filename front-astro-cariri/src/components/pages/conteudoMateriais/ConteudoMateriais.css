@@ -46,3 +46,12 @@ p {
     font-size: 0.6em;
     padding: 0;
 }
+
+.btn-area-download {
+    display: flex;
+    justify-content: right;
+}
+
+.btn-download {
+    margin-right: 15vw; 
+}

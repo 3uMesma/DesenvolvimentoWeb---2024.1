@@ -1,0 +1,38 @@
+.header-pdf {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.navbar-header-pdf {
+    background-color: var(--cor-navbar);
+    color: var(--cor-nav-footer-text);
+    display: flex;
+    text-align: center;
+    height: 12vh;
+    justify-content: center;
+}
+
+.navbar-left-header-pdf {
+    display:flex;
+    align-items: center;
+}
+
+.navbar-title-pdf {
+    color: var(--cor-nav-footer-text);
+    padding: 5px;
+    font-size: 1.8em;
+    font-weight: 600;
+}
+
+.navbar-title-pdf:hover {
+    color: var(--cor-main-background);
+    transition: scale(1.03);
+}
+
+
+.navbar-icon-main-pdf {
+    height: 45px;
+    width: 45px;
+}

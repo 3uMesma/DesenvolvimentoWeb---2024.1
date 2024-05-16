@@ -54,7 +54,7 @@ function Navbar(){
             <div className="navbar-header">
                 <div className="navbar-left-header">
                     <Link to="/" className="navbar-link">
-                    <img src={astrocariri_logo} alt="astrocariri logo" className="navbar-icon-main"></img>
+                    <img src={astrocariri_logo} alt="astrocariri logo que é o símbolo do Cariri, com várias estrelas dentro e um anel de saturno ao redor" className="navbar-icon-main"></img>
                     </Link>
                     <Link to="/" className="navbar-link">
                     <div className='navbar-title'>ASTROCARIRI</div>
