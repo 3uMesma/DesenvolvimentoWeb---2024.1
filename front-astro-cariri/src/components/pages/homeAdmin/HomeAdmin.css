@@ -1,12 +1,9 @@
 .homeAdmin {
     background-color: #000000;
     width: 100%;
-    height: auto;
-    align-items: center;
-    text-align: center;
-    display: flex;
-    justify-content: center;
     padding-top: 70px;
+    display: flex;
+    flex-direction: column;
 }
 
 .home-admin-body {
@@ -28,6 +25,7 @@ h1 {
 .proposals-container {
     max-height: 52.5vh;
     overflow-y: scroll;
+
 }
 
 .homeAdmin-title {

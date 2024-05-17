@@ -1,6 +1,7 @@
 import './GerenciarUsers.css'
 import GlobalStyle from '../../../styles/GlobalStyle.js';
 import Header from '../../layout/header-admin/Navbar.js';
+import Footer from '../../layout/footer/Footer.js';
 import HamburguerMenu from "../../layout/header-admin-hamburguer/NavbarHamburguer.jsx"
 import deleteIcon from '../../../images/Delete.png';
 import polygon1_forward from '../../../images/polygon1.png'
@@ -67,6 +68,7 @@ function GerenciarUsers(){
                     {(startIndex + usersPerPage) < users.length && <button onClick={nextPage}><img src={polygon1_forward}/></button>}
                 </div>
             </div>
+            <Footer/>
         </div>
     )
 }

@@ -2,6 +2,7 @@ import './ConteudoMateriais.css';
 import GlobalStyle from '../../../styles/GlobalStyle.js';
 
 import Header from '../../layout/header/Navbar';
+import Footer from '../../layout/footer/Footer.js';
 import HamburguerMenu from "../../layout/header-hamburguer/NavbarHamburguer.jsx";
 import MenuPDF from "../../layout/header_pdf/Navbar.js";
 
@@ -124,6 +125,7 @@ function ConteudoMateriais(props) {
                     </ul>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 }

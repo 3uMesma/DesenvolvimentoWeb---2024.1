@@ -1,5 +1,6 @@
 import './Home.css'
 import Header from '../../layout/header/Navbar.js'
+import Footer from '../../layout/footer/Footer.js'
 import HamburguerMenu from "../../layout/header-hamburguer/NavbarHamburguer.jsx"
 import GlobalStyle from '../../../styles/GlobalStyle.js';
 import { fakeHome } from '../../data/home.jsx';
@@ -47,6 +48,7 @@ function Home(props){
                     <img src={home.imagem_descricao} alt="banner do Astrocariri, com por do sol ao fundo, algumas estrelas no céu, e cactos e outras palntas nativas do cariri no chão, símbolo do projeto Força Meninas no canto inferior direito" id="home-about-image"></img>
                 </div>
             </div>
+            <Footer/>
         </div>
     )
 }

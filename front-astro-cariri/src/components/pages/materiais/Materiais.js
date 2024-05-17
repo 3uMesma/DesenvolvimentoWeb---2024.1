@@ -1,6 +1,7 @@
 import './Materiais.css'
 import GlobalStyle from '../../../styles/GlobalStyle.js';
 import Header from '../../layout/header/Navbar.js';
+import Footer from '../../layout/footer/Footer.js';
 import HamburguerMenu from "../../layout/header-hamburguer/NavbarHamburguer.jsx"
 import React, {useState, useEffect} from 'react';
 
@@ -62,6 +63,7 @@ function Materiais(){
                     </ul>
                 </div>
             </div>
+            <Footer/>
         </div>
     )
 }

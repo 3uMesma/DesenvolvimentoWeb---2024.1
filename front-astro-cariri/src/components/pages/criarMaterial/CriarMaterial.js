@@ -4,6 +4,7 @@ import React, { useRef, useState, useEffect } from 'react';
 
 // Importação de componentes de layout
 import Header from "../../layout/header-admin/Navbar";
+import Footer from "../../layout/footer/Footer.js";
 import HamburguerMenu from "../../layout/header-admin-hamburguer/NavbarHamburguer.jsx"
 
 import GlobalStyle from "../../../styles/GlobalStyle";
@@ -117,6 +118,7 @@ function CriarMaterial() {
                     </form>
                 </div>
             </div>
+            <Footer/>
         </div>
     )
 }

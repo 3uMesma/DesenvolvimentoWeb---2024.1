@@ -1,5 +1,6 @@
 import "./EditarMaterial.css"
 import Header from "../../layout/header-admin/Navbar";
+import Footer from "../../layout/footer/Footer.js";
 import HamburguerMenu from "../../layout/header-admin-hamburguer/NavbarHamburguer.jsx"
 import GlobalStyle from "../../../styles/GlobalStyle";
 import React, { useRef, useState, useEffect } from 'react';
@@ -8,7 +9,7 @@ import { fakeMateriais } from "../../data/materiais.jsx"
 
 function EditarMaterial(){
     const textAreaRef = useRef(null);
-    const [textareaHeight, setTextareaHeight] = useState(52); // Altura inicial
+    const [textareaHeight, setTextareaHeight] = useState(82); // Altura inicial
 
     // Função para ajustar a altura do textarea
     function adjustHeight() {
@@ -100,6 +101,7 @@ function EditarMaterial(){
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>
     )
 }

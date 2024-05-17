@@ -1,5 +1,6 @@
 import './HomeAdmin.css'
 import Header from '../../layout/header-admin/Navbar.js'
+import Footer from '../../layout/footer/Footer.js'
 import HamburguerMenu from "../../layout/header-admin-hamburguer/NavbarHamburguer.jsx"
 import GlobalStyle from '../../../styles/GlobalStyle.js';
 import React, {useState, useEffect} from 'react';
@@ -53,6 +54,7 @@ function HomeAdmin(){
                     </ul>
                 </div>
             </div>
+            <Footer/>
         </div>
     )
 }

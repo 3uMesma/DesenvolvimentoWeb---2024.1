@@ -1,5 +1,6 @@
 import "./login.css"
 import Header from "../../layout/header/Navbar";
+import Footer from '../../layout/footer/Footer.js';
 import HamburguerMenu from "../../layout/header-hamburguer/NavbarHamburguer.jsx"
 import GlobalStyle from "../../../styles/GlobalStyle";
 import closed_eye from "../../../images/invisible.png"
@@ -71,6 +72,7 @@ function AdminLogin(){
                     </button>
                 </div>
             </div>
+            <Footer/>
         </div>
         
     )

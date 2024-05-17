@@ -68,3 +68,7 @@
     color: var(--cor-roxo-escuro);
     transform: scale(1.05);
 }
+
+#botaoSolicitar {
+    padding: 15px;
+}

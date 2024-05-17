@@ -1,6 +1,7 @@
 import './Materiais.css'
 import GlobalStyle from '../../../styles/GlobalStyle.js';
 import Header from '../../layout/header-admin/Navbar.js';
+import Footer from '../../layout/footer/Footer.js';
 import HamburguerMenu from "../../layout/header-admin-hamburguer/NavbarHamburguer.jsx"
 
 import { Link } from "react-router-dom";
@@ -85,6 +86,7 @@ function GerenciaMateriais(){
                     </ul>
                 </div>
             </div>
+            <Footer/>
         </div>
     )
 }

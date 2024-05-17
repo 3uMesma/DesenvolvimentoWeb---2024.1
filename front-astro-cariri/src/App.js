@@ -44,8 +44,6 @@ function App() {
 				<Route path="/admin/cadastrar" element={<CadastrarAdmin/>}></Route>
 			</Routes>
 
-			<Footer/>
-
         	</BrowserRouter>
       	</div>
     );

@@ -1,5 +1,6 @@
 import "./EditarDadosLogin.css"
 import Header from "../../layout/header-admin/Navbar";
+import Footer from "../../layout/footer/Footer.js";
 import HamburguerMenu from "../../layout/header-admin-hamburguer/NavbarHamburguer.jsx"
 import GlobalStyle from "../../../styles/GlobalStyle";
 import closed_eye from "../../../images/invisible.png"
@@ -94,6 +95,7 @@ function EditarDadosLogin () {
                     <button type="submit" id="salvar-mudancas" name="salvar-mudancas">Salvar Mudanças</button>
                 </div>
             </div>
+            <Footer/>
         </div>
 
     )
