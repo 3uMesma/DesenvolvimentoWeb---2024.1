@@ -40,3 +40,8 @@ O front do site já esté hospedado no Vercel, no link desenvolvimento-web-2024-
 `npm i` 
 para instalar o npm e suas dependências
 - escreva o código `npm run start`
+
+
+## Formatar código
+
+Antes de realizar um commit, rode o comando "npm run pretty" para formatar todos os arquivos.

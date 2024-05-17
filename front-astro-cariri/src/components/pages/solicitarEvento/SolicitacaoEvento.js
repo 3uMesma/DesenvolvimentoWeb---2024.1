@@ -1,6 +1,6 @@
 import "./SolicitacaoEvento.css"
 import Header from "../../layout/header/Navbar";
-import Footer from '../../layout/footer/Footer.js';
+import Footer from '../../layout/footer/Footer.js'
 import HamburguerMenu from "../../layout/header-hamburguer/NavbarHamburguer.jsx"
 import GlobalStyle from "../../../styles/GlobalStyle";
 import React, { useRef, useState, useEffect } from 'react';
