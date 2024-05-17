@@ -68,3 +68,10 @@
     padding: 1%;
     right: 45vw;
 }
+
+@media screen and (max-width: 1150px){
+    .gerenciarUsers-list {
+        width: 90%;
+        padding: 3em;
+    }
+}
