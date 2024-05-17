@@ -1,77 +1,74 @@
 [
-    {
-        "nome": "usuario1"
-    },
-    {
-        "nome": "usuario2"
-    },
-    {
-        "nome": "usuario3"
-    },
-    {
-        "nome": "usuario4"
-    },
-    {
-        "nome": "usuario4"
-    },
-    {
-        "nome": "usuario4"
-    },
-    {
-        "nome": "usuario4"
-    },
-    {
-        "nome": "usuario4"
-    },
-    {
-        "nome": "usuario1"
-    },
-    {
-        "nome": "usuario2"
-    },
-    {
-        "nome": "usuario3"
-    },
-    {
-        "nome": "usuario4"
-    },
-    {
-        "nome": "usuario4"
-    },
-    {
-        "nome": "usuario4"
-    },
-    {
-        "nome": "usuario4"
-    },
-    {
-        "nome": "usuario4"
-    },
-    {
-        "nome": "usuario1"
-    },
-    {
-        "nome": "usuario2"
-    },
-    {
-        "nome": "usuario3"
-    },
-    {
-        "nome": "usuario4"
-    },
-    {
-        "nome": "usuario4"
-    },
-    {
-        "nome": "usuario4"
-    },
-    {
-        "nome": "usuario4"
-    },
-    {
-        "nome": "usuario4"
-    }
-    
-
-
+  {
+    "nome": "usuario1"
+  },
+  {
+    "nome": "usuario2"
+  },
+  {
+    "nome": "usuario3"
+  },
+  {
+    "nome": "usuario4"
+  },
+  {
+    "nome": "usuario4"
+  },
+  {
+    "nome": "usuario4"
+  },
+  {
+    "nome": "usuario4"
+  },
+  {
+    "nome": "usuario4"
+  },
+  {
+    "nome": "usuario1"
+  },
+  {
+    "nome": "usuario2"
+  },
+  {
+    "nome": "usuario3"
+  },
+  {
+    "nome": "usuario4"
+  },
+  {
+    "nome": "usuario4"
+  },
+  {
+    "nome": "usuario4"
+  },
+  {
+    "nome": "usuario4"
+  },
+  {
+    "nome": "usuario4"
+  },
+  {
+    "nome": "usuario1"
+  },
+  {
+    "nome": "usuario2"
+  },
+  {
+    "nome": "usuario3"
+  },
+  {
+    "nome": "usuario4"
+  },
+  {
+    "nome": "usuario4"
+  },
+  {
+    "nome": "usuario4"
+  },
+  {
+    "nome": "usuario4"
+  },
+  {
+    "nome": "usuario4"
+  }
 ]

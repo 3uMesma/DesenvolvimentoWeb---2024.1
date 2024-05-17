@@ -1,7 +1,7 @@
 export const fakeLogin = [
-    {
-        nome: "Fulano",
-        email: "exemplo@gmail.com",
-        novaSenha: "senha123",
-  }
-  ];
+  {
+    nome: "Fulano",
+    email: "exemplo@gmail.com",
+    novaSenha: "senha123",
+  },
+];
