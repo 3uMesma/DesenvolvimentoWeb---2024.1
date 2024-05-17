@@ -56,3 +56,14 @@ p {
     margin-right: 15vw; 
     color: var(--cor-texto);
 }
+
+@media screen and (max-width: 1150px){
+    .conteudoMateriais-list {
+        width: 90%;
+        padding: 3em;
+    }
+
+    .btn-download {
+        margin-right: 5vw; 
+    }
+}
