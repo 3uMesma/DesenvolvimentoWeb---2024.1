@@ -29,7 +29,7 @@
     font-weight: 400;
 }
 
-@media screen and (max-width: 520px){
+@media screen and (max-width: 720px){
     .materiais-list{
         background-color: transparent;
         width: 100%;

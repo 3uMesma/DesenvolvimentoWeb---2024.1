@@ -85,5 +85,16 @@
         display: flex;
         justify-content: space-between;
         gap: 20px;
+        margin-top: 20px;
+    }
+
+    .gerenciar-materiais-list{
+        background-color: transparent;
+        width: 100%;
+        padding-top: 0;
+    }
+
+    .gerenciar-materiais-item {
+        background-color: var(--cor-secondary-background);
     }
 }
