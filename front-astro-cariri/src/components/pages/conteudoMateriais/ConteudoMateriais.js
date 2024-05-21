@@ -112,9 +112,7 @@ function ConteudoMateriais(props) {
     <div className="conteudoMateriais" id="conteudoMateriais">
       <GlobalStyle />
 
-      {generatingPDF ? (
-        <MenuPDF />
-      ) : windowWidth > 850 ? (
+      {windowWidth > 850 ? (
         <Header />
       ) : (
         <HamburguerMenu />
@@ -151,7 +149,7 @@ function ConteudoMateriais(props) {
           </ul>
         </div>
       </div>
-      {!generatingPDF && (<Footer/>)}
+      <Footer/>
     </div>
   );
 }
