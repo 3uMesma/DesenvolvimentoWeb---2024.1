@@ -1,84 +1,117 @@
 import "./ConteudoMateriais.css";
+
+import React, { useState, useEffect } from "react";
+import { pdf } from '@react-pdf/renderer';
+import { Document, Page, Text, View, StyleSheet, Image } from '@react-pdf/renderer';
 import GlobalStyle from "../../../styles/GlobalStyle.js";
 
 import Header from '../../layout/header/Navbar';
 import Footer from '../../layout/footer/Footer.js';
 import HamburguerMenu from "../../layout/header-hamburguer/NavbarHamburguer.jsx";
-import MenuPDF from "../../layout/header_pdf/Navbar.js";
-
-import React, { useState, useEffect } from "react";
-import jsPDF from "jspdf";
-import html2canvas from "html2canvas";
 
 // Importação dos dados falsos de materiais
 import { fakeMateriais } from "../../data/materiais.jsx";
 
+function PDFContent({ material }) {
+  return (
+    <Document>
+      <Page style={styles.page}>
+        <View style={styles.section}>
+          <Text style={styles.header}> ASTROCARIRI</Text>
+          <Text style={styles.name}> {material.nome}</Text>
+          <Text style={styles.author}>Escrito por: {material.autor}</Text>
+          <Text>{material.texto}</Text>
+          <Image style={styles.image} src={material.imagem_url} />
+          <Text style={styles.caption}>{material.imagem_legenda}</Text>
+        </View>
+      </Page>
+    </Document>
+  );
+}
+
+const styles = StyleSheet.create({
+  page: {
+    flexDirection: 'row',
+    backgroundColor: '#E4E4E4',
+    padding: 50,
+    fontSize: 12,
+  },
+  header: {
+    backgroundColor: '#4D2375',
+    color: '#E4E4E4',
+    fontSize: 24,
+    padding: 5,
+    margin: -50,
+  },
+  section: {
+    margin: 10,
+    padding: 10,
+    flexGrow: 1,
+  },
+  name: {
+    color: '#4D2375',
+    fontSize: 18,
+    marginTop: 70,
+    fontWeight: 'bold',
+    marginLeft: -5,
+  },
+  author: {
+    fontWeight: 'bold',
+    marginTop: 5,
+    marginBottom: 10,
+  },
+  image: {
+    width: '100%',
+    height: 'auto',
+    marginTop: 10,
+  },
+  caption: {
+    marginTop: 5,
+    fontStyle: 'italic',
+  },
+});
+
 function ConteudoMateriais(props) {
-  // Definição do material a ser exibido, apenas para exemplo
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [generatingPDF, setGeneratingPDF] = useState(false);
   const material = fakeMateriais[0];
 
-  // Definição do estado para a largura da janela, serve para o menu hamburguer
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-  // Efeito para atualizar a largura da janela quando ela é redimensionada
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
 
-    // Adiciona um listener para o evento de redimensionamento da janela
     window.addEventListener("resize", handleResize);
 
-    // Remove o listener quando o componente é desmontado
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
 
-  const [generatingPDF, setGeneratingPDF] = useState(false); // Declarando generatingPDF e setGeneratingPDF usando o hook useState
-  function downloadPDF() {
+  async function downloadPDF() {
     setGeneratingPDF(true);
-
-    const input = document.getElementById("conteudoMateriais");
-
-    if (input) {
-      // Adicione uma classe ao elemento de conteúdo
-      input.classList.add("generating-pdf");
-
-      html2canvas(input, { scale: 2 }).then((canvas) => {
-        const pdf = new jsPDF("p", "mm", "a4");
-        const imgData = canvas.toDataURL("image/jpeg", 1.0);
-
-        const imgWidth = 210;
-        const imgHeight = (canvas.height * imgWidth) / canvas.width;
-
-        pdf.addImage(imgData, "JPEG", 0, 0, imgWidth, imgHeight);
-
-        pdf.save("material_astrocariri.pdf");
-        setGeneratingPDF(false);
-      });
-    } else {
-      console.error("Elemento não encontrado");
-      setGeneratingPDF(false);
-    }
+  
+    const pdfContent = <PDFContent material={material} />;
+    const instance = pdf(pdfContent);
+    const blob = await instance.toBlob();
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `${material.nome}.pdf`;
+    document.body.appendChild(a);
+    a.click();
+    setGeneratingPDF(false);
   }
-
-  useEffect(() => {
-    if (generatingPDF) {
-      downloadPDF();
-    }
-  }, [generatingPDF]);
 
   function handleDownloadClick() {
     setGeneratingPDF(true);
+    downloadPDF();
   }
 
-  // Renderização do componente
   return (
     <div className="conteudoMateriais" id="conteudoMateriais">
       <GlobalStyle />
 
-      {/* Renderiza o cabeçalho apropriado com base no estado de generatingPDF, o seguinte renderiza de acordo com o tamanho da janela*/}
       {generatingPDF ? (
         <MenuPDF />
       ) : windowWidth > 850 ? (
@@ -97,21 +130,13 @@ function ConteudoMateriais(props) {
           )}
         </div>
         <div className="conteudoMateriais-list">
-          {/* Título do material */}
           <h1 className="conteudoMateriais-title">{material.nome}</h1>
-
-          {/* Informações sobre o autor */}
           <h2>Escrito por: {material.autor} ✨</h2>
-
-          {/* Conteúdo do material */}
           <ul>
             <div className="conteudoMateriais-conteudo">
               <ul>
-                {/* Texto do material */}
                 <p className="conteudoMateriais-text">{material.texto}</p>
                 <br></br>
-
-                {/* Imagem do material */}
                 <figure>
                   <img
                     src={material.imagem_url}
@@ -120,16 +145,15 @@ function ConteudoMateriais(props) {
                   ></img>
                 </figure>
                 <br></br>
-
-                {/* Legenda da imagem */}
                 <p className="material-legenda">{material.imagem_legenda}</p>
               </ul>
             </div>
           </ul>
         </div>
       </div>
-      <Footer/>
+      {!generatingPDF && (<Footer/>)}
     </div>
   );
 }
+
 export default ConteudoMateriais;
