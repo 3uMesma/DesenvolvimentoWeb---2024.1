@@ -65,47 +65,21 @@ function NavbarAdmin() {
           </Link>
         </div>
         <div className="navbar-mid">
-          {location.pathname === "/admin/home" ? (
-            <Link to="/admin/home" className="navbar-text-selected">
-              HOME ADMIN
-            </Link>
-          ) : (
-            <Link to="/admin/home" className="navbar-text-">
-              HOME ADMIN
-            </Link>
-          )}
+          <Link to="/admin/home" className={location.pathname === "/admin/home" ? "navbar-text-selected" : "navbar-text-"} aria-current={location.pathname === "/admin/home" ? "page" : null}>
+            HOME ADMIN
+          </Link>
           <div className="navbar-pipe">|</div>
-          {location.pathname === "/material/gerenciar" ? (
-            <Link to="/material/gerenciar" className="navbar-text-selected">
-              GERENCIAR MATERIAL
-            </Link>
-          ) : (
-            <Link to="/material/gerenciar" className="navbar-text-">
-              GERENCIAR MATERIAL
-            </Link>
-          )}
+          <Link to="/material/gerenciar" className={location.pathname === "/material/gerenciar" ? "navbar-text-selected" : "navbar-text-"} aria-current={location.pathname === "/material/gerenciar" ? "page" : null}>
+            GERENCIAR MATERIAL
+          </Link>
           <div className="navbar-pipe">|</div>
-          {location.pathname === "/admin/cadastrar" ? (
-            <Link to="/admin/cadastrar" className="navbar-text-selected">
-              ADICIONAR ADMIN
-            </Link>
-          ) : (
-            <Link to="/admin/cadastrar" className="navbar-text-">
-              ADICIONAR ADMIN
-            </Link>
-          )}
+          <Link to="/admin/cadastrar" className={location.pathname === "/admin/cadastrar" ? "navbar-text-selected" : "navbar-text-"} aria-current={location.pathname === "/admin/cadastrar" ? "page" : null}>
+            ADICIONAR ADMIN
+          </Link>
           <div className="navbar-pipe">|</div>
-          {location.pathname === "/gerenciar-users" ? (
-            <Link to="/gerenciar-users" className="navbar-text-selected">
-              GERENCIAR ADMINS
-            </Link>
-          ) : (
-            <Link to="/gerenciar-users" className="navbar-text-">
-              GERENCIAR ADMINS
-            </Link>
-          )}
-
-          {/* <div className='navbar-pipe'>|</div> */}
+          <Link to="/gerenciar-users" className={location.pathname === "/gerenciar-users" ? "navbar-text-selected" : "navbar-text-"} aria-current={location.pathname === "/gerenciar-users" ? "page" : null}>
+            GERENCIAR ADMINS
+          </Link>
         </div>
         <div className="navbar-right">
           <Link to="/user" className="navbar-text-username">

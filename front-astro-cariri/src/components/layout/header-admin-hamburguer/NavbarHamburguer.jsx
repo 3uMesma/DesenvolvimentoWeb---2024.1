@@ -126,30 +126,30 @@ const HamburgerMenu = () => {
       <div className="drop-down">
         {isOpen && (
           <ul className="lista-menu">
-            <a href="/admin/home">
-              <li className="li-item-hamburguer">
-                <img src={home} className="img-item-hamburguer" />
+            <li>
+              <Link to="/admin/home" aria-label="Home Admin" aria-current={location.pathname === "/admin/home" ? "page" : null}>
+                <img src={home} alt="Ícone da Home" className="img-item-hamburguer" />
                 <p className="lista-title-hamburguer">Home Admin</p>
-              </li>
-            </a>
-            <a href="/material/gerenciar">
-              <li className="li-item-hamburguer">
-                <img src={material} className="img-item-hamburguer" />
+              </Link>
+            </li>
+            <li>
+              <Link to="/material/gerenciar" aria-label="Gerenciar Material" aria-current={location.pathname === "/material/gerenciar" ? "page" : null}>
+                <img src={material} alt="Ícone de Gerenciar Material" className="img-item-hamburguer" />
                 <p className="lista-title-hamburguer">Gerenciar Material</p>
-              </li>
-            </a>
-            <a href="/admin/cadastrar">
-              <li className="li-item-hamburguer">
-                <img src={add_user} className="img-item-hamburguer" />
+              </Link>
+            </li>
+            <li>
+              <Link to="/admin/cadastrar" aria-label="Adicionar Admin" aria-current={location.pathname === "/admin/cadastrar" ? "page" : null}>
+                <img src={add_user} alt="Ícone de Adicionar Admin" className="img-item-hamburguer" />
                 <p className="lista-title-hamburguer">Adicionar Admin</p>
-              </li>
-            </a>
-            <a href="/gerenciar-users">
-              <li className="li-item-hamburguer">
-                <img src={mng_user} className="img-item-hamburguer" />
+              </Link>
+            </li>
+            <li>
+              <Link to="/gerenciar-users" aria-label="Gerenciar Admins" aria-current={location.pathname === "/gerenciar-users" ? "page" : null}>
+                <img src={mng_user} alt="Ícone de Gerenciar Admins" className="img-item-hamburguer" />
                 <p className="lista-title-hamburguer">Gerenciar Admins</p>
-              </li>
-            </a>
+              </Link>
+            </li>
           </ul>
         )}
       </div>
