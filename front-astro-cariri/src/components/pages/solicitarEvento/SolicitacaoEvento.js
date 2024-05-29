@@ -30,6 +30,27 @@ function SolicitacaoEventos(){
       };
     }, []);
 
+    const [date, setDate] = useState('');
+
+    const handleDateChange = (event) => {
+        let input = event.target.value;
+        
+        // Remove caracteres que não são números
+        input = input.replace(/\D/g, '');
+        
+        // Insere a barra de separação após o dia e mês
+        if (input.length > 2 && input.length <= 4) {
+        input = input.replace(/^(\d{2})(\d{2})/, '$1/$2');
+        }
+        
+        // Insere a barra de separação após o mês
+        if (input.length > 4) {
+        input = input.replace(/^(\d{2})(\d{2})(\d{0,4})/, '$1/$2/$3');
+        }
+        
+        setDate(input);
+    };
+
     return(
         <div className="solicitarEvento">
             <GlobalStyle/>
@@ -56,13 +77,18 @@ function SolicitacaoEventos(){
                         </div>
 
                         <div className="solicitarEvento-form-entry">
-                        <p className="title-input">Tipo de Contato</p>
+                        <p className="title-input">Forma de Contato</p>
                         <input name="contato" className="input" type="text" placeholder="email ou celular"></input>
                         </div>
 
                         <div className="solicitarEvento-form-entry">
                         <p className="title-input">Instituição do Interessado</p>
                         <input name="instituicao" className="input" type="text" placeholder="Nome completo da sua instituição"></input>
+                        </div>
+
+                        <div className="solicitarEvento-form-entry">
+                        <p className="title-input">Endereço da Instituição</p>
+                        <input name="endereco" className="input" type="text" placeholder="Rua, número, bairro e cidade"></input>
                         </div>
 
                         {/**Select para indicar o tipo do evento */}
@@ -74,6 +100,11 @@ function SolicitacaoEventos(){
                             <option>Roda de Conversa</option>
                             <option>Outro</option>
                         </select>
+                        </div>
+
+                        <div className="solicitarEvento-form-entry">
+                        <p className="title-input">Data do evento proposto</p>
+                        <input name="data" className="input" type="text" placeholder="DD/MM/AAAA" maxLength="10" value={date} onChange={handleDateChange}></input>
                         </div>
 
                         {/**Campo de descrição do evento e tratamento da textarea */}
