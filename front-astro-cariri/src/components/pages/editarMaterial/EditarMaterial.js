@@ -102,6 +102,8 @@ function EditarMaterial() {
                 className="file-input-criar"
                 type="file"
                 onChange={handleFileChange}
+                aria-label="Selecione uma imagem"
+                aria-describedby="Este é um campo de entrada de arquivo. Clique para selecionar uma imagem."
               ></input>
             </div>
             <p className="p-imagem-atual">

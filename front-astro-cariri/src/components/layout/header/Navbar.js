@@ -70,35 +70,17 @@ function Navbar() {
           </Link>
         </div>
         <div className="navbar-mid">
-          {location.pathname === "/materiais" ? (
-            <Link to="/materiais" className="navbar-text-selected">
-              MATERIAIS
-            </Link>
-          ) : (
-            <Link to="/materiais" className="navbar-text-">
-              MATERIAIS
-            </Link>
-          )}
+          <Link to="/materiais" className={location.pathname === "/materiais" ? "navbar-text-selected" : "navbar-text-"} aria-current={location.pathname === "/materiais" ? "page" : null}>
+            MATERIAIS
+          </Link>
           <div className="navbar-pipe">|</div>
-          {location.pathname === "/solicitacao-evento" ? (
-            <Link to="/solicitacao-evento" className="navbar-text-selected">
-              SOLICITE EVENTO
-            </Link>
-          ) : (
-            <Link to="/solicitacao-evento" className="navbar-text-">
-              SOLICITE EVENTO
-            </Link>
-          )}
+          <Link to="/solicitacao-evento" className={location.pathname === "/solicitacao-evento" ? "navbar-text-selected" : "navbar-text-"} aria-current={location.pathname === "/solicitacao-evento" ? "page" : null}>
+            SOLICITE EVENTO
+          </Link>
           <div className="navbar-pipe">|</div>
-          {location.pathname === "/login" ? (
-            <Link to="/login" className="navbar-text-selected">
-              LOGIN
-            </Link>
-          ) : (
-            <Link to="/login" className="navbar-text-">
-              LOGIN
-            </Link>
-          )}
+          <Link to="/login" className={location.pathname === "/login" ? "navbar-text-selected" : "navbar-text-"} aria-current={location.pathname === "/login" ? "page" : null}>
+            LOGIN
+          </Link>
         </div>
         <div className="navbar-right-header">
           {isLoggedIn && (

@@ -28,9 +28,6 @@ export const Container = styled.header`
 
   .li-item-hamburguer {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 20px;
   }
 
   .navbar-title-accepted {

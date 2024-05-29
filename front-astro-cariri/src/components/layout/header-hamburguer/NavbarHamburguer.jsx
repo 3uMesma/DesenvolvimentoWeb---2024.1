@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useCookies } from "react-cookie";
 
 import { Container } from "./NavbarHamburguer";
@@ -62,6 +62,8 @@ const HamburgerMenu = () => {
   }
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const location = useLocation();
 
   return (
     <Container>
@@ -132,25 +134,31 @@ const HamburgerMenu = () => {
       <div className="drop-down">
         {isOpen && (
           <ul className="lista-menu">
-            <a href="/materiais">
-              <li className="li-item-hamburguer">
-                <img src={materiais} className="img-item-hamburguer" />
+          <li className="li-item-hamburguer">
+            <Link to="/materiais" aria-label="Materiais" aria-current={location.pathname === "/materiais" ? "page" : null}>
+              <div classname="div-item-hamburguer">
+                <img src={materiais} alt="Ícone de Materiais, um livro aberto" className="img-item-hamburguer" />
                 <p className="lista-title-hamburguer">Materiais</p>
-              </li>
-            </a>
-            <a href="/solicitacao-evento">
-              <li className="li-item-hamburguer">
-                <img src={solicitar} className="img-item-hamburguer" />
+              </div>
+            </Link>
+          </li>
+          <li className="li-item-hamburguer">
+            <Link to="/solicitacao-evento" aria-label="Solicitar Evento" aria-current={location.pathname === "/solicitacao-evento" ? "page" : null}>
+              <div classname="div-item-hamburguer">
+                <img src={solicitar} alt="Ícone de Soclitar Evento" className="img-item-hamburguer" />
                 <p className="lista-title-hamburguer">Solicite Evento</p>
-              </li>
-            </a>
-            <a href="/login">
-              <li className="li-item-hamburguer">
-                <img src={login} className="img-item-hamburguer" />
+              </div>
+            </Link>
+          </li>
+          <li className="li-item-hamburguer">
+            <Link to="/login" aria-label="Logar" aria-current={location.pathname === "/login" ? "page" : null} classname="a-item-hamburguer">
+              <div classname="div-item-hamburguer">
+                <img src={login} alt="Ícone de Login" className="img-item-hamburguer" />
                 <p className="lista-title-hamburguer">Login</p>
-              </li>
-            </a>
-          </ul>
+              </div>
+            </Link>
+          </li>
+        </ul>   
         )}
       </div>
     </Container>

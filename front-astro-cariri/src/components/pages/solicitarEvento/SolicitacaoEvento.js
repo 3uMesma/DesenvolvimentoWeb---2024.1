@@ -94,11 +94,11 @@ function SolicitacaoEventos(){
                         {/**Select para indicar o tipo do evento */}
                         <div className="solicitarEvento-form-entry">
                         <p className="title-input">Tipo de Evento</p> 
-                        <select name="tipo" className="input">
-                            <option selected>Minicurso</option>
-                            <option>Palestra</option>
-                            <option>Roda de Conversa</option>
-                            <option>Outro</option>
+                        <select name="tipo" className="input" role="listbox">
+                            <option aria-selected={true} selected>Minicurso</option>
+                            <option aria-selected={false}>Palestra</option>
+                            <option aria-selected={false}>Roda de Conversa</option>
+                            <option aria-selected={false}>Outro</option>
                         </select>
                         </div>
 
