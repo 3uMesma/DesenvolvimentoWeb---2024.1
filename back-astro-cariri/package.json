@@ -2,7 +2,10 @@
   "name": "back-astro-cariri",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
