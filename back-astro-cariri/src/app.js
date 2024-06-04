@@ -5,7 +5,8 @@ const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
-const routes = require('./routes/userRoutes');
+const userRoutes = require('./routes/userRoutes');
+const eventRoutes = require('./routes/eventRoutes');
 
 const app = express();
 
@@ -16,7 +17,8 @@ const app = express();
 // app.use(bodyParser.urlencoded({ extended: true }));
 
 // Routes
-app.use('/', routes);
+app.use('/', userRoutes);
+app.use('/', eventRoutes);
 
 // iniciar servidor e conectar banco de dados
 const PORT = process.env.PORT || 3000;
