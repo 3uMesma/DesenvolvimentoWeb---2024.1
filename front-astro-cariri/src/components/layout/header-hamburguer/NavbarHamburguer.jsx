@@ -63,14 +63,12 @@ const HamburgerMenu = () => {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const location = useLocation();
-
   return (
     <Container>
       <div className="navbar">
         <div className="navbar-elements">
           <button onClick={toggleMenu} className="btn-menu">
-            <img className="btn-menu" src={MenuImage} />
+            <img className="btn-menu" src={MenuImage} alt="Menu" />
           </button>
           <div className="navbar-left">
             <Link to="/" className="navbar-link">
@@ -134,31 +132,53 @@ const HamburgerMenu = () => {
       <div className="drop-down">
         {isOpen && (
           <ul className="lista-menu">
-          <li className="li-item-hamburguer">
-            <Link to="/materiais" aria-label="Materiais" aria-current={location.pathname === "/materiais" ? "page" : null}>
-              <div classname="div-item-hamburguer">
-                <img src={materiais} alt="Ícone de Materiais, um livro aberto" className="img-item-hamburguer" />
-                <p className="lista-title-hamburguer">Materiais</p>
-              </div>
-            </Link>
-          </li>
-          <li className="li-item-hamburguer">
-            <Link to="/solicitacao-evento" aria-label="Solicitar Evento" aria-current={location.pathname === "/solicitacao-evento" ? "page" : null}>
-              <div classname="div-item-hamburguer">
-                <img src={solicitar} alt="Ícone de Soclitar Evento" className="img-item-hamburguer" />
-                <p className="lista-title-hamburguer">Solicite Evento</p>
-              </div>
-            </Link>
-          </li>
-          <li className="li-item-hamburguer">
-            <Link to="/login" aria-label="Logar" aria-current={location.pathname === "/login" ? "page" : null} classname="a-item-hamburguer">
-              <div classname="div-item-hamburguer">
-                <img src={login} alt="Ícone de Login" className="img-item-hamburguer" />
-                <p className="lista-title-hamburguer">Login</p>
-              </div>
-            </Link>
-          </li>
-        </ul>   
+            <li className="li-item-hamburguer">
+              <Link
+                to="/materiais"
+                aria-label="Materiais"
+              >
+                <div className="div-item-hamburguer">
+                  <img
+                    src={materiais}
+                    alt="Ícone de Materiais, um livro aberto"
+                    className="img-item-hamburguer"
+                  />
+                  <p className="lista-title-hamburguer">Materiais</p>
+                </div>
+              </Link>
+            </li>
+            <li className="li-item-hamburguer">
+              <Link
+                to="/solicitacao-evento"
+                aria-label="Solicitar Evento"
+              >
+                <div className="div-item-hamburguer">
+                  <img
+                    src={solicitar}
+                    alt="Ícone de Soclitar Evento"
+                    className="img-item-hamburguer"
+                  />
+                  <p className="lista-title-hamburguer">Solicite Evento</p>
+                </div>
+              </Link>
+            </li>
+            <li className="li-item-hamburguer">
+              <Link
+                to="/login"
+                aria-label="Logar"
+                className="a-item-hamburguer"
+              >
+                <div className="div-item-hamburguer">
+                  <img
+                    src={login}
+                    alt="Ícone de Login"
+                    className="img-item-hamburguer"
+                  />
+                  <p className="lista-title-hamburguer">Login</p>
+                </div>
+              </Link>
+            </li>
+          </ul>
         )}
       </div>
     </Container>

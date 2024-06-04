@@ -23,7 +23,7 @@ h1 {
 }
 
 .proposals-container {
-    max-height: 52.5vh;
+    max-height: 54vh;
     overflow-y: scroll;
 
 }

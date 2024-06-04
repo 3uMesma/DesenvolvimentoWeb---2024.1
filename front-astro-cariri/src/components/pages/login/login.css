@@ -7,8 +7,7 @@
 
 .AdminLogin {
     background-color: var(--cor-main-background);
-    min-height: 88vh;
-    max-height: 88vh;
+    max-height: 100vh;
 }
 
 .AdminLogin-Main {
@@ -29,8 +28,7 @@
     background-color: var(--cor-secondary-background);
     margin-right: 15%;
     margin-left: 15%;
-    margin-bottom: 47px;
-    padding-bottom: 5vh;
+    margin-bottom: 11.6vh;
 }
 
 #fazer-login {
