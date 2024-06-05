@@ -7,7 +7,7 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const userRoutes = require('./routes/userRoutes');
 const eventRoutes = require('./routes/eventRoutes');
-const materialRoutes = require('./routes/materialRoutes')
+const materialRoutes = require('./routes/materialRoutes');
 
 const app = express();
 
