@@ -95,10 +95,10 @@ function SolicitacaoEventos(){
                         <div className="solicitarEvento-form-entry">
                         <p className="title-input">Tipo de Evento</p> 
                         <select name="tipo" className="input" role="listbox">
-                            <option aria-selected={true} selected>Minicurso</option>
-                            <option aria-selected={false}>Palestra</option>
-                            <option aria-selected={false}>Roda de Conversa</option>
-                            <option aria-selected={false}>Outro</option>
+                            <option role="listbox" aria-selected={true} selected>Minicurso</option>
+                            <option role="listbox" aria-selected={false}>Palestra</option>
+                            <option role="listbox" aria-selected={false}>Roda de Conversa</option>
+                            <option role="listbox" aria-selected={false}>Outro</option>
                         </select>
                         </div>
 
