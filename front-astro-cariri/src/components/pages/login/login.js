@@ -41,7 +41,7 @@ function AdminLogin() {
 
       {/* Formulario para login */}
       <div className="Login-form">
-        <form>
+        <form className="form-official">
           <div className="form-entry">
             <p className="name-input">Nome de Usuário</p>
             <input

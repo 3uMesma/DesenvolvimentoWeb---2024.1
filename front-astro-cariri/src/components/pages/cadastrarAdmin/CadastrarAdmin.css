@@ -10,7 +10,8 @@
     text-align: center;
     justify-content: center;
     background-color: var(--cor-main-background);
-    padding-top: 105.5px;
+    padding-top: 18vh;
+    height: 100vh;
 }
 
 .CadastrarAdmin-Main {
@@ -27,10 +28,11 @@
     align-items: left;
     text-align: left;
     justify-content: left;
+    padding: 4.2vh 0;
     background-color: var(--cor-secondary-background);
     margin-right: 15vw;
     margin-left: 15vw;
-    margin-bottom: 4.6vh;
+    margin-bottom: 4.9vh;
 }
 
 #fazer-cadastro {
