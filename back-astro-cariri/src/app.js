@@ -7,6 +7,7 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const userRoutes = require('./routes/userRoutes');
 const eventRoutes = require('./routes/eventRoutes');
+const materialRoutes = require('./routes/materialRoutes')
 
 const app = express();
 
@@ -19,6 +20,7 @@ const app = express();
 // Routes
 app.use('/', userRoutes);
 app.use('/', eventRoutes);
+app.use('/', materialRoutes);
 
 // iniciar servidor e conectar banco de dados
 const PORT = process.env.PORT || 3000;
