@@ -12,18 +12,27 @@
 
 ## Pós-condições
 - Fica registrada uma solicitação de atividade descrita nos seguintes termos:
-  - **ID do evento (event_id):** Uma identificação serial e individual para o registro ser armazenado no banco de dados;
-  - **Título (title):** Uma identificação sumária da proposta de atividade, tal qual descrita pelo solicitante;
-  - **Requerente (requester):** O nome do solicitante;
-  - **Número de celular (phone)**;
-  - **E-mail (e-mail)**;
-  - **Endereço (address):** local em que a atividade será realizada ou veiculada.
-  - **Tipo de evento (event_type):** uma classificação associada ao evento, pode assumir um dos seguintes valores:
-
-> TODO
-
-  - **Descrição (description):** A descrição textual da atividade pretendida pelo solicitante, em tantos detalhes quanto este crê serem necessários.
-  - **Data (date):** Dia e horário para a realização da atividade.
+  - **ID do evento (event_id):** Identificação serial gerada automaticamente quando efetivado o envio da solicitação, para posterior armazenamento e recuperação a partir do banco de dados do site;
+  - **Título da Proposta (title):** uma identificação sumária da proposta de atividade, tal qual descrita pelo solicitante;
+  - **Nome do interessado (requester)**;
+  - **Forma de contato (contact):** dados para contato, este pode ser e-mail ou telefone de acordo com a preferência do solicitante.
+  - **Instituição do interessado (institution):** nome da instituição a qual o requerente representa;
+  - **Endereço da Instituição (address):** local em que a atividade será realizada ou veiculada.
+  - **Tipo de evento (event_type_id):** uma classificação associada ao evento, pode assumir um dos seguintes valores: `Minicurso`, `Palestra`, `Roda de Conversa` e `Outro`.
+  - **Data do evento proposto (date_)**;
+    - **Descrição (description):** A descrição textual da atividade pretendida pelo solicitante, em tantos detalhes quanto este crê serem necessários.
+- Por vez, este registro figura entre uma lista de solicitações na página do administrador, com as quais este pode proceder a interagir com.
 ## Cenário de Sucesso Principal
 
-## Fluxos Alternativos
+![Opção de solicitar evento destacada no menu principal](Images/Screenshot from 2024-06-05 13-33-49.png)
+
+**1.** Ao acessar o site, o interessado, talvez após ter conferido algumas das publicações veiculadas, se interessa por solicitar aos integrantes do AstroCariri que realizem uma atividade em sua instituição de ensino. Este então procede a clicar na opção "Solicite evento", vista no menu principal ao topo da página (em um menu colapsível nesta mesma localidade para dispositivos móveis).
+
+![Formulário para solicitação de evento](Images/Screenshot from 2024-06-05 13-45-20.png)
+
+**2.** O interessado é levado a um formulário em que este preenche a todas as informações pertinentes a sua proposta de atividade antes de clicar "Solicitar". Estando todas as informações preenchidas corretamente, uma confirmação de envio aparece.
+
+![Listagem das solicitações de eventos](Images/Screenshot from 2024-06-05 15-09-58.png)
+
+**3.** Na área dos administradores o evento em questão figura entre uma lista de solicitações com as quais os integrantes do coletivo AstroCariri podem interagir.
+
