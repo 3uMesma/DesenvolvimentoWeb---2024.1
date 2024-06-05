@@ -1,4 +1,4 @@
-# Caso: Solicitação de atividade
+# Caso de uso: Solicitação de atividade
 **Ator Principal:** Professor
 
 ## Interessados e Interesses
@@ -24,15 +24,15 @@
 - Por vez, este registro figura entre uma lista de solicitações na página do administrador, com as quais este pode proceder a interagir com.
 ## Cenário de Sucesso Principal
 
-![Opção de solicitar evento destacada no menu principal](Images/Screenshot from 2024-06-05 13-33-49.png)
+![Opção de solicitar evento destacada no menu principal](https://raw.githubusercontent.com/3uMesma/DesenvolvimentoWeb---2024.1/main/Documenta%C3%A7%C3%A3o/Casos%20de%20uso/Images/Screenshot%20from%202024-06-05%2013-33-49.png)
 
 **1.** Ao acessar o site, o interessado, talvez após ter conferido algumas das publicações veiculadas, se interessa por solicitar aos integrantes do AstroCariri que realizem uma atividade em sua instituição de ensino. Este então procede a clicar na opção "Solicite evento", vista no menu principal ao topo da página (em um menu colapsível nesta mesma localidade para dispositivos móveis).
 
-![Formulário para solicitação de evento](Images/Screenshot from 2024-06-05 13-45-20.png)
+![Formulário para solicitação de evento](https://raw.githubusercontent.com/3uMesma/DesenvolvimentoWeb---2024.1/main/Documenta%C3%A7%C3%A3o/Casos%20de%20uso/Images/Screenshot%20from%202024-06-05%2013-45-20.png)
 
 **2.** O interessado é levado a um formulário em que este preenche a todas as informações pertinentes a sua proposta de atividade antes de clicar "Solicitar". Estando todas as informações preenchidas corretamente, uma confirmação de envio aparece.
 
-![Listagem das solicitações de eventos](Images/Screenshot from 2024-06-05 15-09-58.png)
+![Listagem das solicitações de eventos](https://raw.githubusercontent.com/3uMesma/DesenvolvimentoWeb---2024.1/main/Documenta%C3%A7%C3%A3o/Casos%20de%20uso/Images/Screenshot%20from%202024-06-05%2015-09-58.png)
 
 **3.** Na área dos administradores o evento em questão figura entre uma lista de solicitações com as quais os integrantes do coletivo AstroCariri podem interagir.
 
