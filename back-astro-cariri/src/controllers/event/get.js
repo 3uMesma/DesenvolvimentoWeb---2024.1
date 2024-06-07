@@ -7,7 +7,7 @@ exports.getEventData = async (req, res, next) => {
     const eventId = req.params.eventId;
 
     // Consulta para obter os dados do evento pelo ID
-    const query = 'SELECT e.title, e.requester, e.institution, e.date_, et.name_ AS event_type_name FROM event_ e JOIN eventType et ON e.event_type_id = et.type_id WHERE e.event_id = $1';
+    const query = 'SELECT e.title, e.requester, e.contact, e.institution, e.address, e.date_, e.description, et.name_ AS event_type_name FROM event_ e JOIN eventType et ON e.event_type_id = et.type_id WHERE e.event_id = $1';
     // usamos o método query do cliente do banco de dados para executar uma consulta SQL. O client representa a conexão com o banco de dados.
     const result = await client.query(query, [eventId]);
 
