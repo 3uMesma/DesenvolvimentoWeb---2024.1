@@ -8,6 +8,7 @@ const bodyParser = require('body-parser');
 const userRoutes = require('./routes/userRoutes');
 const eventRoutes = require('./routes/eventRoutes');
 const materialRoutes = require('./routes/materialRoutes');
+const eventCardsRoutes = require('./routes/eventCardsRoutes')
 
 const app = express();
 
@@ -21,6 +22,7 @@ const app = express();
 app.use('/', userRoutes);
 app.use('/', eventRoutes);
 app.use('/', materialRoutes);
+app.use('/', eventCardsRoutes);
 
 // iniciar servidor e conectar banco de dados
 const PORT = process.env.PORT || 3000;
