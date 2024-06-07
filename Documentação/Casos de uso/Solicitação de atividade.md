@@ -36,3 +36,30 @@
 
 **3.** Na área dos administradores o evento em questão figura entre uma lista de solicitações com as quais os integrantes do coletivo AstroCariri podem interagir.
 
+## Casos de teste
+
+1. Verificar se os botões relevantes são renderizados corretamente e seus links redirecionam o usuário corretamente, considerando uma combinação dos seguintes fatores:
+    - Configuração desktop e mobile;
+    - Uso de diferentes navegadores, dentre os mais utilizados;
+    - A disponibilidade ou não de Javascript (indicar a necessidade deste estar habilitado).
+2. Verificar se o formulário funciona corretamente segundo os casos de teste seguintes:
+    1. Teste de entrada válida
+        - Preenche-se o formulário com informações esperadas e avalia-se se
+            1. a resposta ao usuário foi adequada ao enviá-las
+            2. o registro foi corretamente acrescido ao banco de dados
+    2. Teste de entrada faltante
+        - Preenche-se o formulário com informações faltantes, mas doutra forma válidas. Avalia-se para cada campo com informação faltante se
+            1. a informação faltante é corretamente indicada ao usuário
+            2. o envio das informações é, corretamente, impedido.
+    3. Teste de entrada inválida
+        - Preenche-se o formulário com informações inválidas. À saber:
+            - textos excessivamente longos para campos os quais possuem limites de caracteres;
+            - datas inválidas (passadas ou de formatação inválida);
+            - inserção de caracteres especiais, e sql injections por conseguinte.
+        Avalia-se para cada campo com informação inválida se
+            1. a informação inválida é corretamente indicada ao usuário
+            2. informações pertinentes são apresentadas ao usuário para que este faça a correção necessária
+            3. o envio das informações é, corretamente, impedido.
+    4. Teste de entrada duplicada
+        - Concomitante ao teste de entrada válida, preenche-se e envia o formulário com informações válidas mas previamente enviadas. O sistema deve corretamente identificar a duplicata e descartá-la.
+3. Verificar se as informações foram armazenadas adequadamente, e são posteriormente exibidas correta e ordenadamente na página "Home" dos usuários administradores.
