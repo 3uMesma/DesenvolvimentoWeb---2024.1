@@ -79,6 +79,12 @@ p {
     width: 40vw;
 }
 
+.password-area {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+}
+
 #password-id {
     display: inline;
     text-indent: 0.5rem;

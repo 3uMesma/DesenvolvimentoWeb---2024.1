@@ -1,7 +1,7 @@
 import "./EditarDadosLogin.css";
 import Header from "../../layout/header-admin/Navbar";
 import Footer from "../../layout/footer/Footer.js";
-import HamburguerMenu from "../../layout/header-admin-hamburguer/NavbarHamburguer.jsx"
+import HamburguerMenu from "../../layout/header-admin-hamburguer/NavbarHamburguer.jsx";
 import GlobalStyle from "../../../styles/GlobalStyle";
 import closed_eye from "../../../images/invisible.png";
 import opened_eye from "../../../images/visible.png";
@@ -37,6 +37,7 @@ function EditarDadosLogin() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
   return (
     <div className="EditarDadosLogin">
       <GlobalStyle />
@@ -82,14 +83,20 @@ function EditarDadosLogin() {
                     id="password-input2"
                     placeholder="Sua nova senha"
                     type={hidden2 ? "password" : "text"}
-                    value={login.novaSenha}
+                    value={newPassword}
                     onChange={(e) => setNewPassword(e.target.value)}
                   ></input>
-                  <button type="button" id="botao-senha2" onClick={toggleShow2}>
+                  <button
+                    type="button"
+                    id="botao-senha2"
+                    onClick={toggleShow2}
+                    aria-label={hidden2 ? "Mostrar nova senha" : "Esconder nova senha"}
+                    aria-pressed={!hidden2}
+                  >
                     <img
-                      src={closed_eye}
+                      src={hidden2 ? closed_eye : opened_eye}
                       id="img-botao2"
-                      alt="mostrar/esconder senha"
+                      alt={hidden2 ? "Mostrar nova senha" : "Esconder nova senha"}
                     ></img>
                   </button>
                 </div>
@@ -101,16 +108,22 @@ function EditarDadosLogin() {
                   <input
                     name="confirm-password"
                     id="password-input3"
-                    placeholder="Antiga senha"
+                    placeholder="Confirmar nova senha"
                     type={hidden3 ? "password" : "text"}
-                    value={login.novaSenha}
+                    value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
                   ></input>
-                  <button type="button" id="botao-senha3" onClick={toggleShow3}>
+                  <button
+                    type="button"
+                    id="botao-senha3"
+                    onClick={toggleShow3}
+                    aria-label={hidden3 ? "Mostrar confirmação de senha" : "Esconder confirmação de senha"}
+                    aria-pressed={!hidden3}
+                  >
                     <img
-                      src={closed_eye}
+                      src={hidden3 ? closed_eye : opened_eye}
                       id="img-botao3"
-                      alt="mostrar/esconder senha"
+                      alt={hidden3 ? "Mostrar confirmação de senha" : "Esconder confirmação de senha"}
                     ></img>
                   </button>
                 </div>
@@ -126,7 +139,7 @@ function EditarDadosLogin() {
           </button>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

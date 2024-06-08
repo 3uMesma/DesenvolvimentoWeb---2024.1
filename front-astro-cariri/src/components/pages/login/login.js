@@ -1,7 +1,7 @@
 import "./login.css";
 import Header from "../../layout/header/Navbar";
 import Footer from '../../layout/footer/Footer.js';
-import HamburguerMenu from "../../layout/header-hamburguer/NavbarHamburguer.jsx"
+import HamburguerMenu from "../../layout/header-hamburguer/NavbarHamburguer.jsx";
 import GlobalStyle from "../../../styles/GlobalStyle";
 import closed_eye from "../../../images/invisible.png";
 import opened_eye from "../../../images/visible.png";
@@ -29,6 +29,7 @@ function AdminLogin() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
   return (
     <div className="AdminLogin">
       <GlobalStyle />
@@ -63,8 +64,14 @@ function AdminLogin() {
                 value={Password}
                 onChange={(e) => setPassword(e.target.value)}
               ></input>
-              <button type="button" id="botao-senha" onClick={toggleShow}>
-                <img src={closed_eye} id="img-botao"></img>
+              <button
+                type="button"
+                id="botao-senha"
+                onClick={toggleShow}
+                aria-label={hidden ? "Mostrar senha" : "Esconder senha"}
+                aria-pressed={!hidden}
+              >
+                <img src={hidden ? closed_eye : opened_eye} id="img-botao" alt={hidden ? "Mostrar senha" : "Esconder senha"} />
               </button>
             </div>
           </div>
@@ -77,7 +84,7 @@ function AdminLogin() {
           </button>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
