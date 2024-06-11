@@ -9,6 +9,7 @@ const userRoutes = require('./routes/userRoutes');
 const eventRoutes = require('./routes/eventRoutes');
 const materialRoutes = require('./routes/materialRoutes');
 const loginRoutes = require('./routes/loginRoutes');
+const eventCardsRoutes = require('./routes/eventCardsRoutes')
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.use('/', userRoutes);
 app.use('/', eventRoutes);
 app.use('/', materialRoutes);
 app.use('/', loginRoutes);
+app.use('/', eventCardsRoutes);
 
 // iniciar servidor e conectar banco de dados
 const PORT = process.env.PORT || 3000;
