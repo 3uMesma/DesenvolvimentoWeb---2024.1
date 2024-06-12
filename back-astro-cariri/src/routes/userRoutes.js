@@ -8,6 +8,6 @@ router.use(express.json());
 
 router.get('/user/:userId', getUserController.getUserData);
 router.put('/user/:userId', putUserController.putUserData);
-router.post('/user/:userId', postUserController.postNewUser);
+router.post('/user/', postUserController.postNewUser);
 
 module.exports = router;
