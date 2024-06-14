@@ -7,6 +7,7 @@ import closed_eye from "../../../images/invisible.png";
 import opened_eye from "../../../images/visible.png";
 import React, { useEffect, useState } from "react";
 import { getUserBackApi } from "../../../back-api/user/get.js";
+import { putUserBackApi } from "../../../back-api/user/put.js";
 
 function EditarDadosLogin() {
   const [hidden2, setHidden2] = useState(true);
@@ -14,6 +15,8 @@ function EditarDadosLogin() {
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [user, setUser] = useState(null);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const userId = 11;
 
   useEffect(() => {
@@ -21,6 +24,8 @@ function EditarDadosLogin() {
       try {
         const userData = await getUserBackApi(userId);
         setUser(userData);
+        setName(userData.name_);
+        setEmail(userData.email);
       } catch (error) {
         console.error('Failed to fetch user:', error);
       }
@@ -51,6 +56,33 @@ function EditarDadosLogin() {
     };
   }, []);
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (newPassword !== confirmPassword) {
+      alert("As senhas não coincidem");
+      return;
+    }
+    
+    console.log("Dados a serem enviados:", {
+      name: name,
+      email: email,
+      newPassword: newPassword,
+      confirmPassword: confirmPassword,
+    });
+
+    try {
+      await putUserBackApi(userId, {
+        new_name: name,
+        new_email: email,
+        new_password: newPassword
+      });
+      alert("Dados atualizados com sucesso");
+    } catch (error) {
+      console.error("Erro ao atualizar os dados:", error);
+      alert("Erro ao atualizar os dados");
+    }
+  };
+
   if (!user) {
     return <div>Carregando...</div>;
   }
@@ -64,7 +96,7 @@ function EditarDadosLogin() {
       </div>
 
       <div className="EditarDados-form">
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="form-entry">
             <p className="name-input">Nome de Usuário</p>
             <input
@@ -72,8 +104,8 @@ function EditarDadosLogin() {
               className="text-input2"
               placeholder="Seu nome de usuário"
               type="text"
-              value={user.name_}
-              readOnly
+              value={name}
+              onChange={(e) => setName(e.target.value)}
             ></input>
           </div>
 
@@ -84,8 +116,8 @@ function EditarDadosLogin() {
               className="text-input2"
               type="email"
               placeholder="exemplo@gmail.com"
-              value={user.email}
-              readOnly
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             ></input>
           </div>
 
@@ -142,13 +174,13 @@ function EditarDadosLogin() {
               </button>
             </div>
           </div>
-        </form>
 
-        <div className="btn-area-editar-dados">
-          <button type="submit" id="salvar-mudancas" name="salvar-mudancas">
-            Salvar Mudanças
-          </button>
-        </div>
+          <div className="btn-area-editar-dados">
+            <button type="submit" id="salvar-mudancas" name="salvar-mudancas">
+              Salvar Mudanças
+            </button>
+          </div>
+        </form>
       </div>
       <Footer />
     </div>

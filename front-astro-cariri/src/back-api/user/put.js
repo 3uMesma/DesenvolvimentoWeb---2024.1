@@ -1,9 +1,10 @@
+// api.js
 import axios from 'axios';
 import { API_URL } from '../api';
 
-export const getUserBackApi = async (userId) => {
+export const putUserBackApi = async (userId, userData) => {
   try {
-    const response = await axios.get(`${API_URL}/user/${userId}`);
+    const response = await axios.put(`${API_URL}/user/${userId}`, userData);
     return response.data;
   } catch (error) {
     console.error('Axios error:', error);
