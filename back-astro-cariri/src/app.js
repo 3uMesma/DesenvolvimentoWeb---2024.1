@@ -27,7 +27,7 @@ app.use('/', loginRoutes);
 app.use('/', eventCardsRoutes);
 
 // iniciar servidor e conectar banco de dados
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.BACK_PORT || 3333;
 
 client.connect()
 .then(() => {
