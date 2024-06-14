@@ -11,11 +11,7 @@ const Event = sequelize.define('Event', {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  requester: {event_id: {
-    type: DataTypes.INTEGER,
-    autoIncrement: true,
-    primaryKey: true,
-  },
+  requester: {
     type: DataTypes.STRING,
     allowNull: false,
   },
