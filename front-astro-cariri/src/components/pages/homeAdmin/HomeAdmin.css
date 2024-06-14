@@ -1,7 +1,7 @@
 .homeAdmin {
     background-color: #000000;
     width: 100%;
-    padding-top: 70px;
+    padding-top: 10vh;
     display: flex;
     flex-direction: column;
 }
@@ -11,7 +11,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    height: auto;
+    height: 78vh;
 }
 
 .header-style {
@@ -23,7 +23,7 @@ h1 {
 }
 
 .proposals-container {
-    max-height: 52.5vh;
+    max-height: 54vh;
     overflow-y: scroll;
 
 }

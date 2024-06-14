@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.14.5",
     "@djpfs/react-vlibras": "^2.0.2",
     "@react-pdf/renderer": "^3.4.4",
     "@testing-library/jest-dom": "^5.17.0",

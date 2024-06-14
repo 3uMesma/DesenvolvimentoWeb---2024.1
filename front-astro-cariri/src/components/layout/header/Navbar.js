@@ -18,15 +18,28 @@ function Navbar() {
   const [theme, setTheme] = useState("white");
   const [cookies, setCookie] = useCookies(["darkmode"]);
   const location = useLocation();
+  const [fontChangeMessage, setFontChangeMessage] = useState(''); 
 
   // Função para aumentar a fonte
   const increaseFontSize = () => {
-    setFontSize((prevFontSize) => Math.min(prevFontSize + 2, 22)); // Aumenta o tamanho da fonte em 2px
+    setFontSize((prevFontSize) => {
+      const newFontSize = Math.min(prevFontSize + 2, 22);
+      setFontChangeMessage(newFontSize === prevFontSize 
+        ? `A fonte já está no tamanho máximo de ${newFontSize}px` 
+        : `A fonte aumentou para ${newFontSize}px`);
+      return newFontSize;
+    });
   };
 
   // Função para diminuir a fonte
   const decreaseFontSize = () => {
-    setFontSize((prevFontSize) => Math.max(prevFontSize - 2, 10)); // Garante que a fonte não fique menor que 10px
+    setFontSize((prevFontSize) => {
+      const newFontSize = Math.max(prevFontSize - 2, 10);
+      setFontChangeMessage(newFontSize === prevFontSize 
+        ? `A fonte já está no tamanho mínimo de ${newFontSize}px` 
+        : `A fonte diminuiu para ${newFontSize}px`);
+      return newFontSize;
+    });
   };
 
   // Função para aumentar o contraste
@@ -100,10 +113,7 @@ function Navbar() {
       <div className="second-navbar">
         <div className="navbar-acessibility">
           <div className="acessibility-fonts">
-            {/* <button onClick={increaseFontSize}>
-                            Aumentar Fonte
-                        </button> */}
-            <button onClick={increaseFontSize}>
+            <button onClick={increaseFontSize} >
               <img
                 className="icon-acessibility"
                 src={aumenta_fonte_icon}
@@ -117,8 +127,20 @@ function Navbar() {
                 alt="ícone da ferramenta para diminuição do tamanho da fonte"
               />
             </button>
+            <div
+              aria-live="polite"
+              style={{
+                position: 'absolute',
+                left: '-9999px',
+                height: '1px',
+                width: '1px',
+                overflow: 'hidden',
+              }}
+            >
+              {fontChangeMessage}
+            </div>
           </div>
-          <button onClick={darkMode}>
+          <button onClick={darkMode} aria-pressed={theme === 'dark'} aria-label={theme === 'white' ? 'Ativar modo escuro' : 'Ativar modo claro'}>
             <img
               className="icon-acessibility"
               src={contraste_icon}

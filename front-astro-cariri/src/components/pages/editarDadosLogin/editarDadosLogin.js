@@ -100,11 +100,17 @@ function EditarDadosLogin() {
                 value={newPassword}
                 onChange={(e) => setNewPassword(e.target.value)}
               ></input>
-              <button type="button" id="botao-senha2" onClick={toggleShow2}>
+              <button
+                type="button"
+                id="botao-senha2"
+                onClick={toggleShow2}
+                aria-label={hidden2 ? "Mostrar nova senha" : "Esconder nova senha"}
+                aria-pressed={!hidden2}
+              >
                 <img
                   src={hidden2 ? closed_eye : opened_eye}
                   id="img-botao2"
-                  alt="mostrar/esconder senha"
+                  alt={hidden2 ? "Mostrar nova senha" : "Esconder nova senha"}
                 ></img>
               </button>
             </div>
@@ -121,11 +127,17 @@ function EditarDadosLogin() {
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
               ></input>
-              <button type="button" id="botao-senha3" onClick={toggleShow3}>
+              <button
+                type="button"
+                id="botao-senha3"
+                onClick={toggleShow3}
+                aria-label={hidden3 ? "Mostrar confirmação de senha" : "Esconder confirmação de senha"}
+                aria-pressed={!hidden3}
+              >
                 <img
                   src={hidden3 ? closed_eye : opened_eye}
                   id="img-botao3"
-                  alt="mostrar/esconder senha"
+                  alt={hidden3 ? "Mostrar confirmação de senha" : "Esconder confirmação de senha"}
                 ></img>
               </button>
             </div>
