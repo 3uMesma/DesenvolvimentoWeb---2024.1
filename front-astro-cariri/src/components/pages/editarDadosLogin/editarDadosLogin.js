@@ -6,7 +6,7 @@ import GlobalStyle from "../../../styles/GlobalStyle";
 import closed_eye from "../../../images/invisible.png";
 import opened_eye from "../../../images/visible.png";
 import React, { useEffect, useState } from "react";
-import { getUserBackApi } from "../../data/api";
+import { getUserBackApi } from "../../../back-api/user/get.js";
 
 function EditarDadosLogin() {
   const [hidden2, setHidden2] = useState(true);
@@ -14,7 +14,7 @@ function EditarDadosLogin() {
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [user, setUser] = useState(null);
-  const userId = '10';
+  const userId = 11;
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -72,7 +72,7 @@ function EditarDadosLogin() {
               className="text-input2"
               placeholder="Seu nome de usuário"
               type="text"
-              value={user.nome}
+              value={user.name_}
               readOnly
             ></input>
           </div>
