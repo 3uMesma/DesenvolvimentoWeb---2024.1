@@ -39,7 +39,7 @@ function App() {
           <Route path="/login" element={<Login />}></Route>
           <Route path="/admin/home" element={<HomeAdmin />}></Route>
           <Route
-            path="/conteudo-materiais"
+            path="/conteudo-materiais/:material_id"
             element={<ConteudoMateriais />}
           ></Route>
           <Route path="/material/criar" element={<CriarMaterial />}></Route>

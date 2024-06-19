@@ -7,7 +7,7 @@ exports.getAllMaterialsTitles = async (req, res, next) => {
     // const materialsTitles = req.params.materialsTitles;
 
     // Consulta para obter os titulos dos materiais
-    const query = 'SELECT title FROM Material';
+    const query = 'SELECT title, material_id FROM Material';
     // usamos o método query do cliente do banco de dados para executar uma consulta SQL. O client representa a conexão com o banco de dados.
     const result = await client.query(query);
 

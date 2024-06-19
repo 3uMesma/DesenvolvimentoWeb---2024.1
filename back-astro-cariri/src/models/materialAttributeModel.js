@@ -10,7 +10,7 @@ const MaterialAttribute = sequelize.define('MaterialAttribute', {
     autoIncrement: true,
     primaryKey: true,
   },
-  attribute_type_id: {
+  attribute_type: {
     type: DataTypes.INTEGER,
   },
   sequence_: {

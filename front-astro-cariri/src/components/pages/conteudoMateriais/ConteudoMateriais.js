@@ -4,13 +4,16 @@ import React, { useState, useEffect } from "react";
 import { pdf } from '@react-pdf/renderer';
 import { Document, Page, Text, View, StyleSheet, Image } from '@react-pdf/renderer';
 import GlobalStyle from "../../../styles/GlobalStyle.js";
+import { useParams } from "react-router-dom";
 
 import Header from '../../layout/header/Navbar';
 import Footer from '../../layout/footer/Footer.js';
 import HamburguerMenu from "../../layout/header-hamburguer/NavbarHamburguer.jsx";
 
-// Importação dos dados falsos de materiais
-import { fakeMateriais } from "../../data/materiais.jsx";
+import { getMaterialApi } from "../../../back-api/materiais/get.js";
+
+// import imagemFoguete from "../../../images/img-materiais/foguete.png";
+// const images = require.context("../../../images/img-materiais/", true);
 
 function PDFContent({ material }) {
   return (
@@ -72,9 +75,24 @@ const styles = StyleSheet.create({
 });
 
 function ConteudoMateriais(props) {
+  const { material_id } = useParams();
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [generatingPDF, setGeneratingPDF] = useState(false);
-  const material = fakeMateriais[0];
+  const [material, setMaterial] = useState([]);
+
+
+  const fetchMateriais = async () => {
+    try {
+        const response = await getMaterialApi(material_id);
+        setMaterial(response);
+    } catch (error) {
+        console.error("Error fetching material:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchMateriais();
+  }, [material_id]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -108,6 +126,44 @@ function ConteudoMateriais(props) {
     downloadPDF();
   }
 
+  function displayElement(element){
+    if(element.type==1){
+      return (
+        <li key={element.id}>
+          <p className="conteudoMateriais-topic-title">{element.title}</p>
+          <p className="conteudoMateriais-topic-text">{element.text}</p>
+        </li>
+      )
+    } else {
+      // let imagePath;
+      // console.log(element.path)
+      // try {
+      //   imagePath = images(`foguete.png`);
+      // } catch (error) {
+      //   console.error("Image not found:", element.image);
+      //   imagePath = null; // Fallback image if not found
+      // }
+      // console.log(imagePath);
+      // return (
+      //   // <li key={element.id}>
+      //   //   <figure>
+      //   //     <img
+      //   //       src={imagePath}
+      //   //       className="conteudoMateriais-image"
+      //   //       alt={element.alt}
+      //   //     ></img>
+      //   //   </figure>
+      //   //   <br></br>
+      //   //   <p className="material-legenda">{element.caption}</p>
+      //   // </li>
+      // )
+    }
+  }
+
+  if (!material.info || !material.elements) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="conteudoMateriais" id="conteudoMateriais">
       <GlobalStyle />
@@ -128,22 +184,12 @@ function ConteudoMateriais(props) {
           )}
         </div>
         <div className="conteudoMateriais-list">
-          <h1 className="conteudoMateriais-title">{material.nome}</h1>
-          <h2>Escrito por: {material.autor} ✨</h2>
+          <h1 className="conteudoMateriais-title">{material.info.title}</h1>
+          <h2>Escrito por: {material.info.author} ✨</h2>
           <ul>
             <div className="conteudoMateriais-conteudo">
               <ul>
-                <p className="conteudoMateriais-text">{material.texto}</p>
-                <br></br>
-                <figure>
-                  <img
-                    src={material.imagem_url}
-                    className="conteudoMateriais-image"
-                    alt="Imagem do material"
-                  ></img>
-                </figure>
-                <br></br>
-                <p className="material-legenda">{material.imagem_legenda}</p>
+                {material.elements.map((element) => displayElement(element))}
               </ul>
             </div>
           </ul>

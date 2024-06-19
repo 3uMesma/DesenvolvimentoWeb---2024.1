@@ -28,7 +28,17 @@ p {
     padding: 0;
 }
 
-.conteudoMateriais-text {
+.conteudoMateriais-topic-title {
+    display: flex;
+    font-weight: 400;
+    margin: 0.8em 0;
+    padding: 0;
+    font-size: 1em;
+    font-weight: 500;
+    text-align: justify;
+}
+
+.conteudoMateriais-topic-text {
     display: flex;
     font-weight: 400;
     margin: 0.8em 0;

@@ -23,8 +23,7 @@ function Materiais(){
 
     const fetchMateriais = async () => {
         try {
-            const response = await getAllMateriaisApi(); 
-            console.log(response);
+            const response = await getAllMateriaisApi();
             setMateriais(response);
         } catch (error) {
             console.error("Error fetching materials:", error);
@@ -74,9 +73,12 @@ function Materiais(){
                 <h1 className='materiais-title'>MATERIAIS</h1>
                 <div className='materiais-list'>
                     <ul>
-                        {materiais.map((material, index) => (
-                        <li key={index}><div className='materiais-item'>
-                            <Link to='/conteudo-materiais'>{material.title}</Link></div></li>
+                        {materiais.map((material) => (
+                        <li key={material.material_id}>
+                            <div className='materiais-item'>
+                                <Link to={`/conteudo-materiais/${material.material_id}`}>{material.title}</Link>
+                            </div>
+                        </li>
                         ))}
                     </ul>
                 </div>
