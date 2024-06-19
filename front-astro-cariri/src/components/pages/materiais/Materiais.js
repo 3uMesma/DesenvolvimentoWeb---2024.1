@@ -8,6 +8,8 @@ import React, {useState, useEffect} from 'react';
 import { Link } from "react-router-dom";
 import { fakeMateriais } from "../../data/materiais.jsx"
 
+import { getAllMateriaisApi } from "../../../back-api/materiais/getAll.js";
+
 /*
 Retorna o código HTML da página que contém os materiais disponíveis no site. 
 Os títulos de cada um são listados em ordem de inclusão no site.
@@ -16,10 +18,26 @@ Usa os dados dos materiais contidos no arquivo "materiais.jsx", da pasta data.
 function Materiais(){
     const materialsPerPage = 10; // Materiais por página
     const [startIndex, setStartIndex] = useState(0); 
+    const [materiais, setMateriais] = useState([]);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+    const fetchMateriais = async () => {
+        try {
+            const response = await getAllMateriaisApi(); 
+            console.log(response);
+            setMateriais(response);
+        } catch (error) {
+            console.error("Error fetching materials:", error);
+        }
+    };
+
+    useEffect(() => {
+        fetchMateriais();
+    }, []);
 
     const nextPage = () => {
         const nextIndex = startIndex + materialsPerPage;
-        if (nextIndex < fakeMateriais.length) {
+        if (nextIndex < materiais.length) {
             setStartIndex(nextIndex);
         }
     };
@@ -31,7 +49,6 @@ function Materiais(){
         }
     };
 
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   
     useEffect(() => {
       const handleResize = () => {
@@ -44,6 +61,7 @@ function Materiais(){
         window.removeEventListener('resize', handleResize);
       };
     }, []);
+
     return(
         <div className='materiais'>
             <GlobalStyle/>
@@ -56,9 +74,9 @@ function Materiais(){
                 <h1 className='materiais-title'>MATERIAIS</h1>
                 <div className='materiais-list'>
                     <ul>
-                        {fakeMateriais.map((material, index) => (
+                        {materiais.map((material, index) => (
                         <li key={index}><div className='materiais-item'>
-                            <Link to='/conteudo-materiais'>{material.nome}</Link></div></li>
+                            <Link to='/conteudo-materiais'>{material.title}</Link></div></li>
                         ))}
                     </ul>
                 </div>
