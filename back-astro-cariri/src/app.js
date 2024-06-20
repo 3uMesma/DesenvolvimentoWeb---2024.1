@@ -14,15 +14,10 @@ const eventCardsRoutes = require('./routes/eventCardsRoutes')
 const app = express();
 
 // Middleware setup
-
-const corsOptions = {
-    origin: 'localhost:3000', // Replace with your frontend URL
-};
-
 app.use(cors());
-// app.use(morgan('dev'));
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: true }));
+app.use(morgan('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Routes
 app.use('/', userRoutes);
@@ -39,7 +34,7 @@ client.connect()
 console.log('Conexão bem-sucedida com o banco de dados');
 // Inicia o servidor após a conexão com o banco de dados
 app.listen(PORT, () => {
-    console.log('Servidor rodando na porta', PORT);
+    console.log('Servidor rodando na porta 3000');
 });
 })
 .catch(err => {
