@@ -7,7 +7,7 @@ exports.postMaterial = async (req, res, next) => {
         const { 
             title, date_, author_id, 
             text, 
-            atribute_type_id, path, caption, alt,
+            atribute_type, path, caption, alt,
             sequence_
         } = req.body;
 
@@ -31,7 +31,7 @@ exports.postMaterial = async (req, res, next) => {
             return res.status(400).json({ error: 'Texto não pode ser nulo' });
         }
 
-        if(!atribute_type_id){
+        if(!atribute_type){
             return res.status(400).json({ error: 'Tipo de material não pode ser nulo'});
         }
         
@@ -40,16 +40,16 @@ exports.postMaterial = async (req, res, next) => {
         const result_material = await client.query(query_material, values_material);
         const newMaterial = result_material.rows[0];
         
-        const query_topic = 'INSERT INTO Topic(title) VALUES ($1) RETURNING *';
-        const values_topic = [title];
+        const query_topic = 'INSERT INTO Topic(title, text) VALUES ($1, $2) RETURNING *';
+        const values_topic = [title, text];
         const result_topic = await client.query(query_topic, values_topic);
         
-        const query_img = 'INSERT INTO Image(path, caption, alt, material_id) VALUES ($1, $2, $3, $4) RETURNING *';
-        const values_img = [path, caption, alt, newMaterial.material_id];
+        const query_img = 'INSERT INTO Image(path, caption, alt) VALUES ($1, $2, $3) RETURNING *';
+        const values_img = [path, caption, alt];
         const result_img = await client.query(query_img, values_img);
 
-        const query_materialAttribute = 'INSERT INTO MaterialAttribute(material_id, atribute_type_id, sequence_) VALUES ($1, $2, $3) RETURNING *';
-        const values_materialAttribute = [newMaterial.material_id, atribute_type_id, sequence_];
+        const query_materialAttribute = 'INSERT INTO MaterialAttribute(material_id, atribute_type, sequence_) VALUES ($1, $2, $3) RETURNING *';
+        const values_materialAttribute = [newMaterial.material_id, atribute_type, sequence_];
         const result_materialAttribute = await client.query(query_materialAttribute, values_materialAttribute);
 
         return res.status(200).json({ message: 'Material criado com sucesso!', material: newMaterial});

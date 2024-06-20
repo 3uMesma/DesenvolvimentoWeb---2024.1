@@ -5,7 +5,7 @@ exports.putMaterials = async (req, res, next) => {
         const { 
             title, date_, author_id, 
             text, 
-            atribute_type_id, path, caption, alt,
+            atribute_type, path, caption, alt,
             sequence_
         } = req.body;
 
@@ -26,9 +26,10 @@ exports.putMaterials = async (req, res, next) => {
             UPDATE Topic
             SET
             title = $1,
-            WHERE Topic.topic_id = $2
+            text = $2
+            WHERE Topic.topic_id = $3
         `;
-        const values_topic = [title, topicId];
+        const values_topic = [title, text, topicId];
         const result_topic = await client.query(query_topic, values_topic);
 
         const imageId = req.params.imageId;
@@ -48,11 +49,11 @@ exports.putMaterials = async (req, res, next) => {
         UPDATE user_
         SET
         material_id = $1,
-        atribute_type_id = $2,
+        atribute_type = $2,
         sequence_ = $3
         WHERE MaterialAttribute.attribute_id = $4
         `;
-        const values_materialAttribute = [materialId, atribute_type_id, sequence_, materialAttributeId];
+        const values_materialAttribute = [materialId, atribute_type, sequence_, materialAttributeId];
         const result_materialAttribute = await client.query(query_materialAttribute, values_materialAttribute);
 
 
