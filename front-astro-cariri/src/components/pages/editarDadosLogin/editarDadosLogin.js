@@ -6,10 +6,13 @@ import GlobalStyle from "../../../styles/GlobalStyle";
 import closed_eye from "../../../images/invisible.png";
 import opened_eye from "../../../images/visible.png";
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { getUserBackApi } from "../../../back-api/user/get.js";
 import { putUserBackApi } from "../../../back-api/user/put.js";
 
 function EditarDadosLogin() {
+  const navigate = useNavigate();
+
   const [hidden2, setHidden2] = useState(true);
   const [hidden3, setHidden3] = useState(true);
   const [newPassword, setNewPassword] = useState("");
@@ -82,6 +85,17 @@ function EditarDadosLogin() {
       alert("Erro ao atualizar os dados");
     }
   };
+
+  const logoutSubmit = async (e) => {
+    e.preventDefault();
+    setUser(null);
+    setName("");
+    setEmail("");
+
+    console.log("Logout bem-sucedido!");
+    // Redirecionar para a página inicial após o logout
+    navigate("/");
+  }
 
   if (!user) {
     return <div>Carregando...</div>;
@@ -178,6 +192,13 @@ function EditarDadosLogin() {
           <div className="btn-area-editar-dados">
             <button type="submit" id="salvar-mudancas" name="salvar-mudancas">
               Salvar Mudanças
+            </button>
+          </div>
+        </form>
+        <form onSubmit={logoutSubmit}>
+          <div className="btn-area-editar-dados">
+            <button type="submit" id="logout" name="logout">
+              Logout
             </button>
           </div>
         </form>

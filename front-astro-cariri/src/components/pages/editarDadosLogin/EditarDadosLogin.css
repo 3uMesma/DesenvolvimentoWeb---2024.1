@@ -55,6 +55,25 @@
     transform: scale(1.05);
 }
 
+#logout {
+    border-style: solid;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background-color: var(--cor-roxo);
+    color: var(--cor-amarelo);
+    font-size: 1.5em;
+    padding: 10px;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.05);
+    border-radius: 0.5rem;
+}
+
+#logout:hover {
+    color: var(--cor-main-background);
+    transform: scale(1.05);
+}
+
+
 p {
     padding-top: 3%;
     font-size: 1.5em;
