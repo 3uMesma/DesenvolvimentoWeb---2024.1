@@ -1,5 +1,5 @@
 import "./Navbar.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useCookies } from "react-cookie";
@@ -12,6 +12,8 @@ import contraste_icon from "../../../images/contraste.png";
 import userLogoLoggedOut from "../../../images/user-logo.png";
 import userLogoLoggedIn from "../../../images/user-logo-logado.png";
 
+import { getUserBackApi } from "../../../back-api/user/get";
+
 function Navbar() {
   // Definindo o estado inicial do tamanho da fonte
   const [fontSize, setFontSize] = useState(16); // Tamanho padrão da fonte é 16px
@@ -19,6 +21,21 @@ function Navbar() {
   const [cookies, setCookie] = useCookies(["darkmode"]);
   const location = useLocation();
   const [fontChangeMessage, setFontChangeMessage] = useState(''); 
+  const [username, setUsername] = useState(""); // Estado para armazenar o nome do usuário
+
+  useEffect(() => {
+    const fetchUserName = async () => {
+      try {
+        const userId = 11;
+        const userData = await getUserBackApi(userId);
+        setUsername(userData.name); // Supondo que a resposta contenha o nome do usuário na propriedade 'name'
+      } catch (error) {
+        console.error('Failed to fetch user data:', error);
+      }
+    };
+
+    fetchUserName();
+  }, []);
 
   // Função para aumentar a fonte
   const increaseFontSize = () => {
@@ -98,7 +115,7 @@ function Navbar() {
         <div className="navbar-right-header">
           {isLoggedIn && (
             <Link to="/user" className="navbar-text-username">
-              Letícia Vieira
+              {username}
             </Link>
           )}
           <Link to="/user">
