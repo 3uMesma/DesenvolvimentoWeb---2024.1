@@ -4,16 +4,38 @@ import Footer from '../../layout/footer/Footer.js'
 import HamburguerMenu from "../../layout/header-hamburguer/NavbarHamburguer.jsx"
 import GlobalStyle from "../../../styles/GlobalStyle";
 import React, { useRef, useState, useEffect } from 'react';
+import { postEventoApi } from "../../../back-api/evento/post.js";
 
 function SolicitacaoEventos(){
+    const [eventData, setEventData] = useState({
+        titulo: "",
+        contato: "",
+        interessado: "",
+        instituicao: "",
+        endereco: "",
+        tipo: "",
+        data: "",
+        descricao: "",
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setEventData({ ...eventData, [name]: value });
+    };
+    
     const textAreaRef = useRef(null);
     const [textareaHeight, setTextareaHeight] = useState(96); // Altura inicial
-
+    
     // Função para ajustar a altura do textarea
     function adjustHeight() {
         const { scrollHeight } = textAreaRef.current;
         const newHeight = Math.max(scrollHeight, 32); // Altura mínima
         setTextareaHeight(newHeight);
+    }
+
+    const handleDescriptionChange = (e) => {
+        adjustHeight();
+        handleChange(e);
     }
 
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -30,7 +52,7 @@ function SolicitacaoEventos(){
       };
     }, []);
 
-    const [date, setDate] = useState('');
+    const [displayDate, setDisplayDate] = useState('');
 
     const handleDateChange = (event) => {
         let input = event.target.value;
@@ -47,8 +69,17 @@ function SolicitacaoEventos(){
         if (input.length > 4) {
         input = input.replace(/^(\d{2})(\d{2})(\d{0,4})/, '$1/$2/$3');
         }
-        
-        setDate(input);
+
+        setDisplayDate(input);
+
+        const dateParts = event.target.value.split("/");
+        const formattedDate = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`;
+        setEventData({ ...eventData, ["data"]: formattedDate });
+    };
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        postEventoApi(eventData);
     };
 
     return(
@@ -64,37 +95,37 @@ function SolicitacaoEventos(){
                 
                 {/**Formulário para a solicitação de um novo evento */}
                 <div className="solicitarEvento-form">
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         {/**Dados do evento e do interessado */}
                         <div className="solicitarEvento-form-entry">
                         <p className="title-input">Título da Proposta</p>
-                        <input name="titulo" className="input" type="text" placeholder="Título do evento que você propõe"></input>
+                        <input name="titulo" className="input" type="text" onChange={handleChange} placeholder="Título do evento que você propõe"></input>
                         </div>
 
                         <div className="solicitarEvento-form-entry">
                         <p className="title-input">Nome do Interessado</p>
-                        <input name="interessado" className="input" type="text" placeholder="Nome e Sobrenome"></input>
+                        <input name="interessado" className="input" type="text" onChange={handleChange} placeholder="Nome e Sobrenome"></input>
                         </div>
 
                         <div className="solicitarEvento-form-entry">
                         <p className="title-input">Forma de Contato</p>
-                        <input name="contato" className="input" type="text" placeholder="email ou celular"></input>
+                        <input name="contato" className="input" type="text" onChange={handleChange} placeholder="email ou celular"></input>
                         </div>
 
                         <div className="solicitarEvento-form-entry">
                         <p className="title-input">Instituição do Interessado</p>
-                        <input name="instituicao" className="input" type="text" placeholder="Nome completo da sua instituição"></input>
+                        <input name="instituicao" className="input" type="text" onChange={handleChange} placeholder="Nome completo da sua instituição"></input>
                         </div>
 
                         <div className="solicitarEvento-form-entry">
                         <p className="title-input">Endereço da Instituição</p>
-                        <input name="endereco" className="input" type="text" placeholder="Rua, número, bairro e cidade"></input>
+                        <input name="endereco" className="input" type="text" onChange={handleChange} placeholder="Rua, número, bairro e cidade"></input>
                         </div>
 
                         {/**Select para indicar o tipo do evento */}
                         <div className="solicitarEvento-form-entry">
                         <p className="title-input">Tipo de Evento</p> 
-                        <select name="tipo" className="input" role="listbox">
+                        <select name="tipo" className="input" role="listbox" onChange={handleChange}>
                             <option role="listbox" aria-selected={true} selected>Minicurso</option>
                             <option role="listbox" aria-selected={false}>Palestra</option>
                             <option role="listbox" aria-selected={false}>Roda de Conversa</option>
@@ -104,7 +135,7 @@ function SolicitacaoEventos(){
 
                         <div className="solicitarEvento-form-entry">
                         <p className="title-input">Data do evento proposto</p>
-                        <input name="data" className="input" type="text" placeholder="DD/MM/AAAA" maxLength="10" value={date} onChange={handleDateChange}></input>
+                        <input name="data" className="input" type="text" placeholder="DD/MM/AAAA" maxLength="10" value={displayDate} onChange={handleDateChange}></input>
                         </div>
 
                         {/**Campo de descrição do evento e tratamento da textarea */}
@@ -113,18 +144,20 @@ function SolicitacaoEventos(){
                         <textarea required name="descricao" 
                         className="descricao-input" 
                         ref={textAreaRef}
-                        onChange={adjustHeight}
+                        onChange={handleDescriptionChange}
                         style={{ height: `${textareaHeight}px` }}
                         placeholder="Explique brevemente a proposta do evento"></textarea>
                         </div>
 
                         <br></br>
-                    </form>
 
                     {/**Botão de submissão do forms */}
                     <div className="btn-area-solicitar">
                         <button type="submit" id="botaoSolicitar" name="SolicitarEvento">Solicitar</button>
                     </div>
+
+                    </form>
+
                 </div>
             </div>
             <p>    </p>

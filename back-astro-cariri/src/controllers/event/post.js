@@ -2,52 +2,43 @@ const client = require('../../data/data_base');
 
 exports.postEvent = async (req, res, next) => {
   try {
+    const { titulo, contato, interessado, instituicao, endereco, tipo, data, descricao } = req.body;
+    // const { title, requester, contact, institution, address, event_type_id, date_, description } = req.body;
 
-    const { title, requester, contact, institution, address, event_type_id, date_, description } = req.body;
-
-    // console.log(title)
-    // console.log(requester)
-    // console.log(contact)
-    // console.log(institution)
-    // console.log(address)
-    // console.log(Number(event_type_id)+5)
-    // console.log(date_)
-    // console.log(description)
-
-    if (!title){
+    if (!titulo){
         return res.status(400).json({ error: 'Título não pode ser nulo' });
     }
         
-    if(!requester){
+    if(!interessado){
         return res.status(400).json({ error: 'Cliente não pode ser nulo' });
     }
         
-    if( !contact){
+    if( !contato){
         return res.status(400).json({ error: 'Contato não pode ser nulo' });
     }
         
-    if( !institution){
+    if( !instituicao){
         return res.status(400).json({ error: 'Instituição não pode ser nula' });
     }
         
-    if( !address){
+    if( !endereco){
         return res.status(400).json({ error: 'Endereço não pode ser nulo' });
     }
         
-    if( !event_type_id){
+    if( !tipo){
         return res.status(400).json({ error: 'Tipo de evento não pode ser nulo' });
     }
         
-    if( !date_){
+    if( !data){
         return res.status(400).json({ error: 'Data não pode ser nula' });
     }
         
-    if( !description ) {
+    if( !descricao ) {
         return res.status(400).json({ error: 'Descrição não pode ser nula' });
     }
 
     const query = 'INSERT INTO Event_(title, requester, contact, institution, address, event_type_id, date_, description) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *';
-    const values = [title, requester, contact, institution, address, Number(event_type_id), date_, description];
+    const values = [titulo, interessado, contato, instituicao, endereco, Number(tipo), data, descricao];
     console.log(values);
     const result = await client.query(query, values);
 
