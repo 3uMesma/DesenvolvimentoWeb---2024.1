@@ -1,9 +1,9 @@
-import './HomeAdmin.css'
-import Header from '../../layout/header-admin/Navbar.js'
-import Footer from '../../layout/footer/Footer.js'
-import HamburguerMenu from "../../layout/header-admin-hamburguer/NavbarHamburguer.jsx"
-import GlobalStyle from '../../../styles/GlobalStyle.js';
-import React, {useState, useEffect} from 'react';
+import "./HomeAdmin.css";
+import Header from "../../layout/header-admin/Navbar.js";
+import Footer from "../../layout/footer/Footer.js";
+import HamburguerMenu from "../../layout/header-admin-hamburguer/NavbarHamburguer.jsx";
+import GlobalStyle from "../../../styles/GlobalStyle.js";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import eventos from "../../data/eventos.json";
@@ -61,7 +61,7 @@ function HomeAdmin() {
           </ul>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

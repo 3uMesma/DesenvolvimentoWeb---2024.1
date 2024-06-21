@@ -24,7 +24,7 @@ function EditarDadosLogin() {
   const [changeEmail, setEmail] = useState("");
   const { user } = useAuth();
 
-  const {sigout} = useAuth();
+  const { sigout } = useAuth();
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -34,7 +34,7 @@ function EditarDadosLogin() {
         setName(userData.name_);
         setEmail(userData.email);
       } catch (error) {
-        console.error('Failed to fetch user:', error);
+        console.error("Failed to fetch user:", error);
       }
     };
 
@@ -69,7 +69,7 @@ function EditarDadosLogin() {
       alert("As senhas não coincidem");
       return;
     }
-    
+
     console.log("Dados a serem enviados:", {
       name: changeName,
       email: changeEmail,
@@ -81,7 +81,7 @@ function EditarDadosLogin() {
       await putUserBackApi(user.id, {
         new_name: changeName,
         new_email: changeEmail,
-        new_password: newPassword
+        new_password: newPassword,
       });
       alert("Dados atualizados com sucesso");
     } catch (error) {
@@ -97,7 +97,7 @@ function EditarDadosLogin() {
     console.log("Logout bem-sucedido!");
     // Redirecionar para a página inicial após o logout
     navigate("/");
-  }
+  };
 
   if (!user) {
     return <div>Carregando...</div>;
@@ -152,7 +152,9 @@ function EditarDadosLogin() {
                 type="button"
                 id="botao-senha2"
                 onClick={toggleShow2}
-                aria-label={hidden2 ? "Mostrar nova senha" : "Esconder nova senha"}
+                aria-label={
+                  hidden2 ? "Mostrar nova senha" : "Esconder nova senha"
+                }
                 aria-pressed={!hidden2}
               >
                 <img
@@ -179,13 +181,21 @@ function EditarDadosLogin() {
                 type="button"
                 id="botao-senha3"
                 onClick={toggleShow3}
-                aria-label={hidden3 ? "Mostrar confirmação de senha" : "Esconder confirmação de senha"}
+                aria-label={
+                  hidden3
+                    ? "Mostrar confirmação de senha"
+                    : "Esconder confirmação de senha"
+                }
                 aria-pressed={!hidden3}
               >
                 <img
                   src={hidden3 ? closed_eye : opened_eye}
                   id="img-botao3"
-                  alt={hidden3 ? "Mostrar confirmação de senha" : "Esconder confirmação de senha"}
+                  alt={
+                    hidden3
+                      ? "Mostrar confirmação de senha"
+                      : "Esconder confirmação de senha"
+                  }
                 ></img>
               </button>
             </div>

@@ -1,7 +1,7 @@
-const { DataTypes } = require('sequelize');
-const { sequelize } = require('../utils/db');
+const { DataTypes } = require("sequelize");
+const { sequelize } = require("../utils/db");
 
-const EventType = sequelize.define('EventType', {
+const EventType = sequelize.define("EventType", {
   type_id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,

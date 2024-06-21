@@ -18,7 +18,7 @@ function NavbarAdmin() {
   const [cookies, setCookie] = useCookies(["darkmode"]);
   const location = useLocation();
 
-  const {user} = useAuth();
+  const { user } = useAuth();
 
   // Função para aumentar a fonte
   const increaseFontSize = () => {
@@ -69,19 +69,57 @@ function NavbarAdmin() {
           </Link>
         </div>
         <div className="navbar-mid">
-          <Link to="/admin/home" className={location.pathname === "/admin/home" ? "navbar-text-selected" : "navbar-text-"} aria-current={location.pathname === "/admin/home" ? "page" : null}>
+          <Link
+            to="/admin/home"
+            className={
+              location.pathname === "/admin/home"
+                ? "navbar-text-selected"
+                : "navbar-text-"
+            }
+            aria-current={location.pathname === "/admin/home" ? "page" : null}
+          >
             HOME ADMIN
           </Link>
           <div className="navbar-pipe">|</div>
-          <Link to="/material/gerenciar" className={location.pathname === "/material/gerenciar" ? "navbar-text-selected" : "navbar-text-"} aria-current={location.pathname === "/material/gerenciar" ? "page" : null}>
+          <Link
+            to="/material/gerenciar"
+            className={
+              location.pathname === "/material/gerenciar"
+                ? "navbar-text-selected"
+                : "navbar-text-"
+            }
+            aria-current={
+              location.pathname === "/material/gerenciar" ? "page" : null
+            }
+          >
             GERENCIAR MATERIAL
           </Link>
           <div className="navbar-pipe">|</div>
-          <Link to="/admin/cadastrar" className={location.pathname === "/admin/cadastrar" ? "navbar-text-selected" : "navbar-text-"} aria-current={location.pathname === "/admin/cadastrar" ? "page" : null}>
+          <Link
+            to="/admin/cadastrar"
+            className={
+              location.pathname === "/admin/cadastrar"
+                ? "navbar-text-selected"
+                : "navbar-text-"
+            }
+            aria-current={
+              location.pathname === "/admin/cadastrar" ? "page" : null
+            }
+          >
             ADICIONAR ADMIN
           </Link>
           <div className="navbar-pipe">|</div>
-          <Link to="/gerenciar-users" className={location.pathname === "/gerenciar-users" ? "navbar-text-selected" : "navbar-text-"} aria-current={location.pathname === "/gerenciar-users" ? "page" : null}>
+          <Link
+            to="/gerenciar-users"
+            className={
+              location.pathname === "/gerenciar-users"
+                ? "navbar-text-selected"
+                : "navbar-text-"
+            }
+            aria-current={
+              location.pathname === "/gerenciar-users" ? "page" : null
+            }
+          >
             GERENCIAR ADMINS
           </Link>
         </div>

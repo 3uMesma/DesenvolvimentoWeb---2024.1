@@ -1,7 +1,7 @@
 import "./EditarMaterial.css";
 import Header from "../../layout/header-admin/Navbar";
 import Footer from "../../layout/footer/Footer.js";
-import HamburguerMenu from "../../layout/header-admin-hamburguer/NavbarHamburguer.jsx"
+import HamburguerMenu from "../../layout/header-admin-hamburguer/NavbarHamburguer.jsx";
 import GlobalStyle from "../../../styles/GlobalStyle";
 import React, { useRef, useState, useEffect } from "react";
 
@@ -156,7 +156,7 @@ function EditarMaterial() {
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

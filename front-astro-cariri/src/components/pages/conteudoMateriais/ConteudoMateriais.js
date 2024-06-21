@@ -1,13 +1,20 @@
 import "./ConteudoMateriais.css";
 
 import React, { useState, useEffect } from "react";
-import { pdf } from '@react-pdf/renderer';
-import { Document, Page, Text, View, StyleSheet, Image } from '@react-pdf/renderer';
+import { pdf } from "@react-pdf/renderer";
+import {
+  Document,
+  Page,
+  Text,
+  View,
+  StyleSheet,
+  Image,
+} from "@react-pdf/renderer";
 import GlobalStyle from "../../../styles/GlobalStyle.js";
 import { useParams } from "react-router-dom";
 
-import Header from '../../layout/header/Navbar';
-import Footer from '../../layout/footer/Footer.js';
+import Header from "../../layout/header/Navbar";
+import Footer from "../../layout/footer/Footer.js";
 import HamburguerMenu from "../../layout/header-hamburguer/NavbarHamburguer.jsx";
 
 import { getMaterialApi } from "../../../back-api/materiais/get.js";
@@ -34,14 +41,14 @@ function PDFContent({ material }) {
 
 const styles = StyleSheet.create({
   page: {
-    flexDirection: 'row',
-    backgroundColor: '#E4E4E4',
+    flexDirection: "row",
+    backgroundColor: "#E4E4E4",
     padding: 50,
     fontSize: 12,
   },
   header: {
-    backgroundColor: '#4D2375',
-    color: '#E4E4E4',
+    backgroundColor: "#4D2375",
+    color: "#E4E4E4",
     fontSize: 24,
     padding: 5,
     margin: -50,
@@ -52,25 +59,25 @@ const styles = StyleSheet.create({
     flexGrow: 1,
   },
   name: {
-    color: '#4D2375',
+    color: "#4D2375",
     fontSize: 18,
     marginTop: 70,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginLeft: -5,
   },
   author: {
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginTop: 5,
     marginBottom: 10,
   },
   image: {
-    width: '100%',
-    height: 'auto',
+    width: "100%",
+    height: "auto",
     marginTop: 10,
   },
   caption: {
     marginTop: 5,
-    fontStyle: 'italic',
+    fontStyle: "italic",
   },
 });
 
@@ -80,13 +87,12 @@ function ConteudoMateriais(props) {
   const [generatingPDF, setGeneratingPDF] = useState(false);
   const [material, setMaterial] = useState([]);
 
-
   const fetchMateriais = async () => {
     try {
-        const response = await getMaterialApi(material_id);
-        setMaterial(response);
+      const response = await getMaterialApi(material_id);
+      setMaterial(response);
     } catch (error) {
-        console.error("Error fetching material:", error);
+      console.error("Error fetching material:", error);
     }
   };
 
@@ -108,12 +114,12 @@ function ConteudoMateriais(props) {
 
   async function downloadPDF() {
     setGeneratingPDF(true);
-  
+
     const pdfContent = <PDFContent material={material} />;
     const instance = pdf(pdfContent);
     const blob = await instance.toBlob();
     const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
+    const a = document.createElement("a");
     a.href = url;
     a.download = `${material.nome}.pdf`;
     document.body.appendChild(a);
@@ -126,14 +132,14 @@ function ConteudoMateriais(props) {
     downloadPDF();
   }
 
-  function displayElement(element){
-    if(element.type==1){
+  function displayElement(element) {
+    if (element.type == 1) {
       return (
         <li key={element.id}>
           <p className="conteudoMateriais-topic-title">{element.title}</p>
           <p className="conteudoMateriais-topic-text">{element.text}</p>
         </li>
-      )
+      );
     } else {
       // let imagePath;
       // console.log(element.path)
@@ -168,11 +174,7 @@ function ConteudoMateriais(props) {
     <div className="conteudoMateriais" id="conteudoMateriais">
       <GlobalStyle />
 
-      {windowWidth > 850 ? (
-        <Header />
-      ) : (
-        <HamburguerMenu />
-      )}
+      {windowWidth > 850 ? <Header /> : <HamburguerMenu />}
 
       <div className="body">
         <h1 className="conteudoMateriais-title"></h1>
@@ -195,7 +197,7 @@ function ConteudoMateriais(props) {
           </ul>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

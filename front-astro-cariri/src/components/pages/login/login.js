@@ -1,6 +1,6 @@
 import "./login.css";
 import Header from "../../layout/header/Navbar";
-import Footer from '../../layout/footer/Footer.js';
+import Footer from "../../layout/footer/Footer.js";
 import HamburguerMenu from "../../layout/header-hamburguer/NavbarHamburguer.jsx";
 import GlobalStyle from "../../../styles/GlobalStyle";
 import closed_eye from "../../../images/invisible.png";
@@ -21,7 +21,7 @@ function AdminLogin() {
   const [error, setError] = useState(null);
   const [id, setId] = useState([]);
 
-  const {signin} = useAuth();
+  const { signin } = useAuth();
 
   useEffect(() => {
     const handleResize = () => {
@@ -47,14 +47,18 @@ function AdminLogin() {
       const response = await postLoginApi(username, password);
       setId(response);
       console.log("Login bem-sucedido:", response.message);
-      const res = signin(response.loginData.user_id, username, response.loginData.email, password);
-      if(res) {
+      const res = signin(
+        response.loginData.user_id,
+        username,
+        response.loginData.email,
+        password,
+      );
+      if (res) {
         setError(res);
         return;
       }
       // Redirecionar para a página após o login bem-sucedido
       navigate("/admin/home");
-
     } catch (error) {
       // Exibe mensagem de erro usando um alerta
       alert("Credenciais inválidas. Por favor, tente novamente.");

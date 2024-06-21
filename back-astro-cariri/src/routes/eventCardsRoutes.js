@@ -1,7 +1,7 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const getEventCardsController = require('../controllers/event-cards/get');
+const getEventCardsController = require("../controllers/event-cards/get");
 
-router.get('/event-cards/', getEventCardsController.getEventCardsData);
+router.get("/event-cards/", getEventCardsController.getEventCardsData);
 
 module.exports = router;

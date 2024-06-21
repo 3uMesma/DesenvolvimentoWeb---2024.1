@@ -1,7 +1,7 @@
-const { DataTypes } = require('sequelize');
-const { sequelize } = require('../utils/db');
+const { DataTypes } = require("sequelize");
+const { sequelize } = require("../utils/db");
 
-const MaterialAttribute = sequelize.define('MaterialAttribute', {
+const MaterialAttribute = sequelize.define("MaterialAttribute", {
   material_id: {
     type: DataTypes.INTEGER,
   },

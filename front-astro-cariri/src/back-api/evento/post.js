@@ -1,6 +1,6 @@
 // Importe o Axios e a URL da API conforme necessário
-import axios from 'axios';
-import { API_URL } from '../api';
+import axios from "axios";
+import { API_URL } from "../api";
 
 // Função para realizar o login na API
 export const postEventoApi = async (eventData) => {
@@ -9,11 +9,11 @@ export const postEventoApi = async (eventData) => {
 
     let data = Object.assign({}, eventData);
 
-    if(data["tipo"] == "Minicurso"){
+    if (data["tipo"] == "Minicurso") {
       data["tipo"] = 1;
-    } else if (data["tipo"] == "Palestra"){
+    } else if (data["tipo"] == "Palestra") {
       data["tipo"] = 2;
-    } else if (data["tipo"] == "Roda de Conversa"){
+    } else if (data["tipo"] == "Roda de Conversa") {
       data["tipo"] = 3;
     } else {
       data["tipo"] = 4;
@@ -22,7 +22,7 @@ export const postEventoApi = async (eventData) => {
     const response = await axios.post(url, data);
     return response.data;
   } catch (error) {
-    console.error('Axios error:', error);
+    console.error("Axios error:", error);
     throw error;
   }
 };
