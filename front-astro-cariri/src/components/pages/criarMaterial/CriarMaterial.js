@@ -32,7 +32,7 @@ function CriarMaterial() {
   }
   
   const [topics, setTopics] = useState([{topic: "Tópico 1", text: "Texto 1", sequence: 1}]);
-  const [images, setImages] = useState([{file:"", capion: "Legenda 1", alt: "Descrição 1", sequence: 2}]);
+  // const [images, setImages] = useState([{file:"", capion: "Legenda 1", alt: "Descrição 1", sequence: 2}]);
   
   const addTopic = () => {
     const newTopic = { topic: `Tópico ${topics.length+1}`, text: `Texto ${topics.length+1}` };
@@ -45,16 +45,16 @@ function CriarMaterial() {
     }
   }
 
-  const addImage = () => {
-    const newImage = { file: "", caption: `Legenda ${images.length+1}`, alt: `Descrição ${images.length+1}` };
-    setImages([...images, newImage]);
-  }
+  // const addImage = () => {
+  //   const newImage = { file: "", caption: `Legenda ${images.length+1}`, alt: `Descrição ${images.length+1}` };
+  //   setImages([...images, newImage]);
+  // }
 
-  const removeImage = () => {
-    if (images.length > 0) {
-      setImages(images.slice(0, -1));
-    }
-  }
+  // const removeImage = () => {
+  //   if (images.length > 0) {
+  //     setImages(images.slice(0, -1));
+  //   }
+  // }
 
   const handleTopicChange = (e, index) => {
     if(e.target.name == "text"){
@@ -68,21 +68,21 @@ function CriarMaterial() {
     });
   }
 
-  const handleImageChange = (e, index) => {
-    if(e.target.name == "file"){
-      setImages(images => {
-        let updatedImages = [...images];
-        updatedImages[index][e.target.name] = e.target.files[0];
-        return updatedImages;
-      });
-    } else {
-      setImages(images => {
-        let updatedImages = [...images];
-        updatedImages[index][e.target.name] = e.target.value;
-        return updatedImages;
-      });
-    }
-  }
+  // const handleImageChange = (e, index) => {
+  //   if(e.target.name == "file"){
+  //     setImages(images => {
+  //       let updatedImages = [...images];
+  //       updatedImages[index][e.target.name] = e.target.files[0];
+  //       return updatedImages;
+  //     });
+  //   } else {
+  //     setImages(images => {
+  //       let updatedImages = [...images];
+  //       updatedImages[index][e.target.name] = e.target.value;
+  //       return updatedImages;
+  //     });
+  //   }
+  // }
 
   const displayTopic = (topic, index) => {
     return (
@@ -127,50 +127,50 @@ function CriarMaterial() {
     )
   }
 
-  const displayImage = (image, index) => {
-    return (
-      <div>
+  // const displayImage = (image, index) => {
+  //   return (
+  //     <div>
 
-        {/* Campo para selecionar um arquivo de imagem*/}
-        <div className="campo-forms">
-        <p className="title-input-criar">Imagem</p>
-        <input
-          name="file"
-          className="file-input-criar"
-          type="file"
-          onChange={(e) => handleImageChange(e, index)}
-          aria-label="Selecione uma imagem"
-          aria-describedby="Este é um campo de entrada de arquivo. Clique para selecionar uma imagem."
-        ></input>
-        </div>
+  //       {/* Campo para selecionar um arquivo de imagem*/}
+  //       <div className="campo-forms">
+  //       <p className="title-input-criar">Imagem</p>
+  //       <input
+  //         name="file"
+  //         className="file-input-criar"
+  //         type="file"
+  //         onChange={(e) => handleImageChange(e, index)}
+  //         aria-label="Selecione uma imagem"
+  //         aria-describedby="Este é um campo de entrada de arquivo. Clique para selecionar uma imagem."
+  //       ></input>
+  //       </div>
 
-        {/* Campo de legenda da imagem*/}
-        <div className="campo-forms">
-        <p className="title-input-criar">Legenda Imagem</p>
-        <input
-          name="caption"
-          className="text-input-criar"
-          placeholder="Leganda para a imagem"
-          onChange={(e) => handleImageChange(e, index)}
-          type="text"
-          ></input>
-        </div>
+  //       {/* Campo de legenda da imagem*/}
+  //       <div className="campo-forms">
+  //       <p className="title-input-criar">Legenda Imagem</p>
+  //       <input
+  //         name="caption"
+  //         className="text-input-criar"
+  //         placeholder="Leganda para a imagem"
+  //         onChange={(e) => handleImageChange(e, index)}
+  //         type="text"
+  //         ></input>
+  //       </div>
 
-        <div className="campo-forms">
-        <p className="title-input-criar">Ordem no material</p>
-        <textarea
-          name="sequence"
-          className="texto-input"
-          type="number"
-          value={image.sequence}
-          onChange={(e) => handleImageChange(e, index)}
-          style={{ height: `${textareaHeight}px` }}
-          ></textarea>
-      </div>
+  //       <div className="campo-forms">
+  //       <p className="title-input-criar">Ordem no material</p>
+  //       <textarea
+  //         name="sequence"
+  //         className="texto-input"
+  //         type="number"
+  //         value={image.sequence}
+  //         onChange={(e) => handleImageChange(e, index)}
+  //         style={{ height: `${textareaHeight}px` }}
+  //         ></textarea>
+  //     </div>
 
-      </div>
-    )
-  }
+  //     </div>
+  //   )
+  // }
   
   // Função para lidar com o envio do formulário
   const handleSubmit = (e) => {
@@ -178,8 +178,9 @@ function CriarMaterial() {
     const date = new Date().toJSON().slice(0,10);
     // const material = {title: materialData.title, author: materialData.author, date: date, topics: topics, images: images};
     const material = {title: materialData.title, author: materialData.author, date: date, topics: topics, images: []};
-    console.log(material)
     postMaterialApi(material);
+    setMaterialData({title: "", author: ""})
+    setTopics([{topic: "Tópico 1", text: "Texto 1", sequence: 1}])
   };
 
   // Estado para armazenar a largura da janela, serve para o menu hamburguer
@@ -219,6 +220,7 @@ function CriarMaterial() {
                 className="text-input-criar"
                 type="text"
                 placeholder="Título do Material a ser criado"
+                value={materialData.title}
                 onChange={handleChange}
               ></input>
             </div>
@@ -231,6 +233,7 @@ function CriarMaterial() {
                 name="author"
                 className="text-input-criar"
                 type="text"
+                value={materialData.author}
                 placeholder="Autor do Material"
                 onChange={handleChange}
               ></input>
