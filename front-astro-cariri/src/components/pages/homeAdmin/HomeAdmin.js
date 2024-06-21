@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { getAllEventsApi } from "../../../back-api/evento/getAll.js"
 
 import eventos from "../../data/eventos.json";
+import { propTypes } from "react-bootstrap/esm/Image.js";
 
 function HomeAdmin() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -61,7 +62,7 @@ function HomeAdmin() {
             {eventos.map((proposta, index) => (
               <li key={index}>
                 <div className="homeAdmin-proposals-proposal">
-                  <Link to="/visualizar-evento">
+                  <Link to={`/visualizar-evento/${proposta.event_id}`}>
                     <h2 className="homeAdmin-proposal-title">
                       {proposta.title}
                     </h2>

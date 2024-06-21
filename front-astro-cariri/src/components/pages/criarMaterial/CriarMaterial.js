@@ -9,6 +9,8 @@ import HamburguerMenu from "../../layout/header-admin-hamburguer/NavbarHamburgue
 
 import GlobalStyle from "../../../styles/GlobalStyle";
 
+import { postMaterialApi } from "../../../back-api/materiais/post.js"
+
 function CriarMaterial() {
   // Referência para o textarea
   const textAreaRef = useRef(null);
@@ -29,8 +31,8 @@ function CriarMaterial() {
     setMaterialData({ ...materialData, [name]: value });
   }
   
-  const [topics, setTopics] = useState([{topic: "Tópico 1", text: "Texto 1"}]);
-  const [images, setImages] = useState([{file:"", capion: "Legenda 1", alt: "Descrição 1"}]);
+  const [topics, setTopics] = useState([{topic: "Tópico 1", text: "Texto 1", sequence: 1}]);
+  const [images, setImages] = useState([{file:"", capion: "Legenda 1", alt: "Descrição 1", sequence: 2}]);
   
   const addTopic = () => {
     const newTopic = { topic: `Tópico ${topics.length+1}`, text: `Texto ${topics.length+1}` };
@@ -100,11 +102,22 @@ function CriarMaterial() {
       <div className="campo-forms">
         <p className="title-input-criar">Texto</p>
         <textarea
-          required
           name="text"
           className="texto-input"
           ref={textAreaRef}
           value={topic.text}
+          onChange={(e) => handleTopicChange(e, index)}
+          style={{ height: `${textareaHeight}px` }}
+          ></textarea>
+      </div>
+
+      <div className="campo-forms">
+        <p className="title-input-criar">Ordem no material</p>
+        <textarea
+          name="sequence"
+          className="texto-input"
+          type="number"
+          value={topic.sequence}
           onChange={(e) => handleTopicChange(e, index)}
           style={{ height: `${textareaHeight}px` }}
           ></textarea>
@@ -142,6 +155,19 @@ function CriarMaterial() {
           type="text"
           ></input>
         </div>
+
+        <div className="campo-forms">
+        <p className="title-input-criar">Ordem no material</p>
+        <textarea
+          name="sequence"
+          className="texto-input"
+          type="number"
+          value={image.sequence}
+          onChange={(e) => handleImageChange(e, index)}
+          style={{ height: `${textareaHeight}px` }}
+          ></textarea>
+      </div>
+
       </div>
     )
   }
@@ -149,7 +175,11 @@ function CriarMaterial() {
   // Função para lidar com o envio do formulário
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Aqui você pode enviar o arquivo para o back-end, parte futura
+    const date = new Date().toJSON().slice(0,10);
+    // const material = {title: materialData.title, author: materialData.author, date: date, topics: topics, images: images};
+    const material = {title: materialData.title, author: materialData.author, date: date, topics: topics, images: []};
+    console.log(material)
+    postMaterialApi(material);
   };
 
   // Estado para armazenar a largura da janela, serve para o menu hamburguer
@@ -184,6 +214,7 @@ function CriarMaterial() {
             <div className="campo-forms">
               <p className="title-input-criar">Título</p>
               <input
+                required
                 name="title"
                 className="text-input-criar"
                 type="text"
@@ -196,6 +227,7 @@ function CriarMaterial() {
             <div className="campo-forms">
               <p className="title-input-criar">Autor</p>
               <input
+                required
                 name="author"
                 className="text-input-criar"
                 type="text"
@@ -205,7 +237,7 @@ function CriarMaterial() {
             </div>
 
             {topics.map((topic, index) => displayTopic(topic, index))}
-            {images.map((image, index) => displayImage(image, index))}
+            {/* {images.map((image, index) => displayImage(image, index))} */}
             
             {/* Botões de ação */}
             <div className="btn-add">
@@ -213,6 +245,7 @@ function CriarMaterial() {
               <button
                 className="botaoAdicionar"
                 name="AdicionarTopico"
+                type="button"
                 onClick={addTopic}>
                 Adicionar Tópico
               </button>
@@ -220,13 +253,15 @@ function CriarMaterial() {
               <button
                 className="botaoAdicionar"
                 name="RetirarTopico"
+                type="button"
                 onClick={removeTopic}>
                 Retirar Tópico
               </button>
 
-              <button
+              {/* <button
                 className="botaoAdicionar"
                 name="AdicionarImagem"
+                type="button"
                 onClick={addImage}>
                 Adicionar Imagem
               </button>
@@ -234,15 +269,16 @@ function CriarMaterial() {
               <button
                 className="botaoAdicionar"
                 name="RetirarImagem"
+                type="button"
                 onClick={removeImage}>
                 Retirar Imagem
-              </button>
+              </button> */}
 
             </div>
 
             {/* Botão para submeter o formulário (ainda nn funciona por causa do back*/}
             <div className="btn-solicitar">
-              <button type="submit" id="botaoSolicitar" name="SolicitarEvento">
+              <button type="submit" id="botaoSolicitar" name="SolicitarEvento" onClick={handleSubmit}>
                 Submeter
               </button>
             </div>

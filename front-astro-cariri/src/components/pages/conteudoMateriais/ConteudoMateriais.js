@@ -134,12 +134,12 @@ function ConteudoMateriais(props) {
     downloadPDF();
   }
 
-  function displayElement(element) {
-    if (element.type == 1) {
+  function displayElement(topic) {
+    if (topic.type == 1) {
       return (
-        <li key={element.id}>
-          <p className="conteudoMateriais-topic-title">{element.title}</p>
-          <p className="conteudoMateriais-topic-text">{element.text}</p>
+        <li key={topic.id}>
+          <p className="conteudoMateriais-topic-title">{topic.topic}</p>
+          <p className="conteudoMateriais-topic-text">{topic.text}</p>
         </li>
       );
     } else {
@@ -168,7 +168,7 @@ function ConteudoMateriais(props) {
     }
   }
 
-  if (!material.info || !material.elements) {
+  if (!material.info || !material.topics) {
     return <div>Loading...</div>;
   }
 
@@ -193,7 +193,7 @@ function ConteudoMateriais(props) {
           <ul>
             <div className="conteudoMateriais-conteudo">
               <ul>
-                {material.elements.map((element) => displayElement(element))}
+                {material.topics.map((topic) => displayElement(topic))}
               </ul>
             </div>
           </ul>

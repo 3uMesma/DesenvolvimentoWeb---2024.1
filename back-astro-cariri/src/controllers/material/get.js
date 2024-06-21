@@ -13,7 +13,7 @@ exports.getMaterialData = async (req, res, next) => {
       "WHERE m.material_id = $1";
 
     const query_topics =
-      "SELECT t.title, t.text, ma.sequence_ AS sequence, ma.attribute_type AS type, t.topic_id AS id " +
+      "SELECT t.title AS topic, t.text, ma.sequence_ AS sequence, ma.attribute_type AS type, t.topic_id AS id " +
       "FROM Topic t " +
       "INNER JOIN MaterialAttribute ma ON t.topic_id = ma.attribute_id " +
       "WHERE ma.material_id = $1 " +
@@ -34,10 +34,10 @@ exports.getMaterialData = async (req, res, next) => {
     const topics = await client.query(query_topics, [materialId]);
     const images = await client.query(query_images, [materialId]);
 
-    const elements = images.rows.concat(topics.rows);
-    elements.sort(function (a, b) {
-      return parseFloat(a.sequence) - parseFloat(b.sequence);
-    });
+    // const elements = images.rows.concat(topics.rows);
+    // elements.sort(function (a, b) {
+    //   return parseFloat(a.sequence) - parseFloat(b.sequence);
+    // });
 
     // console.log('MATERIAL')
     // console.log(material.rows)
@@ -46,11 +46,10 @@ exports.getMaterialData = async (req, res, next) => {
     // console.log('IMAGENS')
     // console.log(images.rows)
 
-    const result = { info: material.rows[0], elements: elements };
-    console.log(result);
+    // const result = { info: material.rows[0], elements: elements };
+    const result = { info: material.rows[0], topics: topics.rows, images: images.rows };
 
     // 200 é código que indica que deu certo
-    // const materialData = material.rows;
     return res.status(200).json(result);
   } catch (error) {
     next(error);

@@ -4,8 +4,13 @@ import Footer from "../../layout/footer/Footer.js";
 import HamburguerMenu from "../../layout/header-admin-hamburguer/NavbarHamburguer.jsx";
 import GlobalStyle from "../../../styles/GlobalStyle";
 import React, { useRef, useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 import { fakeMateriais } from "../../data/materiais.jsx";
+
+import { putMaterialApi } from "../../../back-api/materiais/put.js"
+
+import { getMaterialApi } from "../../../back-api/materiais/get.js";
 
 // Essa page tem a mesma estrutura, incluso comnetários, da paga criarMaterial, com a diferença de que, nessa a gente chama
 // o material que a pessoa quer editar (por enquanto isso é mocado) com react, para que apareça na tela as informações.
@@ -21,15 +26,33 @@ function EditarMaterial() {
     setTextareaHeight(newHeight);
   }
 
-  const [materialData, setMaterialData] = useState({title:"", author:""});
+  const { material_id } = useParams();
+  const [materialData, setMaterialData] = useState();
+  const [topics, setTopics] = useState([]);
+  const [images, setImages] = useState([]);
+
+  const fetchMaterial = async () => {
+    try {
+      const response = await getMaterialApi(material_id);
+      setMaterialData(response.info);
+      setTopics(response.topics)
+      setImages(response.images)
+      console.log(response)
+    } catch (error) {
+      console.error("Error fetching material:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchMaterial();
+  }, [material_id]);
   
   const handleChange = (e) => {
     const { name, value } = e.target;
     setMaterialData({ ...materialData, [name]: value });
   }
   
-  const [topics, setTopics] = useState([{topic: "Tópico 1", text: "Texto 1"}]);
-  const [images, setImages] = useState([{file:"", capion: "Legenda 1", alt: "Descrição 1"}]);
+  
   
   const addTopic = () => {
     const newTopic = { topic: `Tópico ${topics.length+1}`, text: `Texto ${topics.length+1}` };
@@ -57,6 +80,10 @@ function EditarMaterial() {
     if(e.target.name == "text"){
       adjustHeight()
     }
+
+    console.log(index)
+    console.log(topics)
+    console.log(e.target.name)
 
     setTopics(topics => {
       let updatedTopics = [...topics];
@@ -124,6 +151,7 @@ function EditarMaterial() {
           name="file"
           className="file-input-criar"
           type="file"
+          value={image.file}
           onChange={(e) => handleImageChange(e, index)}
           aria-label="Selecione uma imagem"
           aria-describedby="Este é um campo de entrada de arquivo. Clique para selecionar uma imagem."
@@ -140,7 +168,7 @@ function EditarMaterial() {
         <input
           name="caption"
           className="text-input-criar"
-          placeholder="Leganda para a imagem"
+          value={image.caption}
           onChange={(e) => handleImageChange(e, index)}
           type="text"
           ></input>
@@ -148,10 +176,21 @@ function EditarMaterial() {
       </div>
     )
   }
+
+  function displayElement(element, index) {
+    if (element.type == 1) {
+      return displayTopic(element, index);
+    } else {
+      displayImage(element, index);
+    }
+  }
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Aqui enviar para o back
+    const date = new Date().toJSON().slice(0,10);
+    // const material = {material_id: material_id, title: materialData.title, author: materialData.author, date: date, topics: topics, images: images};
+    const material = {material_id: material_id, title: materialData.title, author: materialData.author, date: date, topics: topics, images: []};
+    putMaterialApi(material);
   };
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -168,6 +207,11 @@ function EditarMaterial() {
     };
   }, []);
 
+  if(!materialData){
+    return (
+      <div>Carregando...</div>
+    )
+  }
   
   return (
     <div className="criarMaterial">
@@ -185,6 +229,7 @@ function EditarMaterial() {
                 className="text-input-criar"
                 type="text"
                 value={materialData.title}
+                onChange={handleChange}
               ></input>
             </div>
 
@@ -195,12 +240,12 @@ function EditarMaterial() {
                 className="text-input-criar"
                 type="text"
                 value={materialData.author}
+                onChange={handleChange}
               ></input>
             </div>
 
             {topics.map((topic, index) => displayTopic(topic, index))}
-            {images.map((image, index) => displayImage(image, index))}
-            
+
           </form>
 
           <div className="btn-add">
@@ -219,7 +264,7 @@ function EditarMaterial() {
               Retirar Tópico
             </button>
 
-            <button
+            {/* <button
               className="botaoAdicionar"
               name="AdicionarImagem"
               onClick={addImage}>
@@ -231,12 +276,12 @@ function EditarMaterial() {
               name="RetirarImagem"
               onClick={removeImage}>
               Retirar Imagem
-            </button>
+            </button> */}
 
           </div>
 
           <div className="btn-solicitar">
-            <button type="submit" id="botaoSolicitar" name="SolicitarEvento">
+            <button type="submit" id="botaoSolicitar" name="SolicitarEvento" onClick={handleSubmit}>
               Atualizar
             </button>
           </div>

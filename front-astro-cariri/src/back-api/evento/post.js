@@ -2,7 +2,6 @@
 import axios from "axios";
 import { API_URL } from "../api";
 
-// Função para realizar o login na API
 export const postEventoApi = async (eventData) => {
   try {
     const url = `${API_URL}/event`;

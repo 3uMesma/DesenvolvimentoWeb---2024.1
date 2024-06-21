@@ -91,10 +91,10 @@ function GerenciaMateriais() {
             {materiais.slice(startIndex, startIndex+10).map((material, index) => (
               <li key={index}>
                 <div className="gerenciar-materiais-item">
-                  <Link to="/conteudo-materiais">{material.title}</Link>
+                  <Link to={`/conteudo-materiais/${material.material_id}`}>{material.title}</Link>
                   <div className="btn-area-gerenciar-material">
                     {/* Botao de editar material */}
-                    <Link to="/material/editar" className="btn-editar-material">
+                    <Link to={`/material/editar/${material.material_id}`} className="btn-editar-material">
                       <img className="icon-editar-material" src={editIcon} />
                     </Link>
                     {/* Botao de excluir material */}

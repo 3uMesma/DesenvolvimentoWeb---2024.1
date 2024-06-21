@@ -62,7 +62,7 @@ function App() {
               element={<Private Item={CriarMaterial} />}
             ></Route>
             <Route
-              path="/material/editar"
+              path="/material/editar/:material_id"
               element={<Private Item={EditarMaterial} />}
             ></Route>
             <Route
