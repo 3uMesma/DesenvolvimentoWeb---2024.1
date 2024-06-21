@@ -1,5 +1,5 @@
-import axios from 'axios';
-import { API_URL } from '../api';
+import axios from "axios";
+import { API_URL } from "../api";
 
 export const getAllMateriaisApi = async () => {
   try {
@@ -8,7 +8,7 @@ export const getAllMateriaisApi = async () => {
     const response = await axios.get(url);
     return response.data;
   } catch (error) {
-    console.error('Axios error:', error);
+    console.error("Axios error:", error);
     throw error;
   }
 };

@@ -1,9 +1,9 @@
-import './Home.css'
-import Header from '../../layout/header/Navbar.js'
-import Footer from '../../layout/footer/Footer.js'
-import HamburguerMenu from "../../layout/header-hamburguer/NavbarHamburguer.jsx"
-import GlobalStyle from '../../../styles/GlobalStyle.js';
-import { fakeHome } from '../../data/home.jsx';
+import "./Home.css";
+import Header from "../../layout/header/Navbar.js";
+import Footer from "../../layout/footer/Footer.js";
+import HamburguerMenu from "../../layout/header-hamburguer/NavbarHamburguer.jsx";
+import GlobalStyle from "../../../styles/GlobalStyle.js";
+import { fakeHome } from "../../data/home.jsx";
 
 import React, { useState, useEffect } from "react";
 
@@ -48,7 +48,7 @@ function Home(props) {
           ></img>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

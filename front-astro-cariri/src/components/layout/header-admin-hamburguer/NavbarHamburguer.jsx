@@ -128,25 +128,41 @@ const HamburgerMenu = () => {
           <ul className="lista-menu">
             <li>
               <Link to="/admin/home" aria-label="Home Admin">
-                <img src={home} alt="Ícone da Home" className="img-item-hamburguer"/>
+                <img
+                  src={home}
+                  alt="Ícone da Home"
+                  className="img-item-hamburguer"
+                />
                 <p className="lista-title-hamburguer">Home Admin</p>
               </Link>
             </li>
             <li>
               <Link to="/material/gerenciar" aria-label="Gerenciar Material">
-                <img src={material} alt="Ícone de Gerenciar Material" className="img-item-hamburguer" />
+                <img
+                  src={material}
+                  alt="Ícone de Gerenciar Material"
+                  className="img-item-hamburguer"
+                />
                 <p className="lista-title-hamburguer">Gerenciar Material</p>
               </Link>
             </li>
             <li>
-              <Link to="/admin/cadastrar" aria-label="Adicionar Admin" >
-                <img src={add_user} alt="Ícone de Adicionar Admin" className="img-item-hamburguer" />
+              <Link to="/admin/cadastrar" aria-label="Adicionar Admin">
+                <img
+                  src={add_user}
+                  alt="Ícone de Adicionar Admin"
+                  className="img-item-hamburguer"
+                />
                 <p className="lista-title-hamburguer">Adicionar Admin</p>
               </Link>
             </li>
             <li>
               <Link to="/gerenciar-users" aria-label="Gerenciar Admins">
-                <img src={mng_user} alt="Ícone de Gerenciar Admins" className="img-item-hamburguer" />
+                <img
+                  src={mng_user}
+                  alt="Ícone de Gerenciar Admins"
+                  className="img-item-hamburguer"
+                />
                 <p className="lista-title-hamburguer">Gerenciar Admins</p>
               </Link>
             </li>

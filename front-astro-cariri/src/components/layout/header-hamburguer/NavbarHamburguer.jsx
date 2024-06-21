@@ -133,10 +133,7 @@ const HamburgerMenu = () => {
         {isOpen && (
           <ul className="lista-menu">
             <li className="li-item-hamburguer">
-              <Link
-                to="/materiais"
-                aria-label="Materiais"
-              >
+              <Link to="/materiais" aria-label="Materiais">
                 <div className="div-item-hamburguer">
                   <img
                     src={materiais}
@@ -148,10 +145,7 @@ const HamburgerMenu = () => {
               </Link>
             </li>
             <li className="li-item-hamburguer">
-              <Link
-                to="/solicitacao-evento"
-                aria-label="Solicitar Evento"
-              >
+              <Link to="/solicitacao-evento" aria-label="Solicitar Evento">
                 <div className="div-item-hamburguer">
                   <img
                     src={solicitar}

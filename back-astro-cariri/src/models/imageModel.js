@@ -1,7 +1,7 @@
-const { DataTypes } = require('sequelize');
-const { sequelize } = require('../utils/db');
+const { DataTypes } = require("sequelize");
+const { sequelize } = require("../utils/db");
 
-const Image = sequelize.define('Image', {
+const Image = sequelize.define("Image", {
   image_id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
@@ -18,7 +18,7 @@ const Image = sequelize.define('Image', {
   alt: {
     type: DataTypes.STRING,
     allowNull: false,
-  }
+  },
 });
 
 module.exports = Image;

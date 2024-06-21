@@ -1,15 +1,32 @@
-import './HomeAdmin.css'
-import Header from '../../layout/header-admin/Navbar.js'
-import Footer from '../../layout/footer/Footer.js'
-import HamburguerMenu from "../../layout/header-admin-hamburguer/NavbarHamburguer.jsx"
-import GlobalStyle from '../../../styles/GlobalStyle.js';
-import React, {useState, useEffect} from 'react';
+import "./HomeAdmin.css";
+import Header from "../../layout/header-admin/Navbar.js";
+import Footer from "../../layout/footer/Footer.js";
+import HamburguerMenu from "../../layout/header-admin-hamburguer/NavbarHamburguer.jsx";
+import GlobalStyle from "../../../styles/GlobalStyle.js";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { getAllEventsApi } from "../../../back-api/evento/getAll.js"
 
 import eventos from "../../data/eventos.json";
 
 function HomeAdmin() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [eventos, setEventos] = useState([]);
+
+  const fetchEvents = async () => {
+    try {
+      const response = await getAllEventsApi();
+      console.log(response)
+      setEventos(response);
+    } catch (error) {
+      console.error("Error fetching events:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchEvents();
+    console.log(eventos)
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -22,6 +39,13 @@ function HomeAdmin() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  if(!eventos){
+    return (
+      <div>Carregando...</div>
+    )
+  }
+
   return (
     <div className="homeAdmin">
       <GlobalStyle />
@@ -39,20 +63,20 @@ function HomeAdmin() {
                 <div className="homeAdmin-proposals-proposal">
                   <Link to="/visualizar-evento">
                     <h2 className="homeAdmin-proposal-title">
-                      {proposta.titulo}
+                      {proposta.title}
                     </h2>
                     <p className="p-proposal">
                       <strong>Interessado: </strong>{" "}
-                      {proposta["nome-interessado"]}
+                      {proposta.requester}
                     </p>
                     <p className="p-proposal">
-                      <strong>Instituição: </strong> {proposta.instituicao}
+                      <strong>Instituição: </strong> {proposta.institution}
                     </p>
                     <p className="p-proposal">
-                      <strong>Data: </strong> {proposta.data}
+                      <strong>Data: </strong> {proposta.date_.substring(0, 10)}
                     </p>
                     <p className="p-proposal">
-                      <strong>Tipo: </strong> {proposta.tipo}
+                      <strong>Tipo: </strong> {proposta.event_type_name}
                     </p>
                   </Link>
                 </div>
@@ -61,7 +85,7 @@ function HomeAdmin() {
           </ul>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

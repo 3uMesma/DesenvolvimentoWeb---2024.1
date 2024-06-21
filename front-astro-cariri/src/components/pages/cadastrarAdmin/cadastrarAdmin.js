@@ -1,7 +1,7 @@
 import "./CadastrarAdmin.css";
 import Header from "../../layout/header-admin/Navbar";
 import Footer from "../../layout/footer/Footer.js";
-import HamburguerMenu from "../../layout/header-admin-hamburguer/NavbarHamburguer.jsx"
+import HamburguerMenu from "../../layout/header-admin-hamburguer/NavbarHamburguer.jsx";
 import GlobalStyle from "../../../styles/GlobalStyle";
 import closed_eye from "../../../images/invisible.png";
 import opened_eye from "../../../images/visible.png";
@@ -86,7 +86,7 @@ function CadastrarAdmin() {
           </button>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

@@ -15,6 +15,15 @@ import EditarDadosLogin from "./components/pages/editarDadosLogin/editarDadosLog
 import GerenciaMateriais from "./components/pages/gerenciarMaterial/Materiais";
 import CadastrarAdmin from "./components/pages/cadastrarAdmin/cadastrarAdmin";
 
+import { AuthProvider } from "./back-api/login/auth";
+import useAuth from "./back-api/login/useAuth";
+
+const Private = ({ Item }) => {
+  const { signed } = useAuth();
+
+  return signed > 0 ? <Item /> : <Login />;
+};
+
 function App() {
   return (
     <div className="App">
@@ -27,38 +36,56 @@ function App() {
         {/* <Nav.Link as={Link} to="/alunos">Cadastro de Materiais</Nav.Link> */}
         {/* <Nav.Link as={Link} to="/sobre">User</Nav.Link> */}
         {/* </Nav> */}
-
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/materiais" element={<Materiais />}></Route>
-          <Route path="/user" element={<EditarDadosLogin />}></Route>
-          <Route
-            path="/solicitacao-evento"
-            element={<SolicitacaoEvento />}
-          ></Route>
-          <Route path="/login" element={<Login />}></Route>
-          <Route path="/admin/home" element={<HomeAdmin />}></Route>
-          <Route
-            path="/conteudo-materiais/:material_id"
-            element={<ConteudoMateriais />}
-          ></Route>
-          <Route path="/material/criar" element={<CriarMaterial />}></Route>
-          <Route path="/material/editar" element={<EditarMaterial />}></Route>
-          <Route
-            path="/visualizar-evento"
-            element={<VisualizarEvento />}
-          ></Route>
-          <Route path="/gerenciar-users" element={<GerenciarUsers />}></Route>
-          <Route
-            path="/material/gerenciar"
-            element={<GerenciaMateriais />}
-          ></Route>
-          <Route path="/admin/cadastrar" element={<CadastrarAdmin />}></Route>
-        </Routes>
-
-        	</BrowserRouter>
-      	</div>
-    );
+        <AuthProvider>
+          <Routes>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/materiais" element={<Materiais />}></Route>
+            <Route
+              path="/user"
+              element={<Private Item={EditarDadosLogin} />}
+            ></Route>
+            <Route
+              path="/solicitacao-evento"
+              element={<SolicitacaoEvento />}
+            ></Route>
+            <Route path="/login" element={<Login />}></Route>
+            <Route
+              path="/admin/home"
+              element={<Private Item={HomeAdmin} />}
+            ></Route>
+            <Route
+              path="/conteudo-materiais/:material_id"
+              element={<ConteudoMateriais />}
+            ></Route>
+            <Route
+              path="/material/criar"
+              element={<Private Item={CriarMaterial} />}
+            ></Route>
+            <Route
+              path="/material/editar"
+              element={<Private Item={EditarMaterial} />}
+            ></Route>
+            <Route
+              path="/visualizar-evento/:event_id"
+              element={<VisualizarEvento />}
+            ></Route>
+            <Route
+              path="/gerenciar-users"
+              element={<Private Item={GerenciarUsers} />}
+            ></Route>
+            <Route
+              path="/material/gerenciar"
+              element={<Private Item={GerenciaMateriais} />}
+            ></Route>
+            <Route
+              path="/admin/cadastrar"
+              element={<Private Item={CadastrarAdmin} />}
+            ></Route>
+          </Routes>
+        </AuthProvider>
+      </BrowserRouter>
+    </div>
+  );
 }
 
 export default App;

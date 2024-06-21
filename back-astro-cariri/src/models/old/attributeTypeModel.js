@@ -1,7 +1,7 @@
-const { DataTypes } = require('sequelize');
-const { sequelize } = require('../../utils/db');
+const { DataTypes } = require("sequelize");
+const { sequelize } = require("../../utils/db");
 
-const AttributeType = sequelize.define('AttributeType', {
+const AttributeType = sequelize.define("AttributeType", {
   attribute_type_id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,

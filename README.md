@@ -1,7 +1,9 @@
 # DesenvolvimentoWeb---2024.1
+
 Repositório para a disciplina de SCC0219 - Introdução ao Desenvolvimento Web turma B.
 
 ## INTEGRANTES DO GRUPO
+
 Amanda Kasat - 13727210
 
 Alcino Salviano Cavalcanti - 11892963
@@ -10,37 +12,25 @@ Eduarda Fritzen Neumann - 12556973
 
 Lucas Isao Omati - 13673090
 
-Caio Oliveira Godinho - 12731996 
+Caio Oliveira Godinho - 12731996
 
 ## BRANCHS
+
 main -> Branch principal, onde será colocada as partes finalizadas e testadas durante o desenvolvimento.
 
 dev-fromt -> Branch relacionada a etapa de desenvolvimento do front-end
 
 dev-back -> Branch ralacionada a etapa de desenvolvimento do back-end
 
-## Subir alterações
-Como o repo aqui no git vai ser composto tanto do back como do front, ao subir alterações certifique-se de que o seu `git add` companha apenas o repo que está trabalhando na corrente task.
-Exemplo:
-A task está vinculada ao front seu `git add` será da seguinte forma `git add front-app`, sendo front-app seu repo relacionada a organização de todo o front.
-Sobre os commits, quando forem subir mudanças, usem o padrão:
+## Como rodar o projeto
 
-- Hotfix: Usado para correções de bugs ou pequenas mudanças rápidas importantes. 
-- Feature (Feat): Usado para adicionar novas funcionalidades ao código. Isso pode ser qualquer coisa, desde a implementação de um novo recurso até a melhoria de uma funcionalidade existente. 
-- Refactor: Usado para refatorar o código, ou seja, reestruturar o código sem alterar sua funcionalidade externa.
-- Docs: Usado para atualizar a documentação do projeto.
-- Chore: Usado para commits relacionados à manutenção do projeto que não se encaixam em nenhuma outra categoria.
+Para que o site funcione corretamente primeiro é necessário instalar todas as dependências nescessárias com o comando `npm i`. Em seguida é necessário atualizar o .env com seus dados, está disponibilizado um exemplo de como deve estar o .env no arquivo `back-astro-cariri/.example.env`.
 
-## Instruções para configuração e instalação do ambiente
-O front do site já esté hospedado no Vercel, no link desenvolvimento-web-2024-1-y38t.vercel.app . Mas, caso queira rodar na máquina e ver o site em localhost, seguie o tutorial:
-- Clone o projeto
-- Como a branch main está atualizada com as mudanças do front, não é necessário mexer nas outras branchs fora a main
-- Vá para a pasta front-astro-cariri
-- Dê um 
-`npm i` 
-para instalar o npm e suas dependências
-- escreva o código `npm run start`
+Para que as funções do back operem corretamente é necessário que os arquivos `back-astro-cariri/src/database/initialize.sql` e `back-astro-cariri/src/database/population.sql` sejam copiados para um SGBD da sua escolha e compilados, para que as tabelas estejam disponíveis de forma local.
 
+Por último, é necessário abrir dois terminais, um para rodar o back e outro o front. No primeiro terminal você vai acessar a pasta `back-astro-cariri`e usar o comando `npm run dev`, após isso o back deverá estará rodando na porta 3333. No segundo terminal você vai acessar a pasta `front-astro-cariri` e usar o comando `npm run start`, após isso o front deverá estará rodando na porta 3000.
+
+**Observação:** Para conseguir fazer login pode ser usado qualquer um dos usuários na tabela user\_, um exemplo é o usuário: `Amanda`, cuja senha é `10000000`
 
 ## Formatar código
 

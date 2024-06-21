@@ -1,9 +1,9 @@
 import axios from "axios";
 import { API_URL } from "../api";
 
-export const getMaterialApi = async (id) => {
+export const getUserApi = async () => {
   try {
-    const url = `${API_URL}/material/${id}`;
+    const url = `${API_URL}/user`;
     const response = await axios.get(url);
     return response.data;
   } catch (error) {

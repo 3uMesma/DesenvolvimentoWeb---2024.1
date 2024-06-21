@@ -1,11 +1,11 @@
-import './GerenciarUsers.css'
-import GlobalStyle from '../../../styles/GlobalStyle.js';
-import Header from '../../layout/header-admin/Navbar.js';
-import Footer from '../../layout/footer/Footer.js';
-import HamburguerMenu from "../../layout/header-admin-hamburguer/NavbarHamburguer.jsx"
-import deleteIcon from '../../../images/Delete.png';
-import polygon1_forward from '../../../images/polygon1.png'
-import polygon1_backward from '../../../images/polygon1_upwards.png'
+import "./GerenciarUsers.css";
+import GlobalStyle from "../../../styles/GlobalStyle.js";
+import Header from "../../layout/header-admin/Navbar.js";
+import Footer from "../../layout/footer/Footer.js";
+import HamburguerMenu from "../../layout/header-admin-hamburguer/NavbarHamburguer.jsx";
+import deleteIcon from "../../../images/Delete.png";
+import polygon1_forward from "../../../images/polygon1.png";
+import polygon1_backward from "../../../images/polygon1_upwards.png";
 
 import React, { useState, useEffect } from "react";
 import users from "../../data/users.json";
@@ -80,7 +80,7 @@ function GerenciarUsers() {
           )}
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
