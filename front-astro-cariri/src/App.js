@@ -55,7 +55,7 @@ function App() {
             ></Route>
             <Route
               path="/conteudo-materiais/:material_id"
-              element={<Private Item={ConteudoMateriais} />}
+              element={<ConteudoMateriais />}
             ></Route>
             <Route
               path="/material/criar"
