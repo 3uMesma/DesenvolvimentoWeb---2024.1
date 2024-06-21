@@ -82,7 +82,9 @@ const styles = StyleSheet.create({
 });
 
 function ConteudoMateriais(props) {
+  
   const { material_id } = useParams();
+  console.log(material_id)
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [generatingPDF, setGeneratingPDF] = useState(false);
   const [material, setMaterial] = useState([]);

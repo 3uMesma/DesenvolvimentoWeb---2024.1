@@ -66,7 +66,7 @@ function App() {
               element={<Private Item={EditarMaterial} />}
             ></Route>
             <Route
-              path="/visualizar-evento"
+              path="/visualizar-evento/:event_id"
               element={<VisualizarEvento />}
             ></Route>
             <Route
