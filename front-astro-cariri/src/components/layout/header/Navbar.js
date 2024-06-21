@@ -12,7 +12,7 @@ import contraste_icon from "../../../images/contraste.png";
 import userLogoLoggedOut from "../../../images/user-logo.png";
 import userLogoLoggedIn from "../../../images/user-logo-logado.png";
 
-import { getUserBackApi } from "../../../back-api/user/get";
+import useAuth from "../../../back-api/login/useAuth";
 
 function Navbar() {
   // Definindo o estado inicial do tamanho da fonte
@@ -21,21 +21,8 @@ function Navbar() {
   const [cookies, setCookie] = useCookies(["darkmode"]);
   const location = useLocation();
   const [fontChangeMessage, setFontChangeMessage] = useState(''); 
-  const [username, setUsername] = useState(""); // Estado para armazenar o nome do usuário
 
-  useEffect(() => {
-    const fetchUserName = async () => {
-      try {
-        const userId = 11;
-        const userData = await getUserBackApi(userId);
-        setUsername(userData.name); // Supondo que a resposta contenha o nome do usuário na propriedade 'name'
-      } catch (error) {
-        console.error('Failed to fetch user data:', error);
-      }
-    };
-
-    fetchUserName();
-  }, []);
+  const {user} = useAuth();
 
   // Função para aumentar a fonte
   const increaseFontSize = () => {
@@ -115,7 +102,7 @@ function Navbar() {
         <div className="navbar-right-header">
           {isLoggedIn && (
             <Link to="/user" className="navbar-text-username">
-              {username}
+              {user.username}
             </Link>
           )}
           <Link to="/user">

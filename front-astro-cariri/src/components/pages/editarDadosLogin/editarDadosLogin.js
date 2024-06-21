@@ -10,6 +10,8 @@ import { useNavigate } from "react-router-dom";
 import { getUserBackApi } from "../../../back-api/user/get.js";
 import { putUserBackApi } from "../../../back-api/user/put.js";
 
+import useAuth from "../../../back-api/login/useAuth.js";
+
 function EditarDadosLogin() {
   const navigate = useNavigate();
 
@@ -17,15 +19,17 @@ function EditarDadosLogin() {
   const [hidden3, setHidden3] = useState(true);
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [user, setUser] = useState(null);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const userId = 11;
+  const [changeUser, setUser] = useState(null);
+  const [changeName, setName] = useState("");
+  const [changeEmail, setEmail] = useState("");
+  const { user } = useAuth();
+
+  const {sigout} = useAuth();
 
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const userData = await getUserBackApi(userId);
+        const userData = await getUserBackApi(user.id);
         setUser(userData);
         setName(userData.name_);
         setEmail(userData.email);
@@ -35,7 +39,7 @@ function EditarDadosLogin() {
     };
 
     fetchUser();
-  }, [userId]);
+  }, [changeUser]);
 
   const toggleShow2 = () => {
     setHidden2(!hidden2);
@@ -67,16 +71,16 @@ function EditarDadosLogin() {
     }
     
     console.log("Dados a serem enviados:", {
-      name: name,
-      email: email,
+      name: changeName,
+      email: changeEmail,
       newPassword: newPassword,
       confirmPassword: confirmPassword,
     });
 
     try {
-      await putUserBackApi(userId, {
-        new_name: name,
-        new_email: email,
+      await putUserBackApi(user.id, {
+        new_name: changeName,
+        new_email: changeEmail,
         new_password: newPassword
       });
       alert("Dados atualizados com sucesso");
@@ -88,9 +92,7 @@ function EditarDadosLogin() {
 
   const logoutSubmit = async (e) => {
     e.preventDefault();
-    setUser(null);
-    setName("");
-    setEmail("");
+    sigout();
 
     console.log("Logout bem-sucedido!");
     // Redirecionar para a página inicial após o logout
@@ -118,7 +120,7 @@ function EditarDadosLogin() {
               className="text-input2"
               placeholder="Seu nome de usuário"
               type="text"
-              value={name}
+              value={changeName}
               onChange={(e) => setName(e.target.value)}
             ></input>
           </div>
@@ -130,7 +132,7 @@ function EditarDadosLogin() {
               className="text-input2"
               type="email"
               placeholder="exemplo@gmail.com"
-              value={email}
+              value={changeEmail}
               onChange={(e) => setEmail(e.target.value)}
             ></input>
           </div>

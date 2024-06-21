@@ -9,6 +9,8 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { postLoginApi } from "../../../back-api/login/post.js";
 
+import useAuth from "../../../back-api/login/useAuth.js";
+
 function AdminLogin() {
   const navigate = useNavigate();
 
@@ -17,6 +19,9 @@ function AdminLogin() {
   const [password, setPassword] = useState("");
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [error, setError] = useState(null);
+  const [id, setId] = useState([]);
+
+  const {signin} = useAuth();
 
   useEffect(() => {
     const handleResize = () => {
@@ -40,8 +45,13 @@ function AdminLogin() {
     try {
       // Chama a API para login
       const response = await postLoginApi(username, password);
-
-      console.log("Login bem-sucedido:", response);
+      setId(response);
+      console.log("Login bem-sucedido:", response.message);
+      const res = signin(response.loginData.user_id, username, response.loginData.email, password);
+      if(res) {
+        setError(res);
+        return;
+      }
       // Redirecionar para a página após o login bem-sucedido
       navigate("/admin/home");
 

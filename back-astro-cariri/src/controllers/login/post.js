@@ -15,7 +15,8 @@ exports.login = async (req, res, next) => {
 
     // Se chegou até aqui, o usuário está autenticado com sucesso
     // Aqui você pode retornar qualquer informação adicional que deseja enviar de volta ao cliente
-    return res.status(200).json({ message: 'Login bem-sucedido! :)'});
+    const loginData = result.rows[0];
+    return res.status(200).json({ message: 'Login bem-sucedido! :)', loginData});
 
   } catch (error) {
     next(error);

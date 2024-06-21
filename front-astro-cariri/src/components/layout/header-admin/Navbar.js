@@ -1,5 +1,5 @@
 import "./Navbar.css";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useCookies } from "react-cookie";
@@ -8,37 +8,29 @@ import user_logo from "../../../images/user-logo-logado.png";
 import aumenta_fonte_icon from "../../../images/aumenta-fonte.png";
 import diminui_fonte_icon from "../../../images/diminui-fonte.png";
 import contraste_icon from "../../../images/contraste.png";
-import { getUserBackApi } from "../../../back-api/user/get.js"; // Ajuste o caminho conforme necessário
+
+import useAuth from "../../../back-api/login/useAuth";
 
 function NavbarAdmin() {
+  // Definindo o estado inicial do tamanho da fonte
   const [fontSize, setFontSize] = useState(16); // Tamanho padrão da fonte é 16px
   const [theme, setTheme] = useState("white");
   const [cookies, setCookie] = useCookies(["darkmode"]);
   const location = useLocation();
-  const [userName, setUserName] = useState(""); // Estado para armazenar o nome do usuário
-  const userId = 11; // Substitua pelo método adequado de obter o ID do usuário logado
 
-  useEffect(() => {
-    const fetchUserName = async () => {
-      try {
-        const userData = await getUserBackApi(userId);
-        setUserName(userData.name_); // Supondo que a API retorne um objeto com uma propriedade "name_"
-      } catch (error) {
-        console.error("Error fetching user data:", error);
-      }
-    };
+  const {user} = useAuth();
 
-    fetchUserName();
-  }, [userId]); // O array vazio [] como segundo argumento garante que essa função seja chamada apenas uma vez após o primeiro render
-
+  // Função para aumentar a fonte
   const increaseFontSize = () => {
     setFontSize((prevFontSize) => prevFontSize + 2); // Aumenta o tamanho da fonte em 2px
   };
 
+  // Função para diminuir a fonte
   const decreaseFontSize = () => {
     setFontSize((prevFontSize) => Math.max(prevFontSize - 2, 10)); // Garante que a fonte não fique menor que 10px
   };
 
+  // Função para aumentar o contraste
   const darkMode = () => {
     setTheme((prevTheme) => {
       if (prevTheme === "white") {
@@ -51,6 +43,7 @@ function NavbarAdmin() {
     });
   };
 
+  // Aplica o tamanho da fonte à página inteira
   document.body.style.fontSize = `${fontSize}px`;
 
   const cookieValue = cookies["darkmode"];
@@ -76,41 +69,25 @@ function NavbarAdmin() {
           </Link>
         </div>
         <div className="navbar-mid">
-          <Link
-            to="/admin/home"
-            className={location.pathname === "/admin/home" ? "navbar-text-selected" : "navbar-text-"}
-            aria-current={location.pathname === "/admin/home" ? "page" : null}
-          >
+          <Link to="/admin/home" className={location.pathname === "/admin/home" ? "navbar-text-selected" : "navbar-text-"} aria-current={location.pathname === "/admin/home" ? "page" : null}>
             HOME ADMIN
           </Link>
           <div className="navbar-pipe">|</div>
-          <Link
-            to="/material/gerenciar"
-            className={location.pathname === "/material/gerenciar" ? "navbar-text-selected" : "navbar-text-"}
-            aria-current={location.pathname === "/material/gerenciar" ? "page" : null}
-          >
+          <Link to="/material/gerenciar" className={location.pathname === "/material/gerenciar" ? "navbar-text-selected" : "navbar-text-"} aria-current={location.pathname === "/material/gerenciar" ? "page" : null}>
             GERENCIAR MATERIAL
           </Link>
           <div className="navbar-pipe">|</div>
-          <Link
-            to="/admin/cadastrar"
-            className={location.pathname === "/admin/cadastrar" ? "navbar-text-selected" : "navbar-text-"}
-            aria-current={location.pathname === "/admin/cadastrar" ? "page" : null}
-          >
+          <Link to="/admin/cadastrar" className={location.pathname === "/admin/cadastrar" ? "navbar-text-selected" : "navbar-text-"} aria-current={location.pathname === "/admin/cadastrar" ? "page" : null}>
             ADICIONAR ADMIN
           </Link>
           <div className="navbar-pipe">|</div>
-          <Link
-            to="/gerenciar-users"
-            className={location.pathname === "/gerenciar-users" ? "navbar-text-selected" : "navbar-text-"}
-            aria-current={location.pathname === "/gerenciar-users" ? "page" : null}
-          >
+          <Link to="/gerenciar-users" className={location.pathname === "/gerenciar-users" ? "navbar-text-selected" : "navbar-text-"} aria-current={location.pathname === "/gerenciar-users" ? "page" : null}>
             GERENCIAR ADMINS
           </Link>
         </div>
         <div className="navbar-right">
           <Link to="/user" className="navbar-text-username">
-            {userName || "Carregando..."}
+            {user.username}
           </Link>
           <Link to="/user">
             <img
@@ -124,6 +101,9 @@ function NavbarAdmin() {
       <div className="second-navbar">
         <div className="navbar-acessibility">
           <div className="acessibility-fonts">
+            {/* <button onClick={increaseFontSize}>
+                            Aumentar Fonte
+                        </button> */}
             <button onClick={increaseFontSize}>
               <img
                 className="icon-acessibility"
