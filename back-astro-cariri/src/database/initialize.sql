@@ -3,9 +3,11 @@ CREATE TABLE User_(
     user_id    		SERIAL PRIMARY KEY,
     name_          	VARCHAR(50) NOT NULL,
     email           VARCHAR(40) NOT NULL,
-    password_       VARCHAR(40) NOT NULL
+    password_       VARCHAR(40) NOT NULL,
+    is_active		BOOLEAN DEFAULT TRUE
 );
 
+-- tabela aux para os tipos de evento
 DROP TABLE IF EXISTS EventType CASCADE;
 CREATE TABLE EventType(
     type_id    		SERIAL PRIMARY KEY,
@@ -34,13 +36,17 @@ CREATE TABLE Event_(
 );
 
 DROP TABLE IF EXISTS Material CASCADE;
-CREATE TABLE Material(
-    material_id    		SERIAL PRIMARY KEY,
-    title	          	VARCHAR(70) NOT NULL,
-    date_	           	DATE NOT NULL,
-    author_id	       	INT, 
-    FOREIGN KEY (author_id) REFERENCES User_(user_id) ON UPDATE CASCADE
+CREATE TABLE Material (
+    material_id SERIAL PRIMARY KEY,
+    title VARCHAR(70) NOT NULL,
+    date_ DATE NOT NULL,
+    author_id INT,
+    CONSTRAINT fk_author
+        FOREIGN KEY (author_id)
+        REFERENCES User_(user_id)
+        ON UPDATE CASCADE
 );
+
 
 DROP TABLE IF EXISTS Image CASCADE;
 CREATE TABLE Image(
@@ -68,10 +74,18 @@ VALUES
 (1, 'Topic'),
 (2, 'Image');
 
+/*
+	Há formas de fazer com que a verificação de existência seja feita aqui, 
+	assim como seria feita com o FOREIGN KEY, mas são escritas bem grandes.
+	Como é uma aplicação pequena acho que vale mais de bom senso de todos 
+	escreverem códigos que façam sentido, prezando pela integridade do banco
+	e seus dados.
+ */
+
 DROP TABLE IF EXISTS MaterialAttribute;
 CREATE TABLE MaterialAttribute(
 	material_id        INT,
-	attribute_id       INT NOT NULL, -- Polimorfismo (Image e Topic)
+	attribute_id       INT NOT NULL, -- Polimorfismo (Image and Topic)
 	attribute_type     iNT,
 	sequence_          INT NOT NULL,
 	FOREIGN KEY (material_id) REFERENCES Material(material_id)

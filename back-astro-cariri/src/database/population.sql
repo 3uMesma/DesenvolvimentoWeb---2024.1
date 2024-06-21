@@ -71,7 +71,7 @@ INSERT INTO image (image_id, path, caption, alt) VALUES
 (8, 'imagemFoguete', 'legenda 4', 'imagem 4');
 
 INSERT INTO topic (topic_id, title, text) VALUES
-(1, 'Astronomia Moderna', 'texto'),
-(2, 'Astronomia Antiga', 'texto'),
-(5, 'Pesquisa', 'texto'),
-(6, 'Iniciação Científica', 'texto');
+(1, 'Astronomia Moderna', 'A astronomia moderna se caracteriza pelo uso de tecnologias avançadas, como telescópios espaciais, radiotelescópios e sondas espaciais. Ela se foca na compreensão detalhada de fenômenos cósmicos como buracos negros, exoplanetas, a matéria escura e a energia escura. Grandes colaborações internacionais e o uso de supercomputadores para simulações cosmológicas também são características marcantes dessa era da astronomia.'),
+(2, 'Astronomia Antiga', 'A astronomia antiga abrange os primeiros esforços humanos para entender o cosmos. Civilizações como os babilônios, gregos, chineses e maias desenvolveram calendários, mapas estelares e teorias sobre o movimento dos corpos celestes. Muitos desses conhecimentos foram fundamentais para a navegação e a agricultura. A transição das concepções geocêntricas para heliocêntricas marcou um grande avanço na história da astronomia.'),
+(5, 'Pesquisa', 'A pesquisa em astronomia envolve observações, experimentos e modelagem teórica para responder perguntas fundamentais sobre o universo. Pesquisadores utilizam uma variedade de instrumentos e técnicas para estudar objetos celestes e fenômenos astronômicos. A coleta e análise de dados, muitas vezes em colaboração internacional, são cruciais para expandir nosso entendimento do cosmos e fazer novas descobertas.'),
+(6, 'Iniciação Científica', 'A iniciação científica é uma fase importante na formação de novos cientistas. Em astronomia, isso pode envolver participação em projetos de pesquisa, análise de dados astronômicos, desenvolvimento de software para simulações ou até a construção de pequenos instrumentos. Este processo proporciona experiência prática, promove o pensamento crítico e incentiva o interesse contínuo na ciência e na investigação do universo.');  
