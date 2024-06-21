@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 
 import { getAllMateriaisApi } from "../../../back-api/materiais/getAll.js";
+import { deleteMaterialApi } from "../../../back-api/materiais/delete.js";
 
 import deleteIcon from "../../../images/Delete.png";
 import editIcon from "../../../images/edit.png";
@@ -34,6 +35,14 @@ function GerenciaMateriais() {
   useEffect(() => {
     fetchMateriais();
   }, []);
+
+  const deleteMaterial = async (id) => {
+    try {
+      const response = await deleteMaterialApi(id);
+    } catch (error) {
+      console.error("Error deleting materials:", error);
+    }
+  }
 
   const nextPage = () => {
     const nextIndex = startIndex + materialsPerPage;
@@ -98,7 +107,7 @@ function GerenciaMateriais() {
                       <img className="icon-editar-material" src={editIcon} />
                     </Link>
                     {/* Botao de excluir material */}
-                    <button className="btn-excluir-material">
+                    <button className="btn-excluir-material" onClick={() => deleteMaterial(material.material_id)} >
                       <img className="icon-excluir-material" src={deleteIcon} />
                     </button>
                   </div>
