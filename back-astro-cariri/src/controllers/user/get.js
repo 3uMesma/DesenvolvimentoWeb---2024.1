@@ -8,7 +8,7 @@ exports.getUserData = async (req, res, next) => {
 
     // Consulta para obter os dados do usuário pelo ID
     const query =
-      "SELECT name_, email, password_ FROM user_ u WHERE u.user_id = $1";
+      "SELECT name_, email, password_ FROM user_ u WHERE u.user_id = $1 AND is_active = true";
     // usamos o método query do cliente do banco de dados para executar uma consulta SQL. O client representa a conexão com o banco de dados.
     const result = await client.query(query, [userId]);
 

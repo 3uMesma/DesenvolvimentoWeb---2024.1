@@ -5,7 +5,7 @@ exports.login = async (req, res, next) => {
     const { username, password } = req.body;
 
     // Consulta para obter as informações do usuário com base no nome de usuário
-    const query = "SELECT * FROM user_ WHERE name_  = $1 AND password_  = $2;";
+    const query = "SELECT * FROM user_ WHERE name_  = $1 AND password_  = $2 AND is_active = true;";
     const result = await client.query(query, [username, password]);
 
     // Verifica se o usuário foi encontrado com as credenciais fornecidas

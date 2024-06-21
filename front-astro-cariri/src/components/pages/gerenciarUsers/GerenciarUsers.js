@@ -8,12 +8,31 @@ import polygon1_forward from "../../../images/polygon1.png";
 import polygon1_backward from "../../../images/polygon1_upwards.png";
 
 import React, { useState, useEffect } from "react";
-import users from "../../data/users.json";
+import { getAllUsersBackApi } from "../../../back-api/users/get";
+import { deleteUserBackApi } from "../../../back-api/user/delete";
 
 function GerenciarUsers() {
-  // const user = users[0];
   const usersPerPage = 10; // Usuários por página
+  const [users, setUsers] = useState([]);
   const [startIndex, setStartIndex] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        const data = await getAllUsersBackApi();
+        setUsers(data);
+        setLoading(false);
+      } catch (err) {
+        setError(err);
+        setLoading(false);
+      }
+    };
+
+    fetchUsers();
+  }, []);
 
   const nextPage = () => {
     const nextIndex = startIndex + usersPerPage;
@@ -29,8 +48,6 @@ function GerenciarUsers() {
     }
   };
 
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
@@ -42,6 +59,22 @@ function GerenciarUsers() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  const handleDeleteUser = async (userId) => {
+    try {
+      await deleteUserBackApi(userId);
+      // Atualize a lista de usuários após deletar
+      const updatedUsers = users.filter((user) => user.user_id !== userId);
+      setUsers(updatedUsers);
+    } catch (err) {
+      console.error("Erro ao deletar usuário:", err);
+      // Trate o erro aqui conforme necessário
+    }
+  };
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
+
   return (
     <div className="gerenciar-users">
       <GlobalStyle />
@@ -54,15 +87,21 @@ function GerenciarUsers() {
           </li>
           {users
             .slice(startIndex, startIndex + usersPerPage)
-            .map((user, index) => (
-              <li key={index}>
+            .map((user) => (
+              <li key={user.user_id}>
                 <div className="gerenciarUsers-item">
-                  <p className="gerenciarUsers-item-userName">{user.nome}</p>
-                  <img
-                    className="delete-icon"
-                    src={deleteIcon}
-                    alt="Delete Image"
-                  ></img>
+                  <p className="gerenciarUsers-item-userName">{user.name_}</p>
+                  <button
+                    className="delete-icon-button"
+                    onClick={() => handleDeleteUser(user.user_id)}
+                    aria-label={`Delete ${user.name_}`}
+                  >
+                    <img
+                      className="delete-icon"
+                      src={deleteIcon}
+                      alt="Delete"
+                    />
+                  </button>
                 </div>
               </li>
             ))}
@@ -70,12 +109,12 @@ function GerenciarUsers() {
         <div className="btn-scroll">
           {startIndex > 0 && (
             <button onClick={prevPage}>
-              <img src={polygon1_backward} />
+              <img src={polygon1_backward} alt="Previous" />
             </button>
           )}
           {startIndex + usersPerPage < users.length && (
             <button onClick={nextPage}>
-              <img src={polygon1_forward} />
+              <img src={polygon1_forward} alt="Next" />
             </button>
           )}
         </div>

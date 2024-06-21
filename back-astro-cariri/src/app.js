@@ -9,6 +9,7 @@ const userRoutes = require("./routes/userRoutes");
 const eventRoutes = require("./routes/eventRoutes");
 const materialRoutes = require("./routes/materialRoutes");
 const loginRoutes = require("./routes/loginRoutes");
+const usersRoutes = require("./routes/usersRoutes")
 
 const app = express();
 
@@ -20,6 +21,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Routes
 app.use("/", userRoutes);
+app.use("/", usersRoutes)
 app.use("/", eventRoutes);
 app.use("/", materialRoutes);
 app.use("/", loginRoutes);
@@ -33,7 +35,7 @@ client
     console.log("Conexão bem-sucedida com o banco de dados");
     // Inicia o servidor após a conexão com o banco de dados
     app.listen(PORT, () => {
-      console.log("Servidor rodando na porta 3000");
+      console.log("Servidor rodando na porta 3333");
     });
   })
   .catch((err) => {
