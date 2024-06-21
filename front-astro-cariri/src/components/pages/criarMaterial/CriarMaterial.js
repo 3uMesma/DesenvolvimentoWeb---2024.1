@@ -9,7 +9,7 @@ import HamburguerMenu from "../../layout/header-admin-hamburguer/NavbarHamburgue
 
 import GlobalStyle from "../../../styles/GlobalStyle";
 
-import { postMaterialApi } from "../../../back-api/materiais/post.js"
+import { postMaterialApi } from "../../../back-api/materiais/post.js";
 
 function CriarMaterial() {
   // Referência para o textarea
@@ -24,26 +24,31 @@ function CriarMaterial() {
     setTextareaHeight(newHeight);
   }
 
-  const [materialData, setMaterialData] = useState({title:"", author:""});
-  
+  const [materialData, setMaterialData] = useState({ title: "", author: "" });
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setMaterialData({ ...materialData, [name]: value });
-  }
-  
-  const [topics, setTopics] = useState([{topic: "Tópico 1", text: "Texto 1", sequence: 1}]);
+  };
+
+  const [topics, setTopics] = useState([
+    { topic: "Tópico 1", text: "Texto 1", sequence: 1 },
+  ]);
   // const [images, setImages] = useState([{file:"", capion: "Legenda 1", alt: "Descrição 1", sequence: 2}]);
-  
+
   const addTopic = () => {
-    const newTopic = { topic: `Tópico ${topics.length+1}`, text: `Texto ${topics.length+1}` };
+    const newTopic = {
+      topic: `Tópico ${topics.length + 1}`,
+      text: `Texto ${topics.length + 1}`,
+    };
     setTopics([...topics, newTopic]);
-  }
+  };
 
   const removeTopic = () => {
     if (topics.length > 0) {
       setTopics(topics.slice(0, -1));
     }
-  }
+  };
 
   // const addImage = () => {
   //   const newImage = { file: "", caption: `Legenda ${images.length+1}`, alt: `Descrição ${images.length+1}` };
@@ -57,16 +62,16 @@ function CriarMaterial() {
   // }
 
   const handleTopicChange = (e, index) => {
-    if(e.target.name == "text"){
-      adjustHeight()
+    if (e.target.name == "text") {
+      adjustHeight();
     }
 
-    setTopics(topics => {
+    setTopics((topics) => {
       let updatedTopics = [...topics];
       updatedTopics[index][e.target.name] = e.target.value;
       return updatedTopics;
     });
-  }
+  };
 
   // const handleImageChange = (e, index) => {
   //   if(e.target.name == "file"){
@@ -87,45 +92,43 @@ function CriarMaterial() {
   const displayTopic = (topic, index) => {
     return (
       <div>
-
-      <div className="campo-forms">
-        <p className="title-input-criar">Tópico</p>
-        <input
-          name="topic"
-          className="text-input-criar"
-          type="text"
-          value={topic.topic}
-          onChange={(e) => handleTopicChange(e, index)}
+        <div className="campo-forms">
+          <p className="title-input-criar">Tópico</p>
+          <input
+            name="topic"
+            className="text-input-criar"
+            type="text"
+            value={topic.topic}
+            onChange={(e) => handleTopicChange(e, index)}
           ></input>
-      </div>
+        </div>
 
-      <div className="campo-forms">
-        <p className="title-input-criar">Texto</p>
-        <textarea
-          name="text"
-          className="texto-input"
-          ref={textAreaRef}
-          value={topic.text}
-          onChange={(e) => handleTopicChange(e, index)}
-          style={{ height: `${textareaHeight}px` }}
+        <div className="campo-forms">
+          <p className="title-input-criar">Texto</p>
+          <textarea
+            name="text"
+            className="texto-input"
+            ref={textAreaRef}
+            value={topic.text}
+            onChange={(e) => handleTopicChange(e, index)}
+            style={{ height: `${textareaHeight}px` }}
           ></textarea>
-      </div>
+        </div>
 
-      <div className="campo-forms">
-        <p className="title-input-criar">Ordem no material</p>
-        <textarea
-          name="sequence"
-          className="texto-input"
-          type="number"
-          value={topic.sequence}
-          onChange={(e) => handleTopicChange(e, index)}
-          style={{ height: `${textareaHeight}px` }}
+        <div className="campo-forms">
+          <p className="title-input-criar">Ordem no material</p>
+          <textarea
+            name="sequence"
+            className="texto-input"
+            type="number"
+            value={topic.sequence}
+            onChange={(e) => handleTopicChange(e, index)}
+            style={{ height: `${textareaHeight}px` }}
           ></textarea>
+        </div>
       </div>
-
-      </div>
-    )
-  }
+    );
+  };
 
   // const displayImage = (image, index) => {
   //   return (
@@ -171,16 +174,22 @@ function CriarMaterial() {
   //     </div>
   //   )
   // }
-  
+
   // Função para lidar com o envio do formulário
   const handleSubmit = (e) => {
     e.preventDefault();
-    const date = new Date().toJSON().slice(0,10);
+    const date = new Date().toJSON().slice(0, 10);
     // const material = {title: materialData.title, author: materialData.author, date: date, topics: topics, images: images};
-    const material = {title: materialData.title, author: materialData.author, date: date, topics: topics, images: []};
+    const material = {
+      title: materialData.title,
+      author: materialData.author,
+      date: date,
+      topics: topics,
+      images: [],
+    };
     postMaterialApi(material);
-    setMaterialData({title: "", author: ""})
-    setTopics([{topic: "Tópico 1", text: "Texto 1", sequence: 1}])
+    setMaterialData({ title: "", author: "" });
+    setTopics([{ topic: "Tópico 1", text: "Texto 1", sequence: 1 }]);
   };
 
   // Estado para armazenar a largura da janela, serve para o menu hamburguer
@@ -210,7 +219,6 @@ function CriarMaterial() {
         <div className="criarMaterial-form">
           {/* Formulário para criar material */}
           <form onSubmit={handleSubmit}>
-
             {/* Campos de título */}
             <div className="campo-forms">
               <p className="title-input-criar">Título</p>
@@ -241,15 +249,15 @@ function CriarMaterial() {
 
             {topics.map((topic, index) => displayTopic(topic, index))}
             {/* {images.map((image, index) => displayImage(image, index))} */}
-            
+
             {/* Botões de ação */}
             <div className="btn-add">
-
               <button
                 className="botaoAdicionar"
                 name="AdicionarTopico"
                 type="button"
-                onClick={addTopic}>
+                onClick={addTopic}
+              >
                 Adicionar Tópico
               </button>
 
@@ -257,7 +265,8 @@ function CriarMaterial() {
                 className="botaoAdicionar"
                 name="RetirarTopico"
                 type="button"
-                onClick={removeTopic}>
+                onClick={removeTopic}
+              >
                 Retirar Tópico
               </button>
 
@@ -276,12 +285,16 @@ function CriarMaterial() {
                 onClick={removeImage}>
                 Retirar Imagem
               </button> */}
-
             </div>
 
             {/* Botão para submeter o formulário (ainda nn funciona por causa do back*/}
             <div className="btn-solicitar">
-              <button type="submit" id="botaoSolicitar" name="SolicitarEvento" onClick={handleSubmit}>
+              <button
+                type="submit"
+                id="botaoSolicitar"
+                name="SolicitarEvento"
+                onClick={handleSubmit}
+              >
                 Submeter
               </button>
             </div>

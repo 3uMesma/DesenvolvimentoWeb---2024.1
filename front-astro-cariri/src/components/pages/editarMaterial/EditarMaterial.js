@@ -8,7 +8,7 @@ import { useParams } from "react-router-dom";
 
 import { fakeMateriais } from "../../data/materiais.jsx";
 
-import { putMaterialApi } from "../../../back-api/materiais/put.js"
+import { putMaterialApi } from "../../../back-api/materiais/put.js";
 
 import { getMaterialApi } from "../../../back-api/materiais/get.js";
 
@@ -35,9 +35,9 @@ function EditarMaterial() {
     try {
       const response = await getMaterialApi(material_id);
       setMaterialData(response.info);
-      setTopics(response.topics)
-      setImages(response.images)
-      console.log(response)
+      setTopics(response.topics);
+      setImages(response.images);
+      console.log(response);
     } catch (error) {
       console.error("Error fetching material:", error);
     }
@@ -46,116 +46,118 @@ function EditarMaterial() {
   useEffect(() => {
     fetchMaterial();
   }, [material_id]);
-  
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setMaterialData({ ...materialData, [name]: value });
-  }
-  
-  
-  
+  };
+
   const addTopic = () => {
-    const newTopic = { topic: `Tópico ${topics.length+1}`, text: `Texto ${topics.length+1}` };
+    const newTopic = {
+      topic: `Tópico ${topics.length + 1}`,
+      text: `Texto ${topics.length + 1}`,
+    };
     setTopics([...topics, newTopic]);
-  }
+  };
 
   const removeTopic = () => {
     if (topics.length > 0) {
       setTopics(topics.slice(0, -1));
     }
-  }
+  };
 
   const addImage = () => {
-    const newImage = { file: "", caption: `Legenda ${images.length+1}`, alt: `Descrição ${images.length+1}` };
+    const newImage = {
+      file: "",
+      caption: `Legenda ${images.length + 1}`,
+      alt: `Descrição ${images.length + 1}`,
+    };
     setImages([...images, newImage]);
-  }
+  };
 
   const removeImage = () => {
     if (images.length > 0) {
       setImages(images.slice(0, -1));
     }
-  }
+  };
 
   const handleTopicChange = (e, index) => {
-    if(e.target.name == "text"){
-      adjustHeight()
+    if (e.target.name == "text") {
+      adjustHeight();
     }
 
-    console.log(index)
-    console.log(topics)
-    console.log(e.target.name)
+    console.log(index);
+    console.log(topics);
+    console.log(e.target.name);
 
-    setTopics(topics => {
+    setTopics((topics) => {
       let updatedTopics = [...topics];
       updatedTopics[index][e.target.name] = e.target.value;
       return updatedTopics;
     });
-  }
+  };
 
   const handleImageChange = (e, index) => {
-    if(e.target.name == "file"){
-      setImages(images => {
+    if (e.target.name == "file") {
+      setImages((images) => {
         let updatedImages = [...images];
         updatedImages[index][e.target.name] = e.target.files[0];
         return updatedImages;
       });
     } else {
-      setImages(images => {
+      setImages((images) => {
         let updatedImages = [...images];
         updatedImages[index][e.target.name] = e.target.value;
         return updatedImages;
       });
     }
-  }
+  };
 
   const displayTopic = (topic, index) => {
     return (
       <div>
-
-      <div className="campo-forms">
-        <p className="title-input-criar">Tópico</p>
-        <input
-          name="topic"
-          className="text-input-criar"
-          type="text"
-          value={topic.topic}
-          onChange={(e) => handleTopicChange(e, index)}
+        <div className="campo-forms">
+          <p className="title-input-criar">Tópico</p>
+          <input
+            name="topic"
+            className="text-input-criar"
+            type="text"
+            value={topic.topic}
+            onChange={(e) => handleTopicChange(e, index)}
           ></input>
-      </div>
+        </div>
 
-      <div className="campo-forms">
-        <p className="title-input-criar">Texto</p>
-        <textarea
-          required
-          name="text"
-          className="texto-input"
-          ref={textAreaRef}
-          value={topic.text}
-          onChange={(e) => handleTopicChange(e, index)}
-          style={{ height: `${textareaHeight}px` }}
+        <div className="campo-forms">
+          <p className="title-input-criar">Texto</p>
+          <textarea
+            required
+            name="text"
+            className="texto-input"
+            ref={textAreaRef}
+            value={topic.text}
+            onChange={(e) => handleTopicChange(e, index)}
+            style={{ height: `${textareaHeight}px` }}
           ></textarea>
+        </div>
       </div>
-
-      </div>
-    )
-  }
+    );
+  };
 
   const displayImage = (image, index) => {
     return (
       <div>
-
         {/* Campo para selecionar um arquivo de imagem*/}
         <div className="campo-forms">
-        <p className="title-input-criar">Imagem</p>
-        <input
-          name="file"
-          className="file-input-criar"
-          type="file"
-          value={image.file}
-          onChange={(e) => handleImageChange(e, index)}
-          aria-label="Selecione uma imagem"
-          aria-describedby="Este é um campo de entrada de arquivo. Clique para selecionar uma imagem."
-        ></input>
+          <p className="title-input-criar">Imagem</p>
+          <input
+            name="file"
+            className="file-input-criar"
+            type="file"
+            value={image.file}
+            onChange={(e) => handleImageChange(e, index)}
+            aria-label="Selecione uma imagem"
+            aria-describedby="Este é um campo de entrada de arquivo. Clique para selecionar uma imagem."
+          ></input>
         </div>
 
         <p className="p-imagem-atual">
@@ -164,18 +166,18 @@ function EditarMaterial() {
 
         {/* Campo de legenda da imagem*/}
         <div className="campo-forms">
-        <p className="title-input-criar">Legenda Imagem</p>
-        <input
-          name="caption"
-          className="text-input-criar"
-          value={image.caption}
-          onChange={(e) => handleImageChange(e, index)}
-          type="text"
+          <p className="title-input-criar">Legenda Imagem</p>
+          <input
+            name="caption"
+            className="text-input-criar"
+            value={image.caption}
+            onChange={(e) => handleImageChange(e, index)}
+            type="text"
           ></input>
         </div>
       </div>
-    )
-  }
+    );
+  };
 
   function displayElement(element, index) {
     if (element.type == 1) {
@@ -184,12 +186,19 @@ function EditarMaterial() {
       displayImage(element, index);
     }
   }
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const date = new Date().toJSON().slice(0,10);
+    const date = new Date().toJSON().slice(0, 10);
     // const material = {material_id: material_id, title: materialData.title, author: materialData.author, date: date, topics: topics, images: images};
-    const material = {material_id: material_id, title: materialData.title, author: materialData.author, date: date, topics: topics, images: []};
+    const material = {
+      material_id: material_id,
+      title: materialData.title,
+      author: materialData.author,
+      date: date,
+      topics: topics,
+      images: [],
+    };
     putMaterialApi(material);
   };
 
@@ -207,12 +216,10 @@ function EditarMaterial() {
     };
   }, []);
 
-  if(!materialData){
-    return (
-      <div>Carregando...</div>
-    )
+  if (!materialData) {
+    return <div>Carregando...</div>;
   }
-  
+
   return (
     <div className="criarMaterial">
       <GlobalStyle />
@@ -221,7 +228,6 @@ function EditarMaterial() {
         <h1 className="criarMaterial-title">EDIÇÃO DE MATERIAL</h1>
         <div className="criarMaterial-form">
           <form onSubmit={handleSubmit}>
-
             <div className="campo-forms">
               <p className="title-input-criar">Título</p>
               <input
@@ -245,22 +251,22 @@ function EditarMaterial() {
             </div>
 
             {topics.map((topic, index) => displayTopic(topic, index))}
-
           </form>
 
           <div className="btn-add">
-
             <button
               className="botaoAdicionar"
               name="AdicionarTopico"
-              onClick={addTopic}>
+              onClick={addTopic}
+            >
               Adicionar Tópico
             </button>
 
             <button
               className="botaoAdicionar"
               name="RetirarTopico"
-              onClick={removeTopic}>
+              onClick={removeTopic}
+            >
               Retirar Tópico
             </button>
 
@@ -277,11 +283,15 @@ function EditarMaterial() {
               onClick={removeImage}>
               Retirar Imagem
             </button> */}
-
           </div>
 
           <div className="btn-solicitar">
-            <button type="submit" id="botaoSolicitar" name="SolicitarEvento" onClick={handleSubmit}>
+            <button
+              type="submit"
+              id="botaoSolicitar"
+              name="SolicitarEvento"
+              onClick={handleSubmit}
+            >
               Atualizar
             </button>
           </div>

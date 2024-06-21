@@ -26,7 +26,7 @@ function GerenciaMateriais() {
     try {
       const response = await getAllMateriaisApi();
       setMateriais(response);
-      console.log(response)
+      console.log(response);
     } catch (error) {
       console.error("Error fetching materials:", error);
     }
@@ -42,7 +42,7 @@ function GerenciaMateriais() {
     } catch (error) {
       console.error("Error deleting materials:", error);
     }
-  }
+  };
 
   const nextPage = () => {
     const nextIndex = startIndex + materialsPerPage;
@@ -72,10 +72,8 @@ function GerenciaMateriais() {
     };
   }, []);
 
-  if(!materiais){
-    return (
-      <div>Carregando...</div>
-    )
+  if (!materiais) {
+    return <div>Carregando...</div>;
   }
 
   return (
@@ -97,23 +95,36 @@ function GerenciaMateriais() {
             </div>
           </div>
           <ul>
-            {materiais.slice(startIndex, startIndex+10).map((material, index) => (
-              <li key={index}>
-                <div className="gerenciar-materiais-item">
-                  <Link to={`/conteudo-materiais/${material.material_id}`}>{material.title}</Link>
-                  <div className="btn-area-gerenciar-material">
-                    {/* Botao de editar material */}
-                    <Link to={`/material/editar/${material.material_id}`} className="btn-editar-material">
-                      <img className="icon-editar-material" src={editIcon} />
+            {materiais
+              .slice(startIndex, startIndex + 10)
+              .map((material, index) => (
+                <li key={index}>
+                  <div className="gerenciar-materiais-item">
+                    <Link to={`/conteudo-materiais/${material.material_id}`}>
+                      {material.title}
                     </Link>
-                    {/* Botao de excluir material */}
-                    <button className="btn-excluir-material" onClick={() => deleteMaterial(material.material_id)} >
-                      <img className="icon-excluir-material" src={deleteIcon} />
-                    </button>
+                    <div className="btn-area-gerenciar-material">
+                      {/* Botao de editar material */}
+                      <Link
+                        to={`/material/editar/${material.material_id}`}
+                        className="btn-editar-material"
+                      >
+                        <img className="icon-editar-material" src={editIcon} />
+                      </Link>
+                      {/* Botao de excluir material */}
+                      <button
+                        className="btn-excluir-material"
+                        onClick={() => deleteMaterial(material.material_id)}
+                      >
+                        <img
+                          className="icon-excluir-material"
+                          src={deleteIcon}
+                        />
+                      </button>
+                    </div>
                   </div>
-                </div>
-              </li>
-            ))}
+                </li>
+              ))}
           </ul>
 
           <div className="btn-scroll">
@@ -128,7 +139,6 @@ function GerenciaMateriais() {
               </button>
             )}
           </div>
-          
         </div>
       </div>
       <Footer />

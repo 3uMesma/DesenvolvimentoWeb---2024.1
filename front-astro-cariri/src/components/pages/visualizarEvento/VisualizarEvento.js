@@ -8,7 +8,7 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import eventos from "../../data/eventos.json";
-import { getEventApi } from "../../../back-api/evento/get.js"
+import { getEventApi } from "../../../back-api/evento/get.js";
 
 /*
 Retorna o código HTML da página que contém as informações especificas de um evento. 
@@ -22,7 +22,6 @@ function VisualizarEvento() {
   const fetchEvents = async () => {
     try {
       const response = await getEventApi(event_id);
-      console.log(response)
       setEventData(response);
     } catch (error) {
       console.error("Error fetching event:", error);
@@ -45,10 +44,8 @@ function VisualizarEvento() {
     };
   }, []);
 
-  if(!eventData){
-    return (
-      <div>Carregando...</div>
-    )
+  if (!eventData) {
+    return <div>Carregando...</div>;
   }
 
   return (

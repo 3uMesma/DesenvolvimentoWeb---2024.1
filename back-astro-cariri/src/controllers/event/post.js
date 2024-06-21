@@ -60,7 +60,6 @@ exports.postEvent = async (req, res, next) => {
       data,
       descricao,
     ];
-    console.log(values);
     const result = await client.query(query, values);
 
     const newEvent = result.rows[0];

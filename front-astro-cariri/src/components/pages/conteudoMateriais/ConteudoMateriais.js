@@ -82,9 +82,7 @@ const styles = StyleSheet.create({
 });
 
 function ConteudoMateriais(props) {
-  
   const { material_id } = useParams();
-  console.log(material_id)
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [generatingPDF, setGeneratingPDF] = useState(false);
   const [material, setMaterial] = useState([]);
@@ -192,9 +190,7 @@ function ConteudoMateriais(props) {
           <h2>Escrito por: {material.info.author} ✨</h2>
           <ul>
             <div className="conteudoMateriais-conteudo">
-              <ul>
-                {material.topics.map((topic) => displayElement(topic))}
-              </ul>
+              <ul>{material.topics.map((topic) => displayElement(topic))}</ul>
             </div>
           </ul>
         </div>

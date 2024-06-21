@@ -89,8 +89,8 @@ function SolicitacaoEventos() {
       tipo: "",
       data: "",
       descricao: "",
-    })
-    setDisplayDate("")
+    });
+    setDisplayDate("");
   };
 
   return (

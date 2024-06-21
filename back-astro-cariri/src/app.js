@@ -9,7 +9,7 @@ const userRoutes = require("./routes/userRoutes");
 const eventRoutes = require("./routes/eventRoutes");
 const materialRoutes = require("./routes/materialRoutes");
 const loginRoutes = require("./routes/loginRoutes");
-const usersRoutes = require("./routes/usersRoutes")
+const usersRoutes = require("./routes/usersRoutes");
 
 const app = express();
 
@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Routes
 app.use("/", userRoutes);
-app.use("/", usersRoutes)
+app.use("/", usersRoutes);
 app.use("/", eventRoutes);
 app.use("/", materialRoutes);
 app.use("/", loginRoutes);

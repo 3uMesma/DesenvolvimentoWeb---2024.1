@@ -5,7 +5,7 @@ import HamburguerMenu from "../../layout/header-admin-hamburguer/NavbarHamburgue
 import GlobalStyle from "../../../styles/GlobalStyle.js";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { getAllEventsApi } from "../../../back-api/evento/getAll.js"
+import { getAllEventsApi } from "../../../back-api/evento/getAll.js";
 
 import eventos from "../../data/eventos.json";
 import { propTypes } from "react-bootstrap/esm/Image.js";
@@ -17,7 +17,7 @@ function HomeAdmin() {
   const fetchEvents = async () => {
     try {
       const response = await getAllEventsApi();
-      console.log(response)
+      console.log(response);
       setEventos(response);
     } catch (error) {
       console.error("Error fetching events:", error);
@@ -26,7 +26,7 @@ function HomeAdmin() {
 
   useEffect(() => {
     fetchEvents();
-    console.log(eventos)
+    console.log(eventos);
   }, []);
 
   useEffect(() => {
@@ -41,10 +41,8 @@ function HomeAdmin() {
     };
   }, []);
 
-  if(!eventos){
-    return (
-      <div>Carregando...</div>
-    )
+  if (!eventos) {
+    return <div>Carregando...</div>;
   }
 
   return (
@@ -67,8 +65,7 @@ function HomeAdmin() {
                       {proposta.title}
                     </h2>
                     <p className="p-proposal">
-                      <strong>Interessado: </strong>{" "}
-                      {proposta.requester}
+                      <strong>Interessado: </strong> {proposta.requester}
                     </p>
                     <p className="p-proposal">
                       <strong>Instituição: </strong> {proposta.institution}

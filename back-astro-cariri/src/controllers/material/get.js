@@ -2,9 +2,7 @@ const client = require("../../data/data_base");
 
 exports.getMaterialData = async (req, res, next) => {
   try {
-    // console.log(req.params);
     const materialId = req.params.materialId;
-    // console.log('fetching material', materialId);
 
     const query_material =
       "SELECT m.title, u.name_ " +
@@ -34,20 +32,11 @@ exports.getMaterialData = async (req, res, next) => {
     const topics = await client.query(query_topics, [materialId]);
     const images = await client.query(query_images, [materialId]);
 
-    // const elements = images.rows.concat(topics.rows);
-    // elements.sort(function (a, b) {
-    //   return parseFloat(a.sequence) - parseFloat(b.sequence);
-    // });
-
-    // console.log('MATERIAL')
-    // console.log(material.rows)
-    // console.log('TOPICOS')
-    // console.log(topics.rows)
-    // console.log('IMAGENS')
-    // console.log(images.rows)
-
-    // const result = { info: material.rows[0], elements: elements };
-    const result = { info: material.rows[0], topics: topics.rows, images: images.rows };
+    const result = {
+      info: material.rows[0],
+      topics: topics.rows,
+      images: images.rows,
+    };
 
     // 200 é código que indica que deu certo
     return res.status(200).json(result);

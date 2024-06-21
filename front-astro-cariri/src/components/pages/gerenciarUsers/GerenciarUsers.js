@@ -85,26 +85,20 @@ function GerenciarUsers() {
           <li>
             <div className="gerenciarUsers-item-titulo">Lista de Usuários</div>
           </li>
-          {users
-            .slice(startIndex, startIndex + usersPerPage)
-            .map((user) => (
-              <li key={user.user_id}>
-                <div className="gerenciarUsers-item">
-                  <p className="gerenciarUsers-item-userName">{user.name_}</p>
-                  <button
-                    className="delete-icon-button"
-                    onClick={() => handleDeleteUser(user.user_id)}
-                    aria-label={`Delete ${user.name_}`}
-                  >
-                    <img
-                      className="delete-icon"
-                      src={deleteIcon}
-                      alt="Delete"
-                    />
-                  </button>
-                </div>
-              </li>
-            ))}
+          {users.slice(startIndex, startIndex + usersPerPage).map((user) => (
+            <li key={user.user_id}>
+              <div className="gerenciarUsers-item">
+                <p className="gerenciarUsers-item-userName">{user.name_}</p>
+                <button
+                  className="delete-icon-button"
+                  onClick={() => handleDeleteUser(user.user_id)}
+                  aria-label={`Delete ${user.name_}`}
+                >
+                  <img className="delete-icon" src={deleteIcon} alt="Delete" />
+                </button>
+              </div>
+            </li>
+          ))}
         </ul>
         <div className="btn-scroll">
           {startIndex > 0 && (
