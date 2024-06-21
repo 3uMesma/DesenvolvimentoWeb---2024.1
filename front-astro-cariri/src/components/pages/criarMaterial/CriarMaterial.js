@@ -124,12 +124,12 @@ function CriarMaterial() {
         <input
           name="file"
           className="file-input-criar"
-            type="file"
-            onChange={(e) => handleImageChange(e, index)}
-            aria-label="Selecione uma imagem"
-            aria-describedby="Este é um campo de entrada de arquivo. Clique para selecionar uma imagem."
-            ></input>
-          </div>
+          type="file"
+          onChange={(e) => handleImageChange(e, index)}
+          aria-label="Selecione uma imagem"
+          aria-describedby="Este é um campo de entrada de arquivo. Clique para selecionar uma imagem."
+        ></input>
+        </div>
 
         {/* Campo de legenda da imagem*/}
         <div className="campo-forms">
@@ -207,7 +207,6 @@ function CriarMaterial() {
             {topics.map((topic, index) => displayTopic(topic, index))}
             {images.map((image, index) => displayImage(image, index))}
             
-
             {/* Botões de ação */}
             <div className="btn-add">
 
