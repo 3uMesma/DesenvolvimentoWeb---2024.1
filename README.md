@@ -30,6 +30,8 @@ Para que as funções do back operem corretamente é necessário que os arquivos
 
 Por último, é necessário abrir dois terminais, um para rodar o back e outro o front. No primeiro terminal você vai acessar a pasta `back-astro-cariri`e usar o comando `npm run dev`, após isso o back deverá estará rodando na porta 3333. No segundo terminal você vai acessar a pasta `front-astro-cariri` e usar o comando `npm run start`, após isso o front deverá estará rodando na porta 3000.
 
+**Observação:** Para conseguir fazer login pode ser usado qualquer um dos usuários na tabela user\_, um exemplo é o usuário: `Amanda`, cuja senha é `10000000`
+
 ## Formatar código
 
 Antes de realizar um commit, rode o comando "npm run pretty" para formatar todos os arquivos.
