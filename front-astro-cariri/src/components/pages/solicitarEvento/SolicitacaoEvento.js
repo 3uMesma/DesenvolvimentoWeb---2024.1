@@ -80,6 +80,17 @@ function SolicitacaoEventos() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     postEventoApi(eventData);
+    setEventData({
+      titulo: "",
+      contato: "",
+      interessado: "",
+      instituicao: "",
+      endereco: "",
+      tipo: "",
+      data: "",
+      descricao: "",
+    })
+    setDisplayDate("")
   };
 
   return (
@@ -100,6 +111,7 @@ function SolicitacaoEventos() {
                 className="input"
                 type="text"
                 onChange={handleChange}
+                value={eventData.titulo}
                 placeholder="Título do evento que você propõe"
               ></input>
             </div>
@@ -111,6 +123,7 @@ function SolicitacaoEventos() {
                 className="input"
                 type="text"
                 onChange={handleChange}
+                value={eventData.interessado}
                 placeholder="Nome e Sobrenome"
               ></input>
             </div>
@@ -122,6 +135,7 @@ function SolicitacaoEventos() {
                 className="input"
                 type="text"
                 onChange={handleChange}
+                value={eventData.contato}
                 placeholder="email ou celular"
               ></input>
             </div>
@@ -133,6 +147,7 @@ function SolicitacaoEventos() {
                 className="input"
                 type="text"
                 onChange={handleChange}
+                value={eventData.instituicao}
                 placeholder="Nome completo da sua instituição"
               ></input>
             </div>
@@ -144,6 +159,7 @@ function SolicitacaoEventos() {
                 className="input"
                 type="text"
                 onChange={handleChange}
+                value={eventData.endereco}
                 placeholder="Rua, número, bairro e cidade"
               ></input>
             </div>
@@ -193,6 +209,7 @@ function SolicitacaoEventos() {
                 name="descricao"
                 className="descricao-input"
                 ref={textAreaRef}
+                value={eventData.descricao}
                 onChange={handleDescriptionChange}
                 style={{ height: `${textareaHeight}px` }}
                 placeholder="Explique brevemente a proposta do evento"
