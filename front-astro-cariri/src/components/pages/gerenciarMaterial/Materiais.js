@@ -4,9 +4,13 @@ import Header from "../../layout/header-admin/Navbar.js";
 import Footer from "../../layout/footer/Footer.js";
 import HamburguerMenu from "../../layout/header-admin-hamburguer/NavbarHamburguer.jsx";
 
+import polygon1_forward from "../../../images/polygon1.png";
+import polygon1_backward from "../../../images/polygon1_upwards.png";
+
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import { fakeMateriais } from "../../data/materiais.jsx";
+
+import { getAllMateriaisApi } from "../../../back-api/materiais/getAll.js";
 
 import deleteIcon from "../../../images/Delete.png";
 import editIcon from "../../../images/edit.png";
@@ -15,10 +19,25 @@ import criarIcon from "../../../images/btn-criar.png";
 function GerenciaMateriais() {
   const materialsPerPage = 10; // Materiais por página
   const [startIndex, setStartIndex] = useState(0);
+  const [materiais, setMateriais] = useState([]);
+
+  const fetchMateriais = async () => {
+    try {
+      const response = await getAllMateriaisApi();
+      setMateriais(response);
+      console.log(response)
+    } catch (error) {
+      console.error("Error fetching materials:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchMateriais();
+  }, []);
 
   const nextPage = () => {
     const nextIndex = startIndex + materialsPerPage;
-    if (nextIndex < fakeMateriais.length) {
+    if (nextIndex < materiais.length) {
       setStartIndex(nextIndex);
     }
   };
@@ -43,6 +62,13 @@ function GerenciaMateriais() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  if(!materiais){
+    return (
+      <div>Carregando...</div>
+    )
+  }
+
   return (
     <div className="gerenciar-materiais">
       <GlobalStyle />
@@ -62,10 +88,10 @@ function GerenciaMateriais() {
             </div>
           </div>
           <ul>
-            {fakeMateriais.map((material, index) => (
+            {materiais.slice(startIndex, startIndex+10).map((material, index) => (
               <li key={index}>
                 <div className="gerenciar-materiais-item">
-                  <Link to="/conteudo-materiais">{material.nome}</Link>
+                  <Link to="/conteudo-materiais">{material.title}</Link>
                   <div className="btn-area-gerenciar-material">
                     {/* Botao de editar material */}
                     <Link to="/material/editar" className="btn-editar-material">
@@ -80,6 +106,20 @@ function GerenciaMateriais() {
               </li>
             ))}
           </ul>
+
+          <div className="btn-scroll">
+            {startIndex > 0 && (
+              <button onClick={prevPage}>
+                <img src={polygon1_backward} />
+              </button>
+            )}
+            {startIndex + materialsPerPage < materiais.length && (
+              <button onClick={nextPage}>
+                <img src={polygon1_forward} />
+              </button>
+            )}
+          </div>
+          
         </div>
       </div>
       <Footer />
