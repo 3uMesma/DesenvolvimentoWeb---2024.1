@@ -13,6 +13,7 @@
 | 20/03/2024 | 0.1    | Criação do documento         | Guilherme de Abreu                  |
 | 23/03/2024 | 0.2    | Mudança de projeto           | Guilherme de Abreu                  |
 | 17/04/2024 | 0.3    | Atualização Plano de Projeto | Alcino Cavalcanti e Eduarda Neumann |
+| 22/06/2024 | 0.4    | Remoção de artefatos de versões anteriores | Guilherme de Abreu    |
 
 ## 3. Introdução
 
@@ -35,8 +36,8 @@ A equipe 1B é composta pelos seguintes integrantes, cujos papeis podem sofrer r
 |:-------------------------- |:---------------- |
 | Alcino Salviano Cavalcanti | Desenvolvedor    |
 | Amanda Kasat Baltor        | Product Owner    |
-| Eduarda Fritzen Neumann    | Desenvolvedora   |
-| Guilherme de Abreu Barreto | SCRUM Master     |
+| Eduarda Fritzen Neumann    | SCRUM Master     |
+| Guilherme de Abreu Barreto | Desnvolvedor     |
 | Lucas Issao Omati          | Desenvolvedor    |
 | Rafael de Almeida          | Desenvolvedor    |
 
@@ -52,7 +53,7 @@ Enquanto as ferramentas das quais faremos uso são:
 
 ## 6. Acompanhamento do Projeto
 
-O acompanhamento do projeto está sendo realizado com o apoio de diferentes ferramentas. A equipe se comunica através do Discord e do Telegram para a distribuição de tarefas e acompanhamento do progresso de cada atividade. Há duas reuniões semanais (dailys) para o alinhamento da equipe e revisão da metodologia ágil que são realizadas via Discord. Tem-se reuniões periódicas com a cliente via Google Meet para apresentar partes do projeto já implementadas e receber feedback. Os relatórios e demais documentos do Plano de Projeto têm sido reunidos em repositório do GitHub de forma a manter organizados a documentação e o código fonte do projeto.
+O acompanhamento do projeto está sendo realizado com o apoio de diferentes ferramentas. A equipe se comunica através do Discord e do Telegram para a distribuição de tarefas e acompanhamento do progresso de cada atividade. Há duas reuniões semanais (dailies) para o alinhamento da equipe e revisão da metodologia ágil que são realizadas via Discord. Tem-se reuniões periódicas com a cliente via Google Meet para apresentar partes do projeto já implementadas e receber feedback. Os relatórios e demais documentos do Plano de Projeto têm sido reunidos em repositório do GitHub de forma a manter organizados a documentação e o código fonte do projeto.
 
 ## 7. Cronograma e Marcos do Projeto
 
@@ -66,10 +67,7 @@ O levantamento de riscos foi organizado nessa [planilha](https://docs.google.com
 
 ## 10. Gerenciamento de configuração de software
 
-### Nomenclatura dos itens de configuração
-
 ### Controle de versão
 
-Utilizaremos os comits do GitHub para controlar as versões do projeto. Cada commit por um desenvolvedor do time representa a adição de uma feature nova, sendo uma nova versão minor. Ao final do projeto espera-se a entrega da versão major 1 do projeto.
+Utilizamos os commits do GitHub para controlar as versões do projeto. Cada commit por um desenvolvedor do time representa a adição de uma feature nova, sendo uma nova versão minor. Ao final do projeto espera-se a entrega da versão major 1 do projeto.
 
-### Dependências entre os itens de configuração.
