@@ -1,17 +1,24 @@
 # Planejamento e Roteiro de Apresentação
-> Notas e separações para os slides dadas em comentários
+> Notas e separações para os slides dadas em comentários.
 ## Planejamento do projeto
 
 > Slide 1
 ### Introdução
 O AstroCariri trata-se de um clube de astronomia originado na região metropolitana do Cariri, Ceará. Pretende-se com este projeto expandir a presença digital do grupo e fornecê-los ferramentas para promover uma melhor divulgação e registro das suas atividades e materiais didáticos.
 
-> Slide 2
+> Slide 2: Não detalhar a metodologia, explicá-la é para que serviu o curso, afinal. Colocar imagens do board do Trello e diagramas elaborados para fins ilustrativos.
 
+### Metodologia
+
+- Emprego da metodologia SCRUM e uso da ferramenta de gestão Trello para gerenciar um total de  5 sprints
+- Modelagem do software usando a metodologia do Processo Unificado (PU) para a confecção de Casos de Uso, de teste; Modelos conceitual e comportamental.
+
+
+> Slide 3: Buscar imagens, seja do coletivo ou da Letícia em si. Para transmitir que aqui não estamos a falar de gnomos.
 ### Cliente
 Letícia Vieira, organizadora do grupo AstroCariri. Responsável pela revisão mensal do progresso feito no projeto.
 
-> Slide 3: continuação do slide anterior, inserção de novas informações
+> Slide 4: continuação do slide anterior, inserção de novas informações
 
 Reuniões realizadas em:
 
@@ -20,7 +27,7 @@ Reuniões realizadas em:
 - **20/05:** Atualizações no desenvolvimento do site
 - **26/06:** Apresentação do produto
 
-> Slide 4: Cada item listado a seguir deve ser inserido seguidamente
+> Slide 5: Cada item listado a seguir deve ser inserido seguidamente
 
 ### Sumário dos Requisitos Funcionais
 - **Materiais:** Listar e apresentar os materiais didáticos e atividades promovidos pelo grupo, permitindo aos usuários buscá-los e aos administradores gerenciar o conteúdo e exibição destes;
@@ -31,14 +38,12 @@ Reuniões realizadas em:
     - Modo "noturno";
     - Leitura por Libras.
 
-> Slide 5: Colocar imagens do board do Trello e diagramas elaborados para fins ilustrativos
+> Slide 6:
 
 ## Aplicação da metodologia de desenvolvimento
 
-- Emprego da metodologia SCRUM e uso da ferramenta de gestão Trello para gerenciar um total de  5 sprints
-- Modelagem do software usando a metodologia do Processo Unificado (PU) para a confecção de Casos de Uso, de teste; Modelos conceitual e comportamental.
 
-> Slide 6: Exibir cada um dos sprints a seguir em um slide separado, possivelmente alternando as imagens junto aos tópicos exibidos. Isso invariavelmente, levará a uma inflação de slides na contagem aqui.
+> Slide 7: Exibir cada um dos sprints a seguir em um slide separado, possivelmente alternando as imagens junto aos tópicos exibidos. Isso invariavelmente, levará a uma inflação de slides na contagem aqui.
 ### Sprints
 
 #### Sprint 1
