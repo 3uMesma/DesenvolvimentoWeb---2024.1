@@ -10,8 +10,8 @@ O AstroCariri trata-se de um clube de astronomia originado na região metropolit
 
 ### Metodologia
 
-- Emprego da metodologia SCRUM e uso da ferramenta de gestão Trello para gerenciar um total de  5 sprints
-- Modelagem do software usando a metodologia do Processo Unificado (PU) para a confecção de Casos de Uso, de teste; Modelos conceitual e comportamental.
+- Metodologia SCRUM e uso da ferramenta de gestão Trello para gerenciar um total de  5 sprints
+- Modelagem do software usando Processo Unificado (PU) para a confecção de Casos de Uso, de teste; Modelos conceitual e comportamental.
 
 
 > Slide 3: Buscar imagens, seja do coletivo ou da Letícia em si. Para transmitir que aqui não estamos a falar de gnomos.
@@ -38,12 +38,11 @@ Reuniões realizadas em:
     - Modo "noturno";
     - Leitura por Libras.
 
-> Slide 6:
 
 ## Aplicação da metodologia de desenvolvimento
 
 
-> Slide 7: Exibir cada um dos sprints a seguir em um slide separado, possivelmente alternando as imagens junto aos tópicos exibidos. Isso invariavelmente, levará a uma inflação de slides na contagem aqui.
+> Slide 6: Exibir cada um dos sprints a seguir em um slide separado, possivelmente alternando as imagens junto aos tópicos exibidos. Isso invariavelmente, levará a uma inflação de slides na contagem aqui.
 ### Sprints
 
 #### Sprint 1
@@ -89,11 +88,11 @@ Reuniões realizadas em:
 
 ## Apresentação do produto desenvolvido
 
-> Slide 8: Vídeo de apresentação
+> Slide 7: Vídeo de apresentação
 
 ## Créditos finais
 
-> Slide 9: Indicar em legenda quem está matriculado em cada matéria
+> Slide 8: Indicar em legenda quem está matriculado em cada matéria
 
 Os integrantes são responsáveis pela elaboração deste projeto:
 
