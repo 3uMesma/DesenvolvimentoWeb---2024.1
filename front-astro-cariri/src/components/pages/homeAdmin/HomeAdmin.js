@@ -7,9 +7,6 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { getAllEventsApi } from "../../../back-api/evento/getAll.js";
 
-import eventos from "../../data/eventos.json";
-import { propTypes } from "react-bootstrap/esm/Image.js";
-
 function HomeAdmin() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [eventos, setEventos] = useState([]);
