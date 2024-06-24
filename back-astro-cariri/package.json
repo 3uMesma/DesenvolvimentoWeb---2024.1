@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node src/app.js",
     "dev": "nodemon src/app.js",
-    "build": "echo 'No build step required' && exit 0"
+    "build": "echo 'Building...' && mkdir -p public && touch public/index.html"
   },
   "keywords": [],
   "author": "",
