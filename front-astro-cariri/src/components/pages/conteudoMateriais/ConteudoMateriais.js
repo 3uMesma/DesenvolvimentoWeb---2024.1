@@ -149,7 +149,6 @@ function ConteudoMateriais(props) {
       );
     } else {
       // let imagePath;
-      // console.log(element.path)
       // try {
       //   imagePath = images(`foguete.png`);
       // } catch (error) {

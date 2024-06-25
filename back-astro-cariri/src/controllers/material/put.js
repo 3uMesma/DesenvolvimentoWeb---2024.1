@@ -16,14 +16,12 @@ exports.putMaterials = async (req, res, next) => {
     if (!author) {
       return res.status(400).json({ error: "Autor não pode ser nulo" });
     }
-    
+
     if (!topics) {
       return res
-      .status(400)
-      .json({ error: "O material deve conter pelo menos um tópico." });
+        .status(400)
+        .json({ error: "O material deve conter pelo menos um tópico." });
     }
-
-
 
     const query_user = "SELECT user_id FROM User_ WHERE name_ = $1";
     const result_user = await client.query(query_user, [author]);
@@ -31,8 +29,6 @@ exports.putMaterials = async (req, res, next) => {
       return res.status(404).json({ message: "Autor não encontrado" });
     }
     const author_id = result_user.rows[0].user_id;
-
-
 
     const query_material = `
             UPDATE Material
@@ -48,19 +44,19 @@ exports.putMaterials = async (req, res, next) => {
       return res.status(404).json({ message: "Material não encontrado" });
     }
 
-
     const query_existing_topics =
       "SELECT t.topic_id " +
       "FROM Topic t " +
       "INNER JOIN MaterialAttribute ma ON t.topic_id = ma.attribute_id " +
       "WHERE ma.material_id = $1 ";
-    const existing_topics = (await client.query(query_existing_topics, [materialId])).rows;
+    const existing_topics = (
+      await client.query(query_existing_topics, [materialId])
+    ).rows;
 
     for (const topic of topics) {
-      if(topic.id){
-        const index = existing_topics.indexOf({topic_id: topic.id});
+      if (topic.id) {
+        const index = existing_topics.indexOf({ topic_id: topic.id });
         existing_topics.splice(index);
-        
 
         const query_topic = `
                   UPDATE Topic
@@ -84,19 +80,20 @@ exports.putMaterials = async (req, res, next) => {
           1,
           topic.sequence,
         ];
-        const result_material_attribute = await client.query(query_material_attribute, values_material_attribute);
+        const result_material_attribute = await client.query(
+          query_material_attribute,
+          values_material_attribute,
+        );
       }
     }
 
-    console.log(existing_topics)
-    for(const topic of existing_topics){
-      const query_attribute = "DELETE FROM MaterialAttribute WHERE attribute_id = $1";
+    for (const topic of existing_topics) {
+      const query_attribute =
+        "DELETE FROM MaterialAttribute WHERE attribute_id = $1";
       const query_material = "DELETE FROM Topic WHERE topic_id = $1";
       await client.query(query_attribute, [topic.topic_id]);
       await client.query(query_material, [topic.topic_id]);
     }
-
-
 
     // for(const image of images) {
     //     const query_img = `

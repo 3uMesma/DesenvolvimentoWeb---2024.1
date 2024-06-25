@@ -22,21 +22,17 @@ function Materiais() {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
-    
+
     window.addEventListener("resize", handleResize);
-    
+
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  
-  
-  
-  
-  
+
   const [materiais, setMateriais] = useState([]);
   const [searchTitle, setSearchTitle] = useState("");
-  
+
   const fetchMateriais = async () => {
     try {
       const response = await getAllMateriaisApi(searchTitle);
@@ -49,9 +45,6 @@ function Materiais() {
   useEffect(() => {
     fetchMateriais();
   }, []);
-
-
-
 
   const materialsPerPage = 10;
   const [startIndex, setStartIndex] = useState(0);
@@ -70,11 +63,10 @@ function Materiais() {
     }
   };
 
-
   const handleSearch = (e) => {
     e.preventDefault();
     fetchMateriais();
-  }
+  };
 
   return (
     <div className="materiais">
@@ -85,17 +77,17 @@ function Materiais() {
 
         <div className="materiais-search-area">
           {/* <form onSubmit={handleSearch}> */}
-            <input
-              className="search-input"
-              type="text"
-              placeholder="Busque por títulos"
-              value={searchTitle}
-              onChange={(e) => setSearchTitle(e.target.value)}
-            ></input>
+          <input
+            className="search-input"
+            type="text"
+            placeholder="Busque por títulos"
+            value={searchTitle}
+            onChange={(e) => setSearchTitle(e.target.value)}
+          ></input>
 
-            <button type="submit" id="btn-search" onClick={handleSearch}>
-              Pesquisar
-            </button>
+          <button type="submit" id="btn-search" onClick={handleSearch}>
+            Pesquisar
+          </button>
           {/* </form> */}
         </div>
 

@@ -14,7 +14,6 @@ function HomeAdmin() {
   const fetchEvents = async () => {
     try {
       const response = await getAllEventsApi();
-      console.log(response);
       setEventos(response);
     } catch (error) {
       console.error("Error fetching events:", error);
@@ -23,7 +22,6 @@ function HomeAdmin() {
 
   useEffect(() => {
     fetchEvents();
-    console.log(eventos);
   }, []);
 
   useEffect(() => {

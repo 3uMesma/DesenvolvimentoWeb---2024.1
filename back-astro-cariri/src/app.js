@@ -42,4 +42,4 @@ client
     console.error("Erro ao conectar ao banco de dados", err);
   });
 
-  module.exports = app;
+module.exports = app;

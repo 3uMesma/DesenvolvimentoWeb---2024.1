@@ -24,10 +24,6 @@ function EditarMaterial() {
     };
   }, []);
 
-
-
-
-
   const textAreaRef = useRef(null);
   const [textareaHeight, setTextareaHeight] = useState(52); // Altura inicial
 
@@ -37,13 +33,9 @@ function EditarMaterial() {
     const newHeight = Math.max(scrollHeight, 32); // Altura mínima
     setTextareaHeight(newHeight);
   }
-  
-
-
-
 
   const { material_id } = useParams();
-  const [materialData, setMaterialData] = useState({title:"", author:""});
+  const [materialData, setMaterialData] = useState({ title: "", author: "" });
   const [topics, setTopics] = useState([]);
   // const [topics, setTopics] = useState([{title:"", text:"", type:"", id:"", sequence:""}]);
   // const [images, setImages] = useState([]);
@@ -68,20 +60,16 @@ function EditarMaterial() {
     setMaterialData({ ...materialData, [name]: value });
   };
 
-
-
-
-
   const addTopic = () => {
-    if(topics.length>0){
+    if (topics.length > 0) {
       const newTopic = {
         title: `Tópico ${topics.length + 1}`,
         text: `Texto ${topics.length + 1}`,
-        sequence: topics[topics.length-1].sequence + 1
+        sequence: topics[topics.length - 1].sequence + 1,
       };
       setTopics([...topics, newTopic]);
     } else {
-      setTopics([{title: "Tópico 1", text: "Texto 1", sequence: 1}])
+      setTopics([{ title: "Tópico 1", text: "Texto 1", sequence: 1 }]);
     }
   };
 
@@ -90,7 +78,7 @@ function EditarMaterial() {
       setTopics(topics.slice(0, -1));
     }
   };
-  
+
   const handleTopicChange = (e, index) => {
     if (e.target.name == "text") {
       adjustHeight();
@@ -132,11 +120,6 @@ function EditarMaterial() {
       </div>
     );
   };
-
-
-
-
-
 
   // const addImage = () => {
   //   const newImage = {
@@ -225,11 +208,10 @@ function EditarMaterial() {
       // images: [],
     };
     await putMaterialApi(updatedMaterial);
-    setMaterialData({})
-    setTopics([])
+    setMaterialData({});
+    setTopics([]);
     fetchMaterial();
   };
-
 
   if (!materialData) {
     return <div>Carregando...</div>;
@@ -243,7 +225,6 @@ function EditarMaterial() {
         <h1 className="criarMaterial-title">EDIÇÃO DE MATERIAL</h1>
         <div className="criarMaterial-form">
           <form onSubmit={handleSubmit}>
-
             <div className="campo-forms">
               <p className="title-input-criar">Título</p>
               <input
@@ -267,7 +248,6 @@ function EditarMaterial() {
             </div>
 
             {topics.map((topic, index) => displayTopic(topic, index))}
-
           </form>
 
           <div className="btn-add">

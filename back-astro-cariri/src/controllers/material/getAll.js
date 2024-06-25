@@ -5,11 +5,11 @@ const client = require("../../data/data_base");
 exports.getAllMaterialsTitles = async (req, res, next) => {
   try {
     const materialsTitle = req.query.titulo;
-    console.log(materialsTitle)
 
     let result = "";
     if (materialsTitle) {
-      const query = "SELECT title, material_id FROM Material WHERE title LIKE $1";
+      const query =
+        "SELECT title, material_id FROM Material WHERE title LIKE $1";
       const values = [`%${materialsTitle}%`];
       result = await client.query(query, values);
 
@@ -34,7 +34,6 @@ exports.getAllMaterialsTitles = async (req, res, next) => {
     // 200 é código que indica que deu certo
     const materialsData = result.rows;
     return res.status(200).json(materialsData);
-    
   } catch (error) {
     next(error);
   }

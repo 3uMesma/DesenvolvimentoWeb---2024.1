@@ -72,9 +72,9 @@ function CadastrarAdmin() {
               ></input>
               <button type="button" id="botao-senha1" onClick={toggleShow}>
                 <img
-                  src={closed_eye}
+                  src={hidden ? closed_eye : opened_eye}
                   id="img-botao1"
-                  alt="mostrar ou esconder senha"
+                  alt={hidden ? "Mostrar senha" : "Esconder senha"}
                 ></img>
               </button>
             </div>
