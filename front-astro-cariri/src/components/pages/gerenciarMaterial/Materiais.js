@@ -42,6 +42,7 @@ function GerenciaMateriais() {
     } catch (error) {
       console.error("Error deleting materials:", error);
     }
+    fetchMateriais();
   };
 
   const nextPage = () => {

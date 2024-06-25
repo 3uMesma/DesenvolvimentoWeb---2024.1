@@ -33,7 +33,7 @@ function PDFContent({ material }) {
           {/* <Text>{material.texto}</Text> */}
           {material.topics.map((topic, index) => (
             <View key={index}>
-              <Text style={styles.section}>{topic.topic}</Text>
+              <Text style={styles.section}>{topic.title}</Text>
               <Text>{topic.text}</Text>
             </View>
           ))}
@@ -143,7 +143,7 @@ function ConteudoMateriais(props) {
     if (topic.type == 1) {
       return (
         <li key={topic.id}>
-          <p className="conteudoMateriais-topic-title">{topic.topic}</p>
+          <p className="conteudoMateriais-topic-title">{topic.title}</p>
           <p className="conteudoMateriais-topic-text">{topic.text}</p>
         </li>
       );
