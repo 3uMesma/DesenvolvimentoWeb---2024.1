@@ -30,6 +30,30 @@ p {
     padding: 3%;
 }
 
+.btn-aceitar {
+    background-color: var(--cor-roxo);
+    padding: 0.5em;
+    font-size: 1.5em;
+    font-weight: 500;
+    border-radius: 10px;
+    color: var(--cor-amarelo);
+}
+
+.btn-rejeitar {
+    background-color: var(--cor-amarelo);
+    padding: 0.5em;
+    font-size: 1.5em;
+    font-weight: 500;
+    border-radius: 10px;
+}
+
+.btn-area {
+    margin: 0 7vw;
+    margin-top: 3vh;
+    display: flex;
+    justify-content: space-around;
+}
+
 /* Engloba todos os campos de informação sobre o evento */
 .visualizarEvento-infos {
     align-items: left;

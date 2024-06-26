@@ -112,6 +112,10 @@ function VisualizarEvento() {
               {eventData.description}
             </div>
           </div>
+          <div className="btn-area">
+            <button className="btn-aceitar">Aceitar Evento</button>
+            <button className="btn-rejeitar">Rejeitar Evento</button>
+          </div>
         </div>
       </div>
       <Footer />
