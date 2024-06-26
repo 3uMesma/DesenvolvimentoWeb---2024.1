@@ -28,11 +28,18 @@ function PDFContent({ material }) {
       <Page style={styles.page}>
         <View style={styles.section}>
           <Text style={styles.header}> ASTROCARIRI</Text>
-          <Text style={styles.name}> {material.nome}</Text>
-          <Text style={styles.author}>Escrito por: {material.autor}</Text>
-          <Text>{material.texto}</Text>
-          <Image style={styles.image} src={material.imagem_url} />
-          <Text style={styles.caption}>{material.imagem_legenda}</Text>
+          <Text style={styles.name}> {material.info.title}</Text>
+          <Text style={styles.author}>Escrito por: {material.info.author}</Text>
+          {/* <Text>{material.texto}</Text> */}
+          {material.topics.map((topic, index) => (
+            <View key={index}>
+              <Text style={styles.section}>{topic.title}</Text>
+              <Text>{topic.text}</Text>
+            </View>
+          ))}
+          {/* <Text>{material.topics.map((topic) => topic.topic topic.title)}</Text> */}
+          {/* <Image style={styles.image} src={material.imagem_url} /> */}
+          {/* <Text style={styles.caption}>{material.imagem_legenda}</Text> */}
         </View>
       </Page>
     </Document>
@@ -121,7 +128,7 @@ function ConteudoMateriais(props) {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = `${material.nome}.pdf`;
+    a.download = `${material.info.title}.pdf`;
     document.body.appendChild(a);
     a.click();
     setGeneratingPDF(false);
@@ -136,13 +143,12 @@ function ConteudoMateriais(props) {
     if (topic.type == 1) {
       return (
         <li key={topic.id}>
-          <p className="conteudoMateriais-topic-title">{topic.topic}</p>
+          <p className="conteudoMateriais-topic-title">{topic.title}</p>
           <p className="conteudoMateriais-topic-text">{topic.text}</p>
         </li>
       );
     } else {
       // let imagePath;
-      // console.log(element.path)
       // try {
       //   imagePath = images(`foguete.png`);
       // } catch (error) {
@@ -167,7 +173,7 @@ function ConteudoMateriais(props) {
   }
 
   if (!material.info || !material.topics) {
-    return <div>Loading...</div>;
+    return <div>Carregando...</div>;
   }
 
   return (

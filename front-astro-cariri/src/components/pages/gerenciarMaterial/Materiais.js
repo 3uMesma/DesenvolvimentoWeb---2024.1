@@ -26,7 +26,6 @@ function GerenciaMateriais() {
     try {
       const response = await getAllMateriaisApi();
       setMateriais(response);
-      console.log(response);
     } catch (error) {
       console.error("Error fetching materials:", error);
     }
@@ -42,6 +41,7 @@ function GerenciaMateriais() {
     } catch (error) {
       console.error("Error deleting materials:", error);
     }
+    fetchMateriais();
   };
 
   const nextPage = () => {

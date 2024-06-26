@@ -5,7 +5,6 @@ export const getMaterialApi = async (id) => {
   try {
     const url = `${API_URL}/material/${id}`;
     const response = await axios.get(url);
-    console.log(response.data);
     return response.data;
   } catch (error) {
     console.error("Axios error:", error);
