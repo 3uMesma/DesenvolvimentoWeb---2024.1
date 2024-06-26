@@ -34,6 +34,18 @@ function Materiais() {
     fetchMateriais();
   }, []);
 
+  const [query, setQuery] = useState("");
+
+  const search_parameters = Object.keys(Object.assign({}, ...materiais));
+
+  function search(materiais) {
+    return materiais.filter((materiais) =>
+      search_parameters.some((param) =>
+        materiais[param].toString().toLowerCase().includes(query)
+      )
+    );
+  }
+
   const nextPage = () => {
     const nextIndex = startIndex + materialsPerPage;
     if (nextIndex < materiais.length) {
@@ -67,8 +79,18 @@ function Materiais() {
       <div className="body">
         <h1 className="materiais-title">MATERIAIS</h1>
         <div className="materiais-list">
+          <div className="input-box">
+            <input
+                type="search"
+                name="search-form"
+                id="search-form"
+                className="search-input"
+                  onChange={(e) => setQuery(e.target.value.toLocaleLowerCase())}
+                placeholder="Pesquise um material"
+            />
+          </div>
           <ul>
-            {materiais.map((material) => (
+            {search(materiais).map((material) => (
               <li key={material.material_id}>
                 <div className="materiais-item">
                   <Link to={`/conteudo-materiais/${material.material_id}`}>

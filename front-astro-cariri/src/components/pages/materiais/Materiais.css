@@ -12,6 +12,7 @@
     width: 70%;
     background-color: var(--cor-secondary-background);
     padding: 80px;
+    padding-top: 40px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 100px;
@@ -27,6 +28,27 @@
     justify-content: left;
     font-size: 1.5em;
     font-weight: 400;
+}
+
+.input-box{
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+
+.search-input{
+    text-indent: 0.5rem;
+    font-size: 1.2em;
+    height: 2.2em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--cor-preto);
+    background-color: var(--cor-item-background);
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.05);
+    width: 30vw;
+    text-align: center;
 }
 
 @media screen and (max-width: 720px){
