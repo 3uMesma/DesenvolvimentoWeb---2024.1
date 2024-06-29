@@ -4,7 +4,7 @@ const client = require("../../data/data_base");
 // req contém informações sobre a requisição, res é usado para enviar a resposta e next é usado para passar o controle para o próximo middleware ou rota.
 exports.getAllMaterialsTitles = async (req, res, next) => {
   try {
-    const materialsTitle = req.query.titulo;
+    const materialsTitle = req.query?.titulo;
 
     let result = "";
     if (materialsTitle) {

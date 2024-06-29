@@ -12,7 +12,7 @@ import contraste_icon from "../../../images/contraste.png";
 import userLogoLoggedOut from "../../../images/user-logo.png";
 import userLogoLoggedIn from "../../../images/user-logo-logado.png";
 
-import useAuth from "../../../back-api/login/useAuth";
+import { getUserBackApi } from "../../../back-api/user/get";
 
 function Navbar() {
   // Definindo o estado inicial do tamanho da fonte
@@ -20,19 +20,30 @@ function Navbar() {
   const [theme, setTheme] = useState("white");
   const [cookies, setCookie] = useCookies(["darkmode"]);
   const location = useLocation();
-  const [fontChangeMessage, setFontChangeMessage] = useState("");
+  const [fontChangeMessage, setFontChangeMessage] = useState(''); 
+  const [username, setUsername] = useState(""); // Estado para armazenar o nome do usuário
 
-  const { user } = useAuth();
+  useEffect(() => {
+    const fetchUserName = async () => {
+      try {
+        const userId = 11;
+        const userData = await getUserBackApi(userId);
+        setUsername(userData.name); // Supondo que a resposta contenha o nome do usuário na propriedade 'name'
+      } catch (error) {
+        console.error('Failed to fetch user data:', error);
+      }
+    };
+
+    fetchUserName();
+  }, []);
 
   // Função para aumentar a fonte
   const increaseFontSize = () => {
     setFontSize((prevFontSize) => {
       const newFontSize = Math.min(prevFontSize + 2, 22);
-      setFontChangeMessage(
-        newFontSize === prevFontSize
-          ? `A fonte já está no tamanho máximo de ${newFontSize}px`
-          : `A fonte aumentou para ${newFontSize}px`,
-      );
+      setFontChangeMessage(newFontSize === prevFontSize 
+        ? `A fonte já está no tamanho máximo de ${newFontSize}px` 
+        : `A fonte aumentou para ${newFontSize}px`);
       return newFontSize;
     });
   };
@@ -41,11 +52,9 @@ function Navbar() {
   const decreaseFontSize = () => {
     setFontSize((prevFontSize) => {
       const newFontSize = Math.max(prevFontSize - 2, 10);
-      setFontChangeMessage(
-        newFontSize === prevFontSize
-          ? `A fonte já está no tamanho mínimo de ${newFontSize}px`
-          : `A fonte diminuiu para ${newFontSize}px`,
-      );
+      setFontChangeMessage(newFontSize === prevFontSize 
+        ? `A fonte já está no tamanho mínimo de ${newFontSize}px` 
+        : `A fonte diminuiu para ${newFontSize}px`);
       return newFontSize;
     });
   };
@@ -91,48 +100,22 @@ function Navbar() {
           </Link>
         </div>
         <div className="navbar-mid">
-          <Link
-            to="/materiais"
-            className={
-              location.pathname === "/materiais"
-                ? "navbar-text-selected"
-                : "navbar-text-"
-            }
-            aria-current={location.pathname === "/materiais" ? "page" : null}
-          >
+          <Link to="/materiais" className={location.pathname === "/materiais" ? "navbar-text-selected" : "navbar-text-"} aria-current={location.pathname === "/materiais" ? "page" : null}>
             MATERIAIS
           </Link>
           <div className="navbar-pipe">|</div>
-          <Link
-            to="/solicitacao-evento"
-            className={
-              location.pathname === "/solicitacao-evento"
-                ? "navbar-text-selected"
-                : "navbar-text-"
-            }
-            aria-current={
-              location.pathname === "/solicitacao-evento" ? "page" : null
-            }
-          >
+          <Link to="/solicitacao-evento" className={location.pathname === "/solicitacao-evento" ? "navbar-text-selected" : "navbar-text-"} aria-current={location.pathname === "/solicitacao-evento" ? "page" : null}>
             SOLICITE EVENTO
           </Link>
           <div className="navbar-pipe">|</div>
-          <Link
-            to="/login"
-            className={
-              location.pathname === "/login"
-                ? "navbar-text-selected"
-                : "navbar-text-"
-            }
-            aria-current={location.pathname === "/login" ? "page" : null}
-          >
+          <Link to="/login" className={location.pathname === "/login" ? "navbar-text-selected" : "navbar-text-"} aria-current={location.pathname === "/login" ? "page" : null}>
             LOGIN
           </Link>
         </div>
         <div className="navbar-right-header">
           {isLoggedIn && (
             <Link to="/user" className="navbar-text-username">
-              {user.username}
+              {username}
             </Link>
           )}
           <Link to="/user">
@@ -147,7 +130,7 @@ function Navbar() {
       <div className="second-navbar">
         <div className="navbar-acessibility">
           <div className="acessibility-fonts">
-            <button onClick={increaseFontSize}>
+            <button onClick={increaseFontSize} >
               <img
                 className="icon-acessibility"
                 src={aumenta_fonte_icon}
@@ -164,23 +147,17 @@ function Navbar() {
             <div
               aria-live="polite"
               style={{
-                position: "absolute",
-                left: "-9999px",
-                height: "1px",
-                width: "1px",
-                overflow: "hidden",
+                position: 'absolute',
+                left: '-9999px',
+                height: '1px',
+                width: '1px',
+                overflow: 'hidden',
               }}
             >
               {fontChangeMessage}
             </div>
           </div>
-          <button
-            onClick={darkMode}
-            aria-pressed={theme === "dark"}
-            aria-label={
-              theme === "white" ? "Ativar modo escuro" : "Ativar modo claro"
-            }
-          >
+          <button onClick={darkMode} aria-pressed={theme === 'dark'} aria-label={theme === 'white' ? 'Ativar modo escuro' : 'Ativar modo claro'}>
             <img
               className="icon-acessibility"
               src={contraste_icon}

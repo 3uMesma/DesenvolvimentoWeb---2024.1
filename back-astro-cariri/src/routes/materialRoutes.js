@@ -8,7 +8,7 @@ const putMaterialController = require("../controllers/material/put");
 
 router.delete("/material/:materialId", deleteMaterialController.deleteMaterial);
 router.get("/material/:materialId", getMaterialController.getMaterialData);
-router.get("/material/", getAllMaterialController.getAllMaterialsTitles);
+router.get("/material", getAllMaterialController.getAllMaterialsTitles);
 router.post("/material", postMaterialController.postMaterial);
 router.put("/material/:materialId", putMaterialController.putMaterials);
 

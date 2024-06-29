@@ -3,7 +3,7 @@ import { API_URL } from "../api";
 
 export const getAllMateriaisApi = async (materialsTitle) => {
   try {
-    const url = `${API_URL}/material?titulo=${materialsTitle}`;
+    const url = `${API_URL}/material`;
 
     const response = await axios.get(url);
     return response.data;
