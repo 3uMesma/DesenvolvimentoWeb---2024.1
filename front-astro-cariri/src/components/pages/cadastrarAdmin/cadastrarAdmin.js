@@ -6,16 +6,29 @@ import GlobalStyle from "../../../styles/GlobalStyle";
 import closed_eye from "../../../images/invisible.png";
 import opened_eye from "../../../images/visible.png";
 import React, { useState, useEffect } from "react";
+import { createNewUser } from "../../../back-api/user/post.js";
 
 function CadastrarAdmin() {
   const [hidden, setHidden] = useState(true);
-  const [Password, setPassword] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
 
   const toggleShow = () => {
     setHidden(!hidden);
   };
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const newUser = {
+      name,
+      email,
+      password
+    };
+    createNewUser(newUser);
+  }
 
   useEffect(() => {
     const handleResize = () => {
@@ -28,6 +41,7 @@ function CadastrarAdmin() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
   return (
     <div className="CadastrarAdmin">
       <GlobalStyle />
@@ -38,7 +52,7 @@ function CadastrarAdmin() {
       </div>
 
       <div className="CadastrarAdmin-form">
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="form-entry">
             <p className="name-input">Nome de Usuário</p>
             <input
@@ -46,6 +60,8 @@ function CadastrarAdmin() {
               className="text-input2"
               placeholder="Nome do usuário a ser cadastrado"
               type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
             ></input>
           </div>
 
@@ -56,6 +72,8 @@ function CadastrarAdmin() {
               className="text-input2"
               type="email"
               placeholder="Email do usuário a ser cadastrado. exemplo@gmail.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             ></input>
           </div>
 
@@ -67,7 +85,7 @@ function CadastrarAdmin() {
                 placeholder="Senha do usuário a ser cadastrado"
                 id="password-input1"
                 type={hidden ? "password" : "text"}
-                value={Password}
+                value={password}
                 onChange={(e) => setPassword(e.target.value)}
               ></input>
               <button type="button" id="botao-senha1" onClick={toggleShow}>
@@ -81,7 +99,7 @@ function CadastrarAdmin() {
           </div>
         </form>
         <div className="btn-area-cadastro">
-          <button type="submit" id="fazer-cadastro" name="fazer-cadastro">
+          <button type="submit" id="fazer-cadastro" name="fazer-cadastro" onSubmit={handleSubmit}>
             Fazer Cadastro
           </button>
         </div>

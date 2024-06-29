@@ -10,7 +10,7 @@ router.use(express.json());
 router.get("/user/:userId", getUserController.getUserData);
 router.put("/user/:userId", putUserController.putUserData);
 
-router.post("/user/", postUserController.postNewUser);
+router.post("/user", postUserController.postNewUser);
 router.delete("/user/:userId", deleteUserController.deleteUser);
 
 module.exports = router;
