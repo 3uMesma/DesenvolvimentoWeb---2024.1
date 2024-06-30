@@ -23,12 +23,12 @@ function EditarDadosLogin() {
   const [changeName, setName] = useState("");
   const [changeEmail, setEmail] = useState("");
   const { user } = useAuth();
-
   const { sigout } = useAuth();
 
   useEffect(() => {
     const fetchUser = async () => {
       try {
+        console.log("Fetching user data...");
         const userData = await getUserBackApi(user.id);
         setUser(userData);
         setName(userData.name_);
@@ -39,7 +39,7 @@ function EditarDadosLogin() {
     };
 
     fetchUser();
-  }, [changeUser]);
+  }, []); // Ensure this runs only once on mount
 
   const toggleShow2 = () => {
     setHidden2(!hidden2);

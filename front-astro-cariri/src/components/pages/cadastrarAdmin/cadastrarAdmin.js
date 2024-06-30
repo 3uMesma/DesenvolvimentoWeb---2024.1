@@ -27,7 +27,13 @@ function CadastrarAdmin() {
       email,
       password
     };
-    createNewUser(newUser);
+    try {
+      createNewUser(newUser);
+      alert("Sucesso ao cadastrar novo usuário!");
+    } catch (err) {
+      console.error(err)
+      alert("Falha no cadastro do novo usuário!");
+    }
   }
 
   useEffect(() => {
@@ -99,7 +105,7 @@ function CadastrarAdmin() {
           </div>
         </form>
         <div className="btn-area-cadastro">
-          <button type="submit" id="fazer-cadastro" name="fazer-cadastro" onSubmit={handleSubmit}>
+          <button type="submit" id="fazer-cadastro" name="fazer-cadastro" onClick={handleSubmit}>
             Fazer Cadastro
           </button>
         </div>
